@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "WebAppExam/1.0.0": {
+      "WebappExam/1.0.0": {
         "runtime": {
-          "WebAppExam.dll": {}
+          "WebappExam.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "WebAppExam/1.0.0": {
+    "WebappExam/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
