@@ -1,4 +1,4 @@
-namespace WebAppExam.Models;
+namespace FoodHub.Models;
 
 public class ErrorViewModel
 {

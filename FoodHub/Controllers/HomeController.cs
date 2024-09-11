@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using WebAppExam.Models;
+using FoodHub.Models;
 
-namespace WebAppExam.Controllers;
+namespace FoodHub.Controllers;
 
 public class HomeController : Controller
 {

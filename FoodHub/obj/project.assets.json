@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/t982515/Documents/WebappExam/WebAppExam/WebappExam.csproj",
-      "projectName": "WebappExam",
-      "projectPath": "/Users/t982515/Documents/WebappExam/WebAppExam/WebappExam.csproj",
+      "projectUniqueName": "/Users/t982515/Documents/FoodHub/FoodHub/FoodHub.csproj",
+      "projectName": "FoodHub",
+      "projectPath": "/Users/t982515/Documents/FoodHub/FoodHub/FoodHub.csproj",
       "packagesPath": "/Users/t982515/.nuget/packages/",
-      "outputPath": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/",
+      "outputPath": "/Users/t982515/Documents/FoodHub/FoodHub/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/t982515/.nuget/NuGet/NuGet.Config"

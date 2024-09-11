@@ -1,28 +1,28 @@
 {
   "Version": 1,
   "Hash": "IrbsScTBgZj/TbeVNFSkFo4rFLjdpBeSa4fdHkSEc58=",
-  "Source": "WebappExam",
-  "BasePath": "_content/WebappExam",
+  "Source": "FoodHub",
+  "BasePath": "_content/FoodHub",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "WebappExam/wwwroot",
-      "Source": "WebappExam",
-      "ContentRoot": "/Users/t982515/Documents/WebappExam/WebAppExam/wwwroot/",
-      "BasePath": "_content/WebappExam",
+      "Name": "FoodHub/wwwroot",
+      "Source": "FoodHub",
+      "ContentRoot": "/Users/t982515/Documents/FoodHub/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/bundle/WebappExam.styles.css",
-      "SourceId": "WebappExam",
+      "Identity": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/bundle/FoodHub.styles.css",
+      "SourceId": "FoodHub",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/bundle/",
-      "BasePath": "_content/WebappExam",
-      "RelativePath": "WebappExam.styles.css",
+      "ContentRoot": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/bundle/",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "FoodHub.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/bundle/WebappExam.styles.css"
+      "OriginalItemSpec": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/bundle/FoodHub.styles.css"
     },
     {
-      "Identity": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/projectbundle/WebappExam.bundle.scp.css",
-      "SourceId": "WebappExam",
+      "Identity": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/FoodHub.bundle.scp.css",
+      "SourceId": "FoodHub",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/projectbundle/",
-      "BasePath": "_content/WebappExam",
-      "RelativePath": "WebappExam.bundle.scp.css",
+      "ContentRoot": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "FoodHub.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -52,14 +52,14 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/t982515/Documents/WebappExam/WebAppExam/obj/Debug/net8.0/scopedcss/projectbundle/WebappExam.bundle.scp.css"
+      "OriginalItemSpec": "/Users/t982515/Documents/FoodHub/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/FoodHub.bundle.scp.css"
     },
     {
-      "Identity": "/Users/t982515/Documents/WebappExam/WebAppExam/wwwroot/js/bootstrap.js",
-      "SourceId": "WebappExam",
+      "Identity": "/Users/t982515/Documents/FoodHub/FoodHub/wwwroot/js/bootstrap.js",
+      "SourceId": "FoodHub",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/t982515/Documents/WebappExam/WebAppExam/wwwroot/",
-      "BasePath": "_content/WebappExam",
+      "ContentRoot": "/Users/t982515/Documents/FoodHub/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
       "RelativePath": "js/bootstrap.js",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -74,11 +74,11 @@
       "OriginalItemSpec": "wwwroot/js/bootstrap.js"
     },
     {
-      "Identity": "/Users/t982515/Documents/WebappExam/WebAppExam/wwwroot/js/jquery.min.js",
-      "SourceId": "WebappExam",
+      "Identity": "/Users/t982515/Documents/FoodHub/FoodHub/wwwroot/js/jquery.min.js",
+      "SourceId": "FoodHub",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/t982515/Documents/WebappExam/WebAppExam/wwwroot/",
-      "BasePath": "_content/WebappExam",
+      "ContentRoot": "/Users/t982515/Documents/FoodHub/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
       "RelativePath": "js/jquery.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
