@@ -1,0 +1,8 @@
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.AssemblyInfoInputs.cache
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.AssemblyInfo.cs
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.csproj.CoreCompileInputs.cache
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.RazorAssemblyInfo.cache
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.RazorAssemblyInfo.cs
+C:\Users\sebas\OneDrive - OsloMet\WebAppExam\WebappExam\FoodHub\obj\Debug\net8.0\FoodHub.sourcelink.json
