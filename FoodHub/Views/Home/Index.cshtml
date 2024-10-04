@@ -4,9 +4,68 @@
 
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to FoodHub!</h1>
-</div>
+<div class="main-container">
+    <div class="kontainer">
+        <div class="text-center">
+            <h1 class="display-4 gradient-text-large">
+                Welcome to <span class="gradient-text">Foodhub!</span>
+            </h1>        
+            <div class="search-container">
+                <form asp-controller="Search" asp-action="Index" method="get" class="form-hero">
+                    <input type="text" class="search-input" name="query" placeholder="Search for your favourite food..">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <div class="content-section">
+        <div class="image-text-container">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Food Image 1" class="content-image">
+            <div class="content-text">
+                <h2 class="image-header">Delicious Recipes</h2>
+                <p>Discover a world of flavors with our curated collection of recipes from around the globe.</p>
+            </div>
+        </div>
+        
+        <div class="image-text-container reverse">
+            <img src="https://images.pexels.com/photos/3026802/pexels-photo-3026802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Food Image 2" class="content-image">
+            <div class="content-text">
+                <h2 class="image-header">Fresh Ingredients</h2>
+                <p>Learn about the best ingredients to use and where to find them for your culinary adventures.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3>200+</h3>
+            <p>Recipes</p>
+        </div>
+        <div class="stat-box">
+            <h3>1st place</h3>
+            <p>User Choice Award</p>
+        </div>
+        <div class="stat-box">
+            <h3>15<sup>+</sup></h3>
+            <p>Cuisines</p>
+        </div>
+        <div class="stat-box">
+            <h3>100%</h3>
+            <p>Transparancy</p>
+        </div>
+    </div>
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3>200+</h3>
+            <p>Recipes</p>
+        </div>
+        <div class="stat-box">
+            <h3>1st place</h3>
+            <p>User Choice Award</p>
+        </div>
+
+    </div>
+</div>
 <!-- <partial name="_Carousel" /> --> 
 
