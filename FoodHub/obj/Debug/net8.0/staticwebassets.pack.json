@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets/images/fishandchips.jpg"
     },
     {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/foodhub_logo_green.png",
+      "PackagePath": "staticwebassets/images/foodhub_logo_green.png"
+    },
+    {
       "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/frenchfries.jpg",
       "PackagePath": "staticwebassets/images/frenchfries.jpg"
     },

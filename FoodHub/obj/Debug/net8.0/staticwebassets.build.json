@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1t4Vceme+HR7h1QcbJpxssNe68xn4fUNKO7dnCyPN7w=",
+  "Hash": "+xvihcuhv+LKBrE1Y/tBlvF/CUPyShdrPxz/Ve3/0As=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/fishandchips.jpg"
+    },
+    {
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/foodhub_logo_green.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "images/foodhub_logo_green.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/foodhub_logo_green.png"
     },
     {
       "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/frenchfries.jpg",
