@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MyShop.Models;
+using FoodHub.Models;
 
-namespace MyShop.DAL;
+namespace FoodHub.DAL;
 
 public static class DBInit
 {

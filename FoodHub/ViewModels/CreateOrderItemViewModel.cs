@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MyShop.Models;
+using FoodHub.Models;
 
-namespace MyShop.ViewModels
+namespace FoodHub.ViewModels
 {
     public class CreateOrderItemViewModel
     {

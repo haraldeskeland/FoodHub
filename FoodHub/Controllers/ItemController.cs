@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using MyShop.DAL;
-using MyShop.Models;
-using MyShop.ViewModels;
+using FoodHub.DAL;
+using FoodHub.Models;
+using FoodHub.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
-namespace MyShop.Controllers;
+namespace FoodHub.Controllers;
 
 public class ItemController : Controller
 {

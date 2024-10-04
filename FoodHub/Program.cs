@@ -1,12 +1,19 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using MyShop.DAL;
+using FoodHub.DAL;
 using Serilog;
 using Serilog.Events;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;  
-using MyShop.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using FoodHub.Services;
+using System;
+using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 var connectionString = builder.Configuration.GetConnectionString("ItemDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ItemDbContextConnection' not found.");
 
 builder.Services.AddControllersWithViews();
@@ -81,7 +88,6 @@ app.UseSession();
 app.UseAuthentication();
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
-app.UseAuthentication();
 
 // app.MapControllerRoute(
 //     name: "default",

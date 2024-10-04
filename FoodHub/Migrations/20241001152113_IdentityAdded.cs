@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace MyShop.Migrations
+namespace FoodHub.Migrations
 {
     /// <inheritdoc />
     public partial class IdentityAdded : Migration

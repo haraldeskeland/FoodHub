@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
-namespace MyShop.Services
+namespace FoodHub.Services
 {
     public class EmailSender : IEmailSender
     {

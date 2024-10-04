@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyShop.Models;
-using MyShop.ViewModels;
+using FoodHub.Models;
+using FoodHub.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using MyShop.DAL;
+using FoodHub.DAL;
 using Microsoft.AspNetCore.Authorization;
 
 
-namespace MyShop.Controllers
+namespace FoodHub.Controllers
 {
     public class OrderController : Controller
     {

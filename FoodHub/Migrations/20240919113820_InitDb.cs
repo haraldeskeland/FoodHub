@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace MyShop.Migrations
+namespace FoodHub.Migrations
 {
     /// <inheritdoc />
     public partial class InitDb : Migration

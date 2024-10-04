@@ -15,8 +15,8 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = MyShop
-build_property.RootNamespace = MyShop
+build_property.RootNamespace = FoodHub
+build_property.RootNamespace = FoodHub
 build_property.ProjectDir = /Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -260,4 +260,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-axnuj3c1xz
+build_metadata.AdditionalFiles.CssScope = b-8slx00hq7y

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3IsA3uL3hWM=",
+  "dgSpecHash": "kYIjLMzQKNA=",
   "success": true,
-  "projectFilePath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj",
+  "projectFilePath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
   "expectedPackageFiles": [
     "/Users/haraldeskeland/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/haraldeskeland/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",

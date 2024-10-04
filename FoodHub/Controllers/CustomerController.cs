@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyShop.Models;
-using MyShop.DAL;
+using FoodHub.Models;
+using FoodHub.DAL;
 
-namespace MyShop.Controllers;
+namespace FoodHub.Controllers;
 
 public class CustomerController : Controller
 {

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj": {}
+    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj": {}
   },
   "projects": {
-    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj": {
+    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj",
-        "projectName": "MyShop",
-        "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj",
+        "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
+        "projectName": "FoodHub",
+        "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
         "packagesPath": "/Users/haraldeskeland/.nuget/packages/",
         "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/",
         "projectStyle": "PackageReference",

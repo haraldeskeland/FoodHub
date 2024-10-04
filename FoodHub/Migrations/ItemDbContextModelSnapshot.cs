@@ -3,11 +3,11 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyShop.DAL;
+using FoodHub.DAL;
 
 #nullable disable
 
-namespace MyShop.Migrations
+namespace FoodHub.Migrations
 {
     [DbContext(typeof(ItemDbContext))]
     partial class ItemDbContextModelSnapshot : ModelSnapshot
@@ -213,7 +213,7 @@ namespace MyShop.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MyShop.Models.Customer", b =>
+            modelBuilder.Entity("FoodHub.Models.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -231,7 +231,7 @@ namespace MyShop.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("MyShop.Models.Item", b =>
+            modelBuilder.Entity("FoodHub.Models.Item", b =>
                 {
                     b.Property<int>("ItemId")
                         .ValueGeneratedOnAdd()
@@ -256,7 +256,7 @@ namespace MyShop.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("MyShop.Models.Order", b =>
+            modelBuilder.Entity("FoodHub.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -279,7 +279,7 @@ namespace MyShop.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("MyShop.Models.OrderItem", b =>
+            modelBuilder.Entity("FoodHub.Models.OrderItem", b =>
                 {
                     b.Property<int>("OrderItemId")
                         .ValueGeneratedOnAdd()
@@ -357,9 +357,9 @@ namespace MyShop.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MyShop.Models.Order", b =>
+            modelBuilder.Entity("FoodHub.Models.Order", b =>
                 {
-                    b.HasOne("MyShop.Models.Customer", "Customer")
+                    b.HasOne("FoodHub.Models.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -368,15 +368,15 @@ namespace MyShop.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("MyShop.Models.OrderItem", b =>
+            modelBuilder.Entity("FoodHub.Models.OrderItem", b =>
                 {
-                    b.HasOne("MyShop.Models.Item", "Item")
+                    b.HasOne("FoodHub.Models.Item", "Item")
                         .WithMany("OrderItems")
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MyShop.Models.Order", "Order")
+                    b.HasOne("FoodHub.Models.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -387,17 +387,17 @@ namespace MyShop.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("MyShop.Models.Customer", b =>
+            modelBuilder.Entity("FoodHub.Models.Customer", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("MyShop.Models.Item", b =>
+            modelBuilder.Entity("FoodHub.Models.Item", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("MyShop.Models.Order", b =>
+            modelBuilder.Entity("FoodHub.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });

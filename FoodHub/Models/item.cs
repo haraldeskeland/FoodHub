@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
-namespace MyShop.Models {
+namespace FoodHub.Models {
     public class Item
     {
         public int ItemId { get; set; }
