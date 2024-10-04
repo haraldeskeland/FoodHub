@@ -7134,11 +7134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/MyShop.csproj",
+      "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj",
       "projectName": "MyShop",
-      "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/MyShop.csproj",
+      "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/MyShop.csproj",
       "packagesPath": "/Users/haraldeskeland/.nuget/packages/",
-      "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/",
+      "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/haraldeskeland/.nuget/NuGet/NuGet.Config"

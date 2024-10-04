@@ -1,59 +1,59 @@
 {
   "Files": [
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css",
       "PackagePath": "staticwebassets/MyShop.bundle.scp.css"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/css/site.css",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/chickenleg.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/chickenleg.jpg",
       "PackagePath": "staticwebassets/images/chickenleg.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/cider.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/cider.jpg",
       "PackagePath": "staticwebassets/images/cider.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/coke.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/coke.jpg",
       "PackagePath": "staticwebassets/images/coke.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/fishandchips.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/fishandchips.jpg",
       "PackagePath": "staticwebassets/images/fishandchips.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/frenchfries.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/frenchfries.jpg",
       "PackagePath": "staticwebassets/images/frenchfries.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/pizza.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/pizza.jpg",
       "PackagePath": "staticwebassets/images/pizza.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/ribs.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/ribs.jpg",
       "PackagePath": "staticwebassets/images/ribs.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/tacos.jpg",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/tacos.jpg",
       "PackagePath": "staticwebassets/images/tacos.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/bootstrap.js",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/bootstrap.js",
       "PackagePath": "staticwebassets/js/bootstrap.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.min.js",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.min.js",
       "PackagePath": "staticwebassets/js/jquery.min.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.validate.js",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.js",
       "PackagePath": "staticwebassets/js/jquery.validate.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.validate.unobtrusive.js",
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets/js/jquery.validate.unobtrusive.js"
     },
     {

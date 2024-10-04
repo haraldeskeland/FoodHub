@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "J+mM3z08L9juUSUuQL/RkFqupRBqI9oGB/MFeLfrrWg=",
+  "Hash": "iG9Tqy7ZeexzrmJdBKj2KO6cSalm8lLCFM4aks7ePdM=",
   "Source": "MyShop",
   "BasePath": "_content/MyShop",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "MyShop/wwwroot",
       "Source": "MyShop",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "Pattern": "**"
     }
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "/Users/haraldeskeland/.nuget/packages/microsoft.aspnetcore.identity.ui/8.0.8/staticwebassets/V5/lib/jquery/LICENSE.txt"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/bundle/MyShop.styles.css",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/bundle/MyShop.styles.css",
       "SourceId": "MyShop",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/MyShop",
       "RelativePath": "MyShop.styles.css",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/bundle/MyShop.styles.css"
+      "OriginalItemSpec": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/bundle/MyShop.styles.css"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css",
       "SourceId": "MyShop",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/MyShop",
       "RelativePath": "MyShop.bundle.scp.css",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css"
+      "OriginalItemSpec": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/MyShop.bundle.scp.css"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/css/site.css",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/css/site.css",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/chickenleg.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/chickenleg.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/chickenleg.jpg",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot/images/chickenleg.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/cider.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/cider.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/cider.jpg",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot/images/cider.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/coke.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/coke.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/coke.jpg",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot/images/coke.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/fishandchips.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/fishandchips.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/fishandchips.jpg",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot/images/fishandchips.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/frenchfries.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/frenchfries.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/frenchfries.jpg",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot/images/frenchfries.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/pizza.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/pizza.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/pizza.jpg",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot/images/pizza.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/ribs.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/ribs.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/ribs.jpg",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot/images/ribs.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/images/tacos.jpg",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/tacos.jpg",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "images/tacos.jpg",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot/images/tacos.jpg"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/bootstrap.js",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/bootstrap.js",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "js/bootstrap.js",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot/js/bootstrap.js"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.min.js",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.min.js",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "js/jquery.min.js",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot/js/jquery.min.js"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.validate.js",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.js",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "js/jquery.validate.js",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot/js/jquery.validate.js"
     },
     {
-      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/js/jquery.validate.unobtrusive.js",
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.unobtrusive.js",
       "SourceId": "MyShop",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/wwwroot/",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
       "BasePath": "_content/MyShop",
       "RelativePath": "js/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
