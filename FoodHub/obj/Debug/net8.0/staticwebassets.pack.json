@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets/js/jquery.validate.unobtrusive.js"
     },
     {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/vanilla-tilt.js",
+      "PackagePath": "staticwebassets/js/vanilla-tilt.js"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FoodHub.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

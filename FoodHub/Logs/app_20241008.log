@@ -1,0 +1,359 @@
+2024-10-08 09:22:55.545 +02:00 [INF] User profile is available. Using '/Users/haraldeskeland/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-10-08 09:22:55.590 +02:00 [INF] Now listening on: http://localhost:5237
+2024-10-08 09:22:55.591 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-08 09:22:55.591 +02:00 [INF] Hosting environment: Development
+2024-10-08 09:22:55.592 +02:00 [INF] Content root path: /Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub
+2024-10-08 09:22:55.759 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:22:55.773 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:22:55.775 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:22:55.777 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:22:55.807 +02:00 [INF] Executed ViewResult - view Index executed in 29.1326ms.
+2024-10-08 09:22:55.807 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 31.7512ms
+2024-10-08 09:22:55.807 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:22:55.808 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 49.3572ms
+2024-10-08 09:22:55.811 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:22:55.811 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:22:55.812 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:22:55.812 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:22:55.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.7595ms
+2024-10-08 09:22:55.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 1.7652ms
+2024-10-08 09:22:55.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 1.6148ms
+2024-10-08 09:22:55.813 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:22:55.813 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:22:55.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 1.633ms
+2024-10-08 09:22:55.813 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:23:04.533 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:23:04.537 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:04.538 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:23:04.539 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:23:04.549 +02:00 [INF] Executed ViewResult - view Index executed in 10.0095ms.
+2024-10-08 09:23:04.549 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 11.2257ms
+2024-10-08 09:23:04.549 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:04.549 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 16.8999ms
+2024-10-08 09:23:04.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:23:04.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:23:04.558 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:23:04.559 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:23:04.559 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2033ms
+2024-10-08 09:23:04.559 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 1.2667ms
+2024-10-08 09:23:04.559 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.6952ms
+2024-10-08 09:23:04.559 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:23:04.559 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:23:04.559 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.7545ms
+2024-10-08 09:23:04.560 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:23:38.125 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:23:38.126 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:38.126 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:23:38.127 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:23:38.139 +02:00 [INF] Executed ViewResult - view Index executed in 12.0884ms.
+2024-10-08 09:23:38.139 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 12.1973ms
+2024-10-08 09:23:38.139 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:38.139 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 13.3442ms
+2024-10-08 09:23:38.144 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:23:38.145 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:23:38.145 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:23:38.145 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4ms
+2024-10-08 09:23:38.145 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:23:38.145 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:23:38.145 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0584ms
+2024-10-08 09:23:38.145 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.5899ms
+2024-10-08 09:23:38.145 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:23:38.145 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.6756ms
+2024-10-08 09:23:38.146 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:23:45.912 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:23:45.912 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:45.913 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:23:45.913 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:23:45.922 +02:00 [INF] Executed ViewResult - view Index executed in 9.4802ms.
+2024-10-08 09:23:45.922 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 9.5765ms
+2024-10-08 09:23:45.922 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:23:45.923 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 10.676ms
+2024-10-08 09:23:45.928 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:23:45.928 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:23:45.928 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:23:45.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.476ms
+2024-10-08 09:23:45.929 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:23:45.929 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:23:45.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1003ms
+2024-10-08 09:23:45.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.6575ms
+2024-10-08 09:23:45.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.6397ms
+2024-10-08 09:23:45.929 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:23:45.929 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:08.364 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:08.366 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:08.366 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:08.367 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:08.370 +02:00 [INF] Executed ViewResult - view Index executed in 3.1797ms.
+2024-10-08 09:24:08.370 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 3.5221ms
+2024-10-08 09:24:08.370 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:08.370 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 5.8372ms
+2024-10-08 09:24:08.382 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:08.382 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:08.382 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:08.382 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.6937ms
+2024-10-08 09:24:08.383 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:08.382 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.5002ms
+2024-10-08 09:24:08.383 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:08.382 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.498ms
+2024-10-08 09:24:08.383 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:08.383 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:08.383 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1911ms
+2024-10-08 09:24:10.620 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:10.621 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:10.621 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:10.622 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:10.624 +02:00 [INF] Executed ViewResult - view Index executed in 1.9942ms.
+2024-10-08 09:24:10.624 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 2.2967ms
+2024-10-08 09:24:10.624 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:10.624 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 4.0203ms
+2024-10-08 09:24:10.632 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:10.633 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.7098ms
+2024-10-08 09:24:10.633 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:10.633 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:10.633 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:10.633 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:10.634 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.2162ms
+2024-10-08 09:24:10.634 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.5402ms
+2024-10-08 09:24:10.634 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.4386ms
+2024-10-08 09:24:10.634 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:10.634 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:11.070 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/Item/Table - null null
+2024-10-08 09:24:11.071 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.ItemController.Table (FoodHub)'
+2024-10-08 09:24:11.078 +02:00 [INF] Route matched with {action = "Table", controller = "Item", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller FoodHub.Controllers.ItemController (FoodHub).
+2024-10-08 09:24:11.128 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-08 09:24:11.140 +02:00 [INF] Executed ViewResult - view Table executed in 11.764ms.
+2024-10-08 09:24:11.140 +02:00 [INF] Executed action FoodHub.Controllers.ItemController.Table (FoodHub) in 61.4722ms
+2024-10-08 09:24:11.140 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.ItemController.Table (FoodHub)'
+2024-10-08 09:24:11.141 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/Item/Table - 200 null text/html; charset=utf-8 71.8212ms
+2024-10-08 09:24:11.148 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:11.149 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.3112ms
+2024-10-08 09:24:11.149 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:11.149 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:11.149 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:11.149 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.1718ms
+2024-10-08 09:24:11.149 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:11.149 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.145ms
+2024-10-08 09:24:11.149 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:11.150 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/pizza.jpg - null null
+2024-10-08 09:24:11.150 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/chickenleg.jpg - null null
+2024-10-08 09:24:11.151 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:11.151 +02:00 [INF] The file /images/chickenleg.jpg was not modified
+2024-10-08 09:24:11.151 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0566ms
+2024-10-08 09:24:11.151 +02:00 [INF] The file /images/pizza.jpg was not modified
+2024-10-08 09:24:11.151 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/chickenleg.jpg - 304 null image/jpeg 1.6274ms
+2024-10-08 09:24:11.152 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/pizza.jpg - 304 null image/jpeg 1.6515ms
+2024-10-08 09:24:11.152 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/frenchfries.jpg - null null
+2024-10-08 09:24:11.152 +02:00 [INF] The file /images/frenchfries.jpg was not modified
+2024-10-08 09:24:11.152 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/frenchfries.jpg - 304 null image/jpeg 0.1265ms
+2024-10-08 09:24:11.152 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/ribs.jpg - null null
+2024-10-08 09:24:11.152 +02:00 [INF] The file /images/ribs.jpg was not modified
+2024-10-08 09:24:11.152 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/ribs.jpg - 304 null image/jpeg 0.0806ms
+2024-10-08 09:24:11.152 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/tacos.jpg - null null
+2024-10-08 09:24:11.152 +02:00 [INF] The file /images/tacos.jpg was not modified
+2024-10-08 09:24:11.152 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/tacos.jpg - 304 null image/jpeg 0.1839ms
+2024-10-08 09:24:11.153 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/fishandchips.jpg - null null
+2024-10-08 09:24:11.153 +02:00 [INF] The file /images/fishandchips.jpg was not modified
+2024-10-08 09:24:11.153 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/fishandchips.jpg - 304 null image/jpeg 0.1672ms
+2024-10-08 09:24:11.153 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/cider.jpg - null null
+2024-10-08 09:24:11.153 +02:00 [INF] The file /images/cider.jpg was not modified
+2024-10-08 09:24:11.153 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/cider.jpg - 304 null image/jpeg 0.0868ms
+2024-10-08 09:24:11.153 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/coke.jpg - null null
+2024-10-08 09:24:11.153 +02:00 [INF] The file /images/coke.jpg was not modified
+2024-10-08 09:24:11.153 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/coke.jpg - 304 null image/jpeg 0.0549ms
+2024-10-08 09:24:11.678 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/Customer/Table - null null
+2024-10-08 09:24:11.680 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:11.683 +02:00 [INF] Route matched with {action = "Table", controller = "Customer", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller FoodHub.Controllers.CustomerController (FoodHub).
+2024-10-08 09:24:11.724 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-08 09:24:11.744 +02:00 [INF] Executed ViewResult - view Table executed in 20.4544ms.
+2024-10-08 09:24:11.744 +02:00 [INF] Executed action FoodHub.Controllers.CustomerController.Table (FoodHub) in 61.3488ms
+2024-10-08 09:24:11.744 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:11.744 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/Customer/Table - 200 null text/html; charset=utf-8 66.5159ms
+2024-10-08 09:24:11.763 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:11.763 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.376ms
+2024-10-08 09:24:11.763 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:11.764 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:11.764 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:11.764 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0534ms
+2024-10-08 09:24:11.764 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:11.764 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.2454ms
+2024-10-08 09:24:11.764 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.2775ms
+2024-10-08 09:24:11.764 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:11.764 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:12.294 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:12.294 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:12.294 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:12.294 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:12.295 +02:00 [INF] Executed ViewResult - view Index executed in 0.7748ms.
+2024-10-08 09:24:12.295 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 0.8732ms
+2024-10-08 09:24:12.295 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:12.295 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 1.6196ms
+2024-10-08 09:24:12.305 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:12.306 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4003ms
+2024-10-08 09:24:12.306 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:12.307 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:12.307 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:12.307 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:12.307 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.1629ms
+2024-10-08 09:24:12.307 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1161ms
+2024-10-08 09:24:12.307 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.2178ms
+2024-10-08 09:24:12.307 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:12.307 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:12.661 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:12.661 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:12.662 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:12.662 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:12.662 +02:00 [INF] Executed ViewResult - view Index executed in 0.5747ms.
+2024-10-08 09:24:12.662 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 0.6527ms
+2024-10-08 09:24:12.662 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:12.662 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 1.1361ms
+2024-10-08 09:24:12.672 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:12.672 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.3093ms
+2024-10-08 09:24:12.672 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:12.674 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:12.674 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.1187ms
+2024-10-08 09:24:12.674 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:12.674 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:12.675 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:12.675 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.0866ms
+2024-10-08 09:24:12.675 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:12.675 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0965ms
+2024-10-08 09:24:13.172 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:13.173 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:13.173 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:13.173 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:13.175 +02:00 [INF] Executed ViewResult - view Index executed in 1.7534ms.
+2024-10-08 09:24:13.175 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 2.0479ms
+2024-10-08 09:24:13.175 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:13.176 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 3.3137ms
+2024-10-08 09:24:13.183 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:13.184 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4739ms
+2024-10-08 09:24:13.184 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:13.184 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:13.184 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:13.184 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:13.184 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.091ms
+2024-10-08 09:24:13.184 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.1747ms
+2024-10-08 09:24:13.184 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.2649ms
+2024-10-08 09:24:13.184 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:13.184 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:13.505 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/Customer/Table - null null
+2024-10-08 09:24:13.506 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:13.507 +02:00 [INF] Route matched with {action = "Table", controller = "Customer", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller FoodHub.Controllers.CustomerController (FoodHub).
+2024-10-08 09:24:13.510 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-08 09:24:13.516 +02:00 [INF] Executed ViewResult - view Table executed in 6.6506ms.
+2024-10-08 09:24:13.517 +02:00 [INF] Executed action FoodHub.Controllers.CustomerController.Table (FoodHub) in 9.9642ms
+2024-10-08 09:24:13.517 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:13.517 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/Customer/Table - 200 null text/html; charset=utf-8 11.6542ms
+2024-10-08 09:24:13.537 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:13.538 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4602ms
+2024-10-08 09:24:13.538 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:13.538 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:13.538 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:13.538 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.1988ms
+2024-10-08 09:24:13.538 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:13.538 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:13.538 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.1509ms
+2024-10-08 09:24:13.538 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:13.538 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1542ms
+2024-10-08 09:24:13.910 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/Customer/Table - null null
+2024-10-08 09:24:13.911 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:13.911 +02:00 [INF] Route matched with {action = "Table", controller = "Customer", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller FoodHub.Controllers.CustomerController (FoodHub).
+2024-10-08 09:24:13.915 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-08 09:24:13.919 +02:00 [INF] Executed ViewResult - view Table executed in 4.2404ms.
+2024-10-08 09:24:13.919 +02:00 [INF] Executed action FoodHub.Controllers.CustomerController.Table (FoodHub) in 8.4853ms
+2024-10-08 09:24:13.919 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.CustomerController.Table (FoodHub)'
+2024-10-08 09:24:13.920 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/Customer/Table - 200 null text/html; charset=utf-8 9.8091ms
+2024-10-08 09:24:13.929 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:13.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.3855ms
+2024-10-08 09:24:13.929 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:13.930 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:13.930 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:13.930 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:13.930 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0852ms
+2024-10-08 09:24:13.930 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.2956ms
+2024-10-08 09:24:13.930 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.3067ms
+2024-10-08 09:24:13.930 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:13.930 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:14.464 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/Item/Table - null null
+2024-10-08 09:24:14.466 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.ItemController.Table (FoodHub)'
+2024-10-08 09:24:14.467 +02:00 [INF] Route matched with {action = "Table", controller = "Item", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller FoodHub.Controllers.ItemController (FoodHub).
+2024-10-08 09:24:14.469 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-08 09:24:14.471 +02:00 [INF] Executed ViewResult - view Table executed in 2.0938ms.
+2024-10-08 09:24:14.471 +02:00 [INF] Executed action FoodHub.Controllers.ItemController.Table (FoodHub) in 4.5324ms
+2024-10-08 09:24:14.471 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.ItemController.Table (FoodHub)'
+2024-10-08 09:24:14.472 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/Item/Table - 200 null text/html; charset=utf-8 7.0554ms
+2024-10-08 09:24:14.479 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:14.480 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4875ms
+2024-10-08 09:24:14.481 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:14.481 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:14.482 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.3399ms
+2024-10-08 09:24:14.482 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:14.482 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:14.482 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.072ms
+2024-10-08 09:24:14.482 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:14.482 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.1219ms
+2024-10-08 09:24:14.482 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:14.814 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:14.815 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:14.816 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:14.816 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:14.818 +02:00 [INF] Executed ViewResult - view Index executed in 2.1053ms.
+2024-10-08 09:24:14.818 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 2.4139ms
+2024-10-08 09:24:14.818 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:14.818 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 4.0691ms
+2024-10-08 09:24:14.835 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:14.836 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.4939ms
+2024-10-08 09:24:14.836 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:14.837 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:14.837 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:14.837 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:14.837 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.2533ms
+2024-10-08 09:24:14.837 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:14.837 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.0679ms
+2024-10-08 09:24:14.837 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.3032ms
+2024-10-08 09:24:14.837 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:15.078 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:24:15.078 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:15.079 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:24:15.079 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:24:15.081 +02:00 [INF] Executed ViewResult - view Index executed in 1.735ms.
+2024-10-08 09:24:15.081 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 2.0472ms
+2024-10-08 09:24:15.081 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:24:15.081 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 3.0577ms
+2024-10-08 09:24:15.089 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:24:15.090 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:24:15.090 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 0.8688ms
+2024-10-08 09:24:15.090 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:24:15.090 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 0.3161ms
+2024-10-08 09:24:15.090 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:24:15.090 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:24:15.090 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:24:15.090 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.1364ms
+2024-10-08 09:24:15.090 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.2015ms
+2024-10-08 09:24:15.090 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:24:54.851 +02:00 [INF] Application is shutting down...
+2024-10-08 09:25:04.052 +02:00 [INF] User profile is available. Using '/Users/haraldeskeland/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-10-08 09:25:04.096 +02:00 [INF] Now listening on: http://localhost:5237
+2024-10-08 09:25:04.098 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-08 09:25:04.098 +02:00 [INF] Hosting environment: Development
+2024-10-08 09:25:04.098 +02:00 [INF] Content root path: /Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub
+2024-10-08 09:25:04.222 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 09:25:04.235 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:25:04.237 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 09:25:04.238 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 09:25:04.267 +02:00 [INF] Executed ViewResult - view Index executed in 28.7978ms.
+2024-10-08 09:25:04.268 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 31.242ms
+2024-10-08 09:25:04.268 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 09:25:04.270 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 48.218ms
+2024-10-08 09:25:04.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 09:25:04.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 09:25:04.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 09:25:04.274 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 09:25:04.275 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.8375ms
+2024-10-08 09:25:04.276 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 1.8734ms
+2024-10-08 09:25:04.276 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 1.8648ms
+2024-10-08 09:25:04.276 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 1.8746ms
+2024-10-08 09:25:04.276 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 09:25:04.276 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 09:25:04.276 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 09:25:06.714 +02:00 [INF] Application is shutting down...

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G7TMQIwBipaGsJatqIoeD9tyHlVPw0QUijS1m9Ftw4c=",
+  "Hash": "KMalOAHQkEX/wrA0YwNNl/5shirqBA4602oZEtiPSes=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -1535,6 +1535,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/vanilla-tilt.js",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "js/vanilla-tilt.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/vanilla-tilt.js"
     }
   ]
 }
