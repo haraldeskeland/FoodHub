@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8zkVaBJCsK5Sk4df+puKi8q8V5iwSwqBsmAionHoMgY=",
+  "Hash": "asQE6GIcHfq8x4kkUPMpe+7H0QLzB3tWv0j7QFxl7P4=",
   "Source": "FoodHub",
   "BasePath": "_content/FoodHub",
   "Mode": "Default",
@@ -1554,6 +1554,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/Illustrations/supplements.png"
+    },
+    {
+      "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/foodhub_logo_black.png",
+      "SourceId": "FoodHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/",
+      "BasePath": "_content/FoodHub",
+      "RelativePath": "images/Logos/foodhub_logo_black.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Logos/foodhub_logo_black.png"
     },
     {
       "Identity": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/kavlilogo.png",

@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets/images/Illustrations/supplements.png"
     },
     {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/foodhub_logo_black.png",
+      "PackagePath": "staticwebassets/images/Logos/foodhub_logo_black.png"
+    },
+    {
       "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/kavlilogo.png",
       "PackagePath": "staticwebassets/images/Logos/kavlilogo.png"
     },

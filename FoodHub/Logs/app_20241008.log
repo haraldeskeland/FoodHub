@@ -6407,3 +6407,77 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2024-10-08 22:21:55.995 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/css/site.css'
 2024-10-08 22:21:55.996 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/css/site.css?nonce=1728418915992 - 200 10728 text/css 2.9632ms
 2024-10-08 22:21:58.794 +02:00 [INF] Application is shutting down...
+2024-10-08 22:44:34.099 +02:00 [INF] User profile is available. Using '/Users/haraldeskeland/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-10-08 22:44:34.149 +02:00 [INF] Now listening on: http://localhost:5237
+2024-10-08 22:44:34.150 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-08 22:44:34.150 +02:00 [INF] Hosting environment: Development
+2024-10-08 22:44:34.150 +02:00 [INF] Content root path: /Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub
+2024-10-08 22:44:34.280 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 22:44:34.349 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 22:44:34.351 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 22:44:34.353 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 22:44:34.380 +02:00 [INF] Executed ViewResult - view Index executed in 26.4511ms.
+2024-10-08 22:44:34.380 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 29.1889ms
+2024-10-08 22:44:34.380 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 22:44:34.383 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 103.6349ms
+2024-10-08 22:44:34.385 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 22:44:34.385 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 22:44:34.386 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 22:44:34.386 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/css/site.css - null null
+2024-10-08 22:44:34.386 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/Logos/foodhub_logo_black.png - null null
+2024-10-08 22:44:34.386 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.6173ms
+2024-10-08 22:44:34.387 +02:00 [INF] The file /css/site.css was not modified
+2024-10-08 22:44:34.387 +02:00 [INF] The file /images/Logos/foodhub_logo_black.png was not modified
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 2.2306ms
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 2.0001ms
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 1.6261ms
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/css/site.css - 304 null text/css 1.6407ms
+2024-10-08 22:44:34.387 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/Logos/foodhub_logo_black.png - 304 null image/png 1.5828ms
+2024-10-08 22:44:34.388 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 22:44:34.388 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 22:44:34.388 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 22:44:34.388 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/Illustrations/chef-phone.png - null null
+2024-10-08 22:44:34.388 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/images/Illustrations/supplements.png - null null
+2024-10-08 22:44:34.388 +02:00 [INF] The file /images/Illustrations/chef-phone.png was not modified
+2024-10-08 22:44:34.388 +02:00 [INF] The file /images/Illustrations/supplements.png was not modified
+2024-10-08 22:44:34.389 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/Illustrations/supplements.png - 304 null image/png 0.1205ms
+2024-10-08 22:44:34.389 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/images/Illustrations/chef-phone.png - 304 null image/png 0.1508ms
+2024-10-08 22:44:34.390 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-SemiBold.woff2 - null null
+2024-10-08 22:44:34.390 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-Bold.woff2 - null null
+2024-10-08 22:44:34.390 +02:00 [INF] The file /fonts/Geist/Geist-Bold.woff2 was not modified
+2024-10-08 22:44:34.390 +02:00 [INF] The file /fonts/Geist/Geist-SemiBold.woff2 was not modified
+2024-10-08 22:44:34.390 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-SemiBold.woff2 - 304 null font/woff2 0.4574ms
+2024-10-08 22:44:34.390 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-Bold.woff2 - 304 null font/woff2 0.4232ms
+2024-10-08 22:44:34.392 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - null null
+2024-10-08 22:44:34.397 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - 404 0 null 4.9584ms
+2024-10-08 22:44:34.397 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/fonts/Geist/Geist-%5Bwght%5D.woff2, Response status code: 404
+2024-10-08 22:44:34.406 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-Regular.woff2 - null null
+2024-10-08 22:44:34.406 +02:00 [INF] The file /fonts/Geist/Geist-Regular.woff2 was not modified
+2024-10-08 22:44:34.406 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-Regular.woff2 - 304 null font/woff2 0.2572ms
+2024-10-08 22:44:39.620 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - null null
+2024-10-08 22:44:39.623 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - 404 0 null 2.6528ms
+2024-10-08 22:44:39.623 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/fonts/Geist/Geist-%5Bwght%5D.woff2, Response status code: 404
+2024-10-08 22:44:59.984 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/ - null null
+2024-10-08 22:44:59.986 +02:00 [INF] Executing endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 22:44:59.986 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FoodHub.Controllers.HomeController (FoodHub).
+2024-10-08 22:44:59.987 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-08 22:44:59.991 +02:00 [INF] Executed ViewResult - view Index executed in 4.6752ms.
+2024-10-08 22:44:59.991 +02:00 [INF] Executed action FoodHub.Controllers.HomeController.Index (FoodHub) in 5.2225ms
+2024-10-08 22:44:59.991 +02:00 [INF] Executed endpoint 'FoodHub.Controllers.HomeController.Index (FoodHub)'
+2024-10-08 22:44:59.992 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/ - 200 null text/html; charset=utf-8 7.9341ms
+2024-10-08 22:44:59.999 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - null null
+2024-10-08 22:45:00.000 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - null null
+2024-10-08 22:45:00.000 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-08 22:45:00.000 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-08 22:45:00.000 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/_framework/aspnetcore-browser-refresh.js - 200 13732 application/javascript; charset=utf-8 0.3521ms
+2024-10-08 22:45:00.000 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/js/jquery-min.js - 404 0 null 1.9156ms
+2024-10-08 22:45:00.001 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/js/jquery-min.js, Response status code: 404
+2024-10-08 22:45:00.001 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 1.0714ms
+2024-10-08 22:45:00.001 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-08 22:45:00.002 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/lib/jquery-validate/jquery.validate.js - 404 0 null 2.0165ms
+2024-10-08 22:45:00.002 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-08 22:45:00.007 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - null null
+2024-10-08 22:45:00.009 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5237/fonts/Geist/Geist-[wght].woff2 - 404 0 null 1.8216ms
+2024-10-08 22:45:00.009 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5237/fonts/Geist/Geist-%5Bwght%5D.woff2, Response status code: 404
+2024-10-08 22:45:19.798 +02:00 [INF] Application is shutting down...
