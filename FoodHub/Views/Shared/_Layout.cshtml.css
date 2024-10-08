@@ -1,25 +1,91 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Black.woff2') format('woff2');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-ExtraBold.woff2') format('woff2');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-ExtraLight.woff2') format('woff2');
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-Thin.woff2') format('woff2');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist/Geist-[wght].woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 #bootstrap-override body,
 #bootstrap-override .container,
 #bootstrap-override .navbar {
-  font-family: "Inter", system-ui;
+  font-family: 'Geist', sans-serif !important;
+}
+
+body {
+  font-family: 'Geist';
 }
 
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 700;
-  font-family: "Inter", system-ui !important;
 }
 
 a {
