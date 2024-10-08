@@ -142,3 +142,9 @@ button.accept-policy[b-8slx00hq7y] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+@media (max-width: 768px) {
+  .navbar-brand[b-8slx00hq7y] {
+    display: none;
+  }
+}

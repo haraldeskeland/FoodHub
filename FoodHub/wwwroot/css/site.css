@@ -546,6 +546,14 @@ button.accept-policy {
     flex-direction: column;
   }
 
+  h1 {
+    font-size: 4rem !important;
+  }
+
+  h2 {
+    font-size: 3rem !important;
+  }
+
   .text-center {
     width: 80vw;
   }
@@ -579,6 +587,7 @@ button.accept-policy {
     width: 30%;
     box-sizing: border-box; /* Ensure padding is included in width */
     flex: 0 0 auto; /* Button takes up fixed size */
+    font-size: 10px;
   }
 
   .search-input {
