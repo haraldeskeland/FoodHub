@@ -20,9 +20,6 @@
     <header>
         <nav class="navbar navbar-light bg-light navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="/images/foodhub_logo_green.png" alt="FoodHub" style="width: 200px"></img>
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -39,8 +36,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Table">Orders</a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                     <!-- Centered logo -->
+        <a class="navbar-brand mx-auto" asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" style="width: 170px"></img>
+        </a>
+
+        <!-- Right-side login partial -->
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+            <partial name="_LoginPartial" />
+        </div>
                 </div>
+                 
             </div>
         </nav>
     </header>

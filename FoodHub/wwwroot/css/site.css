@@ -89,7 +89,7 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem !important;
+  font-size: 5rem !important;
 }
 
 h3 {
@@ -406,7 +406,7 @@ button.accept-policy {
   flex: 1;
   align-items: center;
   margin-bottom: 100px;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
 }
 
