@@ -267,6 +267,7 @@ button.accept-policy {
   margin: 50px 0;
   padding: 50px 0;
   background-color: #181818;
+  border-radius: 100px 100px 0 0;
 }
 
 .logos-container {
@@ -312,7 +313,7 @@ button.accept-policy {
 .content-image {
   width: 50%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .content-text {
@@ -353,9 +354,15 @@ button.accept-policy {
   padding: 20px;
   margin: 10px;
   text-align: center;
-  box-shadow: 20px 20px 60px #c5c5c51a, -20px -20px 60px #ffffff13;
+  box-shadow: 20px 20px 60px #c5c5c51a, -20px -20px 60px #ffffffd6;
   flex: 1 1 calc(25% - 20px);
   max-width: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+.stat-box:hover {
+  transform: scale(1.05) rotate(1deg);
+
 }
 
 .stat-box h3 {
@@ -426,19 +433,10 @@ button.accept-policy {
 }
 
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-  }
-
-  .footer-section {
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 768px) {
   .image-text-container,
   .image-text-container.right,
-  .logos-container {
+  .logos-container,
+  .image-text-container.reverse {
     flex-direction: column;
   }
 
@@ -453,6 +451,14 @@ button.accept-policy {
 
   .stat-box {
     flex: 1 1 calc(50% - 20px);
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-bottom: 30px;
   }
 }
 
