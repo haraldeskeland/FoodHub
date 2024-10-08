@@ -9,6 +9,54 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Black.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Black.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Bold.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Bold.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-ExtraBold.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-ExtraBold.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-ExtraLight.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-ExtraLight.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Light.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Light.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Medium.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Medium.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Regular.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Regular.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-SemiBold.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-SemiBold.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Thin.woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist-Thin.woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist[wght].woff2",
+      "PackagePath": "staticwebassets/fonts/Geist/Geist[wght].woff2"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Illustrations/chef-phone.png",
+      "PackagePath": "staticwebassets/images/Illustrations/chef-phone.png"
+    },
+    {
+      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Illustrations/supplements.png",
+      "PackagePath": "staticwebassets/images/Illustrations/supplements.png"
+    },
+    {
       "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/kavlilogo.png",
       "PackagePath": "staticwebassets/images/Logos/kavlilogo.png"
     },

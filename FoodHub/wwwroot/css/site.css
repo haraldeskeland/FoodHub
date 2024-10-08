@@ -2,80 +2,79 @@
 for details on configuring this project to bundle and minify static web assets. */
 /* Define font family for different weights */
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Black.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Black.woff2") format("woff2");
   font-weight: 900; /* Black */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Bold.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Bold.woff2") format("woff2");
   font-weight: 700; /* Bold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-ExtraBold.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-ExtraBold.woff2") format("woff2");
   font-weight: 800; /* ExtraBold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-ExtraLight.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-ExtraLight.woff2") format("woff2");
   font-weight: 200; /* ExtraLight */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Light.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Light.woff2") format("woff2");
   font-weight: 300; /* Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Medium.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Medium.woff2") format("woff2");
   font-weight: 500; /* Medium */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Regular.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Regular.woff2") format("woff2");
   font-weight: 400; /* Regular */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-SemiBold.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-SemiBold.woff2") format("woff2");
   font-weight: 600; /* SemiBold */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-Thin.woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Thin.woff2") format("woff2");
   font-weight: 100; /* Thin */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Geist';
-  src: url('../fonts/Geist/Geist-[wght].woff2') format('woff2');
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-[wght].woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-
 #bootstrap-override body,
 #bootstrap-override .container,
 #bootstrap-override .navbar {
-  font-family: 'Geist', sans-serif !important;
+  font-family: "Geist", sans-serif !important;
 }
 
 html,
@@ -83,9 +82,14 @@ body {
   height: 100vh;
 }
 
-h1, h2 {
+h1 {
   font-weight: 600 !important;
   letter-spacing: -0.05em !important;
+  font-size: 7rem !important;
+}
+
+h2 {
+  font-size: 4rem !important;
 }
 
 h3 {
@@ -100,7 +104,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 156px;
-  font-family: 'Geist';
+  font-family: "Geist";
 }
 
 a.navbar-brand {
@@ -128,13 +132,13 @@ a.navbar-brand {
 }
 
 :root {
-  --gradient-colors: 45deg, #30a8bc, #4dda68;
+  --gradient-colors: 45deg, #38A1FF, #10e3ff;
 }
 
 .text-center h1.gradient-text-large {
   font-weight: 700;
   font-size: 80px;
-  font-family: 'Geist', sans-serif !important;
+  font-family: "Geist", sans-serif !important;
   letter-spacing: -2px;
   color: black;
 }
@@ -146,6 +150,7 @@ a.navbar-brand {
   -webkit-text-fill-color: transparent;
   color: #30a8bc; /* Fallback color */
   display: inline-block; /* This is important */
+  font-weight: 700;
 }
 
 a {
@@ -306,14 +311,11 @@ button.accept-policy {
 
 .search-container {
   margin: 30px auto;
-  display: flex;
-  justify-content: center;
-  /* background-color: red; */
 }
 
 .search-input {
   padding: 15px;
-  font-size: 12px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-right: 0;
   border-radius: 30px 0 0 30px;
@@ -329,21 +331,29 @@ button.accept-policy {
 
 .search-button {
   padding: 15px;
-  font-size: 12px;
-  background: linear-gradient(45deg, #30a8bc, #4dda68);
+  font-size: 16px;
+  background-image: linear-gradient(
+    45deg,
+    hsl(208deg 100% 61%) 4%,
+    hsl(200deg 100% 50%) 34%,
+    hsl(197deg 100% 49%) 48%,
+    hsl(194deg 100% 47%) 60%,
+    hsl(191deg 100% 46%) 73%,
+    hsl(187deg 100% 44%) 100%
+  );
   color: white;
   border: 1px solid #ccc;
   border-left: 0;
   border-radius: 0 30px 30px 0;
   cursor: text;
-  transition: all 1.5s ease;
+  transition: all .5s ease;
   width: 20%;
   cursor: pointer !important;
   box-shadow: 20px 20px 60px #c5c5c56f, -20px -20px 60px #ffffff79;
 }
 
 .search-button:hover {
-  background: black;
+  font-size: 20px;
 }
 
 .black-section {
@@ -354,7 +364,7 @@ button.accept-policy {
   align-items: center;
   margin: 50px 0;
   padding: 50px 0;
-  background-color: #181818;
+  background-color: #151515;
   border-radius: 100px 100px 0 0;
 }
 
@@ -384,10 +394,16 @@ button.accept-policy {
   max-width: 1800px;
   margin: 50px auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
 .image-text-container {
   display: flex;
+  flex: 1;
   align-items: center;
   margin-bottom: 100px;
   justify-content: flex-end;
@@ -399,13 +415,13 @@ button.accept-policy {
 }
 
 .content-image {
-  width: 50%;
+  max-width: 50%;
   height: auto;
   border-radius: 20px;
 }
 
 .content-text {
-  width: 100%;
+  max-width: 50%;
   padding: 0 30px;
 }
 
@@ -422,7 +438,7 @@ button.accept-policy {
   flex-wrap: wrap;
   margin: 200px 0;
   padding: 100px 0;
-  background-color: #fff7f1;
+  background-color: #38A1FF;
   width: 100vw;
 }
 
@@ -442,7 +458,7 @@ button.accept-policy {
   padding: 20px;
   margin: 10px;
   text-align: center;
-  box-shadow: 20px 20px 60px #c5c5c51a, -20px -20px 60px #ffffffd6;
+  box-shadow: 20px 20px 60px #c5c5c51a, -20px -20px 60px #ffffff60;
   flex: 1 1 calc(25% - 20px);
   max-width: 100%;
   transition: all 0.1s ease-in-out;
@@ -456,8 +472,9 @@ button.accept-policy {
   font-size: 2.5rem;
   margin-bottom: 10px;
   font-weight: 800;
-  background: linear-gradient(45deg, #30a8bc, #4dda68);
+  background: -webkit-linear-gradient(var(--gradient-colors));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -467,7 +484,7 @@ button.accept-policy {
 }
 
 .dark-footer {
-  background-color: #111; /* Very dark gray, almost black */
+  background-color: #151515; /* Very dark gray, almost black */
   color: #fff;
   padding: 40px 20px 20px;
   border-top-left-radius: 50px;
@@ -529,9 +546,13 @@ button.accept-policy {
     flex-direction: column;
   }
 
+  .text-center {
+    width: 80vw;
+  }
+
   .content-image,
   .content-text {
-    width: 100%;
+    max-width: 80%;
   }
 
   .content-text {
@@ -548,6 +569,23 @@ button.accept-policy {
 
   .footer-section {
     margin-bottom: 30px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 30%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    flex: 0 0 auto; /* Button takes up fixed size */
+  }
+
+  .search-input {
+    flex: 1; /* Input takes up available space */
+    width: 70%;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-size: 10px;
   }
 }
 
