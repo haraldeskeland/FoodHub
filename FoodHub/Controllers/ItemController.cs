@@ -1,12 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using FoodHub.DAL;
 using FoodHub.Models;
 using FoodHub.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using System.Threading.Tasks;
-namespace FoodHub.Controllers;
-using Microsoft.Extensions.Logging;
 
+namespace FoodHub.Controllers;
 
 public class ItemController : Controller
 {
@@ -63,7 +61,6 @@ public class ItemController : Controller
 
     [HttpPost]
     [Authorize]
-
     public async Task<IActionResult> Create(Item item)
     {
         if (ModelState.IsValid)
@@ -78,7 +75,6 @@ public class ItemController : Controller
 
     [HttpGet]
     [Authorize]
-
     public async Task<IActionResult> Update(int id)
     {
         var item = await _itemRepository.GetItemById(id);
@@ -104,9 +100,8 @@ public class ItemController : Controller
         return View(item);
     }
 
-    [HttpGet]    
+    [HttpGet]
     [Authorize]
-
     public async Task<IActionResult> Delete(int id)
     {
         var item = await _itemRepository.GetItemById(id);
