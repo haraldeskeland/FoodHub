@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj": {}
+    "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\FoodHub.csproj": {}
   },
   "projects": {
-    "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj": {
+    "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\FoodHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
+        "projectUniqueName": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\FoodHub.csproj",
         "projectName": "FoodHub",
-        "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
-        "packagesPath": "/Users/haraldeskeland/.nuget/packages/",
-        "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/",
+        "projectPath": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\FoodHub.csproj",
+        "packagesPath": "C:\\Users\\mariu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/haraldeskeland/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mariu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -103,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

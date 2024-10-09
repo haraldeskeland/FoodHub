@@ -1,151 +1,151 @@
 {
   "Files": [
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/Debug/net8.0/scopedcss/projectbundle/FoodHub.bundle.scp.css",
-      "PackagePath": "staticwebassets/FoodHub.bundle.scp.css"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FoodHub.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FoodHub.bundle.scp.css"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/css/site.css",
-      "PackagePath": "staticwebassets/css/site.css"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Black.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Black.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Black.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Black.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Bold.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Bold.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Bold.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Bold.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-ExtraBold.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-ExtraBold.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-ExtraBold.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-ExtraBold.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-ExtraLight.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-ExtraLight.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-ExtraLight.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-ExtraLight.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Light.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Light.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Light.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Light.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Medium.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Medium.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Medium.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Medium.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Regular.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Regular.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Regular.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-SemiBold.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-SemiBold.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-SemiBold.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-SemiBold.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist-Thin.woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist-Thin.woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist-Thin.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist-Thin.woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/fonts/Geist/Geist[wght].woff2",
-      "PackagePath": "staticwebassets/fonts/Geist/Geist[wght].woff2"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\fonts\\Geist\\Geist[wght].woff2",
+      "PackagePath": "staticwebassets\\fonts\\Geist\\Geist[wght].woff2"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Illustrations/chef-phone.png",
-      "PackagePath": "staticwebassets/images/Illustrations/chef-phone.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Illustrations\\chef-phone.png",
+      "PackagePath": "staticwebassets\\images\\Illustrations\\chef-phone.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Illustrations/supplements.png",
-      "PackagePath": "staticwebassets/images/Illustrations/supplements.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Illustrations\\supplements.png",
+      "PackagePath": "staticwebassets\\images\\Illustrations\\supplements.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/foodhub_logo_black.png",
-      "PackagePath": "staticwebassets/images/Logos/foodhub_logo_black.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Logos\\foodhub_logo_black.png",
+      "PackagePath": "staticwebassets\\images\\Logos\\foodhub_logo_black.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/kavlilogo.png",
-      "PackagePath": "staticwebassets/images/Logos/kavlilogo.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Logos\\kavlilogo.png",
+      "PackagePath": "staticwebassets\\images\\Logos\\kavlilogo.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/orkla_logo.png",
-      "PackagePath": "staticwebassets/images/Logos/orkla_logo.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Logos\\orkla_logo.png",
+      "PackagePath": "staticwebassets\\images\\Logos\\orkla_logo.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/synnove-1.svg",
-      "PackagePath": "staticwebassets/images/Logos/synnove-1.svg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Logos\\synnove-1.svg",
+      "PackagePath": "staticwebassets\\images\\Logos\\synnove-1.svg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/Logos/tinelogo.png",
-      "PackagePath": "staticwebassets/images/Logos/tinelogo.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\Logos\\tinelogo.png",
+      "PackagePath": "staticwebassets\\images\\Logos\\tinelogo.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/chickenleg.jpg",
-      "PackagePath": "staticwebassets/images/chickenleg.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\chickenleg.jpg",
+      "PackagePath": "staticwebassets\\images\\chickenleg.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/cider.jpg",
-      "PackagePath": "staticwebassets/images/cider.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\cider.jpg",
+      "PackagePath": "staticwebassets\\images\\cider.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/coke.jpg",
-      "PackagePath": "staticwebassets/images/coke.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\coke.jpg",
+      "PackagePath": "staticwebassets\\images\\coke.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/fishandchips.jpg",
-      "PackagePath": "staticwebassets/images/fishandchips.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\fishandchips.jpg",
+      "PackagePath": "staticwebassets\\images\\fishandchips.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/foodhub_logo_green.png",
-      "PackagePath": "staticwebassets/images/foodhub_logo_green.png"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\foodhub_logo_green.png",
+      "PackagePath": "staticwebassets\\images\\foodhub_logo_green.png"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/frenchfries.jpg",
-      "PackagePath": "staticwebassets/images/frenchfries.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\frenchfries.jpg",
+      "PackagePath": "staticwebassets\\images\\frenchfries.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/pizza.jpg",
-      "PackagePath": "staticwebassets/images/pizza.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\pizza.jpg",
+      "PackagePath": "staticwebassets\\images\\pizza.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/ribs.jpg",
-      "PackagePath": "staticwebassets/images/ribs.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\ribs.jpg",
+      "PackagePath": "staticwebassets\\images\\ribs.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/images/tacos.jpg",
-      "PackagePath": "staticwebassets/images/tacos.jpg"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\images\\tacos.jpg",
+      "PackagePath": "staticwebassets\\images\\tacos.jpg"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/bootstrap.js",
-      "PackagePath": "staticwebassets/js/bootstrap.js"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.min.js",
-      "PackagePath": "staticwebassets/js/jquery.min.js"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.js",
-      "PackagePath": "staticwebassets/js/jquery.validate.js"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\js\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/jquery.validate.unobtrusive.js",
-      "PackagePath": "staticwebassets/js/jquery.validate.unobtrusive.js"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/wwwroot/js/vanilla-tilt.js",
-      "PackagePath": "staticwebassets/js/vanilla-tilt.js"
+      "Id": "C:\\Users\\mariu\\Documents\\Webapps\\WebappExam\\FoodHub\\wwwroot\\js\\vanilla-tilt.js",
+      "PackagePath": "staticwebassets\\js\\vanilla-tilt.js"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FoodHub.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodHub.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.FoodHub.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FoodHub.props",
       "PackagePath": "build\\FoodHub.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FoodHub.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FoodHub.props",
       "PackagePath": "buildMultiTargeting\\FoodHub.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FoodHub.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FoodHub.props",
       "PackagePath": "buildTransitive\\FoodHub.props"
     }
   ],

@@ -14,10 +14,8 @@
                 <td>@customer.CustomerId</td>
                 <td>@customer.Name</td>
                 <td>@customer.Address</td>
-                <td>@if (@customer.Orders != null) {
-                    <p>@string.Join(", ", @customer.Orders.Select(order => $"Order{order.OrderId}"))</p>
-                }
-                </td>
+               
+                
                 <td></td>
             </tr>
         }
