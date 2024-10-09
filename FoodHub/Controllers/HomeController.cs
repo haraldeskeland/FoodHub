@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyShop.Controllers {
+namespace FoodHub.Controllers {
     public class HomeController : Controller {
         public IActionResult Index() {
             return View();

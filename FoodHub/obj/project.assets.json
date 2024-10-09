@@ -674,9 +674,7 @@
             "related": ".xml"
           }
         },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ],
+        "frameworkReferences": ["Microsoft.AspNetCore.App"],
         "build": {
           "build/Microsoft.AspNetCore.Identity.UI.props": {},
           "buildTransitive/Microsoft.AspNetCore.Identity.UI.targets": {}
@@ -7134,18 +7132,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/MyShop.csproj",
-      "projectName": "MyShop",
-      "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/MyShop.csproj",
+      "projectUniqueName": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
+      "projectName": "FoodHub",
+      "projectPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/FoodHub.csproj",
       "packagesPath": "/Users/haraldeskeland/.nuget/packages/",
-      "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/ukesoppgaver/MyShop/obj/",
+      "outputPath": "/Users/haraldeskeland/Documents/SKOLE/3.år/WebApp/eksamen/WebappExam/FoodHub/obj/",
       "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/Users/haraldeskeland/.nuget/NuGet/NuGet.Config"
-      ],
-      "originalTargetFrameworks": [
-        "net8.0"
-      ],
+      "configFilePaths": ["/Users/haraldeskeland/.nuget/NuGet/NuGet.Config"],
+      "originalTargetFrameworks": ["net8.0"],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -7156,9 +7150,7 @@
         }
       },
       "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
+        "warnAsError": ["NU1605"]
       },
       "restoreAuditProperties": {
         "enableAudit": "true",

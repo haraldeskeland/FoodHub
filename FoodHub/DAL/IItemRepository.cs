@@ -1,6 +1,6 @@
-using MyShop.Models;
+using FoodHub.Models;
 
-namespace MyShop.DAL;
+namespace FoodHub.DAL;
 
 public interface IItemRepository
 {

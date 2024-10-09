@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MyShop.Models;
+using FoodHub.Models;
 
-namespace MyShop.DAL
+namespace FoodHub.DAL
 {
     public class ItemDbContext : IdentityDbContext
     {

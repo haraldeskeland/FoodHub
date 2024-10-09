@@ -5,7 +5,7 @@
       "label": "build",
       "command": "dotnet",
       "type": "process",
-      "args": ["build", "${workspaceFolder}/MyShop.csproj"],
+      "args": ["build", "${workspaceFolder}/FoodHub.csproj"],
       "problemMatcher": "$msCompile"
     }
   ]

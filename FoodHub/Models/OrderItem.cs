@@ -1,4 +1,4 @@
-namespace MyShop.Models;
+namespace FoodHub.Models;
 
 public class OrderItem {
     public int OrderItemId { get; set; }
