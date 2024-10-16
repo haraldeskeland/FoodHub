@@ -25,28 +25,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="Table">Items</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Table">Customers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Table">Orders</a>
-                        </li>
-                    </ul>
                      <!-- Centered logo -->
-        <a class="navbar-brand mx-auto" asp-area="" asp-controller="Home" asp-action="Index">
-            <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" style="width: 170px"></img>
-        </a>
+                    <a class="navbar-brand mx-auto" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" style="width: 170px"></img>
+                    </a>
 
-        <!-- Right-side login partial -->
-        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
-            <partial name="_LoginPartial" />
-        </div>
+                    <!-- Right-side login partial -->
+                    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-end">
+                        <partial name="_LoginPartial" />
+                    </div>
                 </div>
-                 
             </div>
         </nav>
     </header>
