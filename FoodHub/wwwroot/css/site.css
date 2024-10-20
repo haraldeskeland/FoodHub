@@ -137,7 +137,6 @@ body {
 .partners-section {
   flex-direction: column;
   display: flex;
-  width: 100vw;
   justify-content: space-around;
   align-items: center;
   margin: 50px 0;
@@ -148,6 +147,14 @@ body {
 .scroll-container {
   overflow: hidden;
   width: 100%;
+}
+
+.logo-partner {
+  transition: all 0.1s ease-in-out;
+}
+
+.logo-partner:hover {
+  transform: scale(1.1) rotate(1deg);
 }
 
 .scroll-content {

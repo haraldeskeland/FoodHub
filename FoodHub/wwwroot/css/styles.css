@@ -717,6 +717,14 @@ video {
   min-height: 100vh;
 }
 
+.min-h-\[50vh\] {
+  min-height: 50vh;
+}
+
+.min-h-\[40vh\] {
+  min-height: 40vh;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -765,10 +773,6 @@ video {
   max-width: 1800px;
 }
 
-.max-w-\[50\%\] {
-  max-width: 50%;
-}
-
 .max-w-full {
   max-width: 100%;
 }
@@ -807,10 +811,6 @@ video {
 
 .flex-row {
   flex-direction: row;
-}
-
-.flex-row-reverse {
-  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -905,14 +905,19 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.border-slate-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
+
 .bg-\[\#F6F6F6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(246 246 246 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#f5f5f7\] {
+.bg-\[\#f7f7f7\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 245 247 / var(--tw-bg-opacity));
+  background-color: rgb(247 247 247 / var(--tw-bg-opacity));
 }
 
 .bg-black {
@@ -961,11 +966,6 @@ video {
   padding-right: 1.5rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1002,11 +1002,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .text-base {
@@ -1252,7 +1247,6 @@ body {
 .partners-section {
   flex-direction: column;
   display: flex;
-  width: 100vw;
   justify-content: space-around;
   align-items: center;
   margin: 50px 0;
@@ -1263,6 +1257,14 @@ body {
 .scroll-container {
   overflow: hidden;
   width: 100%;
+}
+
+.logo-partner {
+  transition: all 0.1s ease-in-out;
+}
+
+.logo-partner:hover {
+  transform: scale(1.1) rotate(1deg);
 }
 
 .scroll-content {
@@ -1392,14 +1394,6 @@ body {
     width: 50%;
   }
 
-  .sm\:max-w-\[90\%\] {
-    max-width: 90%;
-  }
-
-  .sm\:max-w-lg {
-    max-width: 32rem;
-  }
-
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -1408,19 +1402,9 @@ body {
     flex-direction: row-reverse;
   }
 
-  .sm\:px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  .sm\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .sm\:px-8 {
@@ -1430,10 +1414,6 @@ body {
 
   .sm\:text-left {
     text-align: left;
-  }
-
-  .sm\:text-center {
-    text-align: center;
   }
 
   .sm\:text-4xl {
