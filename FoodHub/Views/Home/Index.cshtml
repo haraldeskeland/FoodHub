@@ -3,37 +3,57 @@
     Layout = "_Layout";
 }
 
-<div class="main-container max-w-[1800px] mx-auto px-5 flex flex-col items-center">
-    <div class="kontainer max-w-[1400px] flex justify-center items-center h-[70vh]">
-        <div class="text-center w-[60vw] mx-auto">
-            <h1 class="text-5xl font-bold tracking-tight gradient-text-large" data-aos="fade-up">
-                Find out what´s <span class="gradient-text">actually</span> in the food you eat
+<div class="main-container max-w-full lg:max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <div class="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[70vh]">
+        <div class="text-center w-full mx-auto">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight gradient-text-large mb-8" data-aos="fade-up">
+                Find out what´s <span class="gradient-text underline">actually</span> in the food you eat
             </h1>        
-            <div class="search-container mt-8" data-aos="fade-up" data-aos-delay="200">
-                <form asp-controller="Search" asp-action="Index" method="get" class="form-hero flex flex-row justify-center items-center">
-                    <input type="text" class="search-input" name="query" placeholder="Search for your favourite food..">
-                    <button type="submit" class="search-button">Search</button>
+            <div class="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <form asp-controller="Search" asp-action="Index" method="get" class="flex justify-center w-full">
+                    <div class="flex w-full max-w-4xl">
+                        <div class="flex items-center justify-center rounded-l-full border border-r-0 border-gray-300 bg-white px-4">
+                            <svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 fill-gray-500">
+                                <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
+                            </svg>
+                        </div>
+                        <input type="text" placeholder="Search for your favourite food..." class="w-full py-3 px-4 bg-white text-base outline-none border-y border-gray-300" id="">
+                        <button type="submit" class="bg-gray-800 px-6 py-3 rounded-r-full text-white hover:bg-blue-800 transition-colors">
+                            Search
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="partners-section flex flex-col w-full justify-around items-center my-12 py-12 bg-[#F6F6F6]">
-        <h3 class="partners-text text-black text-3xl font-semibold" data-aos="fade-up">Our Partners</h3>
-        <div class="logos-container flex w-[50vw] min-w-[1000px] justify-around items-center my-12">
-            <img src="/images/logos/orkla_logo.png" alt="Orkla" class="logo-partner w-[100px] invert" data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/logos/synnove-1.svg" alt="Synnove" class="logo-partner w-[100px]" data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/logos/tinelogo.png" alt="Tine" class="logo-partner w-[100px] invert" data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/logos/kavlilogo.png" alt="Kavli" class="logo-partner w-[100px]" data-aos="fade-up" data-aos-delay="200">
+   <div class="partners-section flex flex-col w-full justify-around items-center my-12 py-12 bg-[#F6F6F6]">
+    <h3 class="partners-text text-black text-4xl font-semibold" data-aos="fade-up">Our Partners</h3>
+    <div class="scroll-container w-full overflow-hidden mt-10">
+        <div class="scroll-content flex">
+            <div class="logos-group flex items-center">
+                <img src="/images/logos/orkla_logo.png" alt="Orkla" class="logo-partner w-[100px] invert mx-5">
+                <img src="/images/logos/synnove-1.svg" alt="Synnove" class="logo-partner w-[100px] mx-5">
+                <img src="/images/logos/tinelogo.png" alt="Tine" class="logo-partner w-[100px] invert mx-5">
+                <img src="/images/logos/kavlilogo.png" alt="Kavli" class="logo-partner w-[100px] mx-5">
+            </div>
+            <div class="logos-group flex items-center">
+                <img src="/images/logos/orkla_logo.png" alt="Orkla" class="logo-partner w-[100px] invert mx-5">
+                <img src="/images/logos/synnove-1.svg" alt="Synnove" class="logo-partner w-[100px] mx-5">
+                <img src="/images/logos/tinelogo.png" alt="Tine" class="logo-partner w-[100px] invert mx-5">
+                <img src="/images/logos/kavlilogo.png" alt="Kavli" class="logo-partner w-[100px] mx-5">
+            </div>
         </div>
     </div>
+</div>
 
     <div class="content-section max-w-[1800px] my-12 px-5 flex flex-col justify-between items-center flex-1">
         <div class="image-text-container flex flex-1 items-center mb-24 justify-center w-full">
             <img src="../images/Illustrations/chef-phone.png" alt="Food Image 1" class="content-image max-w-[50%] h-auto rounded-2xl tilt-element">
             <div class="content-text max-w-[50%] px-8" data-aos="fade-left" data-aos-delay="50">
                 <h2 class="image-header text-6xl font-bold mb-5"><span class="gradient-text">Delicious</span> Recipes</h2>
-                <p class="text-lg">Discover a world of flavors with our curated collection of recipes from around the globe. <br>
+                <p class="text-lg max-w-10">Discover a world of flavors with our curated collection of recipes from around the globe. <br>
                 Accessible from your phone.</p>
             </div>
         </div>
