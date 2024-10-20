@@ -216,15 +216,6 @@ body {
     flex-direction: column;
   }
 
-  .content-image,
-  .content-text {
-    max-width: 80%;
-  }
-
-  .content-text {
-    padding: 20px 0;
-  }
-
   .search-button {
     width: 30%;
     box-sizing: border-box;
