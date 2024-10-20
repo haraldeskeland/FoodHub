@@ -30,7 +30,7 @@
 </head>
 <body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 overflow-x-hidden">
     <header>
-        <nav class="bg-white border-b shadow-md fixed top-0 left-0 right-0 z-10">
+        <nav class="bg-white border-b shadow-md fixed top-0 left-0 right-0 z-10 ">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center py-3">
                     <button class="sm:hidden" type="button" id="navbar-toggle">
@@ -41,7 +41,7 @@
                     <a class="mx-auto sm:mx-0" asp-area="" asp-controller="Home" asp-action="Index">
                         <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" class="w-[170px]">
                     </a>
-                    <div class="hidden sm:block">
+                    <div class="hidden sm:flex">
                         <partial name="_LoginPartial" />
                     </div>
                 </div>
@@ -54,7 +54,7 @@
         @RenderSection("Scripts", required: false)
     </main>
 
-    <footer class="bg-gray-800 text-white mt-auto dark-footer">
+    <footer class="bg-gray-900 text-white mt-auto dark-footer">
         <div class="container mx-auto px-4 py-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>

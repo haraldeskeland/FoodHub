@@ -798,17 +798,18 @@ video {
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
 }
 
 .rounded-2xl {
   border-radius: 1rem;
-}
-
-.rounded-t-\[100px\] {
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
 }
 
 .border-0 {
@@ -842,6 +843,24 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dadada\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 218 218 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#272727\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 39 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .px-4 {
@@ -955,6 +974,16 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .shadow-md {
@@ -1280,7 +1309,7 @@ button.accept-policy {
   font-size: 20px;
 }
 
-.black-section {
+.partners-section {
   flex-direction: column;
   display: flex;
   width: 100vw;
@@ -1289,7 +1318,7 @@ button.accept-policy {
   margin: 50px 0;
   padding: 50px 0;
   background-color: #151515;
-  border-radius: 100px 100px 0 0;
+  border-radius: 40px;
 }
 
 .logos-container {
@@ -1538,6 +1567,16 @@ button.accept-policy {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+.hover\:text-blue-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:mx-0 {
     margin-left: 0px;
@@ -1546,6 +1585,10 @@ button.accept-policy {
 
   .sm\:block {
     display: block;
+  }
+
+  .sm\:flex {
+    display: flex;
   }
 
   .sm\:hidden {
