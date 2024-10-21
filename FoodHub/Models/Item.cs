@@ -47,7 +47,7 @@ namespace FoodHub.Models {
         public int ItemCategoryId { get; set; }
 
         // Navigation property for the relevant ItemCategory
-        public required virtual ItemCategory ItemCategory { get; set; }
+        public virtual ItemCategory ItemCategory { get; set; }
 
     }
 }
