@@ -15,7 +15,7 @@ public class ItemRepository : IItemRepository
         _logger = logger;
     }
 
-    public async Task<IEnumerable<Item>?> GetAll()
+    public async Task<IEnumerable<Item>> GetAll()
     {
         try
         {
@@ -24,7 +24,7 @@ public class ItemRepository : IItemRepository
         catch (Exception e)
         {
             _logger.LogError("[ItemRepository] items ToListAsync() failed when GetAll(), error message: {e}", e.Message);
-            return null;
+            return Enumerable.Empty<Item>(); // Return an empty list on failure
         }
     }
 
