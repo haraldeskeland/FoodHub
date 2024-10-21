@@ -53,7 +53,8 @@ public static class DBInit
                     DietaryFiber = 3M,
                     Protein = 11M,
                     Salt = 0.9M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
                 new Item
                 {
@@ -69,7 +70,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 25M,
                     Salt = 1.5M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
                 new Item
                 {
@@ -85,7 +87,8 @@ public static class DBInit
                     DietaryFiber = 4M,
                     Protein = 4M,
                     Salt = 0.6M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
                 new Item
                 {
@@ -101,7 +104,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 25M,
                     Salt = 2M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
                 new Item
                 {
@@ -117,7 +121,8 @@ public static class DBInit
                     DietaryFiber = 3M,
                     Protein = 10M,
                     Salt = 0.5M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
                 new Item
                 {
@@ -133,7 +138,8 @@ public static class DBInit
                     DietaryFiber = 3M,
                     Protein = 20M,
                     Salt = 1M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
 
                 new Item
@@ -150,7 +156,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 0M,
                     Salt = 0.02M,
-                    ItemCategoryId = meatCategory.ItemCategoryId
+                    ItemCategoryId = meatCategory.ItemCategoryId,
+                    ItemCategory = meatCategory
                 },
             };
             context.AddRange(items);
