@@ -18,18 +18,18 @@ public static class DBInit
             {
                 new Item
                 {
-                    Name = "Pizza",
+                    Name = "Pizza Grandiosa Original",
                     ImageUrl = "/images/pizza.jpg",
-                    Description = "Delicious Italian dish with a thin crust topped with tomato sauce, cheese, and various toppings.",
-                    Energy = 250M,
-                    Carbohydrate = 30M,
-                    TotalFat = 10M,
-                    SaturatedFat = 4M,
-                    UnsaturedFat = 6M,
-                    Sugar = 2M,
+                    Description = "Grandiosa Original has a filling of tomato sauce, pizza meat and paprika. It is topped with Jarlsberg®, which gives the pizza a taste of its own. The original Grandiosa was launched in 1980 and since then has been by far Norway's most eaten pizza. ",
+                    Energy = 218M,
+                    Carbohydrate = 26M,
+                    TotalFat = 7.7M,
+                    SaturatedFat = 4.2M,
+                    UnsaturedFat = 3.5M,
+                    Sugar = 2.8M,
                     DietaryFiber = 3M,
-                    Protein = 12M,
-                    Salt = 1M
+                    Protein = 11M,
+                    Salt = 0.9M
                 },
                 new Item
                 {
@@ -106,21 +106,7 @@ public static class DBInit
                     Protein = 20M,
                     Salt = 1M
                 },
-                new Item
-                {
-                    Name = "Cider",
-                    ImageUrl = "/images/cider.jpg",
-                    Description = "Refreshing alcoholic beverage made from fermented apple juice, available in various flavors.",
-                    Energy = 50M,
-                    Carbohydrate = 12M,
-                    TotalFat = 0M,
-                    SaturatedFat = 0M,
-                    UnsaturedFat = 0M,
-                    Sugar = 10M,
-                    DietaryFiber = 0M,
-                    Protein = 0M,
-                    Salt = 0M
-                },
+
                 new Item
                 {
                     Name = "Coke",
@@ -145,9 +131,10 @@ public static class DBInit
         {
             var customers = new List<Customer>
             {
-                new Customer { Name = "Alice Hansen", Address = "Osloveien 1"},
-                new Customer { Name = "Bob Johansen", Address = "Oslomet gata 2"},
+            new Customer { Name = "Gilde", Address = "Gildegata 7"},
+new Customer { Name = "Orkla", Address = "Grandiosalleen 2"},
             };
+            //may add later with "Uploder" on the item-side, extra in that case. 
             context.AddRange(customers);
             context.SaveChanges();
         }
