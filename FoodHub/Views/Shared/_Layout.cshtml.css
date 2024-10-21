@@ -83,7 +83,6 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .navbar {
   position: relative;
-  border-radius: 0 0 30px 30px !important;
 }
 
 body {
@@ -96,7 +95,7 @@ a.navbar-brand {
   word-break: break-all;
   position: absolute;
     left: 50%;
-    margin-left: -50px !important;  /* 50% of your logo width */
+    margin-left: -50px !important; 
     display: block;
 }
 

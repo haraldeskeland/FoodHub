@@ -28,13 +28,14 @@
         }
     </script>
 </head>
-<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 overflow-x-hidden">
+<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 overflow-x-hidden ">
     <header>
-        <nav class="bg-white border-b  fixed top-0 left-0 right-0 z-10">
+        <div class="w-full flex justify-center">
+        <nav class="bg-[#ffffff] fixed top-5 z-10 p-3 rounded-full w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5" data-aos="fade-down">
             <div class="container mx-auto px-4">
                 <div class="flex justify-between items-center py-3">
                     <a class="flex-shrink-0" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" class="w-[130px]">
+                        <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" class="w-[130px] hover:scale-105 transition-all duration-200 ease-in-out">
                     </a>
                     <div class="flex items-center space-x-4">
                         <partial name="_LoginPartial" />
@@ -47,6 +48,7 @@
                 </div>
             </div>
 </nav>
+</div>
     </header>
 
     <main class="flex-grow container mx-auto px-4 mt-16">
