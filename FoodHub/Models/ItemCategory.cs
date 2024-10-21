@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace FoodHub.Models {
     public class ItemCategory
     {
+        [Key]
         public int ItemCategoryId { get; set; }
         
         [StringLength(200)]

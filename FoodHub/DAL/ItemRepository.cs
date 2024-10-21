@@ -92,4 +92,12 @@ public class ItemRepository : IItemRepository
             return false;
         }
     }
+
+    public async Task<IEnumerable<Item>> SearchItemsAsync(string query)
+    {
+        return await _db.Items
+            .Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
+                        i.Description.ToLower().Contains(query.ToLower()))
+            .ToListAsync();
+    }
 }

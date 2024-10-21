@@ -1,0 +1,25 @@
+@model IEnumerable<FoodHub.Models.Item>
+<h2>Search Results</h2>
+@if (!Model.Any())
+{
+    <p>No items found.</p>
+}
+else
+{
+    <div class="item-list">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <h3>
+                    <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">
+                        @item.Name
+                    </a>
+                </h3>
+                <img src="@item.ImageUrl" alt="@item.Name" />
+                <p>@item.Description</p>
+                <p>Energy: @item.Energy kcal</p>
+                <!-- Add more item details as needed -->
+            </div>
+        }
+    </div>
+}
