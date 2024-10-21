@@ -43,5 +43,11 @@ namespace FoodHub.Models {
         [Range(0, double.MaxValue, ErrorMessage = "Salt must be a non-negative value")]
         public decimal Salt { get; set; }
 
+        // Foreign key for ItemCategory
+        public int ItemCategoryId { get; set; }
+
+        // Navigation property for the relevant ItemCategory
+        public virtual ItemCategory ItemCategory { get; set; }
+
     }
 }
