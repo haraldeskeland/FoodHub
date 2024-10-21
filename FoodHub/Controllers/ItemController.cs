@@ -133,8 +133,9 @@ namespace FoodHub.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                items = items.Where(i => i.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
-                                         i.Description.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+                items = items.Where(i => 
+                    (i.Name?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (i.Description?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false)).ToList();
             }
 
             var itemsViewModel = new ItemsViewModel(items, "Search");
