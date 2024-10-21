@@ -18,3 +18,5 @@ FoodHub/TestResults/
 FoodHub.Tests/obj/
 FoodHub/*.shm
 FoodHub/*.wal
+*.shm
+*.wal
