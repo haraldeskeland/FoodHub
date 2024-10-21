@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FoodHub.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class ItemDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -65,27 +65,16 @@ namespace FoodHub.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Items",
+                name: "ItemCategories",
                 columns: table => new
                 {
-                    ItemId = table.Column<int>(type: "INTEGER", nullable: false)
+                    ItemCategoryId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    ImageUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    Energy = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Carbohydrate = table.Column<decimal>(type: "TEXT", nullable: false),
-                    TotalFat = table.Column<decimal>(type: "TEXT", nullable: false),
-                    SaturatedFat = table.Column<decimal>(type: "TEXT", nullable: false),
-                    UnsaturedFat = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Sugar = table.Column<decimal>(type: "TEXT", nullable: false),
-                    DietaryFiber = table.Column<decimal>(type: "TEXT", nullable: true),
-                    Protein = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Salt = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Items", x => x.ItemId);
+                    table.PrimaryKey("PK_ItemCategories", x => x.ItemCategoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -194,6 +183,37 @@ namespace FoodHub.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Items",
+                columns: table => new
+                {
+                    ItemId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    ImageUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    Energy = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Carbohydrate = table.Column<decimal>(type: "TEXT", nullable: false),
+                    TotalFat = table.Column<decimal>(type: "TEXT", nullable: false),
+                    SaturatedFat = table.Column<decimal>(type: "TEXT", nullable: false),
+                    UnsaturedFat = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Sugar = table.Column<decimal>(type: "TEXT", nullable: false),
+                    DietaryFiber = table.Column<decimal>(type: "TEXT", nullable: true),
+                    Protein = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Salt = table.Column<decimal>(type: "TEXT", nullable: false),
+                    ItemCategoryId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Items", x => x.ItemId);
+                    table.ForeignKey(
+                        name: "FK_Items_ItemCategories_ItemCategoryId",
+                        column: x => x.ItemCategoryId,
+                        principalTable: "ItemCategories",
+                        principalColumn: "ItemCategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -230,6 +250,11 @@ namespace FoodHub.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Items_ItemCategoryId",
+                table: "Items",
+                column: "ItemCategoryId");
         }
 
         /// <inheritdoc />
@@ -261,6 +286,9 @@ namespace FoodHub.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "ItemCategories");
         }
     }
 }

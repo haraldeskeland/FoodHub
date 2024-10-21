@@ -8,10 +8,11 @@ namespace FoodHub.DAL
     {
         public ItemDbContext(DbContextOptions<ItemDbContext> options) : base(options)
         {
-           // Database.EnsureCreated();
+
         }
 
         public DbSet<Item> Items { get; set; }
+        public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -20,4 +21,3 @@ namespace FoodHub.DAL
         }
     }
 }
-

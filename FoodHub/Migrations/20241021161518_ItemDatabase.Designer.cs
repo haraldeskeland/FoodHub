@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub.Migrations
 {
     [DbContext(typeof(ItemDbContext))]
-    [Migration("20241021104203_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241021161518_ItemDatabase")]
+    partial class ItemDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,46 +49,67 @@ namespace FoodHub.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Carbohydrate")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasMaxLength(200)
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal?>("DietaryFiber")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Energy")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("ItemCategoryId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Protein")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Salt")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("SaturatedFat")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Sugar")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("TotalFat")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("UnsaturedFat")
-                        .HasColumnType("DECIMAL(18,2)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("ItemId");
 
+                    b.HasIndex("ItemCategoryId");
+
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
+                {
+                    b.Property<int>("ItemCategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ItemCategoryId");
+
+                    b.ToTable("ItemCategories");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -287,6 +308,17 @@ namespace FoodHub.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FoodHub.Models.Item", b =>
+                {
+                    b.HasOne("FoodHub.Models.ItemCategory", "ItemCategory")
+                        .WithMany("Items")
+                        .HasForeignKey("ItemCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ItemCategory");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -336,6 +368,11 @@ namespace FoodHub.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

@@ -61,6 +61,9 @@ namespace FoodHub.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("ItemCategoryId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -85,7 +88,25 @@ namespace FoodHub.Migrations
 
                     b.HasKey("ItemId");
 
+                    b.HasIndex("ItemCategoryId");
+
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
+                {
+                    b.Property<int>("ItemCategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ItemCategoryId");
+
+                    b.ToTable("ItemCategories");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -284,6 +305,17 @@ namespace FoodHub.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FoodHub.Models.Item", b =>
+                {
+                    b.HasOne("FoodHub.Models.ItemCategory", "ItemCategory")
+                        .WithMany("Items")
+                        .HasForeignKey("ItemCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ItemCategory");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -333,6 +365,11 @@ namespace FoodHub.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

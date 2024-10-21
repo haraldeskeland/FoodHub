@@ -9,8 +9,31 @@ public static class DBInit
     {
         using var serviceScope = app.ApplicationServices.CreateScope();
         ItemDbContext context = serviceScope.ServiceProvider.GetRequiredService<ItemDbContext>();
-        // context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
+
+        if (!context.ItemCategories.Any())
+        {
+            var itemcategories = new List<ItemCategory>
+            {
+                new ItemCategory { ItemCategoryId = 1, Name = "Grønnsaker, frukt, bær og nøtter"},      
+                new ItemCategory { ItemCategoryId = 2, Name = "Mel, gryn og ris"},        
+                new ItemCategory { ItemCategoryId = 3, Name = "Grøt, brød og pasta"},
+                new ItemCategory { ItemCategoryId = 4, Name = "Melk og syrnede melkeprodukter"},
+                new ItemCategory { ItemCategoryId = 5, Name = "Vegetabilske alternativer til melkeprodukter"},
+                new ItemCategory { ItemCategoryId = 6, Name = "Ost og vegetabilske alternativer"},
+                new ItemCategory { ItemCategoryId = 7, Name = "Helt el delvis vegetabilske produkter"},
+                new ItemCategory { ItemCategoryId = 8, Name = "Ferdigretter"},
+                new ItemCategory { ItemCategoryId = 9, Name = "Helt el delvis vegetabilske produkter"},
+                new ItemCategory { ItemCategoryId = 10, Name = "Dressinger og sauser"},
+                new ItemCategory { ItemCategoryId = 11, Name = "Kjøtt og produkter som inneholder kjøtt"},
+            };
+            context.AddRange(itemcategories);
+            context.SaveChanges();
+        }
+
+        var greensCategory = context.ItemCategories.First(c => c.ItemCategoryId == 1);
+        var pastaCategory = context.ItemCategories.First(c => c.ItemCategoryId == 3);
+        var meatCategory = context.ItemCategories.First(c => c.ItemCategoryId == 11);
 
         if (!context.Items.Any())
         {
@@ -29,7 +52,8 @@ public static class DBInit
                     Sugar = 2.8M,
                     DietaryFiber = 3M,
                     Protein = 11M,
-                    Salt = 0.9M
+                    Salt = 0.9M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
                 new Item
                 {
@@ -44,7 +68,8 @@ public static class DBInit
                     Sugar = 0M,
                     DietaryFiber = 0M,
                     Protein = 25M,
-                    Salt = 1.5M
+                    Salt = 1.5M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
                 new Item
                 {
@@ -59,7 +84,8 @@ public static class DBInit
                     Sugar = 0M,
                     DietaryFiber = 4M,
                     Protein = 4M,
-                    Salt = 0.6M
+                    Salt = 0.6M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
                 new Item
                 {
@@ -74,7 +100,8 @@ public static class DBInit
                     Sugar = 5M,
                     DietaryFiber = 0M,
                     Protein = 25M,
-                    Salt = 2M
+                    Salt = 2M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
                 new Item
                 {
@@ -89,7 +116,8 @@ public static class DBInit
                     Sugar = 1M,
                     DietaryFiber = 3M,
                     Protein = 10M,
-                    Salt = 0.5M
+                    Salt = 0.5M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
                 new Item
                 {
@@ -104,7 +132,8 @@ public static class DBInit
                     Sugar = 0M,
                     DietaryFiber = 3M,
                     Protein = 20M,
-                    Salt = 1M
+                    Salt = 1M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
 
                 new Item
@@ -120,7 +149,8 @@ public static class DBInit
                     Sugar = 39M,
                     DietaryFiber = 0M,
                     Protein = 0M,
-                    Salt = 0.02M
+                    Salt = 0.02M,
+                    ItemCategoryId = meatCategory.ItemCategoryId
                 },
             };
             context.AddRange(items);
@@ -131,8 +161,8 @@ public static class DBInit
         {
             var customers = new List<Customer>
             {
-            new Customer { Name = "Gilde", Address = "Gildegata 7"},
-new Customer { Name = "Orkla", Address = "Grandiosalleen 2"},
+                new Customer { Name = "Gilde", Address = "Gildegata 7"},
+                new Customer { Name = "Orkla", Address = "Grandiosalleen 2"},
             };
             //may add later with "Uploder" on the item-side, extra in that case. 
             context.AddRange(customers);
