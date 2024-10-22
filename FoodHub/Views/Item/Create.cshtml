@@ -18,7 +18,7 @@
     </div>
 
     <div class="content-section max-w-[1800px] my-12 px-5 flex flex-col justify-between items-center w-full">
-        <form asp-action="Create" method="post" enctype="multipart/form-data" class="w-full max-w-5xl bg-white rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+        <form asp-action="Create" method="post" enctype="multipart/form-data" class="w-full max-w-5xl bg-white border border-slate-200 rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
             <div asp-validation-summary="All" class="text-red-500 mb-4"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-40">
@@ -31,11 +31,13 @@
                         <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
                     </div>
 
-                    @* <div>
-                        <label asp-for="ItemCategory" class="block text-sm font-medium text-gray-700">Category</label>
-                        <input asp-for="ItemCategory" class="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
-                        <span asp-validation-for="ItemCategory" class="text-red-500 text-sm"></span>
-                    </div> *@
+                    <div>
+                        <label asp-for="ItemCategoryId" class="block text-sm font-medium text-gray-700">Category</label>
+                        <select asp-for="ItemCategoryId" asp-items="ViewBag.Categories" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <option value="">-- Select a Category --</option>
+                        </select>
+                        <span asp-validation-for="ItemCategoryId" class="text-red-500 text-sm"></span>
+                    </div>
 
                     <div>
                         <label asp-for="Description" class="block text-sm font-medium text-gray-700">Description</label>
@@ -44,9 +46,9 @@
                     </div>
 
                     <div>
-                        <label for="ImageUpload" class="block text-sm font-medium text-gray-700">Image</label>
+                        <label for="ImageUrl" class="block text-sm font-medium text-gray-700">Image</label>
                         <div class="mt-1 flex items-center">
-                            <input type="file" id="ImgageUrl" name="ImageUrl" accept="image/*" class="hidden" onchange="showFileName(this)" />
+                            <input type="file" id="ImageUrl" name="ImageUrl" accept="image/*" class="hidden" onchange="showFileName(this)" />
                             <label for="ImageUrl" class="cursor-pointer bg-white py-2 px-3 border border-gray-300 rounded-full shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Choose file
                             </label>
@@ -59,14 +61,59 @@
                 <div class="space-y-4">
                     <h2 class="text-2xl font-semibold mb-4">Nutritional Information (per 100g)</h2>
                     
-                    @foreach (var nutrient in new[] { "Energy", "TotalFat", "SaturatedFat", "UnsaturedFat", "Carbohydrate", "Sugar", "DietaryFiber", "Protein", "Salt" })
-                    {
-                        <div>
-                            <label asp-for="@nutrient" class="block text-sm font-medium text-gray-700">@nutrient</label>
-                            <input asp-for="@nutrient" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
-                            <span asp-validation-for="@nutrient" class="text-red-500 text-sm"></span>
-                        </div>
-                    }
+                    <div>
+                        <label asp-for="Energy" class="block text-sm font-medium text-gray-700">Energy</label>
+                        <input asp-for="Energy" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="Energy" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="TotalFat" class="block text-sm font-medium text-gray-700">Total Fat</label>
+                        <input asp-for="TotalFat" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="TotalFat" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="SaturatedFat" class="block text-sm font-medium text-gray-700">Saturated Fat</label>
+                        <input asp-for="SaturatedFat" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="SaturatedFat" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="UnsaturedFat" class="block text-sm font-medium text-gray-700">Unsaturated Fat</label>
+                        <input asp-for="UnsaturedFat" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="UnsaturedFat" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Carbohydrate" class="block text-sm font-medium text-gray-700">Carbohydrate</label>
+                        <input asp-for="Carbohydrate" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="Carbohydrate" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Sugar" class="block text-sm font-medium text-gray-700">Sugar</label>
+                        <input asp-for="Sugar" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="Sugar" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="DietaryFiber" class="block text-sm font-medium text-gray-700">Dietary Fiber</label>
+                        <input asp-for="DietaryFiber" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="DietaryFiber" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Protein" class="block text-sm font-medium text-gray-700">Protein</label>
+                        <input asp-for="Protein" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="Protein" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="Salt" class="block text-sm font-medium text-gray-700">Salt</label>
+                        <input asp-for="Salt" type="number" step="0.01" class="mt-1 p-2 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" />
+                        <span asp-validation-for="Salt" class="text-red-500 text-sm"></span>
+                    </div>
                 </div>
             </div>
 

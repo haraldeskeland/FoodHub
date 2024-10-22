@@ -41,6 +41,10 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    public async Task<IEnumerable<ItemCategory>> GetAllCategories()
+    {
+        return await _db.ItemCategories.ToListAsync();
+    }
     public async Task<bool> Create(Item item)
     {
         try
