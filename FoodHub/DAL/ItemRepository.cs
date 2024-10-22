@@ -97,11 +97,22 @@ public class ItemRepository : IItemRepository
         }
     }
 
-    public async Task<IEnumerable<Item>> SearchItemsAsync(string query)
+    public async Task<IEnumerable<Item>> SearchItemsAsync(string query, int? categoryId)
+{
+    var items = _db.Items.AsQueryable();
+
+    if (!string.IsNullOrEmpty(query))
     {
-        return await _db.Items
-            .Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
-                        i.Description.ToLower().Contains(query.ToLower()))
-            .ToListAsync();
+        items = items.Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
+                                 i.Description.ToLower().Contains(query.ToLower()));
     }
+
+    if (categoryId.HasValue)
+    {
+        items = items.Where(i => i.ItemCategoryId == categoryId.Value);
+    }
+
+    return await items.ToListAsync();
+}
+
 }
