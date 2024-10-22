@@ -101,7 +101,7 @@ public class ItemRepository : IItemRepository
     {
         return await _db.Items
             .Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
-                        i.Description.ToLower().Contains(query.ToLower()))
+                        (i.Description != null && i.Description.ToLower().Contains(query.ToLower())))
             .ToListAsync();
     }
 }
