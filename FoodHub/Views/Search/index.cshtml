@@ -17,7 +17,7 @@
            asp-action="Index" 
            asp-route-query="@ViewData["CurrentQuery"]"
            asp-route-categoryId="@category.ItemCategoryId"
-           class="text-gray-800  hover:text-blue-800 text-base  @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold" : "")">
+           class="text-gray-800  hover:text-blue-800 text-base  @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold pl-3 ml-[-18px] border-l-2 border-l-gray-500" : "")">
             @category.Name
         </a>
     </li>
@@ -27,9 +27,8 @@
 
     <!-- Right Side for Search Results -->
     <div class="w-3/4 pl-12 border-l-2">
-        <h2 class="text-4xl font-bold mb-4">Search Results</h2>
+        <h2 class="text-4xl font-bold mb-5 ">Search Results</h2>
         <hr class="pb-3">
-        
         @if (!Model.Any())
         {
             <p class="text-gray-600">No items found.</p>
@@ -44,8 +43,8 @@
                             <img class="w-60 h-60 object-cover p-4 rounded-lg" src="@item.ImageUrl" alt="@item.Name" />
                             <div class="p-4">
                                 <h3 class="font-semibold text-xl mb-2">@item.Name</h3>
-                                <p class="text-gray-700 text-base mb-2 truncate">@item.Description</p>
-                                <p class="text-gray-600 text-sm">Energy: @item.Energy kcal</p>
+                                <p class="text-gray-600 text-base mb-2 truncate">@item.Description</p>
+                                <p class="text-gray-400 text-sm">Energy: @item.Energy kcal</p>
                             </div>
                         </a>
                     </div>
