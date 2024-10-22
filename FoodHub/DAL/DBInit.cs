@@ -9,7 +9,7 @@ public static class DBInit
     {
         using var serviceScope = app.ApplicationServices.CreateScope();
         ItemDbContext context = serviceScope.ServiceProvider.GetRequiredService<ItemDbContext>();
-        context.Database.EnsureCreated();
+        context.Database.Migrate();
 
         if (!context.ItemCategories.Any())
         {
@@ -21,19 +21,21 @@ public static class DBInit
                 new ItemCategory { ItemCategoryId = 4, Name = "Melk og syrnede melkeprodukter"},
                 new ItemCategory { ItemCategoryId = 5, Name = "Vegetabilske alternativer til melkeprodukter"},
                 new ItemCategory { ItemCategoryId = 6, Name = "Ost og vegetabilske alternativer"},
-                new ItemCategory { ItemCategoryId = 7, Name = "Helt el delvis vegetabilske produkter"},
-                new ItemCategory { ItemCategoryId = 8, Name = "Ferdigretter"},
-                new ItemCategory { ItemCategoryId = 9, Name = "Helt el delvis vegetabilske produkter"},
-                new ItemCategory { ItemCategoryId = 10, Name = "Dressinger og sauser"},
-                new ItemCategory { ItemCategoryId = 11, Name = "Kjøtt og produkter som inneholder kjøtt"},
+                new ItemCategory { ItemCategoryId = 7, Name = "Matfett (margariner) og oljer"},
+                new ItemCategory { ItemCategoryId = 8, Name = "Fiskerivarer og produkter av fiskerivarer"},
+                new ItemCategory { ItemCategoryId = 9, Name = "Kjøtt og produkter som inneholder kjøtt"},
+                new ItemCategory { ItemCategoryId = 10, Name = "Helt el delvis vegetabilske produkter"},
+                new ItemCategory { ItemCategoryId = 11, Name = "Ferdigretter"},
+                new ItemCategory { ItemCategoryId = 12, Name = "Dressinger og sauser"}
             };
             context.AddRange(itemcategories);
             context.SaveChanges();
         }
 
+        //Temp variables for seeded database entries
         var greensCategory = context.ItemCategories.First(c => c.ItemCategoryId == 1);
         var pastaCategory = context.ItemCategories.First(c => c.ItemCategoryId == 3);
-        var meatCategory = context.ItemCategories.First(c => c.ItemCategoryId == 11);
+        var meatCategory = context.ItemCategories.First(c => c.ItemCategoryId == 9);
 
         if (!context.Items.Any())
         {
