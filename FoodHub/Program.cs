@@ -3,6 +3,8 @@ using FoodHub.DAL;
 using Serilog;
 using Serilog.Events;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ItemDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ItemDbContextConnection' not found.");
@@ -15,6 +17,9 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
 });
 
 builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ItemDbContext>();
+
+builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
 
 // builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 // {
