@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using FoodHub.DAL;
 using FoodHub.Models;
 using FoodHub.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace FoodHub.Controllers
 {
@@ -54,25 +56,42 @@ namespace FoodHub.Controllers
 
         [HttpGet]
         [Authorize]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var categories = await _itemRepository.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
             return View();
         }
 
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Create(Item item)
+        public async Task<IActionResult> Create(Item item, IFormFile ImageUrl)
         {
             if (ModelState.IsValid)
             {
+                if (ImageUrl != null && ImageUrl.Length > 0)
+                {
+                    var fileName = Path.GetFileName(ImageUrl.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await ImageUrl.CopyToAsync(fileStream);
+                    }
+
+                    item.ImageUrl = "/images/" + fileName;
+                }
+
                 bool returnOk = await _itemRepository.Create(item);
                 if (returnOk)
                     return RedirectToAction(nameof(Table));
             }
+
+            var categories = await _itemRepository.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
             _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
             return View(item);
         }
-
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Update(int id)
