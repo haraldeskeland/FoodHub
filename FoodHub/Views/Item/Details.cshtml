@@ -62,6 +62,22 @@
                 </div>
             </div>
 
+            <!-- Allergens -->
+            <h4>Allergens:</h4>
+            @if (Model.ItemAllergen != null && Model.ItemAllergen.Any())
+            {
+                <ul>
+                    @foreach (var itemAllergen in Model.ItemAllergen)
+                    {
+                        <li>@itemAllergen.Allergen.Name</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No allergens listed for this item.</p>
+            }
+
             <div class="flex space-x-4 pt-6">
                 <a href="/Item/Table" class="bg-slate-900 hover:bg-slate-700 text-white font-normal py-2 px-4 rounded transition duration-100">
                     Back to Table View
