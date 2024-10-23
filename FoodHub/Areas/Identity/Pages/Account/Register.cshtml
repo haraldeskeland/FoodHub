@@ -4,11 +4,11 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="min-h-screen flex flex-col justify-center bg-gray-100 sm:px-6 lg:px-8 pb-20">
+<div class="min-h-screen flex flex-col justify-center bg-white dark:bg-[#101010] sm:px-6 lg:px-8 pb-20">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div class="bg-slate-50 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5] py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div class="sm:mx-auto sm:w-full sm:max-w-md mb-10">
-                <h2 class="mt-6 text-center text-3xl font-semibold text-gray-900">
+                <h2 class="mt-6 text-center text-3xl font-semibold text-gray-900 dark:text-slate-50">
                     <span class="gradient-text underline">Create</span> a new account
                 </h2>
             </div>
@@ -17,7 +17,7 @@
                 <div asp-validation-summary="ModelOnly" class="text-red-600 text-sm" role="alert"></div>
                 
                 <div>
-                    <label asp-for="Input.Email" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.Email" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Email address
                     </label>
                     <div class="mt-1">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div>
-                    <label asp-for="Input.Password" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.Password" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Password
                     </label>
                     <div class="mt-1">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div>
-                    <label asp-for="Input.ConfirmPassword" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.ConfirmPassword" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Confirm Password
                     </label>
                     <div class="mt-1">
