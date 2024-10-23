@@ -4,15 +4,19 @@ namespace FoodHub.Models
 {
     public class ItemAllergen
     {
-        [Key]
+        [Key] // Primary key for the ItemAllergen table
         public int ItemAllergenId { get; set; }
 
-        public int ItemId { get; set; }
+        // Foreign key referencing the Item table
+        public int ItemId { get; set; } 
 
-        public virtual Item? Item { get; set; }
+        // Navigation property for the related Item
+        public virtual Item? Item { get; set; } 
 
-        public int AllergenId { get; set; }
+        // Foreign key referencing the Allergen table
+        public int AllergenId { get; set; } 
 
-        public virtual Allergen? Allergen { get; set; }
+        // Navigation property for the related Allergen
+        public virtual Allergen? Allergen { get; set; } 
     }
 }

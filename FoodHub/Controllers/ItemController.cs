@@ -5,20 +5,22 @@ using FoodHub.Models;
 using FoodHub.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-
 namespace FoodHub.Controllers
 {
+    // Controller for handling item-related requests
     public class ItemController : Controller
     {
         private readonly IItemRepository _itemRepository;
         private readonly ILogger<ItemController> _logger;
 
+        // Constructor accepting the item repository and logger
         public ItemController(IItemRepository itemRepository, ILogger<ItemController> logger)
         {
             _itemRepository = itemRepository;
             _logger = logger;
         }
 
+        // Action method to display items in a table view
         public async Task<IActionResult> Table()
         {
             var items = await _itemRepository.GetAll();
@@ -31,6 +33,7 @@ namespace FoodHub.Controllers
             return View(itemsViewModel);
         }
 
+        // Action method to display items in a grid view
         public async Task<IActionResult> Grid()
         {
             var items = await _itemRepository.GetAll();
@@ -43,6 +46,7 @@ namespace FoodHub.Controllers
             return View(itemsViewModel);
         }
 
+        // Action method to display details of a specific item
         public async Task<IActionResult> Details(int id)
         {
             var item = await _itemRepository.GetItemByIdWithAllergen(id);
@@ -55,6 +59,7 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
+        // GET: Action method to display the create item form
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Create()
@@ -64,6 +69,7 @@ namespace FoodHub.Controllers
             return View();
         }
 
+        // POST: Action method to handle the creation of a new item
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Create(Item item, IFormFile ImageUrl)
@@ -83,7 +89,7 @@ namespace FoodHub.Controllers
                     item.ImageUrl = "/images/" + fileName;
                 }
 
-                bool returnOk = await _itemRepository.Create(item); //This will not be called during the unit test 
+                bool returnOk = await _itemRepository.Create(item); // This will not be called during the unit test 
                 if (returnOk)
                     return RedirectToAction(nameof(Table));
             }
@@ -94,6 +100,7 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
+        // GET: Action method to display the update item form
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Update(int id)
@@ -112,7 +119,7 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
-
+        // POST: Action method to handle the update of an existing item
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Update(Item item)
@@ -140,6 +147,7 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
+        // GET: Action method to display the delete item confirmation form
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Delete(int id)
@@ -153,6 +161,7 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
+        // POST: Action method to handle the deletion of an item
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -166,7 +175,7 @@ namespace FoodHub.Controllers
             return RedirectToAction(nameof(Table));
         }
 
-        // New Search Action
+        // Action method to search for items based on a search string
         public async Task<IActionResult> Search(string searchString)
         {
             var items = await _itemRepository.GetAll();
@@ -180,7 +189,7 @@ namespace FoodHub.Controllers
 
             var itemsViewModel = new ItemsViewModel(items, "Search");
             ViewData["CurrentFilter"] = searchString; // Retain the search string for the view
-            return View("Table", itemsViewModel); // You can also create a dedicated Search view if needed
+            return View("Table", itemsViewModel); // Display the search results in the table view
         }
     }
 }
