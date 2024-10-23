@@ -18,3 +18,4 @@ FoodHub/TestResults/
 FoodHub.Tests/obj/
 FoodHub/ItemDatabase.db-shm
 FoodHub/ItemDatabase.db-wal
+FoodHub/ItemDatabase.db
