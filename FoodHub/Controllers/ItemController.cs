@@ -92,6 +92,7 @@ namespace FoodHub.Controllers
             _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
             return View(item);
         }
+        
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Update(int id)
@@ -102,8 +103,14 @@ namespace FoodHub.Controllers
                 _logger.LogError("[ItemController] Item not found when updating the ItemId {ItemId:0000}", id);
                 return BadRequest("Item not found for the ItemId");
             }
+
+            // Populate categories
+            var categories = await _itemRepository.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
+
             return View(item);
         }
+
 
         [HttpPost]
         [Authorize]
@@ -115,6 +122,19 @@ namespace FoodHub.Controllers
                 if (returnOk)
                     return RedirectToAction(nameof(Table));
             }
+
+            // Log validation errors if the model state is invalid
+            foreach (var state in ModelState.Values)
+            {
+                foreach (var error in state.Errors)
+                {
+                    _logger.LogError("Validation error: {ErrorMessage}", error.ErrorMessage);
+                }
+            }
+
+            // Repopulate categories if update fails
+            var categories = await _itemRepository.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
             _logger.LogWarning("[ItemController] Item update failed {@item}", item);
             return View(item);
         }

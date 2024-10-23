@@ -12,6 +12,15 @@
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
+    <!-- Category -->
+    <div>
+        <label asp-for="ItemCategoryId" class="block text-sm font-medium text-gray-700">Category</label>
+        <select asp-for="ItemCategoryId" asp-items="ViewBag.Categories" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+        <option value="">-- Select a Category --</option>
+        </select>
+        <span asp-validation-for="ItemCategoryId" class="text-red-500 text-sm"></span>
+    </div>
+
     <!-- Description -->
     <div class="form-group">
         <label asp-for="Description"></label>
