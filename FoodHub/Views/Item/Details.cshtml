@@ -1,38 +1,75 @@
 @model Item
 
-<h3 class="my-5">
-    @Model.Name
-</h3>
+<div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Image Section -->
+        <div class="lg:w-1/2">
+            <div class="rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
+                <div class="aspect-square relative">
+                    <div class="absolute inset-0 flex items-center justify-center p-5">
+                        <img class="max-w-full max-h-full object-contain" src="@Model.ImageUrl" alt="@Model.Name" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h4 class="my-5">
-    @Model.ProducerName
-</h4>
+        <!-- Details Section -->
+        <div class="lg:w-1/3 space-y-6 mt-12">
+            <h1 class="text-5xl font-bold text-gray-900 dark:text-white">@Model.Name</h1>
+            <h2 class="text-xl font-semibold text-gray-600 dark:text-gray-300">@Model.ProducerName</h2>
 
-<div class="row gx-5">
-    <!-- Image -->
-    <img alt="@Model.Name" src="@Model.ImageUrl" class="img-fluid col-5" />
+            <p class="text-gray-700 dark:text-gray-300">@Model.Description</p>
 
-    <!-- Details -->
-    <div class="col-7">
-        <!-- Description -->
-        <h5>@Model.Description</h5>
+            <div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Nutritional Information (per 100g)</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Energy</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.Energy kcal</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Carbohydrate</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.Carbohydrate g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Total Fat</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.TotalFat g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Saturated Fat</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.SaturatedFat g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Unsaturated Fat</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.UnsaturedFat g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Sugar</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.Sugar g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Dietary Fiber</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.DietaryFiber g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Protein</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.Protein g</p>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-4 rounded-md">
+                        <p class="font-normal text-md text-gray-700 dark:text-gray-300">Salt</p>
+                        <p class="text-xl font-bold text-gray-900 dark:text-white">@Model.Salt g</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Nutritional Information -->
-        <h4>Nutritional Information (per 100g):</h4>
-        <ul>
-            <li><strong>Energy:</strong> @Model.Energy kcal</li>
-            <li><strong>Carbohydrate:</strong> @Model.Carbohydrate g</li>
-            <li><strong>Total Fat:</strong> @Model.TotalFat g</li>
-            <li><strong>Saturated Fat:</strong> @Model.SaturatedFat g</li>
-            <li><strong>Unsaturated Fat:</strong> @Model.UnsaturedFat g</li>
-            <li><strong>Sugar:</strong> @Model.Sugar g</li>
-            <li><strong>Dietary Fiber:</strong> @Model.DietaryFiber g</li>
-            <li><strong>Protein:</strong> @Model.Protein g</li>
-            <li><strong>Salt:</strong> @Model.Salt g</li>
-        </ul>
-
-        <!-- Navigation Links -->
-        <p><a href="/Item/Table">Back to Table View</a></p>
-        <p><a href="/Item/Grid">Back to Grid View</a></p>
+            <div class="flex space-x-4 pt-6">
+                <a href="/Item/Table" class="bg-slate-900 hover:bg-slate-700 text-white font-normal py-2 px-4 rounded transition duration-100">
+                    Back to Table View
+                </a>
+                <a href="/Item/Grid" class="bg-slate-900 hover:bg-slate-700 text-white font-normal py-2 px-4 rounded transition duration-100">
+                    Back to Grid View
+                </a>
+            </div>
+        </div>
     </div>
 </div>
