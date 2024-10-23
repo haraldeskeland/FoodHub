@@ -95,10 +95,6 @@ body {
   display: inline-block;
 }
 
-.gradient-text.underline {
-  text-decoration: underline var(--gradient-colors);
-}
-
 .search-input {
   padding: 10px;
   font-size: 14px;

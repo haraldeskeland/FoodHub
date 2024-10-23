@@ -27,6 +27,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -37,7 +38,7 @@
         }
     </script>
 </head>
-<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 overflow-x-hidden ">
+<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-gray-900 dark:text-white overflow-x-hidden ">
     <header>
         <div class="w-full flex justify-center">
         <nav class="bg-[#ffffff] fixed top-5 z-10 p-1 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5" data-aos="fade-down">
@@ -62,6 +63,9 @@
                     </div>
                 </form>
                 }
+                <button id="theme-toggle" class="w-10 h-10 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110 active:scale-95">
+                    <img src="/images/light-dark.png" alt="Toggle theme" class="w-full h-full filter dark:invert">
+                </button>
                     <div class="flex items-center space-x-4">
                         <partial name="_LoginPartial" />
                     </div>
@@ -125,6 +129,29 @@
     document.getElementById('navbar-toggle').addEventListener('click', function() {
         document.querySelector('.sm\\:flex').classList.toggle('hidden');
     });
+
+    // Light + Dark mode
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    themeToggleBtn.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    
+    // Save the preference to localStorage
+    if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+    });
+
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    htmlElement.classList.add('dark');
+    } else {
+    htmlElement.classList.remove('dark');
+    }
 </script>
 </body>
 </html>
