@@ -9,6 +9,7 @@ public static class DBInit
     {
         using var serviceScope = app.ApplicationServices.CreateScope();
         ItemDbContext context = serviceScope.ServiceProvider.GetRequiredService<ItemDbContext>();
+        context.Database.EnsureDeleted();
         //Using Migrate() instead of EnsureCreated() since Migration is being used in this project
         context.Database.Migrate();
 
@@ -89,7 +90,7 @@ public static class DBInit
                 {
                     Name = "Opphøgde Potteter - Originalen",
                     ProducerName = "HOFF",
-                    ImageUrl = "/images/Opphogde-Originalen.png",
+                    ImageUrl = "/images/potteter.webp",
                     Description = "HOFF Opphøgde Potteter Originalen har blitt laget på fabrikken i Gjøvik i flere generasjoner. Med sin sprøe overflate og myke innside har den blitt en av nordmenns favoritter! Produktet stekes ferdig på bare 9 minutter i ovnen.",
                     Energy = 198M,
                     Carbohydrate = 34M,
