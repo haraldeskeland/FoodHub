@@ -14,12 +14,12 @@
             <div class="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <form asp-controller="Search" asp-action="Index" method="get" class="flex justify-center w-full">
                     <div class="flex w-full max-w-2xl">
-                        <div class="flex items-center justify-center rounded-l-full border border-r-0 border-gray-300 bg-white px-4">
+                        <div class="flex items-center justify-center rounded-l-full border border-r-0 border-gray-300 bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] px-4">
                             <svg viewBox="0 0 20 20" aria-hidden="true" class="w-5 h-5 fill-gray-500">
                                 <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
                             </svg>
                         </div>
-                        <input type="text" name="query" placeholder="Search for your favourite food..." class="w-full py-3 px-4 bg-white text-base outline-none border-y border-gray-300">
+                        <input type="text" name="query" placeholder="Search for your favourite food..." class="w-full py-3 px-4 bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] text-base outline-none border-y border-gray-300">
                         <button type="submit" class="bg-gray-800 px-6 py-3 rounded-r-full text-white hover:bg-blue-800 transition-colors">
                             Search
                         </button>
@@ -90,27 +90,27 @@
 
     <div class="all-stats-container flex flex-col items-center py-10 bg-[#f7f7f7] w-screen mb-32 dark:bg-[#000000]">
         <div class="stats-container flex flex-wrap max-w-[1200px] w-full mx-auto px-2 gap-[1px] ">
-            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_20%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="100">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">200+</h3>
                 <p class="text-gray-600">Recipes</p>
             </div>
-            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="150">
+            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_40%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="150">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">1st place</h3>
                 <p class="text-gray-600">User Choice Award</p>
             </div>
-            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_40%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="200">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">15<sup>+</sup></h3>
                 <p class="text-gray-600">Cuisines</p>
             </div>
-            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="250">
+            <div class="stat-box flex-1 basis-[calc(25%-1rem)] min-w-[200px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_40%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="250">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">100%</h3>
                 <p class="text-gray-600">Transparency</p>
             </div>
-            <div class="stat-box flex-1 basis-[calc(50%-1rem)] min-w-[300px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-box flex-1 basis-[calc(50%-1rem)] min-w-[300px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_40%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="300">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">50+</h3>
                 <p class="text-gray-600">Food producers</p>
             </div>
-            <div class="stat-box flex-1 basis-[calc(50%-1rem)] min-w-[300px] p-4 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="350">
+            <div class="stat-box flex-1 basis-[calc(50%-1rem)] min-w-[300px] p-4 border border-slate-200 dark:bg-[linear-gradient(45deg,rgba(15,15,15,1)_0%,rgba(29,29,31,1)_40%)] dark:border-[#303030d5]" data-aos="zoom-in" data-aos-delay="350">
                 <h3 class="text-4xl font-extrabold mb-2 gradient-text">All Foods</h3>
                 <p class="text-gray-600">are thoroughly tested and inspected</p>
             </div>

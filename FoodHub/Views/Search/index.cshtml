@@ -1,25 +1,30 @@
 @model IEnumerable<FoodHub.Models.Item>
 
+@{
+    ViewData["Title"] = "Search Results";
+    Layout = "_Layout";
+}
+
 <div class="container mx-auto px-4 py-12">
     <div class="flex flex-col md:flex-row">
         <!-- Categories Section -->
         <div class="w-full md:w-1/4 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
             <h3 class="font-bold text-2xl mb-2">Categories</h3>
-            <hr class="py-2">
-            <ul class="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col">
+            <hr class="py-2 dark:border-slate-700">
+            <ul class="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col ">
                 <li class="hover:scale-[1.01] mr-2 mb-2 md:mr-0 md:mb-0">
-                    <a asp-controller="Search" asp-action="Index" asp-route-query="@ViewData["CurrentQuery"]" class="text-gray-800 hover:text-blue-800">
+                    <a asp-controller="Search" asp-action="Index" asp-route-query="@ViewData["CurrentQuery"]" class="text-gray-800 hover:text-blue-800 dark:text-white">
                         All Categories
                     </a>
                 </li>
                 @foreach (var category in ViewBag.Categories)
                 {
-                    <li class="border-l-2 pl-4 py-2 hover:border-l-gray-500 mr-2 mb-2 md:mr-0 md:mb-0">
+                    <li class="border-l-2 pl-4 py-2 hover:border-l-gray-500 mr-2 mb-2 md:mr-0 md:mb-0 dark:text-white dark:border-slate-700 dark:hover:border-l-slate-200">
                         <a asp-controller="Search" 
                            asp-action="Index" 
                            asp-route-query="@ViewData["CurrentQuery"]"
                            asp-route-categoryId="@category.ItemCategoryId"
-                           class="text-gray-800 hover:text-blue-800 text-base @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold pl-3 ml-[-18px] border-l-2 border-l-gray-500" : "")">
+                           class="text-gray-800 hover:text-blue-800 dark:hover:text-slate-400 transition-all duration-100 ease-in-out text-base dark:text-slate-200 @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold pl-3 ml-[-18px] border-l-2 border-l-gray-500" : "")">
                             @category.Name
                         </a>
                     </li>
@@ -28,19 +33,18 @@
         </div>
 
         <!-- Right Side for Search Results -->
-        <div class="w-full md:w-3/4 md:pl-12 md:border-l-2">
+        <div class="w-full md:w-3/4 md:pl-12 md:border-l-2 dark:border-l-2-slate-200">
             <h2 class="text-4xl font-bold mb-5">Search Results</h2>
-            <hr class="pb-3">
             @if (!Model.Any())
             {
-                <p class="text-gray-600">No items found.</p>
+                <p class="text-gray-600 dark:text-slate-300">No items found.</p>
             }
             else
             {
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     @foreach (var item in Model)
                     {
-                        <div class="bg-white rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
+                        <div class="bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
                             <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">
                                 <img class="w-full h-60 object-cover p-4 rounded-lg" src="@item.ImageUrl" alt="@item.Name" />
                                 <div class="p-4">
