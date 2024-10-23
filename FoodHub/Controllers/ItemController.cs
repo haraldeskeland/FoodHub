@@ -82,7 +82,7 @@ namespace FoodHub.Controllers
                     item.ImageUrl = "/images/" + fileName;
                 }
 
-                bool returnOk = await _itemRepository.Create(item);
+                bool returnOk = await _itemRepository.Create(item); //This will not be called during the unit test 
                 if (returnOk)
                     return RedirectToAction(nameof(Table));
             }
@@ -92,7 +92,7 @@ namespace FoodHub.Controllers
             _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
             return View(item);
         }
-        
+
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Update(int id)
@@ -172,7 +172,7 @@ namespace FoodHub.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                items = items.Where(i => 
+                items = items.Where(i =>
                     (i.Name?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false) ||
                     (i.Description?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false)).ToList();
             }
