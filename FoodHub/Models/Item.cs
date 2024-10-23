@@ -11,6 +11,10 @@ namespace FoodHub.Models {
         [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,100}", ErrorMessage = "The name must be numbers or letters and between 2 and 20 characters")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
+        
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,100}", ErrorMessage = "The name must be numbers or letters and between 2 and 20 characters")]
+        [Display(Name = "Producer Name")]
+        public string ProducerName { get; set; } = string.Empty;
 
         [StringLength(600)]
         public string? Description { get; set; }
