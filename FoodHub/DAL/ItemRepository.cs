@@ -41,6 +41,21 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    public async Task<Item?> GetItemByIdWithAllergen(int id)
+    {
+        try
+        {
+            return await _db.Items
+                .Include(i => i.ItemAllergen) // Include the allergens
+                .FirstOrDefaultAsync(i => i.ItemId == id); // Fetch the item by ID
+        }
+        catch (Exception e)
+        {
+            _logger.LogError("[ItemRepository] item retrieval with allergens failed for ItemId {ItemId:0000}, error message: {e}", id, e.Message);
+            return null;
+        }
+    }
+
     public async Task<IEnumerable<ItemCategory>> GetAllCategories()
     {
         return await _db.ItemCategories.ToListAsync();
