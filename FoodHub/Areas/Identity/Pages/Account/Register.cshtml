@@ -4,11 +4,11 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="min-h-screen flex flex-col justify-center bg-gray-100 sm:px-6 lg:px-8 pb-20">
+<div class="min-h-screen flex flex-col justify-center bg-white dark:bg-[#101010] sm:px-6 lg:px-8 pb-20">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div class="bg-slate-50 border border-slate-200 dark:bg-[#1d1d1f] dark:border-[#303030d5] py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div class="sm:mx-auto sm:w-full sm:max-w-md mb-10">
-                <h2 class="mt-6 text-center text-3xl font-semibold text-gray-900">
+                <h2 class="mt-6 text-center text-3xl font-semibold text-gray-900 dark:text-slate-50">
                     <span class="gradient-text underline">Create</span> a new account
                 </h2>
             </div>
@@ -17,34 +17,34 @@
                 <div asp-validation-summary="ModelOnly" class="text-red-600 text-sm" role="alert"></div>
                 
                 <div>
-                    <label asp-for="Input.Email" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.Email" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Email address
                     </label>
                     <div class="mt-1">
                         <input asp-for="Input.Email" autocomplete="username" required
-                               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                               class="block w-full px-3 py-2 border border-gray-300 dark:text-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     </div>
                     <span asp-validation-for="Input.Email" class="text-red-600 text-xs"></span>
                 </div>
 
                 <div>
-                    <label asp-for="Input.Password" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.Password" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Password
                     </label>
                     <div class="mt-1">
                         <input asp-for="Input.Password" autocomplete="new-password" required
-                               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                               class="block w-full px-3 py-2 border border-gray-300 dark:text-black rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     </div>
                     <span asp-validation-for="Input.Password" class="text-red-600 text-xs"></span>
                 </div>
 
                 <div>
-                    <label asp-for="Input.ConfirmPassword" class="block text-sm font-medium text-gray-700">
+                    <label asp-for="Input.ConfirmPassword" class="block text-sm font-medium text-gray-700 dark:text-slate-200">
                         Confirm Password
                     </label>
                     <div class="mt-1">
                         <input asp-for="Input.ConfirmPassword" autocomplete="new-password" required
-                               class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                               class="block w-full px-3 py-2 border border-gray-300 dark:text-black  rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     </div>
                     <span asp-validation-for="Input.ConfirmPassword" class="text-red-600 text-xs"></span>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="w-full border-t border-gray-300"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="px-2 bg-white text-gray-500">
+                        <span class="px-2 bg-white dark:bg-[#1d1d1f] p-2 rounded-lg text-gray-500 dark:text-slate-300">
                             Or continue with
                         </span>
                     </div>
