@@ -3,18 +3,20 @@ using FoodHub.Models;
 
 namespace FoodHub.DAL;
 
+// Repository class for managing item-related data operations
 public class ItemRepository : IItemRepository
 {
     private readonly ItemDbContext _db;
-
     private readonly ILogger<ItemRepository> _logger;
 
+    // Constructor accepting the database context and logger
     public ItemRepository(ItemDbContext db, ILogger<ItemRepository> logger)
     {
         _db = db;
         _logger = logger;
     }
 
+    // Retrieve all items
     public async Task<IEnumerable<Item>> GetAll()
     {
         try
@@ -28,6 +30,7 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Retrieve an item by its ID
     public async Task<Item?> GetItemById(int id)
     {
         try
@@ -41,6 +44,7 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Retrieve an item by its ID, including its allergens
     public async Task<Item?> GetItemByIdWithAllergen(int id)
     {
         try
@@ -56,10 +60,13 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Retrieve all item categories
     public async Task<IEnumerable<ItemCategory>> GetAllCategories()
     {
         return await _db.ItemCategories.ToListAsync();
     }
+
+    // Create a new item
     public async Task<bool> Create(Item item)
     {
         try
@@ -75,6 +82,7 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Update an existing item
     public async Task<bool> Update(Item item)
     {
         try
@@ -90,6 +98,7 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Delete an item by its ID
     public async Task<bool> Delete(int id)
     {
         try
@@ -112,22 +121,22 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Search for items based on a query and optional category ID
     public async Task<IEnumerable<Item>> SearchItemsAsync(string query, int? categoryId)
-{
-    var items = _db.Items.AsQueryable();
-
-    if (!string.IsNullOrEmpty(query))
     {
-        items = items.Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
-                                 (i.Description != null && i.Description.ToLower().Contains(query.ToLower())));
+        var items = _db.Items.AsQueryable();
+
+        if (!string.IsNullOrEmpty(query))
+        {
+            items = items.Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
+                                     (i.Description != null && i.Description.ToLower().Contains(query.ToLower())));
+        }
+
+        if (categoryId.HasValue)
+        {
+            items = items.Where(i => i.ItemCategoryId == categoryId.Value);
+        }
+
+        return await items.ToListAsync();
     }
-
-    if (categoryId.HasValue)
-    {
-        items = items.Where(i => i.ItemCategoryId == categoryId.Value);
-    }
-
-    return await items.ToListAsync();
-}
-
 }
