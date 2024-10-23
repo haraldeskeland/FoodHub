@@ -50,20 +50,20 @@ public static class DBInit
         {
             var allergens = new List<Allergen>
             {
-                new Allergen { AllergenId = 1, Name = "Selleri" },
+                new Allergen { AllergenId = 1, Name = "Celery" },
                 new Allergen { AllergenId = 2, Name = "Egg" },
-                new Allergen { AllergenId = 3, Name = "Fisk" },
+                new Allergen { AllergenId = 3, Name = "Fish" },
                 new Allergen { AllergenId = 4, Name = "Gluten" },
-                new Allergen { AllergenId = 5, Name = "Melk" },
-                new Allergen { AllergenId = 6, Name = "Sennep" },
-                new Allergen { AllergenId = 7, Name = "Nøtter" },
+                new Allergen { AllergenId = 5, Name = "Milk" },
+                new Allergen { AllergenId = 6, Name = "Mustard" },
+                new Allergen { AllergenId = 7, Name = "Nuts" },
                 new Allergen { AllergenId = 8, Name = "Peanuts" },
-                new Allergen { AllergenId = 9, Name = "Lupiner" },
-                new Allergen { AllergenId = 10, Name = "Bløtdyr" },
-                new Allergen { AllergenId = 11, Name = "Sesam" },
-                new Allergen { AllergenId = 12, Name = "Skalldyr" },
-                new Allergen { AllergenId = 13, Name = "Soya" },
-                new Allergen { AllergenId = 14, Name = "Sulfitt" },
+                new Allergen { AllergenId = 9, Name = "Lupins" },
+                new Allergen { AllergenId = 10, Name = "Shellfish" },
+                new Allergen { AllergenId = 11, Name = "Sesame" },
+                new Allergen { AllergenId = 12, Name = "Crustacean" },
+                new Allergen { AllergenId = 13, Name = "Soy" },
+                new Allergen { AllergenId = 14, Name = "Sulfites" },
             };
             context.AddRange(allergens);
             context.SaveChanges();
