@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub.Migrations
 {
     [DbContext(typeof(ItemDbContext))]
-    [Migration("20241023120619_AddProducerNameToItems")]
-    partial class AddProducerNameToItems
+    [Migration("20241023164834_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,22 +24,22 @@ namespace FoodHub.Migrations
                 .HasAnnotation("Proxies:CheckEquality", false)
                 .HasAnnotation("Proxies:LazyLoading", true);
 
-            modelBuilder.Entity("FoodHub.Models.Customer", b =>
+            modelBuilder.Entity("FoodHub.Models.Allergen", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("AllergenId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("AllergenId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Allergens");
                 });
 
             modelBuilder.Entity("FoodHub.Models.Item", b =>
@@ -98,6 +98,27 @@ namespace FoodHub.Migrations
                     b.HasIndex("ItemCategoryId");
 
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("FoodHub.Models.ItemAllergen", b =>
+                {
+                    b.Property<int>("ItemAllergenId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("AllergenId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ItemAllergenId");
+
+                    b.HasIndex("AllergenId");
+
+                    b.HasIndex("ItemId");
+
+                    b.ToTable("ItemAllergens");
                 });
 
             modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
@@ -323,6 +344,25 @@ namespace FoodHub.Migrations
                     b.Navigation("ItemCategory");
                 });
 
+            modelBuilder.Entity("FoodHub.Models.ItemAllergen", b =>
+                {
+                    b.HasOne("FoodHub.Models.Allergen", "Allergen")
+                        .WithMany("ItemAllergen")
+                        .HasForeignKey("AllergenId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FoodHub.Models.Item", "Item")
+                        .WithMany("ItemAllergen")
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Allergen");
+
+                    b.Navigation("Item");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -372,6 +412,16 @@ namespace FoodHub.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FoodHub.Models.Allergen", b =>
+                {
+                    b.Navigation("ItemAllergen");
+                });
+
+            modelBuilder.Entity("FoodHub.Models.Item", b =>
+                {
+                    b.Navigation("ItemAllergen");
                 });
 
             modelBuilder.Entity("FoodHub.Models.ItemCategory", b =>
