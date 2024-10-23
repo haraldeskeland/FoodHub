@@ -91,26 +91,27 @@
     </div>
 </div>
 
+<!-- Links emojies to allergens -->
 @functions {
     private string GetAllergenEmoji(string allergenName)
     {
         return allergenName.ToLower() switch
-        {
-            "selleri" => "🥬", 
-            "egg" => "🥚",
-            "fisk" => "🐟",    
-            "gluten" => "🌾",
-            "melk" => "🥛",     
-            "skalldyr" => "🦐",
-            "nøtter" => "🌰",   
-            "peanuts" => "🥜",
-            "sennep" => "🌭",  
-            "bløtdyr" => "🦑", 
-            "sesam" => "🌱",
-            "skallfrukt" => "🥥",
-            "soya" => "🫘",    
-            "sulfitt" => "🍷", 
-            _ => "⚠️"
-        };
+    {
+        "celery" => "🥬",    
+        "egg" => "🥚",       
+        "fish" => "🐟",      
+        "gluten" => "🌾",    
+        "milk" => "🥛",       
+        "mustard" => "🌭",    
+        "nuts" => "🌰",       
+        "peanuts" => "🥜",    
+        "lupins" => "🌿",     
+        "shellfish" => "🦐",  
+        "sesame" => "🌱",     
+        "crustacean" => "🦑", 
+        "soy" => "🫘",        
+        "sulfites" => "🍷",   
+        _ => "⚠️"             
+    };
     }
 }
