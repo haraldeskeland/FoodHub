@@ -42,19 +42,19 @@
             }
             else
             {
-                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                     @foreach (var item in Model)
                     {
                         <div class="bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
                             <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">
                                 <div class="aspect-square relative">
-                                    <div class="absolute inset-0 flex items-center justify-center p-8">
+                                    <div class="absolute inset-0 flex items-center justify-center p-5">
                                         <img class="max-w-full max-h-full object-contain" src="@item.ImageUrl" alt="@item.Name" />
                                     </div>
                                 </div>
                                 <div class="p-4">
-                                    <h3 class="font-semibold text-xl mb-2">@item.Name</h3>
-                                    <p class="text-gray-600 font-semibold text-l mb-2">@item.ProducerName</p>
+                                    <h3 class="font-semibold text-l mb-2">@item.Name</h3>
+                                    <p class="text-gray-600 font-semibold text-sm mb-2">@item.ProducerName</p>
                                     <p class="text-gray-600 text-base mb-2 truncate">@item.Description</p>
                                     <p class="text-gray-400 text-sm">Energy: @item.Energy kcal</p>
                                 </div>
