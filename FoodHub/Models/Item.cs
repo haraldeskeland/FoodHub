@@ -8,11 +8,11 @@ namespace FoodHub.Models {
         [Key]
         public int ItemId { get; set; }
 
-        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,20}", ErrorMessage = "The name must be numbers or letters and between 2 and 20 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,100}", ErrorMessage = "The name must be numbers or letters and between 2 and 20 characters")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
 
-        [StringLength(200)]
+        [StringLength(600)]
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
 
