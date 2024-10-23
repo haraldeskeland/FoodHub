@@ -8,15 +8,17 @@ public class SearchController : Controller
     {
         _itemRepository = itemRepository;
     }
+
     [HttpGet]
-    public async Task<IActionResult> Index(string query)
+    public async Task<IActionResult> Index(string query, int? categoryId)
     {
-        if (string.IsNullOrWhiteSpace(query))
-        {
-            return View(new List<Item>()); // Return an empty list if query is empty
-        }
-        // Call your repository to search for items
-        var items = await _itemRepository.SearchItemsAsync(query); // Create this method in your repository
+        var items = await _itemRepository.SearchItemsAsync(query, categoryId);
+        var categories = await _itemRepository.GetAllCategories();
+
+        ViewData["CurrentQuery"] = query;
+        ViewData["CurrentCategory"] = categoryId;
+        ViewBag.Categories = categories;
+
         return View(items);
     }
 }
