@@ -45,12 +45,13 @@ namespace FoodHub.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var item = await _itemRepository.GetItemById(id);
+            var item = await _itemRepository.GetItemByIdWithAllergen(id);
             if (item == null)
             {
                 _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
                 return NotFound("Item not found for the ItemId");
             }
+            // Include allergens when fetching the item
             return View(item);
         }
 

@@ -7,13 +7,13 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li>
-            <a id="manage" class="text-gray-700 hover:text-gray-900" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+            <a id="manage" class="text-gray-700 hover:text-gray-900 dark:text-slate-200" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
                 Hello @UserManager.GetUserName(User)!
             </a>
         </li>
         <li>
             <form id="logoutForm" class="inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="text-blue-600 hover:text-[#38a1ff] bg-transparent border-0 p-0">
+                <button id="logout" type="submit" class="text-blue-600 hover:text-[#38a1ff] bg-transparent border-0 p-0 dark:text-slate-200">
                     Logout
                 </button>
             </form>
@@ -22,12 +22,12 @@
     else
     {
         <li>
-            <a class="text-gray-900 hover:text-[#38a1ff] hover:scale-110 font-medium cursor-pointer inline-block transition-all duration-200 ease-in-out" id="register" asp-area="Identity" asp-page="/Account/Register">
+            <a class="text-gray-900 hover:text-[#38a1ff] hover:scale-110 font-medium cursor-pointer inline-block transition-all duration-200 ease-in-out dark:text-slate-200" id="register" asp-area="Identity" asp-page="/Account/Register">
                 Register
             </a>
         </li>
         <li>
-            <a class="text-gray-900 hover:text-[#38a1ff] hover:scale-110 font-medium cursor-pointer inline-block transition-all duration-200 ease-in-out" id="login" asp-area="Identity" asp-page="/Account/Login">
+            <a class="text-gray-900 hover:text-[#38a1ff] hover:scale-110 font-medium cursor-pointer inline-block transition-all duration-200 ease-in-out dark:text-slate-200" id="login" asp-area="Identity" asp-page="/Account/Login">
                 Login
             </a>
         </li>

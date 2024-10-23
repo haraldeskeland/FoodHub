@@ -11,6 +11,6 @@ namespace FoodHub.Models
         public string Name { get; set; } = string.Empty;
 
         //Navigation property for the related items
-        public virtual List<Item> Items { get; set; } = new List<Item>();
+        public virtual ICollection<Item> Items { get; set; } = new List<Item>();
     }
 }

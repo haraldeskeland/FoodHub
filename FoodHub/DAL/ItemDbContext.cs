@@ -13,6 +13,8 @@ namespace FoodHub.DAL
 
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
+        public DbSet<Allergen> Allergens { get; set; }
+        public DbSet<ItemAllergen> ItemAllergens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
