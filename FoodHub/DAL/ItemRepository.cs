@@ -104,7 +104,7 @@ public class ItemRepository : IItemRepository
     if (!string.IsNullOrEmpty(query))
     {
         items = items.Where(i => i.Name.ToLower().Contains(query.ToLower()) || 
-                                 i.Description.ToLower().Contains(query.ToLower()));
+                                 (i.Description != null && i.Description.ToLower().Contains(query.ToLower())));
     }
 
     if (categoryId.HasValue)
