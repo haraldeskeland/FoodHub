@@ -51,5 +51,8 @@ namespace FoodHub.Models {
 
         // Navigation property for the relevant ItemCategory
         public virtual ItemCategory? ItemCategory { get; set; }
+
+        // Many-to-many relationship with Allergen
+        public virtual ICollection<ItemAllergen> ItemAllergen { get; set; } = new List<ItemAllergen>();
     }
 }

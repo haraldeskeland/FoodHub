@@ -9,6 +9,9 @@ namespace FoodHub.Models {
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
 
-        public string ImageUrl { get; set; } = string.Empty;
+        public string? ImageUrl { get; set; } = string.Empty;
+
+        // Many-to-many relationship with Item
+        public virtual ICollection<ItemAllergen> ItemAllergen { get; set; } = new List<ItemAllergen>();
     }
 }
