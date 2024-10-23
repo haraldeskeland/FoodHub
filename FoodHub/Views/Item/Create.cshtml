@@ -32,6 +32,12 @@
                     </div>
 
                     <div>
+                        <label asp-for="ProducerName" class="block text-sm font-medium text-gray-700">Producer</label>
+                        <input asp-for="ProducerName" class="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30" />
+                        <span asp-validation-for="ProducerName" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <div>
                         <label asp-for="ItemCategoryId" class="block text-sm font-medium text-gray-700">Category</label>
                         <select asp-for="ItemCategoryId" asp-items="ViewBag.Categories" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             <option value="">-- Select a Category --</option>
