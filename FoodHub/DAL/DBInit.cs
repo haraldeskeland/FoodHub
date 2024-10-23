@@ -19,7 +19,7 @@ public static class DBInit
                 new ItemCategory { ItemCategoryId = 1, Name = "Grønnsaker, frukt, bær og nøtter"},      
                 new ItemCategory { ItemCategoryId = 2, Name = "Mel, gryn og ris"},        
                 new ItemCategory { ItemCategoryId = 3, Name = "Grøt, brød og pasta"},
-                new ItemCategory { ItemCategoryId = 4, Name = "Animalske produkter, som egg, melk og syrnede melkeprodukter"},
+                new ItemCategory { ItemCategoryId = 4, Name = "Melk og syrnede melkeprodukter"},
                 new ItemCategory { ItemCategoryId = 5, Name = "Vegetabilske alternativer til melkeprodukter"},
                 new ItemCategory { ItemCategoryId = 6, Name = "Ost og vegetabilske alternativer"},
                 new ItemCategory { ItemCategoryId = 7, Name = "Matfett (margariner) og oljer"},
@@ -27,7 +27,9 @@ public static class DBInit
                 new ItemCategory { ItemCategoryId = 9, Name = "Kjøtt og produkter som inneholder kjøtt"},
                 new ItemCategory { ItemCategoryId = 10, Name = "Helt el delvis vegetabilske produkter"},
                 new ItemCategory { ItemCategoryId = 11, Name = "Ferdigretter"},
-                new ItemCategory { ItemCategoryId = 12, Name = "Dressinger og sauser"}
+                new ItemCategory { ItemCategoryId = 12, Name = "Dressinger og sauser"},
+                new ItemCategory { ItemCategoryId = 13, Name = "Animalske produkter, egg"},
+                new ItemCategory { ItemCategoryId = 14, Name = "Vann, Brus, annen drikke"}
             };
             context.AddRange(itemcategories);
             context.SaveChanges();
@@ -35,10 +37,12 @@ public static class DBInit
 
         //Temp variables for seeded database entries
         var greensCategory = context.ItemCategories.First(c => c.ItemCategoryId == 1);
-        var pastaCategory = context.ItemCategories.First(c => c.ItemCategoryId == 3);
-        var animalCategory = context.ItemCategories.First(c => c.ItemCategoryId == 4);
+        var milkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 4);
+        var oilCategory = context.ItemCategories.First(c => c.ItemCategoryId == 7);
         var meatCategory = context.ItemCategories.First(c => c.ItemCategoryId == 9);
         var fastfoodCategory = context.ItemCategories.First(c => c.ItemCategoryId == 11);
+        var eggCategory = context.ItemCategories.First(c => c.ItemCategoryId == 13);
+        var drinkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 14);
 
         if (!context.Items.Any())
         {
@@ -113,8 +117,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 13M,
                     Salt = 0.4M,
-                    ItemCategoryId = animalCategory.ItemCategoryId,
-                    ItemCategory = animalCategory
+                    ItemCategoryId = eggCategory.ItemCategoryId,
+                    ItemCategory = eggCategory
                 },
                 new Item
                 {
@@ -131,8 +135,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 6M,
                     Salt = 0.1M,
-                    ItemCategoryId = animalCategory.ItemCategoryId,
-                    ItemCategory = animalCategory
+                    ItemCategoryId = milkCategory.ItemCategoryId,
+                    ItemCategory = milkCategory
                 },
                 new Item
                 {
@@ -149,8 +153,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 0M,
                     Salt = 0M,
-                    ItemCategoryId = meatCategory.ItemCategoryId,
-                    ItemCategory = meatCategory
+                    ItemCategoryId = oilCategory.ItemCategoryId,
+                    ItemCategory = oilCategory
                 },
 
                 new Item
@@ -169,8 +173,8 @@ public static class DBInit
                     Protein = 0M,
                     Salt = 0M,
                     //Natrium = 0.02M,
-                    ItemCategoryId = meatCategory.ItemCategoryId,
-                    ItemCategory = meatCategory
+                    ItemCategoryId = drinkCategory.ItemCategoryId,
+                    ItemCategory = drinkCategory
                 },
             };
             context.AddRange(items);
