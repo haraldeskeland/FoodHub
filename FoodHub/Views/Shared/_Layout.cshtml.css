@@ -74,13 +74,6 @@ for details on configuring this project to bundle and minify static web assets. 
   --gradient-colors: 45deg, #38A1FF, #10e3ff;
 }
 
-
-#bootstrap-override body,
-#bootstrap-override .container,
-#bootstrap-override .navbar {
-  font-family: 'Geist', sans-serif !important;
-}
-
 .navbar {
   position: relative;
 }
@@ -98,7 +91,6 @@ a.navbar-brand {
     margin-left: -50px !important; 
     display: block;
 }
-
 
 a {
   color: #0077cc;
@@ -122,10 +114,6 @@ a {
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 button.accept-policy {
