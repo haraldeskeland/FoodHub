@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FoodHub.Models {
+namespace FoodHub.Models
+{
     public class ItemCategory
     {
         [Key]
         public int ItemCategoryId { get; set; }
-        
+
         [StringLength(200)]
         public string Name { get; set; } = string.Empty;
 
