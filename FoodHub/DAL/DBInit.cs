@@ -9,13 +9,14 @@ public static class DBInit
     {
         using var serviceScope = app.ApplicationServices.CreateScope();
         ItemDbContext context = serviceScope.ServiceProvider.GetRequiredService<ItemDbContext>();
+        //Using Migrate() instead of EnsureCreated() since Migration is being used in this project
         context.Database.Migrate();
 
         if (!context.ItemCategories.Any())
         {
             var itemcategories = new List<ItemCategory>
             {
-                //Categories taken from the national norwegian food groups within "Nøkkelhullforskriften", excluding the smaller categories
+                //Categories mostly taken from the national norwegian food groups within "Nøkkelhullforskriften", excluding the smaller categories
                 new ItemCategory { ItemCategoryId = 1, Name = "Grønnsaker, frukt, bær og nøtter"},      
                 new ItemCategory { ItemCategoryId = 2, Name = "Mel, gryn og ris"},        
                 new ItemCategory { ItemCategoryId = 3, Name = "Grøt, brød og pasta"},
@@ -178,18 +179,6 @@ public static class DBInit
                 },
             };
             context.AddRange(items);
-            context.SaveChanges();
-        }
-
-        if (!context.Customers.Any())
-        {
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Gilde", Address = "Gildegata 7"},
-                new Customer { Name = "Orkla", Address = "Grandiosalleen 2"},
-            };
-            //may add later with "Uploder" on the item-side, extra in that case. 
-            context.AddRange(customers);
             context.SaveChanges();
         }
     }
