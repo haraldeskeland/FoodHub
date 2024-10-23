@@ -16,7 +16,5 @@ FoodHub/Logs/
 FoodHub/temp/
 FoodHub/TestResults/
 FoodHub.Tests/obj/
-FoodHub/*.shm
-FoodHub/*.wal
-*.shm
-*.wal
+FoodHub/ItemDatabase.db-shm
+FoodHub/ItemDatabase.db-wal
