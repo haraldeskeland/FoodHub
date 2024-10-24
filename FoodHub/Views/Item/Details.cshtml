@@ -1,6 +1,7 @@
 @model Item
 
 @{
+    // Set the title of the page and specify the layout to use
     ViewData["Title"] = "Product";
     Layout = "_Layout";
 }
@@ -12,6 +13,7 @@
             <div class="rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
                 <div class="aspect-square relative">
                     <div class="absolute inset-0 flex items-center justify-center p-1 md:p-10 lg:p-20">
+                        <!-- Display item image -->
                         <img class="max-w-full max-h-full object-contain" src="@Model.ImageUrl" alt="@Model.Name" />
                     </div>
                 </div>
@@ -20,98 +22,110 @@
 
         <!-- Details Section -->
         <div class="lg:w-1/3 space-y-6 mt-0 lg:mt-12">
+            <!-- Item name -->
             <h1 class="text-5xl font-bold text-gray-900 dark:text-white">@Model.Name</h1>
+            <!-- Producer name -->
             <h2 class="text-xl font-semibold text-gray-600 dark:text-gray-300">@Model.ProducerName</h2>
-
+            <!-- Item description -->
             <p class="text-gray-700 dark:text-gray-300">@Model.Description</p>
 
             <div>
-    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Nutritional Information (per 100g) </h3>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Energy</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Energy kcal</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Carbohydrate</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Carbohydrate g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Total Fat</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.TotalFat g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Saturated Fat</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.SaturatedFat g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Unsaturated Fat</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.UnsaturedFat g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Sugar</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Sugar g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Dietary Fiber</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.DietaryFiber g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Protein</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Protein g</p>
-        </div>
-        <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-            <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Salt</p>
-            <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Salt g</p>
-        </div>
-    </div>
-</div>
+                <!-- Nutritional Information Header -->
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Nutritional Information (per 100g)</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+                    <!-- Energy -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Energy</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Energy kcal</p>
+                    </div>
+                    <!-- Carbohydrate -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Carbohydrate</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Carbohydrate g</p>
+                    </div>
+                    <!-- Total Fat -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Total Fat</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.TotalFat g</p>
+                    </div>
+                    <!-- Saturated Fat -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Saturated Fat</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.SaturatedFat g</p>
+                    </div>
+                    <!-- Unsaturated Fat -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Unsaturated Fat</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.UnsaturedFat g</p>
+                    </div>
+                    <!-- Sugar -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Sugar</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Sugar g</p>
+                    </div>
+                    <!-- Dietary Fiber -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Dietary Fiber</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.DietaryFiber g</p>
+                    </div>
+                    <!-- Protein -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Protein</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Protein g</p>
+                    </div>
+                    <!-- Salt -->
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Salt</p>
+                        <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Salt g</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Allergens -->
-<div class="mt-6">
-    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Allergens:</h4>
-    @if (Model.ItemAllergen != null && Model.ItemAllergen.Any())
-    {
-        <div class="flex flex-wrap gap-2">
-            @foreach (var itemAllergen in Model.ItemAllergen)
-            {
-                <div class="flex items-center bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
-                    <span class="text-2xl mr-2">@GetAllergenEmoji(itemAllergen.Allergen.Name)</span>
-                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">@itemAllergen.Allergen.Name</span>
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        <p class="text-gray-600 dark:text-gray-400">No allergens listed for this item.</p>
-    }
-</div>
+            <div class="mt-6">
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Allergens:</h4>
+                @if (Model.ItemAllergen != null && Model.ItemAllergen.Any())
+                {
+                    <div class="flex flex-wrap gap-2">
+                        @foreach (var itemAllergen in Model.ItemAllergen)
+                        {
+                            <div class="flex items-center bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                                <span class="text-2xl mr-2">@GetAllergenEmoji(itemAllergen.Allergen.Name)</span>
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">@itemAllergen.Allergen.Name</span>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-gray-600 dark:text-gray-400">No allergens listed for this item.</p>
+                }
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Links emojies to allergens -->
+<!-- Links emojis to allergens -->
 @functions {
     private string GetAllergenEmoji(string allergenName)
     {
         return allergenName.ToLower() switch
-    {
-        "celery" => "🥬",    
-        "egg" => "🥚",       
-        "fish" => "🐟",      
-        "gluten" => "🌾",    
-        "milk" => "🥛",       
-        "mustard" => "🌭",    
-        "nuts" => "🌰",       
-        "peanuts" => "🥜",    
-        "lupins" => "🌿",     
-        "shellfish" => "🦐",  
-        "sesame" => "🌱",     
-        "crustacean" => "🦑", 
-        "soy" => "🫘",        
-        "sulfites" => "🍷",   
-        _ => "⚠️"             
-    };
+        {
+            "celery" => "🥬",    
+            "egg" => "🥚",       
+            "fish" => "🐟",      
+            "gluten" => "🌾",    
+            "milk" => "🥛",       
+            "mustard" => "🌭",    
+            "nuts" => "🌰",       
+            "peanuts" => "🥜",    
+            "lupins" => "🌿",     
+            "mollusks" => "🦑",  
+            "sesame" => "🌱",     
+            "crustacean" => "🦐", 
+            "soy" => "🫘",        
+            "sulfites" => "🍷",   
+            _ => "⚠️"             
+        };
     }
 }

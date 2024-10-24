@@ -1,7 +1,7 @@
-
 @model IEnumerable<FoodHub.Models.Item>
 
 @{
+    // Set the title of the page and specify the layout to use
     ViewData["Title"] = "Search Results";
     Layout = "_Layout";
 }
@@ -12,12 +12,14 @@
         <div class="w-full md:w-1/4 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
             <h3 class="font-bold text-2xl mb-2">Categories</h3>
             <hr class="py-2 dark:border-slate-700">
-            <ul class="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col ">
+            <ul class="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col">
+                <!-- All Categories Link -->
                 <li class="hover:scale-[1.01] mr-2 mb-2 md:mr-0 md:mb-0">
                     <a asp-controller="Search" asp-action="Index" asp-route-query="@ViewData["CurrentQuery"]" class="text-gray-800 hover:text-blue-800 dark:text-white">
                         All Categories
                     </a>
                 </li>
+                <!-- Category Links -->
                 @foreach (var category in ViewBag.Categories)
                 {
                     <li class="border-l-2 pl-4 py-2 hover:border-l-gray-500 mr-2 mb-2 md:mr-0 md:mb-0 dark:text-white dark:border-slate-700 dark:hover:border-l-slate-200">
@@ -38,10 +40,12 @@
             <h2 class="text-4xl font-bold mb-5">Search Results</h2>
             @if (!Model.Any())
             {
+                <!-- No items found message -->
                 <p class="text-gray-600 dark:text-slate-300">No items found.</p>
             }
             else
             {
+                <!-- Display search results in a grid -->
                 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                     @foreach (var item in Model)
                     {
@@ -49,12 +53,16 @@
                             <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">
                                 <div class="aspect-square relative">
                                     <div class="absolute inset-0 flex items-center justify-center p-5">
+                                        <!-- Display item image -->
                                         <img class="max-w-full max-h-full object-contain" src="@item.ImageUrl" alt="@item.Name" />
                                     </div>
                                 </div>
                                 <div class="p-4">
+                                    <!-- Display item name -->
                                     <h3 class="font-semibold text-l mb-2">@item.Name</h3>
+                                    <!-- Display producer name -->
                                     <p class="text-gray-600 font-semibold text-sm mb-2 dark:text-slate-400">@item.ProducerName</p>
+                                    <!-- Display protein content -->
                                     <p class="text-gray-600 text-sm mb-2 dark:text-slate-500 flex-grow line-clamp-3">@item.Protein</p>
                                 </div>
                             </a>

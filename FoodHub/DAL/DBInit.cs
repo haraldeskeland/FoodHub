@@ -59,7 +59,7 @@ public static class DBInit
                 new Allergen { AllergenId = 7, Name = "Nuts" },
                 new Allergen { AllergenId = 8, Name = "Peanuts" },
                 new Allergen { AllergenId = 9, Name = "Lupins" },
-                new Allergen { AllergenId = 10, Name = "Shellfish" },
+                new Allergen { AllergenId = 10, Name = "Mollusks" },
                 new Allergen { AllergenId = 11, Name = "Sesame" },
                 new Allergen { AllergenId = 12, Name = "Crustacean" },
                 new Allergen { AllergenId = 13, Name = "Soy" },

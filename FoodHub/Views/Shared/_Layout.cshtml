@@ -2,8 +2,10 @@
 @inject IActionContextAccessor ActionContextAccessor
 
 @{
+    // Get the current action and controller names
     var currentAction = ActionContextAccessor.ActionContext.RouteData.Values["action"]?.ToString();
     var currentController = ActionContextAccessor.ActionContext.RouteData.Values["controller"]?.ToString();
+    // Check if the current page is the home page
     var isHomePage = currentAction == "Index" && currentController == "Home";
 }
 
@@ -13,14 +15,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FoodHub</title>
+    <!-- AOS (Animate On Scroll) library for animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jQuery and validation scripts -->
     <script src="~/js/jquery-min.js"></script>
     <script src="~/lib/jquery-validate/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
     <link rel="stylesheet" href="~/css/styles.css" />
         <link rel="stylesheet" href="~/css/site.css" />
 
@@ -29,6 +35,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Tailwind CSS configuration
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -41,7 +48,7 @@
         }
     </script>
 </head>
-<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-[#101010] dark:text-white overflow-x-hidden ">
+<body class="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-[#101010] dark:text-white overflow-x-hidden">
     <header>
         <div class="w-full flex justify-center">
         <nav class="bg-[#ffffff] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="fade-down">
@@ -51,6 +58,7 @@
                 <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" class="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert">
             </a>
             
+            <!-- Search form (only displayed if not on home page) -->
             @if (!isHomePage)
             {
                 <form asp-controller="Search" asp-action="Index" method="get" class="flex-grow max-w-md">
@@ -60,10 +68,6 @@
                                 <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
                             </svg>
                         </div>
-                        <input type="text" name="query" placeholder="Search for your favourite food..." class="flex-grow py-2 px-2 bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] text-base outline-none border-y border-gray-300">
-                        <button type="submit" class="bg-gray-800 px-4 py-2 rounded-r-full text-white hover:bg-blue-800 transition-colors">
-                            Search
-                        </button>
                     </div>
                 </form>
             }
@@ -80,13 +84,10 @@
                 </button>
             </div>
         </div>
-    </div>
-</nav>
-
-</div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 mt-6">
+    <main class="flex-grow container mx-auto px-4 mt-16">
+        <!-- Main content -->
         @RenderBody()
         @RenderSection("Scripts", required: false)
     </main>
@@ -129,35 +130,37 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS (Animate On Scroll) library
         AOS.init();
     });
 
+    // Toggle mobile menu visibility
     document.getElementById('navbar-toggle').addEventListener('click', function() {
         document.querySelector('.sm\\:flex').classList.toggle('hidden');
     });
 
-    // Light + Dark mode
+    // Light + Dark mode toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
     themeToggleBtn.addEventListener('click', () => {
-    htmlElement.classList.toggle('dark');
-    
-    // Save the preference to localStorage
-    if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+        htmlElement.classList.toggle('dark');
+        
+        // Save the preference to localStorage
+        if (htmlElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
     });
 
     // Check for saved theme preference or use system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    htmlElement.classList.add('dark');
+        htmlElement.classList.add('dark');
     } else {
-    htmlElement.classList.remove('dark');
+        htmlElement.classList.remove('dark');
     }
-</script>
+    </script>
 </body>
 </html>

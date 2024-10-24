@@ -1,9 +1,11 @@
 @model IEnumerable<Item>
 
 <div class="overflow-x-auto">
+    <!-- Table to display items -->
     <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-100">
             <tr>
+                <!-- Table headers -->
                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th>
                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                 <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Producer</th>
@@ -25,20 +27,26 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <!-- Item ID -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">@item.ItemId</td>
+                    <!-- Item Name with link to details -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                         <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700">@item.Name</a>
                     </td>
+                    <!-- Producer Name (truncated if longer than 10 characters) -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">@(item.ProducerName.Length > 10 ? item.ProducerName.Substring(0, 10) + "..." : item.ProducerName)</td> 
+                    <!-- Description (truncated if longer than 30 characters) -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                         @if (!string.IsNullOrWhiteSpace(item.Description))
                         {
                             @(item.Description.Length > 30 ? item.Description.Substring(0, 30) + "..." : item.Description)
                         }
                     </td>
+                    <!-- Item Image -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                         <img src="@item.ImageUrl" alt="@item.Name" class="w-16 h-16 object-cover" />
                     </td>
+                    <!-- Nutritional Information -->
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Energy</td>
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Carbohydrate</td>
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.TotalFat</td>
@@ -48,6 +56,7 @@
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.DietaryFiber</td>
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Protein</td>
                     <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Salt</td>
+                    <!-- Actions (Update and Delete links) -->
                     <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                         <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700">Update</a>
                         <a asp-action="Delete" asp-route-id="@item.ItemId" class="text-red-500 hover:text-red-700">Delete</a>
@@ -57,6 +66,7 @@
         </tbody>
     </table>
 
+    <!-- Button to create a new item -->
     <p class="mt-4">
         <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" asp-controller="Item" asp-action="Create">Create New Item</a>
     </p>
