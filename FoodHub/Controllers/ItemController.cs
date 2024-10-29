@@ -122,30 +122,74 @@ namespace FoodHub.Controllers
         // POST: Action method to handle the update of an existing item
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Update(Item item)
+        public async Task<IActionResult> Update(int id, Item item, IFormFile? NewImage)
         {
-            if (ModelState.IsValid)
+            if (id != item.ItemId)
             {
-                bool returnOk = await _itemRepository.Update(item);
-                if (returnOk)
-                    return RedirectToAction(nameof(Table));
+                return NotFound();
             }
 
-            // Log validation errors if the model state is invalid
-            foreach (var state in ModelState.Values)
+            if (ModelState.IsValid)
             {
-                foreach (var error in state.Errors)
+                try
                 {
-                    _logger.LogError("Validation error: {ErrorMessage}", error.ErrorMessage);
+                    var existingItem = await _itemRepository.GetItemById(item.ItemId);
+                    if (existingItem == null)
+                    {
+                        _logger.LogError("[ItemController] Item not found when updating the ItemId {ItemId:0000}", item.ItemId);
+                        return NotFound("Item not found for the ItemId");
+                    }
+
+                    // Handle image update
+                    if (NewImage != null && NewImage.Length > 0)
+                    {
+                        // Delete old image if it exists
+                        if (!string.IsNullOrEmpty(existingItem.ImageUrl))
+                        {
+                            var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingItem.ImageUrl.TrimStart('/'));
+                            if (System.IO.File.Exists(oldImagePath))
+                            {
+                                System.IO.File.Delete(oldImagePath);
+                            }
+                        }
+
+                        // Save new image
+                        var fileName = Path.GetFileName(NewImage.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
+
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await NewImage.CopyToAsync(fileStream);
+                        }
+
+                        item.ImageUrl = "/images/" + fileName;
+                    }
+                    else
+                    {
+                        // Keep the existing image URL if no new image is uploaded
+                        item.ImageUrl = existingItem.ImageUrl;
+                    }
+
+                    bool returnOk = await _itemRepository.Update(item);
+                    if (returnOk)
+                        return RedirectToAction(nameof(Table));
+                    else
+                        ModelState.AddModelError("", "Failed to update the item. Please try again.");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "[ItemController] Error occurred while updating item {ItemId:0000}", item.ItemId);
+                    ModelState.AddModelError("", "An error occurred while updating the item. Please try again.");
                 }
             }
 
-            // Repopulate categories if update fails
+            // If we got this far, something failed, redisplay form
             var categories = await _itemRepository.GetAllCategories();
             ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
             _logger.LogWarning("[ItemController] Item update failed {@item}", item);
             return View(item);
         }
+
 
         // GET: Action method to display the delete item confirmation form
         [HttpGet]

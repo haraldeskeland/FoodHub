@@ -1,73 +1,91 @@
 @model IEnumerable<Item>
 
-<div class="overflow-x-auto">
-    <!-- Table to display items -->
-    <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-100">
-            <tr>
-                <!-- Table headers -->
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th>
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Producer</th>
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Energy (kcal)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Carbs (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Fat (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Saturated Fat (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unsaturated Fat (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sugar (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dietary Fiber (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Protein (g)</th>
-                <th class="px-2 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Salt (g)</th>
-                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-            @foreach (var item in Model)
-            {
+<div class="overflow-x-auto my-12">
+    <!-- Desktop Table View -->
+    <div class="hidden sm:block rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gray-100 dark:bg-gray-800">
                 <tr>
-                    <!-- Item ID -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">@item.ItemId</td>
-                    <!-- Item Name with link to details -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
-                        <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700">@item.Name</a>
-                    </td>
-                    <!-- Producer Name (truncated if longer than 10 characters) -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">@(item.ProducerName.Length > 10 ? item.ProducerName.Substring(0, 10) + "..." : item.ProducerName)</td> 
-                    <!-- Description (truncated if longer than 30 characters) -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
-                        @if (!string.IsNullOrWhiteSpace(item.Description))
-                        {
-                            @(item.Description.Length > 30 ? item.Description.Substring(0, 30) + "..." : item.Description)
-                        }
-                    </td>
-                    <!-- Item Image -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
-                        <img src="@item.ImageUrl" alt="@item.Name" class="w-16 h-16 object-cover" />
-                    </td>
-                    <!-- Nutritional Information -->
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Energy</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Carbohydrate</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.TotalFat</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.SaturatedFat</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.UnsaturedFat</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Sugar</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.DietaryFiber</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Protein</td>
-                    <td class="px-2 py-2 whitespace-nowrap text-sm text-gray-500">@item.Salt</td>
-                    <!-- Actions (Update and Delete links) -->
-                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
-                        <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700">Update</a>
-                        <a asp-action="Delete" asp-route-id="@item.ItemId" class="text-red-500 hover:text-red-700">Delete</a>
-                    </td>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider rounded-tl-lg">Food Item</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Producer</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Image</th>
+                    <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Energy (kcal)</th>
+                    <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Carbs (g)</th>
+                    <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Total Fat (g)</th>
+                    <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Protein (g)</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider rounded-tr-lg">Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="bg-white dark:bg-[#1d1d1f] divide-y divide-gray-200 dark:divide-gray-700">
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+                        <td class="px-4 py-4 whitespace-nowrap text-sm">
+                            <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">@item.Name</a>
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@(item.ProducerName.Length > 10 ? item.ProducerName[..10] + "..." : item.ProducerName)</td> 
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                            <img src="@item.ImageUrl" alt="@item.Name" class="w-16 h-16 object-cover rounded-md" />
+                        </td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Energy</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Carbohydrate</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.TotalFat</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Protein</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm space-x-2">
+                            <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300">Update</a>
+                            <a asp-action="Delete" asp-route-id="@item.ItemId" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div class="sm:hidden space-y-4">
+        @foreach (var item in Model)
+        {
+            <div class="bg-white dark:bg-[#1d1d1f] shadow rounded-lg p-10">
+                <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2">@item.Name</h2>
+                <img src="@item.ImageUrl" alt="@item.Name" class="w-full h-48 object-cover rounded-md mb-4" />
+                
+                <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+                    <div class="text-gray-600 dark:text-gray-400">Producer:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.ProducerName</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Energy:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Energy kcal</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Protein:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Protein g</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Carbs:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Carbohydrate g</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Total Fat:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.TotalFat g</div>
+                </div>
+                
+                @if (!string.IsNullOrWhiteSpace(item.Description))
+                {
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">@item.Description</p>
+                }
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 mr-2">Update</a>
+                        <a asp-action="Delete" asp-route-id="@item.ItemId" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">Delete</a>
+                    </div>
+                    <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Details</a>
+                </div>
+            </div>
+        }
+    </div>
 
     <!-- Button to create a new item -->
-    <p class="mt-4">
-        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" asp-controller="Item" asp-action="Create">Create New Item</a>
-    </p>
+    <div class="mt-6">
+        <a class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg dark:bg-blue-600 dark:hover:bg-blue-700" asp-controller="Item" asp-action="Create">
+            Create New Item
+        </a>
+    </div>
 </div>
