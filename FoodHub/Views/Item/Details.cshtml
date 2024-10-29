@@ -34,47 +34,47 @@
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Nutritional Information (per 100g)</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
                     <!-- Energy -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Energy</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Energy kcal</p>
                     </div>
                     <!-- Carbohydrate -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Carbohydrate</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Carbohydrate g</p>
                     </div>
                     <!-- Total Fat -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Total Fat</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.TotalFat g</p>
                     </div>
                     <!-- Saturated Fat -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Saturated Fat</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.SaturatedFat g</p>
                     </div>
                     <!-- Unsaturated Fat -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    @* <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Unsaturated Fat</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.UnsaturedFat g</p>
-                    </div>
+                    </div> *@
                     <!-- Sugar -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Sugar</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Sugar g</p>
                     </div>
                     <!-- Dietary Fiber -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Dietary Fiber</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.DietaryFiber g</p>
                     </div>
                     <!-- Protein -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Protein</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Protein g</p>
                     </div>
                     <!-- Salt -->
-                    <div class="bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                    <div class="bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                         <p class="font-normal text-sm text-gray-700 dark:text-gray-300">Salt</p>
                         <p class="text-lg font-bold text-gray-900 dark:text-white">@Model.Salt g</p>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="flex flex-wrap gap-2">
                         @foreach (var itemAllergen in Model.ItemAllergen)
                         {
-                            <div class="flex items-center bg-gray-100 dark:bg-[#1d1d1f] dark:border-[#303030d5] p-2 rounded-md">
+                            <div class="flex items-center bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
                                 <span class="text-2xl mr-2">@GetAllergenEmoji(itemAllergen.Allergen.Name)</span>
                                 <span class="text-sm font-medium text-gray-700 dark:text-gray-300">@itemAllergen.Allergen.Name</span>
                             </div>
