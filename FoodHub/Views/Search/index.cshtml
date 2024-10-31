@@ -19,6 +19,7 @@
                         All Categories
                     </a>
                 </li>
+
                 <!-- Category Links -->
                 @foreach (var category in ViewBag.Categories)
                 {
@@ -52,7 +53,7 @@
                         <div class="bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
                             <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId">
                                 <div class="aspect-square relative">
-                                    <div class="absolute inset-0 flex items-center justify-center p-5">
+                                    <div class="absolute inset-0 flex items-center justify-center p-4">
                                         <!-- Display item image -->
                                         <img class="max-w-full max-h-full object-contain" src="@item.ImageUrl" alt="@item.Name" />
                                     </div>
@@ -63,7 +64,9 @@
                                     <!-- Display producer name -->
                                     <p class="text-gray-600 font-semibold text-sm mb-2 dark:text-slate-400">@item.ProducerName</p>
                                     <!-- Display protein content -->
-                                    <p class="text-gray-600 text-sm mb-2 dark:text-slate-500 flex-grow line-clamp-3">@item.Protein</p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3"><span class="font-semibold">Carbs: </span> @item.Carbohydrate g</p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3"><span class="font-semibold">Protein: </span> @item.Protein g</p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3"><span class="font-semibold">Fats: </span> @item.TotalFat g</p>
                                 </div>
                             </a>
                         </div>
