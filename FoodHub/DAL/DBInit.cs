@@ -18,34 +18,34 @@ public static class DBInit
             var itemcategories = new List<ItemCategory>
             {
                 //Categories mostly taken from the national norwegian food groups within "Nøkkelhullforskriften", excluding the smaller categories
-                new ItemCategory { ItemCategoryId = 1, Name = "Grønnsaker, frukt, bær og nøtter"},      
-                new ItemCategory { ItemCategoryId = 2, Name = "Mel, gryn og ris"},        
-                new ItemCategory { ItemCategoryId = 3, Name = "Grøt, brød og pasta"},
-                new ItemCategory { ItemCategoryId = 4, Name = "Melk og syrnede melkeprodukter"},
-                new ItemCategory { ItemCategoryId = 5, Name = "Vegetabilske alternativer til melkeprodukter"},
-                new ItemCategory { ItemCategoryId = 6, Name = "Ost og vegetabilske alternativer"},
-                new ItemCategory { ItemCategoryId = 7, Name = "Matfett (margariner) og oljer"},
-                new ItemCategory { ItemCategoryId = 8, Name = "Fiskerivarer og produkter av fiskerivarer"},
-                new ItemCategory { ItemCategoryId = 9, Name = "Kjøtt og produkter som inneholder kjøtt"},
-                new ItemCategory { ItemCategoryId = 10, Name = "Helt el delvis vegetabilske produkter"},
-                new ItemCategory { ItemCategoryId = 11, Name = "Ferdigretter"},
-                new ItemCategory { ItemCategoryId = 12, Name = "Dressinger og sauser"},
-                new ItemCategory { ItemCategoryId = 13, Name = "Animalske produkter, egg"},
-                new ItemCategory { ItemCategoryId = 14, Name = "Vann, Brus, annen drikke"}
+                new ItemCategory { ItemCategoryId = 1, Name = "Dairy products"},      
+                new ItemCategory { ItemCategoryId = 2, Name = "Egg"},        
+                new ItemCategory { ItemCategoryId = 3, Name = "Meat and poultry"},
+                new ItemCategory { ItemCategoryId = 4, Name = "Fish and shellfish"},
+                new ItemCategory { ItemCategoryId = 5, Name = "Cereals, bread and cakes"},
+                new ItemCategory { ItemCategoryId = 6, Name = "Vegetables"},
+                new ItemCategory { ItemCategoryId = 7, Name = "Beverages"},
+                new ItemCategory { ItemCategoryId = 8, Name = "Legumes"},
+                new ItemCategory { ItemCategoryId = 9, Name = "Fruit and berries"},
+                new ItemCategory { ItemCategoryId = 10, Name = "Nuts and seeds"},
+                new ItemCategory { ItemCategoryId = 11, Name = "Potatoes"},
+                new ItemCategory { ItemCategoryId = 12, Name = "Herbs and spices"},
+                new ItemCategory { ItemCategoryId = 13, Name = "Sugar and sweet products"},
+                new ItemCategory { ItemCategoryId = 14, Name = "Cooking fat"},
+                new ItemCategory { ItemCategoryId = 15, Name = "Other foods and dishes"}
             };
             context.AddRange(itemcategories);
             context.SaveChanges();
         }
 
         //Temp variables for seeded database entries
-        var greensCategory = context.ItemCategories.First(c => c.ItemCategoryId == 1);
-        var milkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 4);
-        var oilCategory = context.ItemCategories.First(c => c.ItemCategoryId == 7);
-        var meatCategory = context.ItemCategories.First(c => c.ItemCategoryId == 9);
-        var fastfoodCategory = context.ItemCategories.First(c => c.ItemCategoryId == 11);
-        var eggCategory = context.ItemCategories.First(c => c.ItemCategoryId == 13);
-        var drinkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 14);
-
+        var milkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 1);
+        var eggCategory = context.ItemCategories.First(c => c.ItemCategoryId == 2);
+        var drinkCategory = context.ItemCategories.First(c => c.ItemCategoryId == 7);
+        var potatoCategory = context.ItemCategories.First(c => c.ItemCategoryId == 11);
+        var oilCategory = context.ItemCategories.First(c => c.ItemCategoryId == 14);
+        var fastfoodCategory = context.ItemCategories.First(c => c.ItemCategoryId == 15);
+        
         if (!context.Allergens.Any())
         {
             var allergens = new List<Allergen>
@@ -95,8 +95,8 @@ public static class DBInit
                     DietaryFiber = 3M,
                     Protein = 11M,
                     Salt = 0.9M,
-                    ItemCategoryId = meatCategory.ItemCategoryId,
-                    ItemCategory = meatCategory,
+                    ItemCategoryId = fastfoodCategory.ItemCategoryId,
+                    ItemCategory = fastfoodCategory,
                     ItemAllergen = new List<ItemAllergen>
                     {
                         new ItemAllergen { AllergenId = glutenAllergen.AllergenId },
@@ -143,8 +143,8 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 2M,
                     Salt = 0M,
-                    ItemCategoryId = greensCategory.ItemCategoryId,
-                    ItemCategory = greensCategory
+                    ItemCategoryId = potatoCategory.ItemCategoryId,
+                    ItemCategory = potatoCategory,
                 },
                 new Item
                 {
@@ -228,7 +228,6 @@ public static class DBInit
                     DietaryFiber = 0M,
                     Protein = 0M,
                     Salt = 0M,
-                    //Natrium = 0.02M,
                     ItemCategoryId = drinkCategory.ItemCategoryId,
                     ItemCategory = drinkCategory
                 },
