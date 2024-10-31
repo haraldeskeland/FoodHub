@@ -87,13 +87,19 @@ public class ItemRepository : IItemRepository
     {
         try
         {
-            _db.Items.Update(item);
+            var existingItem = await _db.Items.FindAsync(item.ItemId);
+            if (existingItem == null)
+            {
+                return false;
+            }
+
+            _db.Entry(existingItem).CurrentValues.SetValues(item);
             await _db.SaveChangesAsync();
             return true;
         }
         catch (Exception e)
         {
-            _logger.LogError("[ItemRepository] item FindAsync(id) failed when updating the ItemId {ItemId:0000}, error message: {e}", item, e.Message);
+            _logger.LogError("[ItemRepository] Failed to update ItemId {ItemId:0000}, error message: {e}", item.ItemId, e.Message);
             return false;
         }
     }
