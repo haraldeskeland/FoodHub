@@ -3,6 +3,7 @@ using System;
 using FoodHub.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub.Migrations
 {
     [DbContext(typeof(ItemDbContext))]
-    partial class ItemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241031160509_fixAllergen")]
+    partial class fixAllergen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,13 +52,13 @@ namespace FoodHub.Migrations
                         .HasMaxLength(600)
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("DietaryFiber")
+                    b.Property<decimal?>("DietaryFiber")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Energy")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImagePath")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ItemCategoryId")
@@ -123,6 +126,7 @@ namespace FoodHub.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.HasKey("ItemCategoryId");
