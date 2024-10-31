@@ -25,7 +25,7 @@
                         </td>
                         <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@(item.ProducerName.Length > 10 ? item.ProducerName[..10] + "..." : item.ProducerName)</td> 
                         <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                            <img src="@item.ImageUrl" alt="@item.Name" class="w-16 h-16 object-cover rounded-md" />
+                            <img src="@item.ImagePath" alt="@item.Name" class="w-16 h-16 object-cover rounded-md" />
                         </td>
                         <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Energy</td>
                         <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Carbohydrate</td>
@@ -47,7 +47,7 @@
         {
             <div class="bg-white dark:bg-[#1d1d1f] shadow rounded-lg p-10">
                 <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2">@item.Name</h2>
-                <img src="@item.ImageUrl" alt="@item.Name" class="w-full h-48 object-cover rounded-md mb-4" />
+                <img src="@item.ImagePath" alt="@item.Name" class="w-full h-48 object-cover rounded-md mb-4" />
                 
                 <div class="grid grid-cols-2 gap-2 text-sm mb-4">
                     <div class="text-gray-600 dark:text-gray-400">Producer:</div>

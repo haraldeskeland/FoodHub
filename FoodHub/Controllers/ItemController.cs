@@ -72,21 +72,21 @@ namespace FoodHub.Controllers
         // POST: Action method to handle the creation of a new item
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Create(Item item, IFormFile ImageUrl)
+        public async Task<IActionResult> Create(Item item, IFormFile ImagePath)
         {
             if (ModelState.IsValid)
             {
-                if (ImageUrl != null && ImageUrl.Length > 0)
+                if (ImagePath != null && ImagePath.Length > 0)
                 {
-                    var fileName = Path.GetFileName(ImageUrl.FileName);
+                    var fileName = Path.GetFileName(ImagePath.FileName);
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
 
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
                     {
-                        await ImageUrl.CopyToAsync(fileStream);
+                        await ImagePath.CopyToAsync(fileStream);
                     }
 
-                    item.ImageUrl = "/images/" + fileName;
+                    item.ImagePath = "/images/" + fileName;
                 }
 
                 bool returnOk = await _itemRepository.Create(item); // This will not be called during the unit test 
@@ -144,9 +144,9 @@ namespace FoodHub.Controllers
                     if (NewImage != null && NewImage.Length > 0)
                     {
                         // Delete old image if it exists
-                        if (!string.IsNullOrEmpty(existingItem.ImageUrl))
+                        if (!string.IsNullOrEmpty(existingItem.ImagePath))
                         {
-                            var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingItem.ImageUrl.TrimStart('/'));
+                            var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", existingItem.ImagePath.TrimStart('/'));
                             if (System.IO.File.Exists(oldImagePath))
                             {
                                 System.IO.File.Delete(oldImagePath);
@@ -162,12 +162,12 @@ namespace FoodHub.Controllers
                             await NewImage.CopyToAsync(fileStream);
                         }
 
-                        item.ImageUrl = "/images/" + fileName;
+                        item.ImagePath = "/images/" + fileName;
                     }
                     else
                     {
                         // Keep the existing image URL if no new image is uploaded
-                        item.ImageUrl = existingItem.ImageUrl;
+                        item.ImagePath = existingItem.ImagePath;
                     }
 
                     bool returnOk = await _itemRepository.Update(item);
