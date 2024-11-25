@@ -84,7 +84,7 @@ public static class DBInit
                     Name = "Pizza Grandiosa Original",
                     ProducerName = "Orkla",
                     //Source: https://www.grandiosa.no/wp-content/uploads/sites/80/2024/10/1980.png
-                    ImageUrl = "/images/grandiosa-original.png",
+                    ImagePath = "/images/grandiosa-original.png",
                     Description = "Grandiosa Original has a filling of tomato sauce, pizza meat and paprika. It is topped with Jarlsberg®, which gives the pizza a taste of its own. The original Grandiosa was launched in 1980 and since then has been by far Norway's most eaten pizza. ",
                     Energy = 218M,
                     Carbohydrate = 26M,
@@ -109,7 +109,7 @@ public static class DBInit
                     Name = "Kylling Tikka 480g, Fersk & Ferdig",
                     ProducerName = "Unil",
                     //Source: https://bilder.ngdata.no/7035620052279/customerfacing/large.jpg?fallback=404
-                    ImageUrl = "/images/fersk-ferdig-tikka.jpg",
+                    ImagePath = "/images/fersk-ferdig-tikka.jpg",
                     Description = "Ferdig Kylling Tikka inspirert av det indiske kjøkken. Kyllingbiter i deilig masala-saus med basmatiris. Server sammen med naan-brød og chutney. Rask og enkel middag. Varmes i micro.",
                     Energy = 138M,
                     Carbohydrate = 13M,
@@ -132,7 +132,7 @@ public static class DBInit
                     Name = "Opphøgde Potteter - Originalen",
                     ProducerName = "HOFF",
                     //Source: https://www.hoff.no/wp-content/webp-express/webp-images/uploads/2024/03/HOFF-Opphogde-Potteter-Originalen_Familiepose-mockup_136-100-kopi-412x303.png.webp
-                    ImageUrl = "/images/potteter.webp",
+                    ImagePath = "/images/potteter.webp",
                     Description = "HOFF Opphøgde Potteter Originalen har blitt laget på fabrikken i Gjøvik i flere generasjoner. Med sin sprøe overflate og myke innside har den blitt en av nordmenns favoritter! Produktet stekes ferdig på bare 9 minutter i ovnen.",
                     Energy = 198M,
                     Carbohydrate = 34M,
@@ -151,7 +151,7 @@ public static class DBInit
                     Name = "Egg Frittgående, 12stk",
                     ProducerName = "Prior",
                     //Source: https://bilder.ngdata.no/7039610000172/meny/medium.jpg
-                    ImageUrl = "/images/egg-prior.jpg",
+                    ImagePath = "/images/egg-prior.jpg",
                     Description = "Egg fra norske bønder hvor hønene har tilgang på elementer som gir økt trivsel.",
                     Energy = 149M,
                     Carbohydrate = 0.3M,
@@ -174,7 +174,7 @@ public static class DBInit
                     Name = "YT Proteinmelk Kakao, 1L",
                     ProducerName = "Tine",
                     //Source: https://bilder.ngdata.no/7038010068157/meny/medium.jpg
-                    ImageUrl = "/images/yt-proteinmelk-kakao-1l.jpg",
+                    ImagePath = "/images/yt-proteinmelk-kakao-1l.jpg",
                     Description = "YT® Proteinmelk Kakao er sunn kakaomelk med 68 % mer protein enn annen sjokolademelk. I tillegg så er den fettfri, laktoseredusert og uten tilsatt sukker, med naturlig sukker fra melka",
                     Energy = 45M,
                     Carbohydrate = 4.7M,
@@ -197,7 +197,7 @@ public static class DBInit
                     Name = "Olivenolje, 500ml",
                     ProducerName ="Eldorado",
                     //Source: https://bilder.ngdata.no/7311041001400/meny/medium.jpg
-                    ImageUrl = "/images/olivenolje-eldorado.jpg",
+                    ImagePath = "/images/olivenolje-eldorado.jpg",
                     Description = "En klassisk, spansk olivenolje med en rund og mild smak. Passer godt til pasta, steking og baking.",
                     Energy = 900M,
                     Carbohydrate = 60M,
@@ -211,13 +211,12 @@ public static class DBInit
                     ItemCategoryId = oilCategory.ItemCategoryId,
                     ItemCategory = oilCategory
                 },
-
                 new Item
                 {
                     Name = "Coca-Cola Uten Sukker",
                     ProducerName = "Coca-Cola Europacific Partners Norge",
                     //Source: https://www.coca-cola.com/content/dam/onexp/no/no/home-images/brands/coca-cola/no_cocacola_without_sugar_750X750.jpg/width1024.jpg
-                    ImageUrl = "/images/coca-cola-zero-sugar.webp",
+                    ImagePath = "/images/coca-cola-zero-sugar.webp",
                     Description = "Coca-Cola® Uten Sukker ble lansert i 2005, under navnet Coca-Cola® zero. Coca-Cola® Zero Sugar ligger så tett opp til originalen som mulig, og er en del av strategien for å bidra til å redusere folks sukkerinntak.",
                     Energy = 0.3M,
                     Carbohydrate = 0M,

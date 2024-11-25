@@ -172,14 +172,14 @@ public class ItemModelTests
             Name = "Apple",
             ProducerName = "LocalFarm",
             Description = null,  // Nullable fields
-            ImageUrl = null,     // Nullable fields
+            ImagePath = null,     // Nullable fields
             Energy = 52,
             Carbohydrate = 14,
             TotalFat = 0.2m,
             SaturatedFat = 0.1m,
             UnsaturedFat = 0.1m,
             Sugar = 10,
-            DietaryFiber = null,  // Nullable fields
+            DietaryFiber = 1m,  // Nullable fields
             Protein = 0.3m,
             Salt = 0.01m,
             ItemCategoryId = 1

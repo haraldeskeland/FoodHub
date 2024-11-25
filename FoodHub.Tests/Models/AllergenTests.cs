@@ -14,7 +14,6 @@ public class AllergenModelTests
         {
             AllergenId = 1,
             Name = "Gluten",
-            ImageUrl = "http://example.com/image.jpg"
         };
 
         // Act
@@ -32,7 +31,6 @@ public class AllergenModelTests
         {
             AllergenId = 1,
             Name = "Invalid_name_with_more_than_100_characters_invalid_invalid_invalid_invalid_invalid_invalid_invalid_invalid",
-            ImageUrl = "http://example.com/image.jpg"
         };
 
         // Act

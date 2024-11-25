@@ -8,6 +8,11 @@ using FoodHub.ViewModels;
 
 namespace FoodHub.Tests.Controllers
 {
+    /*
+     This class contains tests for the ItemController class. 
+    The item don't need to be real, just for testing puposes.
+    */
+
     public class ItemControllerTests
     {
         private readonly Mock<IItemRepository> _mockItemRepository; //using this to MOCK the IItemRepository
@@ -29,7 +34,7 @@ namespace FoodHub.Tests.Controllers
             {
                 //Creating two new Items, to test the Table method
                 new Item
-                {
+                { //The item don't nessecery have to be real, just for testing
                     ItemId = 1,
                     Name = "Fried Chicken Wing",
                     Energy = 300,
@@ -123,7 +128,7 @@ namespace FoodHub.Tests.Controllers
 
             // Assert
             var notFoundResult = Assert.IsType<NotFoundObjectResult>(result);
-            Assert.Equal("Item not found for the ItemId", notFoundResult.Value);
+            Assert.Equal("Item not found for the ItemId", notFoundResult.Value); //checking if the result is a NotFoundObjectResult
         }
 
         [Fact]
@@ -189,7 +194,7 @@ namespace FoodHub.Tests.Controllers
             var viewResult = Assert.IsType<ViewResult>(result);
             Assert.Equal(item, viewResult.Model);
         }
-
+        //failed to delete item
         [Fact]
         public async Task DeleteConfirmed_ItemDeletionFailed_ReturnsBadRequest()
         {
@@ -204,7 +209,7 @@ namespace FoodHub.Tests.Controllers
             var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
             Assert.Equal("Item deletion failed", badRequestResult.Value);
         }
-
+        //successful deletion of item
         [Fact]
         public async Task DeleteConfirmed_ItemDeleted_ReturnsRedirectToAction()
         {
