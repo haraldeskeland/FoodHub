@@ -1,46 +1,81 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Table, Button } from 'react-bootstrap';
 
-const ItemListPage= () => {
-  // Mock data
-  const items = [
-    {
-      ItemId: 1,
-      Name: "Fried Chicken Leg",
-      Description: "Crispy and succulent chicken leg that is deep-fried to perfection, often served as a popular fast food item.",
-      ImageUrl: "/images/chickenleg.jpg"
-    },
-    {
-      ItemId: 2,
-      Name: "Fish and Chips",
-      Description: "Classic British dish featuring battered and deep-fried fish served with thick-cut fried potatoes.",
-      ImageUrl: "/images/fishandchips.jpg"
+const API_URL = 'https://localhost:7268';
+
+const ItemListPage = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchItems = async () => {
+    setLoading(true); // Set loading to true when starting the fetch
+    setError(null);   // Clear any previous errors
+
+    try {
+      const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setItems(data);
+      console.log(data);
+    } catch (error) {
+      console.error(`There was a problem with the fetch operation: ${error.message}`);
+      setError('Failed to fetch items.');
+    } finally {
+      setLoading(false); // Set loading to false once the fetch is complete
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
   return (
     <div>
       <h1>Items</h1>
+      <Button onClick={fetchItems} className="btn btn-primary mb-3" disabled={loading}>
+        {loading ? 'Loading...' : 'Refresh Items'}
+      </Button>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Descriptions</th>
-          <th>Images</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map(item => (
-          <tr key={item.ItemId}>
-            <td>{item.ItemId}</td>
-            <td>{item.Name}</td>
-            <td>{item.Price} NOK</td>
-            <td>{item.Description}</td>
-            <td><img src={item.ImageUrl} alt={item.Name} width="120" /></td>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Producer</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Energy</th>
+            <th>Carbohydrate</th>
+            <th>Total Fat</th>
+            <th>Saturated Fat</th>
+            <th>Unsaturated Fat</th>
+            <th>Sugar</th>
+            <th>Dietary Fiber</th>
+            <th>Protein</th>
           </tr>
-        ))}
-      </tbody>
+        </thead>
+        <tbody>
+          {items.map(item => (
+            <tr key={item.ItemId}>
+              <td>{item.ItemId}</td>
+              <td>{item.Name}</td>
+              <td>{item.ProducerName}</td>
+              <td>{item.Description}</td>
+              <td><img src={`${API_URL}${item.ImagePath}`} alt={item.Name} width="120" /></td>
+              <td>{item.Energy}</td>
+              <td>{item.Carbohydrate}</td>
+              <td>{item.TotalFat}</td>
+              <td>{item.SaturatedFat}</td>
+              <td>{item.UnsaturedFat}</td>
+              <td>{item.Sugar}</td>
+              <td>{item.DietaryFiber}</td>
+              <td>{item.Protein}</td>
+            </tr>
+          ))}
+        </tbody>
       </Table>
     </div>
   );
