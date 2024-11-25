@@ -172,34 +172,5 @@
     }
     </script>
 
-    @* <script>
-    // Create an Audio object
-    const clickSound = new Audio('/files/vine-boom.mp3');
-
-    // Function to play the sound
-    function playClickSound() {
-        console.log("Attempting to play sound");
-        clickSound.currentTime = 0;
-        clickSound.play().then(() => {
-            console.log("Sound played successfully");
-        }).catch(error => {
-            console.error("Error playing sound:", error);
-        });
-    }
-
-    // Add click event listener to all buttons and links
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log("DOM fully loaded, adding event listeners");
-        const elements = document.querySelectorAll('button, .btn, a');
-        elements.forEach(element => {
-            element.addEventListener('click', function(event) {
-                console.log("Element clicked:", event.target);
-                playClickSound();
-            });
-        });
-        console.log("Event listeners added to", elements.length, "elements");
-    });
-</script> *@
-
 </body>
 </html>
