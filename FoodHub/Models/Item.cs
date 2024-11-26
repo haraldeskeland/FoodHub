@@ -45,7 +45,7 @@ namespace FoodHub.Models {
 
         [Required(ErrorMessage = "Unsatured fat in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Unsaturated fat must be a positive value")]
-        public decimal UnsaturedFat { get; set; }
+        public decimal UnsaturatedFat { get; set; }
 
         [Required(ErrorMessage = "Sugar in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Sugar must be a positive value")]
