@@ -58,7 +58,7 @@ public class SearchControllerTests
     public async Task Index_ReturnsViewWithItems_WhenNoQueryIsProvided()
     {
         // Arrange
-        string query = null; // No query provided
+        string? query = null; // No query provided
         int? categoryId = null; // No category provided
 
         var expectedItems = new List<Item>(); // Assume no items for no query
