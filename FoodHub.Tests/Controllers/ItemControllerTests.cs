@@ -99,6 +99,14 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 5,
                 DietaryFiber = 2,
                 Protein = 10,
+                Energy = 200,
+                Carbohydrate = 5,
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
                 Salt = 0.5m,
                 ItemCategoryId = 1
             };
