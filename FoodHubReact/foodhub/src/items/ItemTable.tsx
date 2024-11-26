@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
+import { Item } from '../types/item';
 
-const ItemTable = ({ items, apiUrl }) => {
+interface ItemTableProps {
+  items: Item[];
+  apiUrl: string;
+}
+
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
   const [showImages, setShowImages] = useState(true);
   const [showDescriptions, setShowDescriptions] = useState(true);
-
   const toggleImages = () => setShowImages(prevShowImages => !prevShowImages);
   const toggleDescriptions = () => setShowDescriptions(prevShowDescriptions => !prevShowDescriptions);
 

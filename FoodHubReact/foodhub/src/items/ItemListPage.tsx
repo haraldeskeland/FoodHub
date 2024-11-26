@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import ItemTable from './ItemTable';
-import ItemGrid from './ItemGrid'; 
+import ItemGrid from './ItemGrid';
+import { Item } from '../types/item';
 
-const API_URL = 'https://localhost:7268'
 
-const ItemListPage= () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [showTable, setShowTable] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+ const API_URL = 'https://localhost:7268'
+
+const ItemListPage: React.FC = () => {
+  const [items, setItems] = useState<Item[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       {/* Section containing the title and search bar */}

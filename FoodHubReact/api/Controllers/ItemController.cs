@@ -48,6 +48,35 @@ public class ItemAPIController : Controller
         return Ok(itemsDtos);
     }
 
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] ItemDto itemDto)
+    {
+        if (itemDto == null)
+        {
+            return BadRequest("Item cannot be null");
+        }
+        var newItem = new Item
+        {
+            Name = itemDto.Name,
+            ProducerName = itemDto.ProducerName,
+            Description = itemDto.Description,
+            ImagePath = itemDto.ImagePath,
+            Energy = itemDto.Energy,
+            Carbohydrate = itemDto.Carbohydrate,
+            TotalFat = itemDto.TotalFat,
+            SaturatedFat = itemDto.SaturatedFat,
+            UnsaturedFat = itemDto.UnsaturedFat,
+            Sugar = itemDto.Sugar,
+            DietaryFiber = itemDto.DietaryFiber,
+            Protein = itemDto.Protein
+        };        
+        bool returnOk = await _itemRepository.Create(newItem);
+        if (returnOk)
+            return CreatedAtAction(nameof(ItemList), new { id = newItem.ItemId }, newItem);
+
+        _logger.LogWarning("[ItemAPIController] Item creation failed {@item}", newItem);
+        return StatusCode(500, "Internal server error");
+    }
 }
     // Controller for handling item-related requests
     public class ItemController : Controller
