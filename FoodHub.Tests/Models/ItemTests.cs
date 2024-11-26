@@ -69,7 +69,7 @@ public class ItemModelTests
 
         // Assert
         Assert.NotEmpty(validationResults);
-        Assert.Contains(validationResults, v => v.ErrorMessage.Contains("The name must be numbers or letters"));
+        Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("The item's name must be between 2 and 100 characters"));
     }
 
     [Fact]
@@ -99,7 +99,7 @@ public class ItemModelTests
 
         // Assert
         Assert.NotEmpty(validationResults);
-        Assert.Contains(validationResults, v => v.ErrorMessage.Contains("The name must be numbers or letters"));
+        Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("The producer's name must be between 2 and 100 characters and don't contain any special characters"));
     }
 
     [Fact]
@@ -129,7 +129,7 @@ public class ItemModelTests
 
         // Assert
         Assert.NotEmpty(validationResults);
-        Assert.Contains(validationResults, v => v.ErrorMessage.Contains("Energy must be a non-negative value"));
+        Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Energy must be a non-negative value"));
     }
 
     [Fact]
@@ -159,7 +159,8 @@ public class ItemModelTests
 
         // Assert
         Assert.NotEmpty(validationResults);
-        Assert.Contains(validationResults, v => v.ErrorMessage.Contains("Total fat must be a non-negative value"));
+        Assert.NotNull(validationResults);
+        Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Total fat must be a non-negative value"));
     }
 
     [Fact]
@@ -172,7 +173,6 @@ public class ItemModelTests
             Name = "Apple",
             ProducerName = "LocalFarm",
             Description = null,  // Nullable fields
-            ImagePath = null,     // Nullable fields
             Energy = 52,
             Carbohydrate = 14,
             TotalFat = 0.2m,
