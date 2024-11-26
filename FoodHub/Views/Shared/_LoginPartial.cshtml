@@ -7,17 +7,43 @@
     @* Check if the user is signed in *@
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-            @* Display a link to manage account with a greeting *@
-            <a id="manage" class="text-gray-700 hover:text-gray-900 dark:text-slate-200" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                <img src="/images/Icons/user-icon.png" class="w-7 dark:invert" />
-            </a>
-            @* Form to log out the user *@
-            <form id="logoutForm" class="inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="text-blue-600 hover:text-[#38a1ff] bg-transparent border-0 p-0 dark:text-slate-200">
-                    Logout
-                </button>
-            </form>
+        <li class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 relative">
+            @* Display the user icon without a link *@
+            <img src="/images/Icons/user-icon.png" class="w-7 dark:invert cursor-pointer" onclick="toggleMenu()" />
+            
+            <div class="sub-menu-wrap absolute top-full right-0 w-64 overflow-hidden max-h-0 transition-all duration-500 ease-out" id="subMenu">
+                <div class="sub-menu bg-white dark:bg-[#1d1d1f] p-5 m-2.5 rounded-lg border dark:border-[#303030d5]">
+                    <div class="user-info flex items-center text-lg font-bold">
+                        👋🏻 Hei @UserManager.GetUserName(User)!
+                    </div>
+                    <hr class="my-3">
+                    <a asp-controller="Item" asp-action="Table" class="flex items-center no-underline text-gray-700 dark:text-slate-200 dark:hover:text-[#38a1ff] my-3 hover:text-[#38a1ff] hover:translate-x-1 transition-all duration-200 ease-in-out">
+                        <img src="/images/Icons/edit.png" class="mr-4 w-5 h-5 dark:invert">
+                        <p class="w-full">Edit Items</p>
+                        <span class="right-0 text-slate-400">></span>
+                    </a>
+                    <a asp-controller="Item" asp-action="Create" class="flex items-center no-underline text-gray-700 dark:text-slate-200 dark:hover:text-[#38a1ff] my-3 hover:text-[#38a1ff] hover:translate-x-1 transition-all duration-200 ease-in-out">
+                        <img src="/images/Icons/create.png" class="mr-4 w-5 h-5 dark:invert">
+                        <p class="w-full">Create Item</p>
+                        <span class="right-0 text-slate-400">></span>
+
+                    </a>
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" class="flex items-center no-underline text-gray-700 dark:text-slate-200 dark:hover:text-[#38a1ff] my-3 hover:text-[#38a1ff] hover:translate-x-1 transition-all duration-200 ease-in-out">
+                        <img src="/images/Icons/settings.png" class="mr-4 w-5 h-5 dark:invert">
+                        <p class="w-full">Settings</p>
+                        <span class="right-0 text-slate-400">></span>
+
+                    </a>
+                    @* Form to log out the user *@
+                    <form id="logoutForm" class="flex items-center no-underline text-gray-700 dark:text-slate-200 dark:hover:text-[#38a1ff] my-3 hover:text-[#38a1ff] hover:translate-x-1 transition-all duration-200 ease-in-out" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <img src="/images/Icons/logout.png" class="mr-4 w-5 h-5 dark:invert">
+                        <button id="logout" type="submit" class="flex items-center justify-between w-full text-gray-700 hover:text-[#38a1ff] dark:hover:text-[#38a1ff] bg-transparent border-0 p-0 dark:text-slate-200">
+                            <span>Logout</span>
+                            <span class="text-slate-400">></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </li>
     }
     else
@@ -39,3 +65,26 @@
     }
 </ul>
 
+<script>
+    let subMenu = document.getElementById('subMenu');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            subMenu.style.maxHeight = '400px';
+            subMenu.style.opacity = '1';
+        } else {
+            subMenu.style.maxHeight = '0';
+            subMenu.style.opacity = '0';
+        }
+    }
+
+    // Close the menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = subMenu.contains(event.target) || event.target.matches('img[onclick="toggleMenu()"]');
+        if (!isClickInside && isMenuOpen) {
+            toggleMenu();
+        }
+    });
+</script>
