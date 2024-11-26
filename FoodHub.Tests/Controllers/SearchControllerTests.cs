@@ -3,7 +3,7 @@ using Moq;
 using FoodHub.DAL; // Ensure you have the correct namespace for your repository
 using FoodHub.Models; // Ensure you have the correct namespace for your Item model
 
-/// Unit tests for the SearchController/> class.
+/// Unit tests for the SearchController class.
 
 public class SearchControllerTests
 {
@@ -12,7 +12,7 @@ public class SearchControllerTests
 
     /// Initializes a new instance of theSearchControllerTests.
     /// Sets up the mock repository and the controller.
-   
+
     public SearchControllerTests()
     {
         _mockItemRepository = new Mock<IItemRepository>();
