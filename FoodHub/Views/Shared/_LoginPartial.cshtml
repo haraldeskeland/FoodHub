@@ -9,7 +9,8 @@
     {
         <li class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 relative">
             @* Display the user icon without a link *@
-            <img src="/images/Icons/user-icon.png" class="w-7 dark:invert cursor-pointer" onclick="toggleMenu()" />
+            <img src="/images/Icons/user-icon.png" class="w-7 dark:invert cursor-pointer transition-all duration-200 ease-in-out hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]" onclick="toggleMenu()" />
+            <img src="/images/Icons/arrow.png" class="absolute left-3 dark:invert cursor-pointer w-4" onclick="toggleMenu()" />
             
             <div class="sub-menu-wrap absolute top-full right-0 w-64 overflow-hidden max-h-0 transition-all duration-500 ease-out" id="subMenu">
                 <div class="sub-menu bg-white dark:bg-[#1d1d1f] p-5 m-2.5 rounded-lg border dark:border-[#303030d5]">
