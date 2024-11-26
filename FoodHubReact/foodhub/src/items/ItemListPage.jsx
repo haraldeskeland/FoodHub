@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
+import ItemTable from './ItemTable';
+import ItemGrid from './ItemGrid'; 
 
-const API_URL = 'https://localhost:7268';
+const API_URL = 'https://localhost:7268'
 
-const ItemListPage = () => {
+const ItemListPage= () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showTable, setShowTable] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
   const fetchItems = async () => {
     setLoading(true); // Set loading to true when starting the fetch
     setError(null);   // Clear any previous errors
 
     try {
-      const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`);
+      const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`); 
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -32,51 +38,32 @@ const ItemListPage = () => {
     fetchItems();
   }, []);
 
+  const filteredItems = items.filter(item =>
+    item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.Description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
       <h1>Items</h1>
-      <Button onClick={fetchItems} className="btn btn-primary mb-3" disabled={loading}>
+      <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
         {loading ? 'Loading...' : 'Refresh Items'}
       </Button>
+      <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
+        {showTable ? `Display Grid` : 'Display Table'}
+      </Button>
+      <Form.Group className="mb-3">        
+      <Form.Control
+        type="text"
+        placeholder="Search by name or description"
+        value={searchQuery}
+        onChange={e => setSearchQuery(e.target.value)}
+      />  
+      </Form.Group>      
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Producer</th>
-            <th>Description</th>
-            <th>Image</th>
-            <th>Energy</th>
-            <th>Carbohydrate</th>
-            <th>Total Fat</th>
-            <th>Saturated Fat</th>
-            <th>Unsaturated Fat</th>
-            <th>Sugar</th>
-            <th>Dietary Fiber</th>
-            <th>Protein</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map(item => (
-            <tr key={item.ItemId}>
-              <td>{item.ItemId}</td>
-              <td>{item.Name}</td>
-              <td>{item.ProducerName}</td>
-              <td>{item.Description}</td>
-              <td><img src={`${API_URL}${item.ImagePath}`} alt={item.Name} width="120" /></td>
-              <td>{item.Energy}</td>
-              <td>{item.Carbohydrate}</td>
-              <td>{item.TotalFat}</td>
-              <td>{item.SaturatedFat}</td>
-              <td>{item.UnsaturedFat}</td>
-              <td>{item.Sugar}</td>
-              <td>{item.DietaryFiber}</td>
-              <td>{item.Protein}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      {showTable 
+      ? <ItemTable items={filteredItems} apiUrl={API_URL} />
+      : <ItemGrid items={filteredItems} apiUrl={API_URL} />}
     </div>
   );
 };
