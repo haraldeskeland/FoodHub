@@ -2,7 +2,7 @@ using FoodHub.Models;
 
 namespace FoodHub.DAL;
 
-// Interface defining the contract for item repository operations
+// Interface that defines the operations available in an item repository.
 public interface IItemRepository
 {
     // Retrieve all items
