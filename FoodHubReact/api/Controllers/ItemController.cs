@@ -77,6 +77,56 @@ public class ItemAPIController : Controller
         _logger.LogWarning("[ItemAPIController] Item creation failed {@item}", newItem);
         return StatusCode(500, "Internal server error");
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetItem(int id)
+    {
+        var item = await _itemRepository.GetItemById(id);
+        if (item == null)
+        {
+            _logger.LogError("[ItemAPIController] Item not found for the ItemId {ItemId:0000}", id);
+            return NotFound("Item not found for the ItemId");
+        }
+        return Ok(item);
+    }
+
+    [HttpPut("update/{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
+    {
+        if (itemDto == null)
+        {
+            return BadRequest("Item data cannot be null");
+        }
+        // Find the item in the database
+        var existingItem = await _itemRepository.GetItemById(id);
+        if (existingItem == null)
+        {
+            return NotFound("Item not found");
+        }
+        // Update the item properties
+        existingItem.Name = itemDto.Name;
+        existingItem.ProducerName = itemDto.ProducerName;
+        existingItem.Description = itemDto.Description;
+        existingItem.ImagePath = itemDto.ImagePath;
+        existingItem.Energy = itemDto.Energy;
+        existingItem.Carbohydrate = itemDto.Carbohydrate;
+        existingItem.TotalFat = itemDto.TotalFat;
+        existingItem.SaturatedFat = itemDto.SaturatedFat;
+        existingItem.UnsaturedFat = itemDto.UnsaturedFat;
+        existingItem.Sugar = itemDto.Sugar;
+        existingItem.DietaryFiber = itemDto.DietaryFiber;
+        existingItem.Protein = itemDto.Protein;
+        // Save the changes
+        bool updateSuccessful = await _itemRepository.Update(existingItem);
+        if (updateSuccessful)
+        {
+            return Ok(existingItem); // Return the updated item
+        }
+
+        _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
+        return StatusCode(500, "Internal server error");
+    }
+
 }
     // Controller for handling item-related requests
     public class ItemController : Controller

@@ -4,6 +4,7 @@ import HomePage from './home/HomePage';
 import ItemListPage from './items/ItemListPage'
 import NavMenu from './shared/NavMenu';
 import ItemCreatePage from './items/ItemCreatePage';
+import ItemUpdatePage from './items/ItemUpdatePage';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/items" element={<ItemListPage />} />
           <Route path="/itemcreate" element={<ItemCreatePage />} />
+          <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

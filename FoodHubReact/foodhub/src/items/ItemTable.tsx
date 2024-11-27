@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
+import { Link } from 'react-router-dom';
 
 interface ItemTableProps {
   items: Item[];
@@ -37,6 +38,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
             <th>Sugar</th>
             <th>Dietary Fiber</th>
             <th>Protein</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +57,9 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
               <td>{item.Sugar}</td>
               <td>{item.DietaryFiber}</td>
               <td>{item.Protein}</td>
+              <td className="text-center">
+                <Link to={`/itemupdate/${item.ItemId}`}>Update</Link>
+              </td>
             </tr>
           ))}
         </tbody>

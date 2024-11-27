@@ -5,23 +5,28 @@ import { Item } from '../types/item';
 
 interface ItemFormProps {
   onItemChanged: (newItem: Item) => void;
-  itemId?: number;
+  ItemId?: number;
+  isUpdate?: boolean;
+  initialData?: Item;
 }
 
-const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
-  const [Name, setName] = useState<string>('');
-  const [ProducerName, setProducerName] = useState<string>('');
-  const [Description, setDescription] = useState<string>('');
-  const [ImagePath, setImagePath] = useState<string>('');
-  const [Energy, setEnergy] = useState<number>(0);
-  const [Carbohydrate, setCarbohydrate] = useState<number>(0);
-  const [TotalFat, setTotalFat] = useState<number>(0);
-  const [SaturatedFat, setSaturatedFat] = useState<number>(0);
-  const [UnsaturedFat, setUnsaturedFat] = useState<number>(0);
-  const [Sugar, setSugar] = useState<number>(0);
-  const [DietaryFiber, setDietaryFiber] = useState<number>(0);
-  const [Protein, setProtein] = useState<number>(0);
-  const [error, setError] = useState<string | null>(null);
+const ItemForm: React.FC<ItemFormProps> = ({ 
+  onItemChanged,
+  ItemId,
+  isUpdate = false,
+  initialData}) => {
+  const [Name, setName] = useState<string>(initialData?.Name || '');
+  const [ProducerName, setProducerName] = useState<string>(initialData?.ProducerName || '');
+  const [Description, setDescription] = useState<string>(initialData?.Description || '');
+  const [ImagePath, setImagePath] = useState<string>(initialData?.ImagePath || '');
+  const [Energy, setEnergy] = useState<number>(initialData?.Energy || 0);
+  const [Carbohydrate, setCarbohydrate] = useState<number>(initialData?.Carbohydrate || 0);
+  const [TotalFat, setTotalFat] = useState<number>(initialData?.TotalFat || 0);
+  const [SaturatedFat, setSaturatedFat] = useState<number>(initialData?.SaturatedFat || 0);
+  const [UnsaturedFat, setUnsaturedFat] = useState<number>(initialData?.UnsaturedFat || 0);
+  const [Sugar, setSugar] = useState<number>(initialData?.Sugar || 0);
+  const [DietaryFiber, setDietaryFiber] = useState<number>(initialData?.DietaryFiber || 0);
+  const [Protein, setProtein] = useState<number>(initialData?.Protein || 0);
   const navigate = useNavigate();
 
   const onCancel = () => {
@@ -31,7 +36,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const item: Item = {
-      ItemId: itemId || 0,
+      ItemId: ItemId || 0,
       Name,
       ProducerName,
       Description,
@@ -180,8 +185,6 @@ const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
           required
         />
       </Form.Group>
-
-      {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <Button variant="primary" type="submit">Create Item</Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>
