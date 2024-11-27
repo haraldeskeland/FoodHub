@@ -22,7 +22,10 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        builder => builder.WithOrigins("http://localhost:3000") // Specify the allowed origin
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials());
 });
 
 builder.Services.AddScoped<IItemRepository, ItemRepository>();

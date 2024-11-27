@@ -7,15 +7,31 @@ import API_URL from '../apiConfig';
 const ItemCreatePage: React.FC = () => {
   const navigate = useNavigate(); // Create a navigate function
 
+  const toPascalCase = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const transformKeysToPascalCase = (obj: any) => {
+    const newObj: any = {};
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const pascalCaseKey = toPascalCase(key);
+        newObj[pascalCaseKey] = obj[key];
+      }
+    }
+    return newObj;
+  };
+
   const handleItemCreated = async (item: Item) => {
     try {
-      console.log('Sending item data:', item);
+      const transformedItem = transformKeysToPascalCase(item);
+      console.log('Sending item data:', transformedItem);
       const response = await fetch(`${API_URL}/api/ItemAPI/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(item),
+        body: JSON.stringify(transformedItem),
       });
 
       console.log('Response status:', response.status);
