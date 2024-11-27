@@ -3,9 +3,8 @@ import { Button, Form } from 'react-bootstrap';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
+import API_URL from '../apiConfig';
 
-
- const API_URL = 'https://localhost:7268'
 
 const ItemListPage: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
@@ -66,6 +65,7 @@ const ItemListPage: React.FC = () => {
       {showTable 
       ? <ItemTable items={filteredItems} apiUrl={API_URL} />
       : <ItemGrid items={filteredItems} apiUrl={API_URL} />}
+      <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
                   Saturated Fat: {item.SaturatedFat} g
                 </Card.Text>
                 <Card.Text>
-                  Unsaturated Fat: {item.UnsaturatedFat} g
+                  Unsatured Fat: {item.UnsaturedFat} g
                 </Card.Text>
                 <Card.Text>
                   Sugar: {item.Sugar} g

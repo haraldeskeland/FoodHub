@@ -33,7 +33,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
             <th>Carbohydrate</th>
             <th>Total Fat</th>
             <th>Saturated Fat</th>
-            <th>Unsaturated Fat</th>
+            <th>Unsatured Fat</th>
             <th>Sugar</th>
             <th>Dietary Fiber</th>
             <th>Protein</th>
@@ -51,7 +51,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
               <td>{item.Carbohydrate}</td>
               <td>{item.TotalFat}</td>
               <td>{item.SaturatedFat}</td>
-              <td>{item.UnsaturatedFat}</td>
+              <td>{item.UnsaturedFat}</td>
               <td>{item.Sugar}</td>
               <td>{item.DietaryFiber}</td>
               <td>{item.Protein}</td>

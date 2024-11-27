@@ -43,7 +43,7 @@ namespace FoodHub.DTOs {
         [Range(0, double.MaxValue, ErrorMessage = "Saturated fat must be a positive value")]
         public decimal SaturatedFat { get; set; }
 
-        [Required(ErrorMessage = "Unsatured fat in gram is required")]
+        [Required(ErrorMessage = "Unsaturated fat in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Unsaturated fat must be a positive value")]
         public decimal UnsaturedFat { get; set; }
 

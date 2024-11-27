@@ -69,7 +69,7 @@ public class ItemAPIController : Controller
             Sugar = itemDto.Sugar,
             DietaryFiber = itemDto.DietaryFiber,
             Protein = itemDto.Protein
-        };        
+        };
         bool returnOk = await _itemRepository.Create(newItem);
         if (returnOk)
             return CreatedAtAction(nameof(ItemList), new { id = newItem.ItemId }, newItem);

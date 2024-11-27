@@ -8,7 +8,7 @@ export interface Item {
     Carbohydrate: number;
     TotalFat: number;
     SaturatedFat: number;
-    UnsaturatedFat: number;
+    UnsaturedFat: number;
     Sugar: number;
     DietaryFiber: number;
     Protein: number;
