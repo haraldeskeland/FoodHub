@@ -80,7 +80,7 @@
 
             <!-- Desktop menu items -->
             <div class="hidden md:flex items-center space-x-4">
-                <a class="text-gray-700 hover:text-gray-900 dark:text-slate-200" asp-controller="Search" asp-action="Index" asp-route-query="">All items</a>
+                <a class="text-gray-700 hover:text-gray-900 dark:text-slate-200 drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]" asp-controller="Search" asp-action="Index" asp-route-query="">All items</a>
                 <button id="theme-toggle" class="w-8 h-8 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95">
                     <img src="/images/light-dark.png" alt="Toggle theme" class="w-full h-full filter dark:invert">
                 </button>
@@ -115,12 +115,12 @@
         }
             <a class="block w-full text-right text-gray-700 hover:text-gray-900 dark:text-slate-200" asp-controller="Search" asp-action="Index" asp-route-query="">All items</a>
 
-        <!-- Add these classes to your theme toggle and login/register buttons -->
         
         <div class="flex justify-end w-full">
             <partial name="_LoginPartial" />
-        </div><div class="flex justify-end w-full">
-            <button id="theme-toggle" class="w-8 h-8 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95">
+        </div>
+        <div class="flex justify-end w-full">
+            <button id="theme-toggle" class="w-8 h-8 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110  hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95">
                 <img src="/images/light-dark.png" alt="Toggle theme" class="w-full h-full filter dark:invert">
             </button>
         </div>
@@ -176,7 +176,7 @@
 
   <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS (Animate On Scroll) library
+    //  AOS (Animate On Scroll) library
     AOS.init();
 
     // Toggle mobile menu visibility
