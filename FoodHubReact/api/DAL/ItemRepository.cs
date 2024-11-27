@@ -30,6 +30,12 @@ public class ItemRepository : IItemRepository
         }
     }
 
+    // Retrieve all categories
+    public async Task<IEnumerable<ItemCategory>> GetAllCategories()
+    {
+        return await _db.ItemCategories.ToListAsync();
+    }
+
     // Retrieve an item by its ID
     public async Task<Item?> GetItemById(int id)
     {
@@ -58,12 +64,6 @@ public class ItemRepository : IItemRepository
             _logger.LogError("[ItemRepository] item retrieval with allergens failed for ItemId {ItemId:0000}, error message: {e}", id, e.Message);
             return null;
         }
-    }
-
-    // Retrieve all item categories
-    public async Task<IEnumerable<ItemCategory>> GetAllCategories()
-    {
-        return await _db.ItemCategories.ToListAsync();
     }
 
     // Create a new item
