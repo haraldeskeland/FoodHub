@@ -66,5 +66,7 @@ namespace FoodHub.DTOs {
         // Foreign key for ItemCategory
         [Required]
         public int ItemCategoryId { get; set; }
+
+        
     }
 }

@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 interface ItemTableProps {
   items: Item[];
   apiUrl: string;
+  onItemDeleted: (itemId: number) => void;
 }
 
-const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) => {
   const [showImages, setShowImages] = useState(true);
   const [showDescriptions, setShowDescriptions] = useState(true);
   const toggleImages = () => setShowImages(prevShowImages => !prevShowImages);
@@ -59,6 +60,10 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
               <td>{item.Protein}</td>
               <td className="text-center">
                 <Link to={`/itemupdate/${item.ItemId}`}>Update</Link>
+                <Link to="#"
+                  onClick={(event) => onItemDeleted(item.ItemId)}
+                  className="btn btn-link text-danger"
+                >Delete</Link>
               </td>
             </tr>
           ))}

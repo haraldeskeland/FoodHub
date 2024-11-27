@@ -5,9 +5,10 @@ import { Item } from '../types/item';
 interface ItemGridProps {
   items: Item[];
   apiUrl: string;
+  onItemDeleted: (itemId: number) => void;
 }
 
-const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
+const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted}) => {
 
   return (
     <div>
@@ -17,7 +18,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
             <Card>
               <Card.Img variant="top" src={`${apiUrl}${item.ImagePath}`} alt={item.Name} />
               <Card.Body>
-                <Card.Title>{item.Name}</Card.Title>
+                <Card.Title>{item.ItemId} {item.Name}</Card.Title>
                 <Card.Text>
                   Producer: {item.ProducerName}
                 </Card.Text>
@@ -50,6 +51,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl }) => {
                 </Card.Text>
                 <div className="d-flex justify-content-between">
                     <Button href={`/itemupdate/${item.ItemId}`} variant="primary">Update</Button>
+                    <Button onClick={(event) => onItemDeleted(item.ItemId)} variant="danger">Delete</Button>
                     </div>
               </Card.Body>
             </Card>
