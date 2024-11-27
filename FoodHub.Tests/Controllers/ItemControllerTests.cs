@@ -5,12 +5,14 @@ using FoodHub.Controllers;
 using FoodHub.DAL;
 using FoodHub.Models;
 using FoodHub.ViewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace FoodHub.Tests.Controllers
 {
     /*
      This class contains tests for the ItemController class. 
     The item don't need to be real, just for testing puposes.
+
     */
 
     public class ItemControllerTests
@@ -27,6 +29,7 @@ namespace FoodHub.Tests.Controllers
         }
 
         [Fact]
+        //Test two objects
         public async Task TestTable() //testing the Table method
         {
             // Arrange
@@ -66,7 +69,7 @@ namespace FoodHub.Tests.Controllers
             };
 
             var mockItemRepository = new Mock<IItemRepository>(); //creating a new Mock of IItemRepository
-            mockItemRepository.Setup(repo => repo.GetAll()).ReturnsAsync(itemList);
+            _ = mockItemRepository.Setup(repo => repo.GetAll()).ReturnsAsync(itemList);
             var mockLogger = new Mock<ILogger<ItemController>>();
             var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
 
@@ -79,38 +82,43 @@ namespace FoodHub.Tests.Controllers
             Assert.Equal(2, itemsViewModel.Items.Count());
             Assert.Equal(itemList, itemsViewModel.Items);
         }
-
         [Fact]
-        public async Task TestCreateNotOk() //Testing testCreateNotOk to see if it gets a errormessage or not 
+        //to test see if the total amount of fat is eaual to the sum of saturated and unsaturated fat
+        public async Task TestCreateItem_InvalidTotalFat_ReturnsValidationError()
         {
             // Arrange
-            var testItem = new Item
+            var newItem = new Item
             {
-                ItemId = 1,
+                ItemId = 3,
                 Name = "Test Item",
-                Energy = 200,
-                Carbohydrate = 5,
-                TotalFat = 10,
-                SaturatedFat = 2,
-                UnsaturedFat = 8,
-                Sugar = 1,
-                DietaryFiber = 0,
-                Protein = 15,
+                Energy = 100,
+                Carbohydrate = 10,
+                TotalFat = 5, // Total fat is less than the sum of saturated and unsaturated fat
+                SaturatedFat = 3,
+                UnsaturedFat = 3,
+                Sugar = 5,
+                DietaryFiber = 2,
+                Protein = 10,
                 Salt = 0.5m,
                 ItemCategoryId = 1
             };
+
             var mockItemRepository = new Mock<IItemRepository>();
-            mockItemRepository.Setup(repo => repo.Create(testItem)).ReturnsAsync(false);
             var mockLogger = new Mock<ILogger<ItemController>>();
             var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
 
             // Act
-            var result = await itemController.Create(testItem, null);
+            var imageUrl = new Mock<IFormFile>().Object; // Mock the IFormFile parameter
+            var result = await itemController.Create(newItem, imageUrl);
 
             // Assert
-            var viewResult = Assert.IsType<ViewResult>(result);
-            var viewItem = Assert.IsAssignableFrom<Item>(viewResult.ViewData.Model);
-            Assert.Equal(testItem, viewItem);
+            var viewResult = Assert.IsType<ViewResult>(result); // Check if the result is a ViewResult
+            var modelState = viewResult.ViewData.ModelState;
+            Assert.False(modelState.IsValid); // Model state should be invalid
+            Assert.Contains("TotalFat", modelState.Keys); // Check if the error is related to TotalFat
+            var error = modelState["TotalFat"]?.Errors?.FirstOrDefault();
+            Assert.NotNull(error); // Ensure error is not null before proceeding
+            Assert.Equal("Total fat must be equal to the sum of saturated fat and unsaturated fat", error.ErrorMessage); // Check the error message
         }
 
         [Fact]
@@ -119,7 +127,7 @@ namespace FoodHub.Tests.Controllers
             // Arrange
             int testItemId = 999;
             var mockItemRepository = new Mock<IItemRepository>();
-            mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item)null);
+            _ = mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item?)null);
             var mockLogger = new Mock<ILogger<ItemController>>();
             var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
 
@@ -137,7 +145,7 @@ namespace FoodHub.Tests.Controllers
             // Arrange
             int testItemId = 999;
             var mockItemRepository = new Mock<IItemRepository>();
-            mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item)null);
+            _ = mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item)null);
             var mockLogger = new Mock<ILogger<ItemController>>();
             var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
 
@@ -154,7 +162,7 @@ namespace FoodHub.Tests.Controllers
         {
             // Arrange
             int itemId = 1;
-            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item)null);
+            _ = _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item)null);
 
             // Act
             var result = await _controller.Delete(itemId);
@@ -185,7 +193,7 @@ namespace FoodHub.Tests.Controllers
                 ItemCategoryId = 1
             };
 
-            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync(item);
+            _ = _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync(item);
 
             // Act
             var result = await _controller.Delete(itemId);
@@ -200,7 +208,7 @@ namespace FoodHub.Tests.Controllers
         {
             // Arrange
             int itemId = 1;
-            _mockItemRepository.Setup(repo => repo.Delete(itemId)).ReturnsAsync(false);
+            _ = _mockItemRepository.Setup(repo => repo.Delete(itemId)).ReturnsAsync(false);
 
             // Act
             var result = await _controller.DeleteConfirmed(itemId);
@@ -215,7 +223,7 @@ namespace FoodHub.Tests.Controllers
         {
             // Arrange
             int itemId = 1;
-            _mockItemRepository.Setup(repo => repo.Delete(itemId)).ReturnsAsync(true);
+            _ = _mockItemRepository.Setup(repo => repo.Delete(itemId)).ReturnsAsync(true);
 
             // Act
             var result = await _controller.DeleteConfirmed(itemId);

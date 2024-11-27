@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FoodHub.Models {
+namespace FoodHub.Models
+{
     public class Item
     {
         // Primary key
@@ -9,13 +10,13 @@ namespace FoodHub.Models {
 
         // Name of the item with validation rules
         [Required(ErrorMessage = "Item name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The item's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,100}", ErrorMessage = "The item's name must be between 2 and 100 characters")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
-        
+
         // Name of the producer with validation rules
         [Required(ErrorMessage = "Producer name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The producer's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{2,100}", ErrorMessage = "The producer's name must be between 2 and 100 characters and don't contain any special characters")]
         [Display(Name = "Producer Name")]
         public string ProducerName { get; set; } = string.Empty;
 
@@ -45,7 +46,7 @@ namespace FoodHub.Models {
 
         [Required(ErrorMessage = "Unsatured fat in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Unsaturated fat must be a positive value")]
-        public decimal UnsaturedFat { get; set; }
+        public decimal UnsaturatedFat { get; set; }
 
         [Required(ErrorMessage = "Sugar in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Sugar must be a positive value")]
