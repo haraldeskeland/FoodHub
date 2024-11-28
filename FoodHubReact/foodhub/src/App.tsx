@@ -1,3 +1,5 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import HomePage from './home/HomePage';
