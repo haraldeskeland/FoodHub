@@ -26,13 +26,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -56,13 +56,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -87,13 +87,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -118,13 +118,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = -10,  // Negative energy value, which is invalid
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -150,12 +150,12 @@ public class ItemModelTests
             Energy = 52,
             Carbohydrate = 14,
             TotalFat = -1,  // Negative fat value, which is invalid
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -180,13 +180,13 @@ public class ItemModelTests
             Description = null,  // Nullable fields
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 1m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 1,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -209,13 +209,13 @@ public class ItemModelTests
             Description = null,  // Nullable field
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturedFat = 1,
             Sugar = 10,
-            DietaryFiber = 1m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 1,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -227,3 +227,4 @@ public class ItemModelTests
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Item name is required"));
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Producer name is required"));
     }
+}

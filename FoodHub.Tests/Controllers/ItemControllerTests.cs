@@ -49,6 +49,7 @@ namespace FoodHub.Tests.Controllers
                     Salt = 1.5m,
                     ItemCategoryId = 1
                 },
+                //Why test one Item, when you could test two?
                 new Item
                 {
                     ItemId = 2,
