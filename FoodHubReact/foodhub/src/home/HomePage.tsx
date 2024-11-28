@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '../shared/SearchBar';
 import '../index.css';
 
 const HomePage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const navigate = useNavigate();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+  const handleSearch = () => {
+    navigate(`/items?search=${encodeURIComponent(searchQuery)}`);
   };
 
   return (
@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
           {/* Main title of the page with animations and gradient text */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
             Find out what you´re <span className="gradient-text underline pr-2 font-extrabold dark:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"><i>actually</i></span> eating
-          </h1>       
+          </h1>        
           {/* Supporting description text with fade-up animation */}
           <p className="text-md font-light text-gray-500 mt-6 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
             We provide you with the most accurate information about the food you eat. 
@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
 
           {/* Search form for finding food, with animations and flexible design for different screen sizes */}
           <div className="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            <form onSubmit={handleSearch} className="flex justify-center w-full">
+            <div className="flex justify-center w-full">
               <div className="flex w-full max-w-2xl">
                 {/* Search icon inside a rounded box */}
                 <div className="flex items-center justify-center rounded-l-full border border-r-0 border-gray-300 bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] px-4">
@@ -36,21 +36,15 @@ const HomePage: React.FC = () => {
                   </svg>
                 </div>
 
-                {/* Text input for search query */}
-                <input 
-                  type="text" 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for your favourite food..." 
-                  className="w-full py-3 px-4 bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] text-base outline-none border-y border-gray-300"
-                />
+                {/* SearchBar component */}
+                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 
-                {/* Submit button for search */}
-                <button type="submit" className="bg-gray-800 px-6 py-3 rounded-r-full text-white hover:bg-blue-800 transition-colors">
+                {/* Search button */}
+                <button onClick={handleSearch} className="bg-gray-800 px-6 py-3 rounded-r-full text-white hover:bg-blue-800 transition-colors">
                   Search
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
