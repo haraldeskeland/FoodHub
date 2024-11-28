@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Container from 'react-bootstrap/Container';
 import HomePage from './home/HomePage';
 import ItemListPage from './items/ItemListPage'
-import NavMenu from './shared/NavMenu';
+import NavMenu from './shared/NavBar';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
 
