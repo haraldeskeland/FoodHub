@@ -8,7 +8,7 @@ namespace FoodHub.Models
         [Key]
         public int AllergenId { get; set; }
 
-        // Allergen name, no further input validation as allergens are seeded via dbinit
+        // Allergen name, some future-proof input validation in case users ever are allowed to create new allergens, otherwise seeded via dbinit
         [Required]
         [MinLength(2, ErrorMessage = "The name must be at least 2 characters long.")]
         [MaxLength(50, ErrorMessage = "Allergen name can't be longer than 50 characters.")]
