@@ -196,7 +196,6 @@ namespace FoodHub.Controllers
             return View(item);
         }
 
-
         // GET: Action method to display the delete item confirmation form
         [HttpGet]
         [Authorize]
