@@ -12,4 +12,5 @@ export interface Item {
     Sugar: number;
     DietaryFiber: number;
     Protein: number;
+    ItemCategoryId: number;
 }

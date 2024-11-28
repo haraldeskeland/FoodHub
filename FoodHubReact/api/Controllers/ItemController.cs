@@ -20,6 +20,24 @@ public class ItemAPIController : Controller
         _logger = logger;
     }
 
+    [HttpGet("GetAllCategories")]
+    public async Task<IActionResult> GetAllCategories()
+    {
+        var categories = await _itemRepository.GetAllCategories();
+        if (categories == null || !categories.Any())
+        {
+            _logger.LogError("[ItemAPIController] Category list not found while executing _itemRepository.GetAllCategories()");
+            return NotFound("Category list not found");
+        }
+        var itemCategoryDtos = categories.Select(c => new CategoryDto
+        {
+            ItemCategoryId = c.ItemCategoryId,
+            ItemCategoryName = c.Name
+        }).ToList();
+
+        return Ok(itemCategoryDtos); // Return the mapped list of categories
+    }
+
     [HttpGet("itemlist")]
     public async Task<IActionResult> ItemList()
     {
@@ -43,7 +61,8 @@ public class ItemAPIController : Controller
             UnsaturedFat = i.UnsaturedFat,
             Sugar = i.Sugar,
             DietaryFiber = i.DietaryFiber,
-            Protein = i.Protein
+            Protein = i.Protein,
+            ItemCategoryId = i.ItemCategoryId
         });        
         return Ok(itemsDtos);
     }
@@ -68,7 +87,8 @@ public class ItemAPIController : Controller
             UnsaturedFat = itemDto.UnsaturedFat,
             Sugar = itemDto.Sugar,
             DietaryFiber = itemDto.DietaryFiber,
-            Protein = itemDto.Protein
+            Protein = itemDto.Protein,
+            ItemCategoryId = itemDto.ItemCategoryId
         };
         bool returnOk = await _itemRepository.Create(newItem);
         if (returnOk)
@@ -116,6 +136,7 @@ public class ItemAPIController : Controller
         existingItem.Sugar = itemDto.Sugar;
         existingItem.DietaryFiber = itemDto.DietaryFiber;
         existingItem.Protein = itemDto.Protein;
+        existingItem.ItemCategoryId = itemDto.ItemCategoryId;
         // Save the changes
         bool updateSuccessful = await _itemRepository.Update(existingItem);
         if (updateSuccessful)

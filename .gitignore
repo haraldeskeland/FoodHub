@@ -19,3 +19,6 @@ FoodHub.Tests/obj/
 FoodHub/ItemDatabase.db-shm
 FoodHub/ItemDatabase.db-wal
 FoodHub/ItemDatabase.db
+FoodHubReact/api/ItemDatabase.db
+FoodHubReact/api/ItemDatabase.db-shm
+FoodHubReact/api/ItemDatabase.db-wal

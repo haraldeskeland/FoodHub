@@ -8,6 +8,9 @@ public interface IItemRepository
     // Retrieve all items
     Task<IEnumerable<Item>> GetAll();
 
+    // Retrieve all categories
+    Task<IEnumerable<ItemCategory>> GetAllCategories();
+
     // Retrieve an item by its ID
     Task<Item?> GetItemById(int id);
 
@@ -25,7 +28,4 @@ public interface IItemRepository
 
     // Search for items based on a query and optional category ID
     Task<IEnumerable<Item>> SearchItemsAsync(string query, int? categoryId);
-
-    // Retrieve all item categories
-    Task<IEnumerable<ItemCategory>> GetAllCategories();
 }

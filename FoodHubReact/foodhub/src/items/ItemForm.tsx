@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
+import API_URL from '../apiConfig';
 
 interface ItemFormProps {
   onItemChanged: (newItem: Item) => void;
@@ -10,11 +11,19 @@ interface ItemFormProps {
   initialData?: Item;
 }
 
+interface Category {
+  ItemCategoryId: number;
+  ItemCategoryName: string;
+}
+
 const ItemForm: React.FC<ItemFormProps> = ({ 
   onItemChanged,
   ItemId,
   isUpdate = false,
-  initialData}) => {
+  initialData
+}) => {
+
+  // Form state
   const [Name, setName] = useState<string>(initialData?.Name || '');
   const [ProducerName, setProducerName] = useState<string>(initialData?.ProducerName || '');
   const [Description, setDescription] = useState<string>(initialData?.Description || '');
@@ -27,12 +36,39 @@ const ItemForm: React.FC<ItemFormProps> = ({
   const [Sugar, setSugar] = useState<number>(initialData?.Sugar || 0);
   const [DietaryFiber, setDietaryFiber] = useState<number>(initialData?.DietaryFiber || 0);
   const [Protein, setProtein] = useState<number>(initialData?.Protein || 0);
+
+  // Categories state and selected category
+  const [categories, setCategories] = useState<Category[]>([]); 
+  const [selectedCategory, setSelectedCategory] = useState<number>(initialData?.ItemCategoryId || 0); 
+
   const navigate = useNavigate();
 
+  // Fetch categories on component mount
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/ItemAPI/GetAllCategories`);
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Fetched Categories:', data); // Log fetched categories
+          setCategories(data); // Update state with categories
+        } else {
+          console.error('Failed to fetch categories');
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
+  // Cancel the form and navigate back
   const onCancel = () => {
-    navigate(-1); // This will navigate back one step in the history
+    navigate(-1); 
   };
 
+  // Form submission handler
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const item: Item = {
@@ -49,12 +85,14 @@ const ItemForm: React.FC<ItemFormProps> = ({
       Sugar,
       DietaryFiber,
       Protein,
+      ItemCategoryId: selectedCategory, // Add the selected category ID
     };
     onItemChanged(item); // Call the passed function with the item data
   };
 
   return (
     <Form onSubmit={handleSubmit}>
+      {/* Item Name */}
       <Form.Group controlId="formItemName">
         <Form.Label>Name</Form.Label>
         <Form.Control
@@ -66,6 +104,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Producer Name */}
       <Form.Group controlId="formItemProducerName">
         <Form.Label>Producer Name</Form.Label>
         <Form.Control
@@ -77,6 +116,25 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Category Dropdown */}
+      <Form.Group controlId="formItemCategory">
+        <Form.Label>Category</Form.Label>
+        <Form.Control
+          as="select"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(Number(e.target.value))}
+          required
+        >
+          <option value="">Select Category</option>
+          {categories.map((category) => (
+            <option key={category.ItemCategoryId} value={category.ItemCategoryId}>
+              {category.ItemCategoryName}
+            </option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+
+      {/* Description */}
       <Form.Group controlId="formItemDescription">
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -88,6 +146,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Image URL */}
       <Form.Group controlId="formItemImagePath">
         <Form.Label>Image URL</Form.Label>
         <Form.Control
@@ -98,6 +157,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Energy */}
       <Form.Group controlId="formItemEnergy">
         <Form.Label>Energy (kcal)</Form.Label>
         <Form.Control
@@ -109,6 +169,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Carbohydrate */}
       <Form.Group controlId="formItemCarbohydrate">
         <Form.Label>Carbohydrate (g)</Form.Label>
         <Form.Control
@@ -120,6 +181,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Total Fat */}
       <Form.Group controlId="formItemTotalFat">
         <Form.Label>Total Fat (g)</Form.Label>
         <Form.Control
@@ -131,6 +193,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Saturated Fat */}
       <Form.Group controlId="formItemSaturatedFat">
         <Form.Label>Saturated Fat (g)</Form.Label>
         <Form.Control
@@ -142,6 +205,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Unsaturated Fat */}
       <Form.Group controlId="formItemUnsaturatedFat">
         <Form.Label>Unsaturated Fat (g)</Form.Label>
         <Form.Control
@@ -153,6 +217,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Sugar */}
       <Form.Group controlId="formItemSugar">
         <Form.Label>Sugar (g)</Form.Label>
         <Form.Control
@@ -164,6 +229,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Dietary Fiber */}
       <Form.Group controlId="formItemDietaryFiber">
         <Form.Label>Dietary Fiber (g)</Form.Label>
         <Form.Control
@@ -175,6 +241,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Protein */}
       <Form.Group controlId="formItemProtein">
         <Form.Label>Protein (g)</Form.Label>
         <Form.Control
@@ -186,6 +253,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
         />
       </Form.Group>
 
+      {/* Submit and Cancel Buttons */}
       <Button variant="primary" type="submit">Create Item</Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>
     </Form>
