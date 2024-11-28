@@ -23,7 +23,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
               <Card.Img variant="top" src={`${apiUrl}${item.ImagePath}`} alt={item.Name} />
               <Card.Body>
                 {/* Display the item title */}
-                <Card.Title>{item.ItemId} {item.Name}</Card.Title>
+                <Card.Title> {item.Name}</Card.Title>
                 {/* Display the item producer */}
                 <Card.Text>
                   Producer: {item.ProducerName}
