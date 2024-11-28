@@ -3,9 +3,14 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+      'inter': ['Inter', 'sans-serif'],
+    },
   },
+},
   plugins: [
     function({ addUtilities, theme }) {
       const gradientTextUtilities = {
