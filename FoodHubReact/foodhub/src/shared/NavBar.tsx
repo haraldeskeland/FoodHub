@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 // Update these paths to match your actual file structure
-import themeToggleIcon from '../images/light-dark.png';
-const logo = require('../images/marius.png');
+
 
 
 const NavMenu: React.FC = () => {
