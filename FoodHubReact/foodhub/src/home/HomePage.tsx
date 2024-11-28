@@ -26,7 +26,6 @@ const HomePage: React.FC = () => {
           <p className="text-md font-light text-gray-500 mt-6 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
             We provide you with the most accurate information about the food you eat. 
           </p>
-
           {/* Search form for finding food, with animations and flexible design for different screen sizes */}
           <div className="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             <div className="flex justify-center w-full">

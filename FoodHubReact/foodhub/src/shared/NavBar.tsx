@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+// Update these paths to match your actual file structure
+import themeToggleIcon from '../images/light-dark.png';
+const logo = require('../images/marius.png');
+
 
 const NavMenu: React.FC = () => {
   const [isHomePage, setIsHomePage] = useState(true);
@@ -37,7 +41,7 @@ const NavMenu: React.FC = () => {
             <div className="flex justify-between items-center p-2">
               <div className="flex">
                 <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">
-                  <img src="/images/Logos/foodhub_logo_black.png" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
+                  <img src="{logo.default}" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
                 </Link>
                 <Link to="/items" className="ml-8 text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
               </div>
