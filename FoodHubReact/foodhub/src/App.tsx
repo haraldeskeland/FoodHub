@@ -5,6 +5,8 @@ import ItemListPage from './items/ItemListPage'
 import NavMenu from './shared/NavBar';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
+import './index.css';
+
 
 const App: React.FC = () => {
   return (
