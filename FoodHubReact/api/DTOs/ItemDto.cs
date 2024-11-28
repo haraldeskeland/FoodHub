@@ -1,8 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace FoodHub.Models
-{
-    public class Item
+namespace FoodHub.DTOs {
+    public class ItemDto
     {
         // Primary key
         [Key]
@@ -10,13 +9,13 @@ namespace FoodHub.Models
 
         // Name of the item with validation rules
         [Required(ErrorMessage = "Item name is required")]
-        [RegularExpression(@"^[0-9a-zA-Zæøå. \-]{2,100}$", ErrorMessage = "The item's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, periods, and hyphens")]
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The item's name must be between 1 and 100 characters")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
-
+        
         // Name of the producer with validation rules
         [Required(ErrorMessage = "Producer name is required")]
-        [RegularExpression(@"^[0-9a-zA-Zæøå. \-]{2,100}$", ErrorMessage = "The producer's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, periods, and hyphens")]
+        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The producer's name must be between 1 and 100 characters")]
         [Display(Name = "Producer Name")]
         public string ProducerName { get; set; } = string.Empty;
 
@@ -44,9 +43,9 @@ namespace FoodHub.Models
         [Range(0, double.MaxValue, ErrorMessage = "Saturated fat must be a positive value")]
         public decimal SaturatedFat { get; set; }
 
-        [Required(ErrorMessage = "Unsatured fat in gram is required")]
+        [Required(ErrorMessage = "Unsaturated fat in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Unsaturated fat must be a positive value")]
-        public decimal UnsaturatedFat { get; set; }
+        public decimal UnsaturedFat { get; set; }
 
         [Required(ErrorMessage = "Sugar in gram is required")]
         [Range(0, double.MaxValue, ErrorMessage = "Sugar must be a positive value")]
@@ -68,10 +67,6 @@ namespace FoodHub.Models
         [Required]
         public int ItemCategoryId { get; set; }
 
-        // Navigation property for the relevant ItemCategory
-        public virtual ItemCategory? ItemCategory { get; set; }
-
-        // Many-to-many relationship with Allergen
-        public virtual ICollection<ItemAllergen> ItemAllergen { get; set; } = new List<ItemAllergen>();
+        
     }
 }
