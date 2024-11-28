@@ -1,3 +1,5 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
@@ -11,15 +13,8 @@ const NavMenu: React.FC = () => {
         <Nav className="me-auto"> {/* Navigation links aligned to the left */}
           <Nav.Link href="/items">All items</Nav.Link> {/* Link to the items page */}
           <NavDropdown title="Dropdown" id="basic-nav-dropdown"> {/* Dropdown menu */}
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item> {/* Dropdown item */}
-            <NavDropdown.Item href="#action/3.2"> {/* Dropdown item */}
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> {/* Dropdown item */}
-            <NavDropdown.Divider /> {/* Divider line */}
-            <NavDropdown.Item href="#action/3.4"> {/* Dropdown item */}
-              Separated link
-            </NavDropdown.Item>
+            <NavDropdown.Item href='/items'>Edit Items</NavDropdown.Item> {/* Dropdown item */}
+            <NavDropdown.Item href='/itemcreate'>Create New Item</NavDropdown.Item> {/* Dropdown item */}
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

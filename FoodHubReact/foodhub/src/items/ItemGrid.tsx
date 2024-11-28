@@ -1,3 +1,5 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React from 'react';
 import { Card, Col, Row, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
@@ -23,7 +25,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
               <Card.Img variant="top" src={`${apiUrl}${item.ImagePath}`} alt={item.Name} />
               <Card.Body>
                 {/* Display the item title */}
-                <Card.Title>{item.ItemId} {item.Name}</Card.Title>
+                <Card.Title> {item.Name}</Card.Title>
                 {/* Display the item producer */}
                 <Card.Text>
                   Producer: {item.ProducerName}
