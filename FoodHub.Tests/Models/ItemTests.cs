@@ -15,7 +15,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is valid and returns no validation errors
-    public void ItemModel_ValidModel_ReturnsNoValidationErrors()
+    public void ItemModel_ValidModel()
     {
         // Arrange
         var item = new Item
@@ -45,7 +45,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is invalid and returns validation errors. In this case the name is too short. 
-    public void ItemModel_InvalidName_ReturnsValidationError()
+    public void ItemModel_InvalidName()
     {
         // Arrange
         var item = new Item
@@ -76,7 +76,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid product name. 
-    public void ItemModel_InvalidProducerName_ReturnsValidationError()
+    public void ItemModel_InvalidProducerName()
     {
         // Arrange
         var item = new Item
@@ -107,7 +107,7 @@ public class ItemModelTests
 
     [Fact]
     //chrck for invalid energy input.
-    public void ItemModel_InvalidEnergyValue_ReturnsValidationError()
+    public void ItemModel_InvalidEnergyValue()
     {
         // Arrange
         var item = new Item
@@ -138,7 +138,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid total fat input.
-    public void ItemModel_InvalidTotalFatValue_ReturnsValidationError()
+    public void ItemModel_InvalidTotalFatValue()
     {
         // Arrange
         var item = new Item
@@ -169,7 +169,7 @@ public class ItemModelTests
 
     [Fact]
     //check for valid null values in the model.
-    public void ItemModel_ValidNullableFields_ReturnsNoValidationErrors()
+    public void ItemModel_ValidNullableFields()
     {
         // Arrange
         var item = new Item
@@ -198,7 +198,7 @@ public class ItemModelTests
     }
     [Fact]
     // Check for invalid null values in the model.
-    public void ItemModel_InvalidNullableFields_ReturnsValidationErrors()
+    public void ItemModel_InvalidNullableFields()
     {
         // Arrange
         var item = new Item
