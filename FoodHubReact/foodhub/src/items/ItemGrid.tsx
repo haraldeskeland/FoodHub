@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 // Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
 // These were used as learning references. Credit goes to Baifan Zhou for similar code.
-import { Card, Col, Row, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
 import { Item } from '../types/item';
 
 // Props for the ItemGrid component
