@@ -28,7 +28,8 @@ namespace FoodHub.Tests.Controllers
         }
 
         [Fact]
-        public async Task TestTable() //testing the Table method
+        //Testing create method to see if it returns a ViewResult
+        public async Task TestCreateTable()
         {
             // Arrange
             var itemList = new List<Item>()
@@ -90,7 +91,7 @@ namespace FoodHub.Tests.Controllers
             var testItem = new Item
             {
                 ItemId = 1,
-                Name = "Test Item",
+                Name = "Item",
                 Energy = 200,
                 Carbohydrate = 5,
                 TotalFat = 10,
@@ -99,7 +100,7 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 1,
                 DietaryFiber = 0,
                 Protein = 15,
-                Salt = 0.5m,
+                Salt = 0.5,
                 ItemCategoryId = 1
             };
             var mockItemRepository = new Mock<IItemRepository>();
@@ -114,6 +115,64 @@ namespace FoodHub.Tests.Controllers
             var viewResult = Assert.IsType<ViewResult>(result);
             var viewItem = Assert.IsAssignableFrom<Item>(viewResult.ViewData.Model);
             Assert.Equal(testItem, viewItem);
+        }
+        [Fact]
+        public async Task TestCreatePost_InvalidModelState()
+        {
+            // Arrange
+            var testItem = new Item
+            {
+                ItemId = 1,
+                Name = "Invalid Item",
+                Energy = 200,
+                Carbohydrate = 5,
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5,
+                ItemCategoryId = 1
+            };
+            _controller.ModelState.AddModelError("Name", "Required");
+
+            // Act
+            var result = await _controller.Create(testItem, null);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewItem = Assert.IsAssignableFrom<Item>(viewResult.ViewData.Model);
+            Assert.Equal(testItem, viewItem);
+        }
+
+        [Fact]
+        public async Task TestCreatePost_ValidModelState()
+        {
+            // Arrange
+            var testItem = new Item
+            {
+                ItemId = 1,
+                Name = "Valid Item",
+                Energy = 200,
+                Carbohydrate = 5,
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5,
+                ItemCategoryId = 1
+            };
+            _mockItemRepository.Setup(repo => repo.Create(testItem)).ReturnsAsync(true);
+
+            // Act
+            var result = await _controller.Create(testItem, null);
+
+            // Assert
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal(nameof(ItemController.Table), redirectToActionResult.ActionName);
         }
 
         [Fact]
@@ -153,7 +212,7 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 1,
                 DietaryFiber = 0,
                 Protein = 15,
-                Salt = 0.5m,
+                Salt = 0.5,
                 ItemCategoryId = 1
             };
 
