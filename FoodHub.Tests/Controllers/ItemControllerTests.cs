@@ -6,6 +6,8 @@ using FoodHub.DAL;
 using FoodHub.Models;
 using FoodHub.ViewModels;
 using System.Formats.Asn1;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 
 namespace FoodHub.Tests.Controllers
 {
@@ -26,9 +28,94 @@ namespace FoodHub.Tests.Controllers
             _mockLogger = new Mock<ILogger<ItemController>>(); //creating a new Mock of ILogger
             _controller = new ItemController(_mockItemRepository.Object, _mockLogger.Object); //creating a new ItemController with the Mocks
         }
+        [Fact]
+        //Testing the Create method to see if it returns a ViewResult
+        // part of the Create method in CRUD
+        public async Task Create_GET_ReturnsView()
+        {
+            // Arrange
+            var categories = new List<ItemCategory> { new ItemCategory { ItemCategoryId = 1, Name = "Category 1" } };
+            //Gets the allCategories from the Mocked ItemRepository
+            _mockItemRepository.Setup(repo => repo.GetAllCategories()).ReturnsAsync(categories);
+
+            // Act
+            var result = await _controller.Create();
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewBagCategories = Assert.IsAssignableFrom<SelectList>(viewResult.ViewData["Categories"]);
+            Assert.Equal(categories.Count, viewBagCategories.Count());
+        }
+        [Fact]
+        //Testing the Create method to see if it returns a ViewResult
+        // part of the Create method in CRUD
+        public async Task Create_POST_ReturnsViewResult_IsValid()
+        {
+            // Arrange
+            var item = new Item { Name = "Test Item", TotalFat = 10, SaturatedFat = 5, UnsaturatedFat = 5 };
+            _mockItemRepository.Setup(repo => repo.Create(item)).ReturnsAsync(true);
+
+            // Act
+            var result = await _controller.Create(item, null);
+
+            // Assert
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Table", redirectToActionResult.ActionName);
+        }
+        [Fact]
+        //Testing the Create method to see if it returns a ViewResult
+        // part of the Create method in CRUD
+        public async Task Create_POST_ReturnsViewResult_Invalid()
+        {
+            // Arrange
+            var item = new Item { Name = "Test Item", TotalFat = 10, SaturatedFat = 5, UnsaturatedFat = 6 };
+            _controller.ModelState.AddModelError("TotalFat", "Total fat must be equal to the sum of saturated fat and unsaturated fat");
+
+            // Act
+            var result = await _controller.Create(item, null);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            Assert.Equal(item, viewResult.Model);
+        }
+        [Fact]
+        //Testing TestCreateNotOk to see if it gets a error message or not 
+        //Part of the CREATE-method in CRUD
+        public async Task TestCreateNotOk()
+        {
+            // Arrange
+            var testItem = new Item
+            {
+                ItemId = 1,
+                Name = "Item",
+                Energy = 200,
+                Carbohydrate = 5,
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5m,
+                ItemCategoryId = 1
+            };
+            var mockItemRepository = new Mock<IItemRepository>();
+            mockItemRepository.Setup(repo => repo.Create(testItem)).ReturnsAsync(false);
+            var mockLogger = new Mock<ILogger<ItemController>>();
+            var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
+
+            // Act
+            var result = await itemController.Create(testItem, null);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var viewItem = Assert.IsAssignableFrom<Item>(viewResult.ViewData.Model);
+            Assert.Equal(testItem, viewItem);
+        }
 
         [Fact]
         //Testing create method to see if it returns a ViewResult
+        //READ-method in CRUD
         public async Task TestCreateTable()
         {
             // Arrange
@@ -84,39 +171,8 @@ namespace FoodHub.Tests.Controllers
         }
 
         [Fact]
-        //Testing TestCreateNotOk to see if it gets a error message or not 
-        public async Task TestCreateNotOk()
-        {
-            // Arrange
-            var testItem = new Item
-            {
-                ItemId = 1,
-                Name = "Item",
-                Energy = 200,
-                Carbohydrate = 5,
-                TotalFat = 10,
-                SaturatedFat = 2,
-                UnsaturatedFat = 8,
-                Sugar = 1,
-                DietaryFiber = 0,
-                Protein = 15,
-                Salt = 0.5,
-                ItemCategoryId = 1
-            };
-            var mockItemRepository = new Mock<IItemRepository>();
-            mockItemRepository.Setup(repo => repo.Create(testItem)).ReturnsAsync(false);
-            var mockLogger = new Mock<ILogger<ItemController>>();
-            var itemController = new ItemController(mockItemRepository.Object, mockLogger.Object);
-
-            // Act
-            var result = await itemController.Create(testItem, null);
-
-            // Assert
-            var viewResult = Assert.IsType<ViewResult>(result);
-            var viewItem = Assert.IsAssignableFrom<Item>(viewResult.ViewData.Model);
-            Assert.Equal(testItem, viewItem);
-        }
-        [Fact]
+        //Create a new Item, and test if the Create method returns a invalid 
+        //CREATE-method in CRUD
         public async Task TestCreatePost_InvalidModelState()
         {
             // Arrange
@@ -132,7 +188,7 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 1,
                 DietaryFiber = 0,
                 Protein = 15,
-                Salt = 0.5,
+                Salt = 0.5m,
                 ItemCategoryId = 1
             };
             _controller.ModelState.AddModelError("Name", "Required");
@@ -147,7 +203,9 @@ namespace FoodHub.Tests.Controllers
         }
 
         [Fact]
-        public async Task TestCreatePost_ValidModelState()
+        //Create a new Item, and test if the Create method returns to the Table with a valid ModelState
+        //CREATE-method in CRUD
+        public async Task TestCreatePost_Valid()
         {
             // Arrange
             var testItem = new Item
@@ -162,7 +220,7 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 1,
                 DietaryFiber = 0,
                 Protein = 15,
-                Salt = 0.5,
+                Salt = 0.5m,
                 ItemCategoryId = 1
             };
             _mockItemRepository.Setup(repo => repo.Create(testItem)).ReturnsAsync(true);
@@ -177,6 +235,7 @@ namespace FoodHub.Tests.Controllers
 
         [Fact]
         //Testing the Details method to see if it returns a NotFoundObjectResult
+        //READ-method in CRUD
         public async Task TestDetailsNotFound()
         {
             // Arrange
@@ -196,7 +255,9 @@ namespace FoodHub.Tests.Controllers
 
 
         [Fact]
-        public async Task Delete_Item()
+        //Testing the Details method to see if it returns a ViewResult
+        //READ-method in CRUD
+        public async Task Delete_GET_ReturnsViewResult()
         {
             // Arrange
             int itemId = 1;
@@ -212,7 +273,7 @@ namespace FoodHub.Tests.Controllers
                 Sugar = 1,
                 DietaryFiber = 0,
                 Protein = 15,
-                Salt = 0.5,
+                Salt = 0.5m,
                 ItemCategoryId = 1
             };
 
@@ -225,13 +286,30 @@ namespace FoodHub.Tests.Controllers
             var viewResult = Assert.IsType<ViewResult>(result);
             Assert.Equal(item, viewResult.Model);
         }
-
-        //Ensures that the DeleteConfirmed method returns a RedirectToActionResult. 
         [Fact]
-        public async Task ItemDeleted_ReturnsRedirectToAction()
+        //Testing the Delete method to see if it deletes an item 
+        //DELETE-method in CRUD
+        public async Task Delete_Item_valid()
         {
             // Arrange
             int itemId = 1;
+            var item = new Item
+            {
+                ItemId = 1,
+                Name = "Test Item",
+                Energy = 200,
+                Carbohydrate = 5,
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5m,
+                ItemCategoryId = 1
+            };
+
+            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync(item);
             _mockItemRepository.Setup(repo => repo.Delete(itemId)).ReturnsAsync(true);
 
             // Act
@@ -240,7 +318,50 @@ namespace FoodHub.Tests.Controllers
             // Assert
             var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal(nameof(ItemController.Table), redirectToActionResult.ActionName);
+            _mockItemRepository.Verify(repo => repo.Delete(itemId), Times.Once);
+        }
+        [Fact]
+        public async Task Update_Get_ReturnsViewWithItem()
+        {
+            // Arrange
+            var itemId = 1;
+            var item = new Item
+            {
+                ItemId = itemId,
+                Name = "Test Item",
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5m,
+                ItemCategoryId = 1
+            };
+
+            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync(item);
+
+            // Act
+            var result = await _controller.Update(itemId);
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<Item>(viewResult.Model);
+            Assert.Equal(item, model);
         }
 
+        [Fact]
+        public async Task Update_Get_ReturnsNotFound_WhenItemNotFound()
+        {
+            // Arrange
+            var itemId = 1;
+            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item?)null);
+
+            // Act
+            var result = await _controller.Update(itemId);
+
+            // Assert
+            Assert.IsType<NotFoundResult>(result);
+        }
     }
 }
