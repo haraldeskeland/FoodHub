@@ -204,19 +204,6 @@ public class ItemController : Controller
         return View(itemsViewModel);
     }
 
-    // Action method to display items in a grid view
-    public async Task<IActionResult> Grid()
-    {
-        var items = await _itemRepository.GetAll();
-        if (items == null)
-        {
-            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
-            return NotFound("Item list not found");
-        }
-        var itemsViewModel = new ItemsViewModel(items, "Grid");
-        return View(itemsViewModel);
-    }
-
     // Action method to display details of a specific item
     public async Task<IActionResult> Details(int id)
     {
@@ -387,22 +374,5 @@ public class ItemController : Controller
             return BadRequest("Item deletion failed");
         }
         return RedirectToAction(nameof(Table));
-    }
-
-    // Action method to search for items based on a search string
-    public async Task<IActionResult> Search(string searchString)
-    {
-        var items = await _itemRepository.GetAll();
-
-        if (!string.IsNullOrEmpty(searchString))
-        {
-            items = items.Where(i =>
-                (i.Name?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                (i.Description?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false)).ToList();
-        }
-
-        var itemsViewModel = new ItemsViewModel(items, "Search");
-        ViewData["CurrentFilter"] = searchString; // Retain the search string for the view
-        return View("Table", itemsViewModel); // Display the search results in the table view
     }
 }
