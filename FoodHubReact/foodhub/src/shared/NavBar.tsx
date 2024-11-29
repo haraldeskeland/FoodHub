@@ -1,7 +1,10 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SearchBar from '../shared/SearchBar';
 
+// NavMenu component definition
 const NavMenu: React.FC = () => {
   const [isHomePage, setIsHomePage] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);

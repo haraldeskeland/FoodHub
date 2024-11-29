@@ -10,8 +10,8 @@ public class SearchControllerTests
     private readonly Mock<IItemRepository> _mockItemRepository;
     private readonly SearchController _controller;
 
-    /// Initializes a new instance of theSearchControllerTests.
-    /// Sets up the mock repository and the controller.
+    //Initializes a new instance of theSearchControllerTests.
+    //Sets up the mock repository and the controller.
 
     public SearchControllerTests()
     {
@@ -20,11 +20,11 @@ public class SearchControllerTests
     }
 
 
-    /// Tests that the Index action returns a view with items when a query is provided.
+    //Tests that the Index action returns a view with items when a query is provided.
 
-    /// <returns>A task representing the asynchronous operation.</returns>
+    //A task representing the asynchronous operation.
     [Fact]
-    public async Task Index_ReturnsViewWithItems_WhenQueryIsProvided()
+    public async Task Index_ReturnsViewWithItems()
     {
         // Arrange
         var query = "test";
@@ -51,11 +51,11 @@ public class SearchControllerTests
         Assert.Equal(categoryId, viewResult.ViewData["CurrentCategory"]);
     }
 
-    /// Tests that the Index action returns a view with items when no query is provided.
+    // Tests that the Index action returns a view with items when no query is provided.
 
-    /// <returns>A task representing the asynchronous operation.</returns>
+    //A task representing the asynchronous operation.
     [Fact]
-    public async Task Index_ReturnsViewWithItems_WhenNoQueryIsProvided()
+    public async Task Index_ReturnsViewWithItems_NoQuery()
     {
         // Arrange
         string? query = null; // No query provided

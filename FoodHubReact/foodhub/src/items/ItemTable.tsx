@@ -1,3 +1,5 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React, { useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
@@ -35,7 +37,6 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) =
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Producer</th>
             {showDescriptions && <th>Description</th>}
@@ -55,7 +56,6 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) =
           {/* Map over the items array to create table rows */}
           {items.map(item => (
             <tr key={item.ItemId}>
-              <td>{item.ItemId}</td>
               <td>{item.Name}</td>
               <td>{item.ProducerName}</td>
               {showDescriptions && <td>{item.Description}</td>}

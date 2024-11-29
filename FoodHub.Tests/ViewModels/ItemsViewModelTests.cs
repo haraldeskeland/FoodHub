@@ -6,7 +6,7 @@ using Xunit;
 public class ItemsViewModelTests
 {
     [Fact]
-    public void ItemsViewModel_ShouldInitializePropertiesCorrectly()
+    public void ItemsViewModel_ListItem()
     {
         // Arrange
         var testItems = new List<Item>
@@ -25,7 +25,7 @@ public class ItemsViewModelTests
     }
 
     [Fact]
-    public void ItemsViewModel_ShouldHandleNullCurrentViewName()
+    public void ItemsViewModel_NullViewName()
     {
         // Arrange
         var testItems = new List<Item>
@@ -42,9 +42,8 @@ public class ItemsViewModelTests
         Assert.Equal(testItems, viewModel.Items);
         Assert.Null(viewModel.CurrentViewName);
     }
-
     [Fact]
-    public void ItemsViewModel_ShouldHandleEmptyItemsList()
+    public void ItemsViewModel_EmptyItemsList()
     {
         // Arrange
         var emptyItems = new List<Item>();
