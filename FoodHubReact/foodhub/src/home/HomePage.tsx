@@ -17,10 +17,27 @@ const HomePage: React.FC = () => {
     navigate(`/items?search=${encodeURIComponent(searchQuery)}`);
   };
 
-  
+  const floatingImages = [
+    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-1/4 left-[7%] w-44 md:w-34 lg:w-72" },
+    { src: "/images/assets/transparency.png", alt: "Food 2", className: "top-1/3 right-[6%] w-20 md:w-28 lg:w-64" },
+    { src: "/images/food3.png", alt: "Food 3", className: "bottom-1/4 left-[20%] w-24 md:w-32 lg:w-40" },
+    { src: "/images/food4.png", alt: "Food 4", className: "bottom-1/3 right-[15%] w-18 md:w-26 lg:w-34" },
+  ];
 
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      
+      
+      {floatingImages.map((img, index) => (
+        <img 
+          key={index}
+          src={img.src} 
+          alt={img.alt} 
+          className={`absolute hidden md:block animate-float ${img.className}`}
+          style={{ animationDelay: `${index * 0.5}s` }}
+        />
+      ))}
+      
       {/* Section containing the title and search bar */}
       <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-32">
         <div className="text-center w-full mx-auto">
