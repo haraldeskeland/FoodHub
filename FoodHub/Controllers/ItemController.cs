@@ -212,22 +212,5 @@ namespace FoodHub.Controllers
             }
             return RedirectToAction(nameof(Table));
         }
-
-        // Action method to search for items based on a search string
-        public async Task<IActionResult> Search(string searchString)
-        {
-            var items = await _itemRepository.GetAll();
-
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                items = items.Where(i =>
-                    (i.Name?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false) ||
-                    (i.Description?.Contains(searchString, StringComparison.OrdinalIgnoreCase) ?? false)).ToList();
-            }
-
-            var itemsViewModel = new ItemsViewModel(items, "Search");
-            ViewData["CurrentFilter"] = searchString; // Retain the search string for the view
-            return View("Table", itemsViewModel); // Display the search results in the table view
-        }
     }
 }
