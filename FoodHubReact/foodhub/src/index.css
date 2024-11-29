@@ -17,6 +17,6 @@ code {
 }
 
 .tailwind-test {
-  @apply text-blue-500 bg-red-500;
+  @apply text-blue-500 bg-blue-400;
 }
 

@@ -2,6 +2,7 @@
 // These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
@@ -14,6 +15,7 @@ const ItemListPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showTable, setShowTable] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const location = useLocation();
 
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
@@ -55,6 +57,20 @@ const ItemListPage: React.FC = () => {
     fetchCategories();
   }, []);
 
+  // Save the view mode to local storage whenever it changes
+  useEffect(() => {
+    const savedViewMode = localStorage.getItem('itemViewMode');
+    if (savedViewMode === 'grid') setShowTable(false);
+    
+    // Read search query from URL
+    const params = new URLSearchParams(location.search);
+    const searchFromUrl = params.get('search') || '';
+    setSearchQuery(searchFromUrl);
+    
+    fetchItems();
+  }, [location]);
+
+  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -84,7 +100,7 @@ const ItemListPage: React.FC = () => {
       <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
         {showTable ? `Display Grid` : 'Display Table'}
       </Button>
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3">        
         <Form.Control
           type="text"
           placeholder="Search by name or description"
