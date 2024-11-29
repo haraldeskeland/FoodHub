@@ -6,8 +6,8 @@ import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
-// ItemListPage component definition
 const ItemListPage: React.FC = () => {
+<<<<<<< HEAD
   const [items, setItems] = useState<Item[]>([]); // State to store the list of items
   const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
   const [error, setError] = useState<string | null>(null); // State to store any error messages
@@ -15,41 +15,53 @@ const ItemListPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>(''); // State to store the search query
   const location = useLocation();
 
+=======
+  const [items, setItems] = useState<Item[]>([]);
+  const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+>>>>>>> ReactApp
 
-  // Function to toggle between table and grid view
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
-  // Function to fetch items from the API
   const fetchItems = async () => {
-    setLoading(true); // Set loading to true when starting the fetch
-    setError(null);   // Clear any previous errors
+    setLoading(true);
+    setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`); 
+      const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
       setItems(data);
-      console.log(data);
     } catch (error) {
       console.error(`There was a problem with the fetch operation: ${error.message}`);
       setError('Failed to fetch items.');
     } finally {
-      setLoading(false); // Set loading to false once the fetch is complete
+      setLoading(false);
     }
   };
 
-  // Set the view mode from local storage when the component mounts
-  useEffect(() => {
-    const savedViewMode = localStorage.getItem('itemViewMode');
-    console.log('[fetch items] Saved view mode:', savedViewMode); // Debugging line
-    if (savedViewMode) {
-      if (savedViewMode === 'grid')
-        setShowTable(false)
-      console.log('show table', showTable);
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/ItemAPI/categories`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.error(`There was a problem with the fetch operation: ${error.message}`);
+      setError('Failed to fetch categories.');
     }
+  };
+
+  useEffect(() => {
     fetchItems();
+    fetchCategories();
   }, []);
 
   // Save the view mode to local storage whenever it changes
@@ -71,16 +83,14 @@ const ItemListPage: React.FC = () => {
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Function to handle item deletion
   const handleItemDeleted = async (itemId: number) => {
-    const confirmDelete = window.confirm(`Are you sure you want to delete this item?`);
+    const confirmDelete = window.confirm(`Are you sure you want to delete the item ${itemId}?`);
     if (confirmDelete) {
       try {
         const response = await fetch(`${API_URL}/api/ItemAPI/delete/${itemId}`, {
           method: 'DELETE',
         });
         setItems(prevItems => prevItems.filter(item => item.ItemId !== itemId));
-        console.log('Item deleted:', itemId);
       } catch (error) {
         console.error('Error deleting item:', error);
         setError('Failed to delete item.');
@@ -103,12 +113,12 @@ const ItemListPage: React.FC = () => {
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
-        />  
-      </Form.Group>      
+        />
+      </Form.Group>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {showTable 
-        ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
-        : <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
+      ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+      : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
       <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
     </div>
   );
