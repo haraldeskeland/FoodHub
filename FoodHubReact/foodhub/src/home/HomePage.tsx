@@ -22,15 +22,24 @@ const HomePage: React.FC = () => {
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       {/* Section containing the title and search bar */}
-      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-12">
+      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-32">
         <div className="text-center w-full mx-auto">
           {/* Main title of the page with animations and gradient text */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
-            Find out what you´re <span className="gradient-text pr-2 font-extrabold dark:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"><i>actually</i></span> eating
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8" data-aos="fade-up">
+            Find out what  you´re<br></br> 
+            <span className="relative inline-block">
+              <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-cyan-500 to-cyan-300 opacity-70 bg-clip-text text-transparent">
+                <i>actually</i>
+              </span>
+              <span className="relative z-10 bg-gradient-to-r from-cyan-800 to-cyan-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
+                <i>actually</i>
+              </span>
+          </span> 
+          eating
           </h1>        
           {/* Supporting description text with fade-up animation */}
-          <p className="text-md font-light text-gray-500 mt-6 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
-            We provide you with the most accurate information about the food you eat. 
+          <p className="text-md font-light text-gray-500 mt-6 dark:text-gray-500" data-aos="fade-up" data-aos-delay="100">
+            We provide you with the most accurate <br></br> information about the food you eat. 
           </p>
           {/* Search form for finding food, with animations and flexible design for different screen sizes */}
           <div className="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">
