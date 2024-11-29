@@ -227,4 +227,3 @@ public class ItemModelTests
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Item name is required"));
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Producer name is required"));
     }
-}

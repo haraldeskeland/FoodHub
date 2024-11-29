@@ -1,11 +1,13 @@
 // src/shared/SearchBar.tsx
 import React from 'react';
 
+// Props for the SearchBar component
 interface SearchBarProps {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  searchQuery: string; // The current search query
+  setSearchQuery: (query: string) => void; // Function to update the search query
 }
 
+// SearchBar component definition
 const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) => {
   return (
     <input 

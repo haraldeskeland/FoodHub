@@ -5,16 +5,18 @@ import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
-
+// ItemListPage component definition
 const ItemListPage: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-  const [showTable, setShowTable] = useState<boolean>(true);
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [items, setItems] = useState<Item[]>([]); // State to store the list of items
+  const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
+  const [error, setError] = useState<string | null>(null); // State to store any error messages
+  const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
+  const [searchQuery, setSearchQuery] = useState<string>(''); // State to store the search query
 
+  // Function to toggle between table and grid view
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
+  // Function to fetch items from the API
   const fetchItems = async () => {
     setLoading(true); // Set loading to true when starting the fetch
     setError(null);   // Clear any previous errors
@@ -35,7 +37,7 @@ const ItemListPage: React.FC = () => {
     }
   };
 
-  // Set the view mode to local storage when the item is fetched
+  // Set the view mode from local storage when the component mounts
   useEffect(() => {
     const savedViewMode = localStorage.getItem('itemViewMode');
     console.log('[fetch items] Saved view mode:', savedViewMode); // Debugging line
@@ -53,15 +55,15 @@ const ItemListPage: React.FC = () => {
     localStorage.setItem('itemViewMode', showTable ? 'table' : 'grid');
   }, [showTable]);
 
-
-
+  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Function to handle item deletion
   const handleItemDeleted = async (itemId: number) => {
-    const confirmDelete = window.confirm(`Are you sure you want to delete the item ${itemId}?`);
+    const confirmDelete = window.confirm(`Are you sure you want to delete this item?`);
     if (confirmDelete) {
       try {
         const response = await fetch(`${API_URL}/api/ItemAPI/delete/${itemId}`, {
@@ -79,24 +81,30 @@ const ItemListPage: React.FC = () => {
   return (
     <div>
       <h1>Items</h1>
+      {/* Button to refresh items */}
       <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
         {loading ? 'Loading...' : 'Refresh Items'}
       </Button>
+      {/* Button to toggle between table and grid view */}
       <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
         {showTable ? `Display Grid` : 'Display Table'}
       </Button>
+      {/* Search bar to filter items by name or description */}
       <Form.Group className="mb-3">        
-      <Form.Control
-        type="text"
-        placeholder="Search by name or description"
-        value={searchQuery}
-        onChange={e => setSearchQuery(e.target.value)}
-      />  
+        <Form.Control
+          type="text"
+          placeholder="Search by name or description"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+        />  
       </Form.Group>      
+      {/* Display error message if any */}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {/* Display items in table or grid view based on the state */}
       {showTable 
-      ? <ItemTable items={filteredItems} apiUrl={API_URL}  onItemDeleted={handleItemDeleted}/>
+      ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
       : <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
+      {/* Button to navigate to the item creation page */}
       <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
     </div>
   );

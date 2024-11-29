@@ -7,9 +7,9 @@
 
 <partial name="_StatusMessage" for="StatusMessage" />
 <h3 class="text-2xl font-bold mb-4">@ViewData["Title"]</h3>
-<div class="bg-white shadow-md rounded-lg p-6">
+<div class="bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] border border-slate-200 shadow-md rounded-lg p-6 dark:text-slate-200 mb-10">
     <p>To use an authenticator app, go through the following steps:</p>
-    <ol class="list-decimal list-inside space-y-4">
+    <ol class="list-decimal list-inside space-y-4 mt-5">
         <li>
             <p>
                 Download a two-factor authenticator app like Microsoft Authenticator for
@@ -21,8 +21,8 @@
             </p>
         </li>
         <li>
-            <p>Scan the QR Code or enter this key <kbd class="bg-gray-200 p-1 rounded">@Model.SharedKey</kbd> into your two-factor authenticator app. Spaces and casing do not matter.</p>
-            <div class="bg-blue-100 border border-blue-300 text-blue-700 p-4 rounded-md mb-4">
+            <p>Scan the QR Code or enter this key <kbd class="bg-gray-200 p-1 rounded dark:text-slate-800">@Model.SharedKey</kbd> into your two-factor authenticator app. Spaces and casing do not matter.</p>
+            <div class="bg-blue-100 border border-blue-300 text-blue-700 p-4 rounded-md  my-8">
                 Learn how to <a href="https://go.microsoft.com/fwlink/?Linkid=852423" class="font-bold hover:underline">enable QR code generation</a>.
             </div>
             <div id="qrCode" class="mb-4"></div>
@@ -35,8 +35,8 @@
             </p>
             <form id="send-code" method="post" class="mt-4">
                 <div class="mb-4">
+                    <label asp-for="Input.Code" class="block text-gray-700 dark:text-slate-400 mt-1">Verification Code</label>
                     <input asp-for="Input.Code" class="block w-full border border-gray-300 rounded-md p-2" autocomplete="off" placeholder="Please enter the code." />
-                    <label asp-for="Input.Code" class="block text-gray-700 mt-1">Verification Code</label>
                     <span asp-validation-for="Input.Code" class="text-red-500"></span>
                 </div>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">Verify</button>

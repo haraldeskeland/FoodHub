@@ -4,18 +4,21 @@ import { Form, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
+// Props for the ItemForm component
 interface ItemFormProps {
-  onItemChanged: (newItem: Item) => void;
-  ItemId?: number;
-  isUpdate?: boolean;
-  initialData?: Item;
+  onItemChanged: (newItem: Item) => void; // Function to handle item changes
+  ItemId?: number; // Optional item ID for updates
+  isUpdate?: boolean; // Flag to indicate if the form is for updating an item
+  initialData?: Item; // Optional initial data for the form
 }
 
+// Interface for item categories
 interface Category {
-  ItemCategoryId: number;
-  ItemCategoryName: string;
+  ItemCategoryId: number; // Unique identifier for the category
+  ItemCategoryName: string; // Name of the category
 }
 
+// ItemForm component definition
 const ItemForm: React.FC<ItemFormProps> = ({ 
   onItemChanged,
   ItemId,

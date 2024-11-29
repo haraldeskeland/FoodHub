@@ -7,10 +7,12 @@ import API_URL from '../apiConfig';
 const ItemCreatePage: React.FC = () => {
   const navigate = useNavigate(); // Create a navigate function
 
+  // Function to convert a string to PascalCase
   const toPascalCase = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
+  // Function to transform the keys of an object to PascalCase
   const transformKeysToPascalCase = (obj: any) => {
     const newObj: any = {};
     for (const key in obj) {
@@ -22,10 +24,14 @@ const ItemCreatePage: React.FC = () => {
     return newObj;
   };
 
+  // Function to handle the creation of a new item
   const handleItemCreated = async (item: Item) => {
     try {
+      // Transform the keys of the item object to PascalCase
       const transformedItem = transformKeysToPascalCase(item);
       console.log('Sending item data:', transformedItem);
+
+      // Send a POST request to create the new item
       const response = await fetch(`${API_URL}/api/ItemAPI/create`, {
         method: 'POST',
         headers: {
@@ -48,12 +54,12 @@ const ItemCreatePage: React.FC = () => {
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
-  }
-  
+  };
+
   return (
     <div>
       <h2>Create New Item</h2>
-      <ItemForm onItemChanged={handleItemCreated}/>
+      <ItemForm onItemChanged={handleItemCreated} />
     </div>
   );
 };
