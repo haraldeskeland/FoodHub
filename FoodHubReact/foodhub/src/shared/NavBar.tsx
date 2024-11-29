@@ -35,8 +35,8 @@ const NavMenu: React.FC = () => {
   return (
     <header>
       <div className="w-full flex justify-center">
-        <nav className="bg-[#ffffff] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:border-[#303030d5]" data-aos="fade-down">
-          <div className="container mx-auto px-4">
+      <nav className="bg-[#ffffff] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:!border-[#303030d5]" data-aos="fade-down">
+      <div className="container mx-auto px-4">
             <div className="flex justify-between items-center p-2">
               <div className="flex">
                 <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">
@@ -45,7 +45,7 @@ const NavMenu: React.FC = () => {
                 <Link to="/items" className="ml-8 text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
               </div>
 
-              
+
 
               {!isHomePage && (
                 <form onSubmit={handleSearch} className="flex-grow max-w-md">
