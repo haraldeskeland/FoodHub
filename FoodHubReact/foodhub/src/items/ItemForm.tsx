@@ -102,7 +102,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -114,7 +114,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={ProducerName}
             onChange={(e) => setProducerName(e.target.value)}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -125,7 +125,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           >
             <option value="">Select Category</option>
             {categories.map((category) => (
@@ -143,7 +143,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Description}
             onChange={(e) => setDescription(e.target.value)}
             rows={4}
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -154,7 +154,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             id="ImagePath"
             value={ImagePath}
             onChange={(e) => setImagePath(e.target.value)}
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
       </div>
@@ -171,7 +171,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Energy}
             onChange={(e) => setEnergy(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -183,7 +183,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Carbohydrate}
             onChange={(e) => setCarbohydrate(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -195,7 +195,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={TotalFat}
             onChange={(e) => setTotalFat(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -207,7 +207,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={SaturatedFat}
             onChange={(e) => setSaturatedFat(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -219,7 +219,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={UnsaturedFat}
             onChange={(e) => setUnsaturedFat(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -231,7 +231,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Sugar}
             onChange={(e) => setSugar(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -243,7 +243,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={DietaryFiber}
             onChange={(e) => setDietaryFiber(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
 
@@ -255,7 +255,7 @@ const ItemForm: React.FC<ItemFormProps> = ({
             value={Protein}
             onChange={(e) => setProtein(Number(e.target.value))}
             required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
       </div>
