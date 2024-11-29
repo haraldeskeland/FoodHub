@@ -40,7 +40,7 @@ const NavMenu: React.FC = () => {
             <div className="flex justify-between items-center p-2">
               <div className="flex">
                 <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">
-                  <img src="{logo.default}" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
+                  <img src="https://localhost:7268/images/Logos/foodhub_logo_black.png" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
                 </Link>
                 <Link to="/items" className="ml-8 text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
               </div>
@@ -72,7 +72,7 @@ const NavMenu: React.FC = () => {
                   onClick={toggleTheme}
                   className="w-8 h-8 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95"
                 >
-                  <img src="/images/light-dark.png" alt="Toggle theme" className="w-full h-full filter dark:invert" />
+                  <img src="https://localhost:7268/images/light-dark.png" alt="Toggle theme" className="w-full h-full filter dark:invert" />
                 </button>
                 {/* Add login/logout buttons here */}
                 <button className="sm:hidden" type="button" id="navbar-toggle">
