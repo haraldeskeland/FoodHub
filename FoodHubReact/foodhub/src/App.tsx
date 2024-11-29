@@ -13,7 +13,7 @@ import Layout from './shared/Layout';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-[#101010] dark:text-white overflow-x-hidden">
+      <div className="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-[#0d0d0d] dark:text-white overflow-x-hidden">
         <NavBar />
         <main className="flex-grow container mx-auto px-4 mt-16">
           <Routes>

@@ -36,9 +36,9 @@ const NavMenu: React.FC = () => {
   return (
     <header>
       <div className="w-full flex justify-center">
-        <nav className="bg-[#ffffff] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto backdrop-blur-md backdrop-saturate-[80%] bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:!border-[#303030d5]" data-aos="fade-down">
+        <nav className="bg-[#ffffff] backdrop-blur-lg backdrop-saturate-[70%] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto mt-3 bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:!border-[#303030d5] dark:backdrop-blur-lg dark:!backdrop-saturate-[100%] dark:bg-[rgba(29,29,31,0.68)]" data-aos="fade-down">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center p-2">
+            <div className="flex justify-between items-center p-3">
               <div className="flex">
                 <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">
                   <img src="https://localhost:7268/images/Logos/foodhub_logo_black.png" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
@@ -58,7 +58,7 @@ const NavMenu: React.FC = () => {
                       searchQuery={searchQuery}
                       setSearchQuery={setSearchQuery}
                     />
-                    <button type="submit" className="bg-gray-800 px-4 py-2 rounded-r-full text-white hover:bg-blue-800 transition-colors">
+                    <button type="submit" className="bg-gray-800 px-4 py-2 rounded-r-full text-white hover:bg-blue-800 transition-colors dark:!backdrop-blur-lg dark:!backdrop-saturate-[100%] dark:!bg-[rgba(29,29,31,0.38)]">
                       Search
                     </button>
                   </div>
