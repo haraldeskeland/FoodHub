@@ -45,6 +45,8 @@ const NavMenu: React.FC = () => {
                 <Link to="/items" className="ml-8 text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
               </div>
 
+              
+
               {!isHomePage && (
                 <form onSubmit={handleSearch} className="flex-grow max-w-md">
                   <div className="flex w-full">

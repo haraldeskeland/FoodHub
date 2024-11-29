@@ -26,7 +26,6 @@ const HomePage: React.FC = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
             Find out what you´re <span className="gradient-text pr-2 font-extrabold dark:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"><i>actually</i></span> eating
           </h1>        
-          <img src="" alt="test" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
           {/* Supporting description text with fade-up animation */}
           <p className="text-md font-light text-gray-500 mt-6 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
             We provide you with the most accurate information about the food you eat. 
