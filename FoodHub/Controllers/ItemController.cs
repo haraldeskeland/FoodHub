@@ -21,7 +21,7 @@ namespace FoodHub.Controllers
             _itemRepository = itemRepository;
             _logger = logger;
         }
-
+        
         // Action method to display items in a table view
         public async Task<IActionResult> Table()
         {
@@ -34,20 +34,7 @@ namespace FoodHub.Controllers
             var itemsViewModel = new ItemsViewModel(items, "Table");
             return View(itemsViewModel);
         }
-
-        // Action method to display items in a grid view
-        public async Task<IActionResult> Grid()
-        {
-            var items = await _itemRepository.GetAll();
-            if (items == null)
-            {
-                _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
-                return NotFound("Item list not found");
-            }
-            var itemsViewModel = new ItemsViewModel(items, "Grid");
-            return View(itemsViewModel);
-        }
-
+        
         // Action method to display details of a specific item
         public async Task<IActionResult> Details(int id)
         {
