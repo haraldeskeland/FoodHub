@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
 const ItemListPage: React.FC = () => {
+<<<<<<< HEAD
+  const [items, setItems] = useState<Item[]>([]); // State to store the list of items
+  const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
+  const [error, setError] = useState<string | null>(null); // State to store any error messages
+  const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
+  const [searchQuery, setSearchQuery] = useState<string>(''); // State to store the search query
+  const location = useLocation();
+
+=======
   const [items, setItems] = useState<Item[]>([]);
   const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showTable, setShowTable] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>('');
+>>>>>>> ReactApp
 
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
@@ -53,6 +64,20 @@ const ItemListPage: React.FC = () => {
     fetchCategories();
   }, []);
 
+  // Save the view mode to local storage whenever it changes
+  useEffect(() => {
+    const savedViewMode = localStorage.getItem('itemViewMode');
+    if (savedViewMode === 'grid') setShowTable(false);
+    
+    // Read search query from URL
+    const params = new URLSearchParams(location.search);
+    const searchFromUrl = params.get('search') || '';
+    setSearchQuery(searchFromUrl);
+    
+    fetchItems();
+  }, [location]);
+
+  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -82,7 +107,7 @@ const ItemListPage: React.FC = () => {
       <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
         {showTable ? `Display Grid` : 'Display Table'}
       </Button>
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3">        
         <Form.Control
           type="text"
           placeholder="Search by name or description"

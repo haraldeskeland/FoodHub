@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
-// Props for the ItemForm component
 interface ItemFormProps {
-  onItemChanged: (newItem: Item) => void; // Function to handle item changes
-  ItemId?: number; // Optional item ID for updates
-  isUpdate?: boolean; // Flag to indicate if the form is for updating an item
-  initialData?: Item; // Optional initial data for the form
+  onItemChanged: (newItem: Item) => void;
+  ItemId?: number;
+  isUpdate?: boolean;
+  initialData?: Item;
 }
 
-// Interface for item categories
 interface Category {
-  ItemCategoryId: number; // Unique identifier for the category
-  ItemCategoryName: string; // Name of the category
+  ItemCategoryId: number;
+  ItemCategoryName: string;
 }
 
-// ItemForm component definition
 const ItemForm: React.FC<ItemFormProps> = ({ 
   onItemChanged,
   ItemId,
   isUpdate = false,
   initialData
 }) => {
-
   // Form state
   const [Name, setName] = useState<string>(initialData?.Name || '');
   const [ProducerName, setProducerName] = useState<string>(initialData?.ProducerName || '');
@@ -53,8 +48,8 @@ const ItemForm: React.FC<ItemFormProps> = ({
         const response = await fetch(`${API_URL}/api/ItemAPI/GetAllCategories`);
         if (response.ok) {
           const data = await response.json();
-          console.log('Fetched Categories:', data); // Log fetched categories
-          setCategories(data); // Update state with categories
+          console.log('Fetched Categories:', data);
+          setCategories(data);
         } else {
           console.error('Failed to fetch categories');
         }
@@ -88,178 +83,200 @@ const ItemForm: React.FC<ItemFormProps> = ({
       Sugar,
       DietaryFiber,
       Protein,
-      ItemCategoryId: selectedCategory, // Add the selected category ID
+      ItemCategoryId: selectedCategory,
     };
-    onItemChanged(item); // Call the passed function with the item data
+    onItemChanged(item);
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      {/* Item Name */}
-      <Form.Group controlId="formItemName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter item name"
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-      </Form.Group>
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-40">
+      {/* Basic Information Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-semibold mb-4">Basic Information</h2>
+        
+        <div>
+          <label htmlFor="Name" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Name</label>
+          <input
+            type="text"
+            id="Name"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
 
-      {/* Producer Name */}
-      <Form.Group controlId="formItemProducerName">
-        <Form.Label>Producer Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter producer name"
-          value={ProducerName}
-          onChange={(e) => setProducerName(e.target.value)}
-          required
-        />
-      </Form.Group>
+        <div>
+          <label htmlFor="ProducerName" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Producer Name</label>
+          <input
+            type="text"
+            id="ProducerName"
+            value={ProducerName}
+            onChange={(e) => setProducerName(e.target.value)}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
 
-      {/* Category Dropdown */}
-      <Form.Group controlId="formItemCategory">
-        <Form.Label>Category</Form.Label>
-        <Form.Control
-          as="select"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(Number(e.target.value))}
-          required
+        <div>
+          <label htmlFor="Category" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Category</label>
+          <select
+            id="Category"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          >
+            <option value="">Select Category</option>
+            {categories.map((category) => (
+              <option key={category.ItemCategoryId} value={category.ItemCategoryId}>
+                {category.ItemCategoryName}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="Description" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Description</label>
+          <textarea
+            id="Description"
+            value={Description}
+            onChange={(e) => setDescription(e.target.value)}
+            rows={4}
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="ImagePath" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Image URL</label>
+          <input
+            type="text"
+            id="ImagePath"
+            value={ImagePath}
+            onChange={(e) => setImagePath(e.target.value)}
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+      </div>
+
+      {/* Nutritional Information Section */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-semibold mb-4">Nutritional Information (per 100g)</h2>
+        
+        <div>
+          <label htmlFor="Energy" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Energy (kcal)</label>
+          <input
+            type="number"
+            id="Energy"
+            value={Energy}
+            onChange={(e) => setEnergy(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="Carbohydrate" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Carbohydrate (g)</label>
+          <input
+            type="number"
+            id="Carbohydrate"
+            value={Carbohydrate}
+            onChange={(e) => setCarbohydrate(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="TotalFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Total Fat (g)</label>
+          <input
+            type="number"
+            id="TotalFat"
+            value={TotalFat}
+            onChange={(e) => setTotalFat(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="SaturatedFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Saturated Fat (g)</label>
+          <input
+            type="number"
+            id="SaturatedFat"
+            value={SaturatedFat}
+            onChange={(e) => setSaturatedFat(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="UnsaturatedFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Unsaturated Fat (g)</label>
+          <input
+            type="number"
+            id="UnsaturatedFat"
+            value={UnsaturedFat}
+            onChange={(e) => setUnsaturedFat(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="Sugar" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Sugar (g)</label>
+          <input
+            type="number"
+            id="Sugar"
+            value={Sugar}
+            onChange={(e) => setSugar(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="DietaryFiber" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Dietary Fiber (g)</label>
+          <input
+            type="number"
+            id="DietaryFiber"
+            value={DietaryFiber}
+            onChange={(e) => setDietaryFiber(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="Protein" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Protein (g)</label>
+          <input
+            type="number"
+            id="Protein"
+            value={Protein}
+            onChange={(e) => setProtein(Number(e.target.value))}
+            required
+            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+          />
+        </div>
+      </div>
+
+      {/* Form buttons */}
+      <div className="col-span-2 flex justify-end space-x-3 mt-8">
+        <button 
+          type="button" 
+          onClick={onCancel}
+          className="px-6 py-3 bg-gray-300 text-gray-700 rounded-full hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors"
         >
-          <option value="">Select Category</option>
-          {categories.map((category) => (
-            <option key={category.ItemCategoryId} value={category.ItemCategoryId}>
-              {category.ItemCategoryName}
-            </option>
-          ))}
-        </Form.Control>
-      </Form.Group>
-
-      {/* Description */}
-      <Form.Group controlId="formItemDescription">
-        <Form.Label>Description</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={3}
-          placeholder="Enter item description"
-          value={Description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </Form.Group>
-
-      {/* Image URL */}
-      <Form.Group controlId="formItemImagePath">
-        <Form.Label>Image URL</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter image URL"
-          value={ImagePath}
-          onChange={(e) => setImagePath(e.target.value)}
-        />
-      </Form.Group>
-
-      {/* Energy */}
-      <Form.Group controlId="formItemEnergy">
-        <Form.Label>Energy (kcal)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter energy in kcal"
-          value={Energy}
-          onChange={(e) => setEnergy(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Carbohydrate */}
-      <Form.Group controlId="formItemCarbohydrate">
-        <Form.Label>Carbohydrate (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter carbohydrate in grams"
-          value={Carbohydrate}
-          onChange={(e) => setCarbohydrate(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Total Fat */}
-      <Form.Group controlId="formItemTotalFat">
-        <Form.Label>Total Fat (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter total fat in grams"
-          value={TotalFat}
-          onChange={(e) => setTotalFat(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Saturated Fat */}
-      <Form.Group controlId="formItemSaturatedFat">
-        <Form.Label>Saturated Fat (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter saturated fat in grams"
-          value={SaturatedFat}
-          onChange={(e) => setSaturatedFat(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Unsaturated Fat */}
-      <Form.Group controlId="formItemUnsaturatedFat">
-        <Form.Label>Unsaturated Fat (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter unsaturated fat in grams"
-          value={UnsaturedFat}
-          onChange={(e) => setUnsaturedFat(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Sugar */}
-      <Form.Group controlId="formItemSugar">
-        <Form.Label>Sugar (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter sugar in grams"
-          value={Sugar}
-          onChange={(e) => setSugar(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Dietary Fiber */}
-      <Form.Group controlId="formItemDietaryFiber">
-        <Form.Label>Dietary Fiber (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter dietary fiber in grams"
-          value={DietaryFiber}
-          onChange={(e) => setDietaryFiber(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Protein */}
-      <Form.Group controlId="formItemProtein">
-        <Form.Label>Protein (g)</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter protein in grams"
-          value={Protein}
-          onChange={(e) => setProtein(Number(e.target.value))}
-          required
-        />
-      </Form.Group>
-
-      {/* Submit and Cancel Buttons */}
-      <Button variant="primary" type="submit">Create Item</Button>
-      <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>
-    </Form>
+          Cancel
+        </button>
+        <button 
+          type="submit" 
+          className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors"
+        >
+          {isUpdate ? 'Update Item' : 'Create Item'}
+        </button>
+      </div>
+    </form>
   );
 };
 
