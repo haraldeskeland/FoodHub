@@ -7,22 +7,13 @@ import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
 const ItemListPage: React.FC = () => {
-<<<<<<< HEAD
-  const [items, setItems] = useState<Item[]>([]); // State to store the list of items
-  const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
-  const [error, setError] = useState<string | null>(null); // State to store any error messages
-  const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
-  const [searchQuery, setSearchQuery] = useState<string>(''); // State to store the search query
-  const location = useLocation();
-
-=======
   const [items, setItems] = useState<Item[]>([]);
   const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showTable, setShowTable] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>('');
->>>>>>> ReactApp
+  const location = useLocation();
 
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
