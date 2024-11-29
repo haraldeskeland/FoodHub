@@ -30,4 +30,3 @@ public class EmailSenderTests
             Times.Once);
     }
 }
-

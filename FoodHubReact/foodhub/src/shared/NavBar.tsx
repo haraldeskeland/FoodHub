@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// Update these paths to match your actual file structure
 
 
 
+// NavMenu component definition
 const NavMenu: React.FC = () => {
   const [isHomePage, setIsHomePage] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
