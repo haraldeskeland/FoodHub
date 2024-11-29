@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
@@ -12,6 +13,8 @@ const ItemListPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null); // State to store any error messages
   const [showTable, setShowTable] = useState<boolean>(true); // State to toggle between table and grid view
   const [searchQuery, setSearchQuery] = useState<string>(''); // State to store the search query
+  const location = useLocation();
+
 
   // Function to toggle between table and grid view
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
@@ -51,9 +54,16 @@ const ItemListPage: React.FC = () => {
 
   // Save the view mode to local storage whenever it changes
   useEffect(() => {
-    console.log('[save view state] Saving view mode:', showTable ? 'table' : 'grid');
-    localStorage.setItem('itemViewMode', showTable ? 'table' : 'grid');
-  }, [showTable]);
+    const savedViewMode = localStorage.getItem('itemViewMode');
+    if (savedViewMode === 'grid') setShowTable(false);
+    
+    // Read search query from URL
+    const params = new URLSearchParams(location.search);
+    const searchFromUrl = params.get('search') || '';
+    setSearchQuery(searchFromUrl);
+    
+    fetchItems();
+  }, [location]);
 
   // Filter items based on the search query
   const filteredItems = items.filter(item =>
@@ -81,15 +91,12 @@ const ItemListPage: React.FC = () => {
   return (
     <div>
       <h1>Items</h1>
-      {/* Button to refresh items */}
       <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
         {loading ? 'Loading...' : 'Refresh Items'}
       </Button>
-      {/* Button to toggle between table and grid view */}
       <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
         {showTable ? `Display Grid` : 'Display Table'}
       </Button>
-      {/* Search bar to filter items by name or description */}
       <Form.Group className="mb-3">        
         <Form.Control
           type="text"
@@ -98,13 +105,10 @@ const ItemListPage: React.FC = () => {
           onChange={e => setSearchQuery(e.target.value)}
         />  
       </Form.Group>      
-      {/* Display error message if any */}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {/* Display items in table or grid view based on the state */}
       {showTable 
-      ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
-      : <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
-      {/* Button to navigate to the item creation page */}
+        ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+        : <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
       <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
     </div>
   );
