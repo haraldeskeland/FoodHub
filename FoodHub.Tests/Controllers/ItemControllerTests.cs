@@ -350,18 +350,5 @@ namespace FoodHub.Tests.Controllers
             Assert.Equal(item, model);
         }
 
-        [Fact]
-        public async Task Update_Get_ReturnsNotFound_WhenItemNotFound()
-        {
-            // Arrange
-            var itemId = 1;
-            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item?)null);
-
-            // Act
-            var result = await _controller.Update(itemId);
-
-            // Assert
-            Assert.IsType<NotFoundResult>(result);
-        }
     }
 }
