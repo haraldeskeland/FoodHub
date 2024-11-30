@@ -101,20 +101,20 @@ const ItemListPage: React.FC = () => {
       <div className="mb-4 space-x-2">
         <button 
           onClick={fetchItems} 
-          className={`px-4 py-2 rounded ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+          className={`px-4 py-2 rounded ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-white'}`}
           disabled={loading}
         >
           {loading ? 'Loading...' : 'Refresh Items'}
         </button>
         <button 
           onClick={toggleTableOrGrid} 
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-4 py-2 text-white rounded bg-gray-800 hover:bg-gray-700"
         >
           {showTable ? 'Display Grid' : 'Display Table'}
         </button>
         <Link 
         to='/itemcreate' 
-        className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+        className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-green-600 no-underline"
       >
         Add new item
       </Link>
