@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
                 <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 
                 {/* Search button */}
-                <button onClick={handleSearch} className="bg-gradient-to-r from-lime-800 to-lime-300 px-6 py-3 rounded-r-full text-black font-bold hover:bg-blue-800 transition-colors">
+                <button onClick={handleSearch} className="bg-gradient-to-r from-lime-700 to-lime-500 px-6 py-3 rounded-r-full text-white dark:!text-black  font-medium hover:bg-blue-800 transition-colors">
                   Search
                 </button>
               </div>
