@@ -263,9 +263,7 @@ const handleSubmit = async (event: React.FormEvent) => {
             className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
-      </div>
-
-      <div>
+        <div>
         <label htmlFor="Salt" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Salt (g)</label>
         <input
           type="number"
@@ -276,6 +274,9 @@ const handleSubmit = async (event: React.FormEvent) => {
           className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
         />
       </div>
+      </div>
+
+      
 
       {/* Form buttons */}
       <div className="col-span-2 flex justify-end space-x-3 mt-8">
