@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
@@ -55,12 +54,10 @@ const ItemListPage: React.FC = () => {
     fetchCategories();
   }, []);
 
-  // Save the view mode to local storage whenever it changes
   useEffect(() => {
     const savedViewMode = localStorage.getItem('itemViewMode');
     if (savedViewMode === 'grid') setShowTable(false);
     
-    // Read search query from URL
     const params = new URLSearchParams(location.search);
     const searchFromUrl = params.get('search') || '';
     setSearchQuery(searchFromUrl);
@@ -68,7 +65,6 @@ const ItemListPage: React.FC = () => {
     fetchItems();
   }, [location]);
 
-  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -90,27 +86,43 @@ const ItemListPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Items</h1>
-      <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
-        {loading ? 'Loading...' : 'Refresh Items'}
-      </Button>
-      <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
-        {showTable ? `Display Grid` : 'Display Table'}
-      </Button>
-      <Form.Group className="mb-3">        
-        <Form.Control
+    <div className='mt-20 container mx-auto px-4'>
+      <h1 className="text-2xl font-bold mb-4">Items</h1>
+      <div className="mb-4 space-x-2">
+        <button 
+          onClick={fetchItems} 
+          className={`px-4 py-2 rounded ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+          disabled={loading}
+        >
+          {loading ? 'Loading...' : 'Refresh Items'}
+        </button>
+        <button 
+          onClick={toggleTableOrGrid} 
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          {showTable ? 'Display Grid' : 'Display Table'}
+        </button>
+      </div>
+      <div className="mb-4">
+        <input
           type="text"
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-      </Form.Group>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      </div>
+      {error && <p className="text-red-500 mb-4">{error}</p>}
       {showTable 
-      ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
-      : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
-      <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
+        ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+        : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+      }
+      <Link 
+        to='/itemcreate' 
+        className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+      >
+        Add new item
+      </Link>
     </div>
   );
 };
