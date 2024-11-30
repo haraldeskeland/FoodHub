@@ -23,7 +23,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     : items;
     
   return (
-    <div className="mx-auto px-4 md:px-0">
+    <div className="mx-auto px-2 sm:px-4 md:px-0">
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
         <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0">

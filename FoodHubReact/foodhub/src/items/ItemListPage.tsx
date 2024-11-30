@@ -98,34 +98,35 @@ const ItemListPage: React.FC = () => {
   return (
     <div className='mt-20 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
       
-      <div className="mb-4 space-x-2">
-        <button 
-          onClick={fetchItems} 
-          className={`px-4 py-2 rounded ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-white'}`}
-          disabled={loading}
-        >
-          {loading ? 'Loading...' : 'Refresh Items'}
-        </button>
-        <button 
-          onClick={toggleTableOrGrid} 
-          className="px-4 py-2 text-white rounded bg-gray-800 hover:bg-gray-700"
-        >
-          {showTable ? 'Display Grid' : 'Display Table'}
-        </button>
+      <div className="mb-4 flex flex-col sm:flex-row sm:flex-wrap gap-2">
+        <div className="flex w-full sm:w-auto gap-2">
+          <button 
+            onClick={fetchItems} 
+            className={`px-4 py-2 rounded flex-1 sm:flex-initial ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-gray-700 text-white'}`}
+            disabled={loading}
+          >
+            {loading ? 'Loading...' : 'Refresh Items'}
+          </button>
+          <button 
+            onClick={toggleTableOrGrid} 
+            className="px-4 py-2 text-white rounded bg-gray-800 hover:bg-gray-700 flex-1 sm:flex-initial"
+          >
+            {showTable ? 'Display Grid' : 'Display Table'}
+          </button>
+        </div>
         <Link 
-        to='/itemcreate' 
-        className="inline-block mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-green-600 no-underline"
-      >
-        Add new item
-      </Link>
-      <input
+          to='/itemcreate' 
+          className="inline-block px-4 py-2 bg-gray-800 text-white rounded hover:bg-green-600 no-underline w-full sm:w-auto text-center"
+        >
+          Add new item
+        </Link>
+        <input
           type="text"
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
-          className="w-[30%] py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
+          className="w-full sm:w-auto py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
         />
-        
       </div>
       
       {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -136,6 +137,7 @@ const ItemListPage: React.FC = () => {
       
     </div>
   );
+  
 };
 
 export default ItemListPage;

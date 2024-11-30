@@ -15,7 +15,7 @@ const App: React.FC = () => {
     <Router>
       <div className="font-inter flex flex-col min-h-screen text-base leading-normal text-gray-800 dark:bg-[#0d0d0d] dark:text-white overflow-x-hidden">
         <NavBar />
-        <main className="flex-grow mx-auto px-4 mt-16">
+        <main className="flex-grow mx-auto px-4  mt-16">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/items" element={<ItemListPage />} />
