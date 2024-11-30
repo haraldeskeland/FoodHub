@@ -62,7 +62,7 @@ const ItemUpdatePage: React.FC = () => {
 
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-16">
+      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-32">
         <div className="text-center w-full mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
             <span className="gradient-text underline pr-2 font-extrabold">Update</span> Food Item

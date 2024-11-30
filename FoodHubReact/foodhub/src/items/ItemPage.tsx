@@ -113,7 +113,7 @@ const ItemPage: React.FC = () => {
             {item.ItemAllergen && item.ItemAllergen.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {item.ItemAllergen.map((itemAllergen, index) => (
-                  <div key={index} className="flex items-center bg-gray-100 dark:bg-[#1d1d1f] border dark:border-[#303030d5] p-2 rounded-md">
+                  <div key={index} className="flex items-center bg-gray-100 dark:!bg-[#1d1d1f] border dark:!border-[#303030d5] p-2 rounded-md">
                     <span className="text-2xl mr-2">{getAllergenEmoji(itemAllergen.Allergen.Name)}</span>
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{itemAllergen.Allergen.Name}</span>
                   </div>

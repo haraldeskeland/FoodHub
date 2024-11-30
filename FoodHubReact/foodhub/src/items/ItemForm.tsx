@@ -36,7 +36,6 @@ const ItemForm: React.FC<ItemFormProps> = ({
   const [Protein, setProtein] = useState<number>(initialData?.Protein || 0);
   const [Salt, setSalt] = useState<number>(initialData?.Salt || 0);
 
-
   // Categories state and selected category
   const [categories, setCategories] = useState<Category[]>([]); 
   const [selectedCategory, setSelectedCategory] = useState<number>(initialData?.ItemCategoryId || 0); 
@@ -68,38 +67,36 @@ const ItemForm: React.FC<ItemFormProps> = ({
     navigate(-1); 
   };
 
-// Form submission handler
-const handleSubmit = async (event: React.FormEvent) => {
-  event.preventDefault();
-  const item: Item = {
-    ItemId: ItemId || 0,
-    Name,
-    ProducerName,
-    Description,
-    ImagePath,
-    Energy,
-    Carbohydrate,
-    TotalFat,
-    SaturatedFat,
-    UnsaturedFat,
-    Sugar,
-    DietaryFiber,
-    Protein,
-    Salt,
-    ItemCategoryId: selectedCategory,
+  // Form submission handler
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const item: Item = {
+      ItemId: ItemId || 0,
+      Name,
+      ProducerName,
+      Description,
+      ImagePath,
+      Energy,
+      Carbohydrate,
+      TotalFat,
+      SaturatedFat,
+      UnsaturedFat,
+      Sugar,
+      DietaryFiber,
+      Protein,
+      Salt,
+      ItemCategoryId: selectedCategory,
+    };
+    onItemChanged(item);
   };
-  onItemChanged(item);
-};
-
-
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-40">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-20">
       {/* Basic Information Section */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold mb-4">Basic Information</h2>
         
-        <div>
+        <div className='pt-8'>
           <label htmlFor="Name" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Name</label>
           <input
             type="text"
@@ -147,7 +144,7 @@ const handleSubmit = async (event: React.FormEvent) => {
             id="Description"
             value={Description}
             onChange={(e) => setDescription(e.target.value)}
-            rows={4}
+            rows={2}
             className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
@@ -168,131 +165,54 @@ const handleSubmit = async (event: React.FormEvent) => {
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold mb-4">Nutritional Information (per 100g)</h2>
         
-        <div>
-          <label htmlFor="Energy" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Energy (kcal)</label>
-          <input
-            type="number"
-            id="Energy"
-            value={Energy}
-            onChange={(e) => setEnergy(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
+        <div className="grid grid-cols-3 gap-4">
+          {[
+            { label: "Energy (kcal)", value: Energy, setter: setEnergy },
+            { label: "Carbohydrate (g)", value: Carbohydrate, setter: setCarbohydrate },
+            { label: "Total Fat (g)", value: TotalFat, setter: setTotalFat },
+            { label: "Saturated Fat (g)", value: SaturatedFat, setter: setSaturatedFat },
+            { label: "Unsaturated Fat (g)", value: UnsaturedFat, setter: setUnsaturedFat },
+            { label: "Sugar (g)", value: Sugar, setter: setSugar },
+            { label: "Dietary Fiber (g)", value: DietaryFiber, setter: setDietaryFiber },
+            { label: "Protein (g)", value: Protein, setter: setProtein },
+            { label: "Salt (g)", value: Salt, setter: setSalt },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col">
+              <div className="h-14 flex items-end">
+                <label htmlFor={item.label} className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                  {item.label}
+                </label>
+              </div>
+              <input
+                type="number"
+                id={item.label}
+                value={item.value}
+                onChange={(e) => item.setter(Number(e.target.value))}
+                required
+                className="p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+              />
+            </div>
+          ))}
         </div>
-
-        <div>
-          <label htmlFor="Carbohydrate" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Carbohydrate (g)</label>
-          <input
-            type="number"
-            id="Carbohydrate"
-            value={Carbohydrate}
-            onChange={(e) => setCarbohydrate(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
+        
+        {/* Form buttons */}
+        <div className='mt-20'>
+          <div className="col-span-2 flex justify-end space-x-3 lg:mt-16">
+            <button 
+              type="button" 
+              onClick={onCancel}
+              className="px-6 py-2 bg-[#444447] rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button 
+              type="submit" 
+              className="px-6 py-2 bg-[#444447] text-white rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors"
+            >
+              {isUpdate ? 'Update Item' : 'Create Item'}
+            </button>
+          </div>
         </div>
-
-        <div>
-          <label htmlFor="TotalFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Total Fat (g)</label>
-          <input
-            type="number"
-            id="TotalFat"
-            value={TotalFat}
-            onChange={(e) => setTotalFat(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="SaturatedFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Saturated Fat (g)</label>
-          <input
-            type="number"
-            id="SaturatedFat"
-            value={SaturatedFat}
-            onChange={(e) => setSaturatedFat(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="UnsaturatedFat" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Unsaturated Fat (g)</label>
-          <input
-            type="number"
-            id="UnsaturatedFat"
-            value={UnsaturedFat}
-            onChange={(e) => setUnsaturedFat(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="Sugar" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Sugar (g)</label>
-          <input
-            type="number"
-            id="Sugar"
-            value={Sugar}
-            onChange={(e) => setSugar(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="DietaryFiber" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Dietary Fiber (g)</label>
-          <input
-            type="number"
-            id="DietaryFiber"
-            value={DietaryFiber}
-            onChange={(e) => setDietaryFiber(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="Protein" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Protein (g)</label>
-          <input
-            type="number"
-            id="Protein"
-            value={Protein}
-            onChange={(e) => setProtein(Number(e.target.value))}
-            required
-            className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-          />
-        </div>
-        <div>
-        <label htmlFor="Salt" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Salt (g)</label>
-        <input
-          type="number"
-          id="Salt"
-          value={Salt}
-          onChange={(e) => setSalt(Number(e.target.value))}
-          required
-          className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
-        />
-      </div>
-      </div>
-
-      
-
-      {/* Form buttons */}
-      <div className="col-span-2 flex justify-end space-x-3 mt-8">
-        <button 
-          type="button" 
-          onClick={onCancel}
-          className="px-6 py-3 bg-gray-300 text-gray-700 rounded-full hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors"
-        >
-          Cancel
-        </button>
-        <button 
-          type="submit" 
-          className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors"
-        >
-          {isUpdate ? 'Update Item' : 'Create Item'}
-        </button>
       </div>
     </form>
   );
