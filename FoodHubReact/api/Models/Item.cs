@@ -11,7 +11,7 @@ namespace FoodHub.Models {
 
         // Name of the item with validation rules
         [Required(ErrorMessage = "Item name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå,. \-]{1,100}", ErrorMessage = "The item's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå,. \&\-]{1,100}", ErrorMessage = "The item's name must be between 1 and 100 characters")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
         
