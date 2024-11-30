@@ -102,6 +102,12 @@ const ItemListPage: React.FC = () => {
         >
           {showTable ? 'Display Grid' : 'Display Table'}
         </button>
+        <Link 
+        to='/itemcreate' 
+        className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+      >
+        Add new item
+      </Link>
         
       </div>
       <div className="mb-4">
@@ -118,12 +124,7 @@ const ItemListPage: React.FC = () => {
         ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
         : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
       }
-      <Link 
-        to='/itemcreate' 
-        className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-      >
-        Add new item
-      </Link>
+      
     </div>
   );
 };
