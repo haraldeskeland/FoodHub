@@ -28,9 +28,7 @@ const NavMenu: React.FC = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/items?search=${encodeURIComponent(searchQuery)}`);
-    }
+    navigate(`/items${searchQuery.trim() ? `?search=${encodeURIComponent(searchQuery)}` : ''}`);
   };
 
   return (
