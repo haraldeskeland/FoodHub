@@ -118,17 +118,16 @@ const ItemListPage: React.FC = () => {
       >
         Add new item
       </Link>
-        
-      </div>
-      <div className="mb-4">
-        <input
+      <input
           type="text"
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
           className="w-[30%] py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
         />
+        
       </div>
+      
       {error && <p className="text-red-500 mb-4">{error}</p>}
       {showTable 
         ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>

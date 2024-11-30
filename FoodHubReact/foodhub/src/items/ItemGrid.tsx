@@ -26,7 +26,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     <div className="mx-auto px-0">
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
-        <div className="w-full md:w-1/5 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
+        <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0">
         <h3 className="font-bold text-2xl mb-2">Categories</h3>
           <hr className="py-2 dark:border-slate-700" />
           <ul className="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col">
