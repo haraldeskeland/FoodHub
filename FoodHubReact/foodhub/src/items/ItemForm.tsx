@@ -34,6 +34,8 @@ const ItemForm: React.FC<ItemFormProps> = ({
   const [Sugar, setSugar] = useState<number>(initialData?.Sugar || 0);
   const [DietaryFiber, setDietaryFiber] = useState<number>(initialData?.DietaryFiber || 0);
   const [Protein, setProtein] = useState<number>(initialData?.Protein || 0);
+  const [Salt, setSalt] = useState<number>(initialData?.Salt || 0);
+
 
   // Categories state and selected category
   const [categories, setCategories] = useState<Category[]>([]); 
@@ -66,27 +68,30 @@ const ItemForm: React.FC<ItemFormProps> = ({
     navigate(-1); 
   };
 
-  // Form submission handler
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    const item: Item = {
-      ItemId: ItemId || 0,
-      Name,
-      ProducerName,
-      Description,
-      ImagePath,
-      Energy,
-      Carbohydrate,
-      TotalFat,
-      SaturatedFat,
-      UnsaturedFat,
-      Sugar,
-      DietaryFiber,
-      Protein,
-      ItemCategoryId: selectedCategory,
-    };
-    onItemChanged(item);
+// Form submission handler
+const handleSubmit = async (event: React.FormEvent) => {
+  event.preventDefault();
+  const item: Item = {
+    ItemId: ItemId || 0,
+    Name,
+    ProducerName,
+    Description,
+    ImagePath,
+    Energy,
+    Carbohydrate,
+    TotalFat,
+    SaturatedFat,
+    UnsaturedFat,
+    Sugar,
+    DietaryFiber,
+    Protein,
+    Salt,
+    ItemCategoryId: selectedCategory,
   };
+  onItemChanged(item);
+};
+
+
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-40">
@@ -258,6 +263,18 @@ const ItemForm: React.FC<ItemFormProps> = ({
             className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="Salt" className="block text-sm font-medium text-gray-700 dark:text-slate-300">Salt (g)</label>
+        <input
+          type="number"
+          id="Salt"
+          value={Salt}
+          onChange={(e) => setSalt(Number(e.target.value))}
+          required
+          className="mt-1 p-2 block w-full rounded-lg border border-gray-300 shadow-sm dark:bg-[#444447] dark:!border-[#5e5e5ed5] focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-30"
+        />
       </div>
 
       {/* Form buttons */}

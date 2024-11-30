@@ -7,6 +7,8 @@ import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
 import './index.css';
 import Layout from './shared/Layout';
+import ItemPage from './items/ItemPage';
+
 
 
 
@@ -21,6 +23,7 @@ const App: React.FC = () => {
             <Route path="/items" element={<ItemListPage />} />
             <Route path="/itemcreate" element={<ItemCreatePage />} />
             <Route path="/itemupdate/:itemId" element={<ItemUpdatePage />} />
+            <Route path="/item/:itemId" element={<ItemPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
