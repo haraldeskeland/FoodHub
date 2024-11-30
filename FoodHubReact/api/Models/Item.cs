@@ -17,7 +17,7 @@ namespace FoodHub.Models {
         
         // Name of the producer with validation rules
         [Required(ErrorMessage = "Producer name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå,. \-]{1,100}", ErrorMessage = "The producer's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå,. \&\-]{1,100}", ErrorMessage = "The producer's name must be between 1 and 100 characters")]
         [Display(Name = "Producer Name")]
         public string ProducerName { get; set; } = string.Empty;
 
