@@ -79,7 +79,14 @@ const ItemListPage: React.FC = () => {
         const response = await fetch(`${API_URL}/api/ItemAPI/delete/${itemId}`, {
           method: 'DELETE',
         });
-        setItems(prevItems => prevItems.filter(item => item.ItemId !== itemId));
+  
+        if (response.ok) {
+          // Only update the state if the delete was successful
+          setItems(prevItems => prevItems.filter(item => item.ItemId !== itemId));
+        } else {
+          // If the response is not ok, throw an error
+          throw new Error(`Failed to delete item. Status: ${response.status}`);
+        }
       } catch (error) {
         console.error('Error deleting item:', error);
         setError('Failed to delete item.');

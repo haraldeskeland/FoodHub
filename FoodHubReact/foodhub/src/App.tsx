@@ -8,7 +8,6 @@ import NavBar from './shared/NavBar';
 import ItemCreatePage from './items/ItemCreatePage';
 import ItemUpdatePage from './items/ItemUpdatePage';
 import './index.css';
-import Layout from './shared/Layout';
 import ItemPage from './items/ItemPage';
 
 

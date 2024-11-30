@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../shared/SearchBar';
 import '../index.css';
-import NavBar from '../shared/NavBar';
 
 
 
@@ -18,11 +17,12 @@ const HomePage: React.FC = () => {
   };
 
   const floatingImages = [
-    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72" },
-    { src: "/images/assets/checks.png", alt: "Food 2", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0" },
-    { src: "/images/assets/graphs.png", alt: "Food 3", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64" },
-    { src: "/images/assets/allergens.png", alt: "Food 4", className: "bottom-1/4 right-[13%] w-18 md:w-26 lg:w-52" },
-  ];
+    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72 z-0" },
+    { src: "/images/assets/checks.png", alt: "Food 2", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0 z-0" },
+    { src: "/images/assets/graphs.png", alt: "Food 3", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64 z-0" },
+    { src: "/images/assets/allergens.png", alt: "Food 4", className: "bottom-1/4 right-[13%] w-20 md:w-28 lg:w-40 xl:w-52 z-0" },
+];
+
 
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -42,8 +42,8 @@ const HomePage: React.FC = () => {
       <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-32">
         <div className="text-center w-full mx-auto">
           {/* Main title of the page with animations and gradient text */}
-          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8" data-aos="fade-up">
-            Find out what  you´re<br></br> 
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8 z-50" data-aos="fade-up">
+            Find out what  you´re<br className='hidden sm:block'></br> 
             <span className="relative inline-block">
               <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-lime-500 to-lime-300 opacity-70 bg-clip-text text-transparent">
                 <i>actually</i>
