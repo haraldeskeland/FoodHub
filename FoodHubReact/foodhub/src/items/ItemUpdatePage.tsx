@@ -74,7 +74,7 @@ const ItemUpdatePage: React.FC = () => {
       </div>
 
       <div className="content-section max-w-[1800px] my-12 px-5 flex flex-col justify-between items-center w-full">
-        <div className="w-full max-w-5xl bg-white border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+        <div className="w-full max-w-5xl bg-slate-50 border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg  p-8" data-aos="fade-up" data-aos-delay="200">
           <ItemForm
             onItemChanged={handleItemUpdated}
             ItemId={item.ItemId}
