@@ -119,24 +119,21 @@ const ItemPage: React.FC = () => {
               <p className="text-gray-600 dark:text-gray-400">No allergens listed for this item.</p>
             )}
           </div>
+           {/* Buttons Section */}
+            <div className="mt-8 flex justify-start space-x-4">
+                <button onClick={() => navigate(`/itemupdate/${item.ItemId}`)}
+                className="px-4 py-2 bg-slate-800 text-white rounded hover:bg-blue-600 transition-colors">
+                Update
+                </button>
+                <button onClick={handleDelete}
+                className="px-4 py-2 bg-slate-900 text-white rounded hover:bg-red-600 transition-colors">
+                Delete
+                </button>
+            </div>
         </div>
       </div>
           
-        {/* Buttons Section */}
-      <div className="mt-8 flex justify-start space-x-4">
-        <button
-          onClick={() => navigate(`/itemupdate/${item.ItemId}`)}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-        >
-          Update
-        </button>
-        <button
-          onClick={handleDelete}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-        >
-          Delete
-        </button>
-      </div>
+       
     </div>
   );
 };
