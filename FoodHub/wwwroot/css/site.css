@@ -90,6 +90,7 @@ body {
   --gradient-colors: 45deg, #38a1ff, #10e3ff;
 }
 
+
 .gradient-text {
   background: -webkit-linear-gradient(var(--gradient-colors));
   -webkit-background-clip: text;

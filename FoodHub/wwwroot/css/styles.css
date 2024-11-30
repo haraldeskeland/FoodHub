@@ -1433,6 +1433,19 @@ body {
   --gradient-colors: 45deg, #38a1ff, #10e3ff;
 }
 
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); /* Adjust the value for how high it should float */
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite; /* Adjust the duration and easing as needed */
+}
+
 .gradient-text {
   background: -webkit-linear-gradient(var(--gradient-colors));
   -webkit-background-clip: text;
