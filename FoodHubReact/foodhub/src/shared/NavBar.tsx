@@ -37,7 +37,7 @@ const NavMenu: React.FC = () => {
     <header>
       <div className="w-full flex justify-center">
         <nav className="bg-[#ffffff] backdrop-blur-lg backdrop-saturate-[70%] fixed top-5 z-10 p-0 rounded-full lg:max-w-[1600px] w-[85vw] mx-auto mt-3 bg-[rgba(255,255,255,0.1)] border border-[rgba(0,0,0,0.14)] shadow-md shadow-black/5 dark:bg-[#1d1d1f] dark:!border-[#303030d5] dark:backdrop-blur-lg dark:!backdrop-saturate-[100%] dark:bg-[rgba(29,29,31,0.68)]" data-aos="fade-down">
-          <div className="container mx-auto px-4">
+          <div className=" mx-auto px-4">
             <div className="flex justify-between items-center p-3">
               <div className="flex">
                 <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">

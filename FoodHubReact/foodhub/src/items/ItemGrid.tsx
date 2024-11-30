@@ -25,7 +25,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
         <div className="w-full md:w-1/5 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
-          <h3 className="font-bold text-2xl mb-2">Categories</h3>
+        <h3 className="font-bold text-2xl mb-2">Categories</h3>
           <hr className="py-2 dark:border-slate-700" />
           <ul className="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col">
             {/* All Categories Link */}
@@ -60,12 +60,12 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
         </div>
 
         {/* Right Side for Search Results */}
-        <div className="w-full md:w-3/4 md:pl-12 md:border-l-2 md:border-gray-200 dark:md:border-[#4e4e4ed5]">
+        <div className="w-full md:w-4/5 md:pl-12 md:border-l-2 md:border-gray-200 dark:md:border-[#4e4e4ed5]">
         <h2 className="text-4xl font-bold mb-5">Search Results</h2>
           {filteredItems.length === 0 ? (
             <p className="text-gray-600 dark:text-slate-300">No items found.</p>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
               {filteredItems.map(item => (
                 <div key={item.ItemId} className="bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
                   <Link to={`/item/${item.ItemId}`} className='no-underline'>

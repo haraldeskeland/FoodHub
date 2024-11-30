@@ -86,7 +86,7 @@ const ItemListPage: React.FC = () => {
   };
 
   return (
-    <div className='mt-20 mx-auto px-4'>
+    <div className='mt-20 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
       <h1 className="text-2xl font-bold mb-4">Items</h1>
       <div className="mb-4 space-x-2">
         <button 
