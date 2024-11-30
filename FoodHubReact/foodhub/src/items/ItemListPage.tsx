@@ -9,7 +9,7 @@ import API_URL from '../apiConfig';
 
 const ItemListPage: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
-  const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
+  const [categories, setCategories] = useState<{ ItemCategoryId: number; ItemCategoryName: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showTable, setShowTable] = useState<boolean>(false);
@@ -37,24 +37,25 @@ const ItemListPage: React.FC = () => {
     }
   };
 
-  const fetchCategories = async () => {
-    try {
-      const response = await fetch(`${API_URL}/api/ItemAPI/categories`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      setCategories(data);
-    } catch (error) {
-      console.error(`There was a problem with the fetch operation: ${error.message}`);
-      setError('Failed to fetch categories.');
-    }
-  };
-
+   // Fetch categories on component mount
   useEffect(() => {
-    fetchItems();
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/ItemAPI/GetAllCategories`);
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Fetched Categories:', data);
+          setCategories(data);
+        } else {
+          console.error('Failed to fetch categories');
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
     fetchCategories();
   }, []);
+
 
   useEffect(() => {
     const savedViewMode = localStorage.getItem('itemViewMode');
