@@ -112,7 +112,6 @@ const NavMenu: React.FC = () => {
             {isMenuOpen && (
               <div className="md:hidden mt-2 pb-2">
                 <Link to="/items" className="block py-2 text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
-                {/* Add more menu items here */}
               </div>
             )}
           </div>
