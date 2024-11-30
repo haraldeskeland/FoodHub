@@ -16,10 +16,10 @@ const HomePage: React.FC = () => {
   };
 
   const floatingImages = [
-    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-1/4 left-[7%] w-44 md:w-34 lg:w-72" },
-    { src: "/images/assets/transparency.png", alt: "Food 2", className: "top-1/3 right-[6%] w-20 md:w-28 lg:w-64" },
-    { src: "/images/food3.png", alt: "Food 3", className: "bottom-1/4 left-[20%] w-24 md:w-32 lg:w-40" },
-    { src: "/images/food4.png", alt: "Food 4", className: "bottom-1/3 right-[15%] w-18 md:w-26 lg:w-34" },
+    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72" },
+    { src: "/images/assets/checks.png", alt: "Food 2", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0" },
+    { src: "/images/assets/graphs.png", alt: "Food 3", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64" },
+    { src: "/images/assets/allergens.png", alt: "Food 4", className: "bottom-1/4 right-[13%] w-18 md:w-26 lg:w-52" },
   ];
 
   return (
@@ -43,17 +43,17 @@ const HomePage: React.FC = () => {
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8" data-aos="fade-up">
             Find out what  you´re<br></br> 
             <span className="relative inline-block">
-              <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-cyan-500 to-cyan-300 opacity-70 bg-clip-text text-transparent">
+              <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-lime-500 to-lime-300 opacity-70 bg-clip-text text-transparent">
                 <i>actually</i>
               </span>
-              <span className="relative z-10 bg-gradient-to-r from-cyan-800 to-cyan-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
+              <span className="relative z-10 bg-gradient-to-r from-lime-800 to-lime-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
                 <i>actually</i>
               </span>
           </span> 
           eating
           </h1>        
           {/* Supporting description text with fade-up animation */}
-          <p className="text-md font-light text-gray-500 mt-6 dark:text-gray-500" data-aos="fade-up" data-aos-delay="100">
+          <p className="text-md font-light text-gray-500 mt-8 dark:text-gray-400" data-aos="fade-up" data-aos-delay="100">
             We provide you with the most accurate <br></br> information about the food you eat. 
           </p>
           {/* Search form for finding food, with animations and flexible design for different screen sizes */}
