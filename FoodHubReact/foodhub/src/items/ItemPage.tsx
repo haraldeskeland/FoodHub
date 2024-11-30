@@ -4,6 +4,10 @@ import { Item } from '../types/item'; // Adjust the import path as needed
 import API_URL from '../apiConfig'; // Adjust the import path as needed
 import { useNavigate } from 'react-router-dom';
 
+const icons = [
+    { src: "/images/icons/edit.png", alt: "Update icon"},
+    { src: "/images/icons/delete.png", alt: "Delete icon"},
+  ];
 
 const ItemPage: React.FC = () => {
   const navigate = useNavigate();
@@ -122,11 +126,14 @@ const ItemPage: React.FC = () => {
            {/* Buttons Section */}
             <div className="mt-8 flex justify-start space-x-4">
                 <button onClick={() => navigate(`/itemupdate/${item.ItemId}`)}
-                className="px-4 py-2 bg-slate-800 text-white rounded hover:bg-blue-600 transition-colors">
+                className="px-4 py-2 bg-slate-800 text-white rounded hover:bg-blue-600 transition-colors flex items-center">
+                <img src={icons[0].src} alt={icons[0].alt} className="w-5 h-5 mr-4 invert" />
+
                 Update
                 </button>
                 <button onClick={handleDelete}
-                className="px-4 py-2 bg-slate-900 text-white rounded hover:bg-red-600 transition-colors">
+                className="px-4 py-2 bg-slate-900 text-white rounded hover:bg-red-600 transition-colors flex items-center">
+                <img src={icons[1].src} alt={icons[1].alt} className="w-5 h-5 mr-4 invert" />
                 Delete
                 </button>
             </div>

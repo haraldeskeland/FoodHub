@@ -5,9 +5,7 @@ import '../index.css';
 import NavBar from '../shared/NavBar';
 
 
-const logos = [
-  { src: "/images/Logos/foodhub_logo_black.png", alt: "FoodHub" }
-];
+
 
 const HomePage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
