@@ -5,5 +5,5 @@ public class CategoryDto
     public int ItemCategoryId { get; set; }
 
     // Name of the item category
-    public string ItemCategoryName { get; set; }
+    public string ItemCategoryName { get; set; } = string.Empty;
 }

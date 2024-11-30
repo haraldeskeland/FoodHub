@@ -15,7 +15,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is valid and returns no validation errors
-    public void ItemModel_ValidModel_ReturnsNoValidationErrors()
+    public void ItemModel_ValidModel()
     {
         // Arrange
         var item = new Item
@@ -26,13 +26,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -45,7 +45,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is invalid and returns validation errors. In this case the name is too short. 
-    public void ItemModel_InvalidName_ReturnsValidationError()
+    public void ItemModel_InvalidName()
     {
         // Arrange
         var item = new Item
@@ -56,13 +56,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -76,7 +76,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid product name. 
-    public void ItemModel_InvalidProducerName_ReturnsValidationError()
+    public void ItemModel_InvalidProducerName()
     {
         // Arrange
         var item = new Item
@@ -87,13 +87,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -107,7 +107,7 @@ public class ItemModelTests
 
     [Fact]
     //chrck for invalid energy input.
-    public void ItemModel_InvalidEnergyValue_ReturnsValidationError()
+    public void ItemModel_InvalidEnergyValue()
     {
         // Arrange
         var item = new Item
@@ -118,13 +118,13 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = -10,  // Negative energy value, which is invalid
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -138,7 +138,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid total fat input.
-    public void ItemModel_InvalidTotalFatValue_ReturnsValidationError()
+    public void ItemModel_InvalidTotalFatValue()
     {
         // Arrange
         var item = new Item
@@ -150,12 +150,12 @@ public class ItemModelTests
             Energy = 52,
             Carbohydrate = 14,
             TotalFat = -1,  // Negative fat value, which is invalid
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 2.4m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 2,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -169,7 +169,7 @@ public class ItemModelTests
 
     [Fact]
     //check for valid null values in the model.
-    public void ItemModel_ValidNullableFields_ReturnsNoValidationErrors()
+    public void ItemModel_ValidNullableFields()
     {
         // Arrange
         var item = new Item
@@ -180,13 +180,13 @@ public class ItemModelTests
             Description = null,  // Nullable fields
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 1m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 1,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -198,7 +198,7 @@ public class ItemModelTests
     }
     [Fact]
     // Check for invalid null values in the model.
-    public void ItemModel_InvalidNullableFields_ReturnsValidationErrors()
+    public void ItemModel_InvalidNullableFields()
     {
         // Arrange
         var item = new Item
@@ -209,13 +209,13 @@ public class ItemModelTests
             Description = null,  // Nullable field
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 0.2m,
-            SaturatedFat = 0.1m,
-            UnsaturedFat = 0.1m,
+            TotalFat = 2,
+            SaturatedFat = 1,
+            UnsaturatedFat = 1,
             Sugar = 10,
-            DietaryFiber = 1m,
-            Protein = 0.3m,
-            Salt = 0.01m,
+            DietaryFiber = 1,
+            Protein = 3,
+            Salt = 1,
             ItemCategoryId = 1
         };
 
@@ -227,3 +227,4 @@ public class ItemModelTests
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Item name is required"));
         Assert.Contains(validationResults, v => v.ErrorMessage != null && v.ErrorMessage.Contains("Producer name is required"));
     }
+}

@@ -1,3 +1,5 @@
+// Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
+// These were used as learning references. Credit goes to Baifan Zhou for similar code.
 using System.ComponentModel.DataAnnotations;
 
 namespace FoodHub.DTOs {
@@ -9,13 +11,13 @@ namespace FoodHub.DTOs {
 
         // Name of the item with validation rules
         [Required(ErrorMessage = "Item name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The item's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå,. \&\-]{2,100}", ErrorMessage = "The item's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, commas, periods, ampersand and hyphens")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
         
         // Name of the producer with validation rules
         [Required(ErrorMessage = "Producer name is required")]
-        [RegularExpression(@"[0-9a-zA-Zæøå. \-]{1,100}", ErrorMessage = "The producer's name must be between 1 and 100 characters")]
+        [RegularExpression(@"[0-9a-zA-Zæøå,. \&\-]{2,100}", ErrorMessage = "The item's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, commas, periods, ampersand and hyphens")]
         [Display(Name = "Producer Name")]
         public string ProducerName { get; set; } = string.Empty;
 
