@@ -11,9 +11,6 @@ import './index.css';
 import Layout from './shared/Layout';
 import ItemPage from './items/ItemPage';
 
-
-
-
 const App: React.FC = () => {
   return (
     <Router>
@@ -29,7 +26,6 @@ const App: React.FC = () => {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        {/* You can add your footer here if needed */}
       </div>
     </Router>
   );

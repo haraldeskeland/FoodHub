@@ -81,10 +81,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* You can add the partners section, content sections, and stats container here */}
-      {/* ... */}
-
     </div>
   );
 };
