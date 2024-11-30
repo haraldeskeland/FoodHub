@@ -11,7 +11,7 @@ const ItemListPage: React.FC = () => {
   const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [showTable, setShowTable] = useState<boolean>(true);
+  const [showTable, setShowTable] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const location = useLocation();
 
