@@ -12,13 +12,13 @@ namespace FoodHub.Models
 
         // Name of the item with validation rules
         [Required(ErrorMessage = "Item name is required")]
-        [RegularExpression(@"^[0-9a-zA-Zæøå,. \&\-]{2,100}$", ErrorMessage = "The item's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, periods, and hyphens")]
+        [RegularExpression(@"^[0-9a-zA-Zæøå,. \&\-]{2,100}$", ErrorMessage = "The item's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, commas, periods, ampersand and hyphens")]
         [Display(Name = "Item Name")]
         public string Name { get; set; } = string.Empty;
 
         // Name of the producer with validation rules
         [Required(ErrorMessage = "Producer name is required")]
-        [RegularExpression(@"^[0-9a-zA-Zæøå,. \&\-]{2,100}$", ErrorMessage = "The producer's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, periods, and hyphens")]
+        [RegularExpression(@"^[0-9a-zA-Zæøå,. \&\-]{2,100}$", ErrorMessage = "The producer's name must be between 2 and 100 characters and can only contain letters, numbers, spaces, commas, periods, ampersand and hyphens")]
         [Display(Name = "Producer Name")]
         public string ProducerName { get; set; } = string.Empty;
 
