@@ -4,6 +4,7 @@ import SearchBar from '../shared/SearchBar';
 
 const NavMenu: React.FC = () => {
   const [isHomePage, setIsHomePage] = useState(true);
+  const [isSearchPage, setSearchPage] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -13,6 +14,7 @@ const NavMenu: React.FC = () => {
 
   useEffect(() => {
     setIsHomePage(location.pathname === '/');
+    setSearchPage(location.pathname === '/items');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setIsDarkMode(true);
@@ -45,7 +47,7 @@ const NavMenu: React.FC = () => {
               {/* Desktop menu */}
               <div className="hidden md:flex items-center space-x-4">
                 <Link to="/items" className="text-gray-700 hover:text-gray-900 dark:text-slate-200">All items</Link>
-                {!isHomePage && (
+                {( !isHomePage && !isSearchPage ) && (
                   <form onSubmit={handleSearch} className="flex-grow max-w-md">
                     <div className="flex w-full">
                       <div className="flex items-center justify-center rounded-l-full border-t border-b border-l border-gray-300 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] px-4">
@@ -73,7 +75,7 @@ const NavMenu: React.FC = () => {
 
               {/* Mobile menu */}
               <div className="flex md:hidden items-center space-x-2">
-                {!isHomePage && (
+                {( !isHomePage && !isSearchPage ) && (
                   <button onClick={() => setIsSearchVisible(!isSearchVisible)} className="p-2">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
