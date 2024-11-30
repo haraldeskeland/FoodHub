@@ -26,7 +26,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     <div className="mx-auto px-2 sm:px-4 md:px-0">
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
-        <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0">
+        <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0 dark:!bg-[#1d1d1f] dark:border dark:!border-[#303030d5]">
           <div className="md:hidden">
             <button 
               onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
@@ -38,7 +38,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
               </svg>
             </button>
           </div>
-          <h3 className="font-bold text-2xl mb-2 hidden md:block">Categories</h3>
+          <h3 className="font-bold text-2xl mb-2 ml-4 mt-4 hidden md:block">Categories</h3>
           <hr className="py-2 dark:border-slate-700 hidden md:block" />
           <ul className={`space-y-0 ${isCategoryMenuOpen ? 'flex' : 'hidden'} md:flex flex-col`}>
             {/* All Categories Link */}
@@ -73,7 +73,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
         </div>
 
         {/* Right Side for Search Results */}
-        <div className="w-full md:w-4/5 md:pl-12 md:border-l-2 md:border-gray-200 dark:md:border-[#4e4e4ed5]">
+        <div className="w-full md:w-4/5 md:pl-12  md:border-gray-200 dark:md:border-[#4e4e4ed5]">
           <h2 className="text-4xl font-bold mb-5">Search Results</h2>
           {filteredItems.length === 0 ? (
             <p className="text-gray-600 dark:text-slate-300">No items found.</p>
