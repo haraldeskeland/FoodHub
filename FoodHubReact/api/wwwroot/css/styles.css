@@ -1430,7 +1430,7 @@ body {
 }
 
 :root {
-  --gradient-colors: 45deg, #38a1ff, #10e3ff;
+  --gradient-colors: 45deg, #0082f3, #10e3ff;
 }
 
 .gradient-text {
@@ -1438,7 +1438,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #30a8bc;
+  color: #29646f;
   display: inline-block;
 }
 

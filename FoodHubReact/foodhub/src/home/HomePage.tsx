@@ -7,9 +7,7 @@ import '../index.css';
 import NavBar from '../shared/NavBar';
 
 
-const logos = [
-  { src: "/images/Logos/foodhub_logo_black.png", alt: "FoodHub" }
-];
+
 
 const HomePage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -19,20 +17,46 @@ const HomePage: React.FC = () => {
     navigate(`/items?search=${encodeURIComponent(searchQuery)}`);
   };
 
-  
+  const floatingImages = [
+    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72" },
+    { src: "/images/assets/checks.png", alt: "Food 2", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0" },
+    { src: "/images/assets/graphs.png", alt: "Food 3", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64" },
+    { src: "/images/assets/allergens.png", alt: "Food 4", className: "bottom-1/4 right-[13%] w-18 md:w-26 lg:w-52" },
+  ];
 
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      
+      
+      {floatingImages.map((img, index) => (
+        <img 
+          key={index}
+          src={img.src} 
+          alt={img.alt} 
+          className={`absolute hidden md:block animate-float ${img.className}`}
+          style={{ animationDelay: `${index * 0.5}s` }}
+        />
+      ))}
+      
       {/* Section containing the title and search bar */}
-      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-12">
+      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-32">
         <div className="text-center w-full mx-auto">
           {/* Main title of the page with animations and gradient text */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
-            Find out what you´re <span className="gradient-text pr-2 font-extrabold dark:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"><i>actually</i></span> eating
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8" data-aos="fade-up">
+            Find out what  you´re<br></br> 
+            <span className="relative inline-block">
+              <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-lime-500 to-lime-300 opacity-70 bg-clip-text text-transparent">
+                <i>actually</i>
+              </span>
+              <span className="relative z-10 bg-gradient-to-r from-lime-800 to-lime-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
+                <i>actually</i>
+              </span>
+          </span> 
+          eating
           </h1>        
           {/* Supporting description text with fade-up animation */}
-          <p className="text-md font-light text-gray-500 mt-6 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
-            We provide you with the most accurate information about the food you eat. 
+          <p className="text-md font-light text-gray-500 mt-8 dark:text-gray-400" data-aos="fade-up" data-aos-delay="100">
+            We provide you with the most accurate <br></br> information about the food you eat. 
           </p>
           {/* Search form for finding food, with animations and flexible design for different screen sizes */}
           <div className="search-container mt-8 w-full max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">

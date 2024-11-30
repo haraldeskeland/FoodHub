@@ -64,7 +64,7 @@ const ItemUpdatePage: React.FC = () => {
 
   return (
     <div className="main-container max-w-full lg:max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-16">
+      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-32">
         <div className="text-center w-full mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
             <span className="gradient-text underline pr-2 font-extrabold">Update</span> Food Item
@@ -76,7 +76,7 @@ const ItemUpdatePage: React.FC = () => {
       </div>
 
       <div className="content-section max-w-[1800px] my-12 px-5 flex flex-col justify-between items-center w-full">
-        <div className="w-full max-w-5xl bg-white border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+        <div className="w-full max-w-5xl bg-slate-50 border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg  p-8" data-aos="fade-up" data-aos-delay="200">
           <ItemForm
             onItemChanged={handleItemUpdated}
             ItemId={item.ItemId}

@@ -1,8 +1,7 @@
 // Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
 // These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React, { useState, useEffect } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import ItemTable from './ItemTable';
 import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
@@ -13,7 +12,7 @@ const ItemListPage: React.FC = () => {
   const [categories, setCategories] = useState<{ ItemCategoryId: number; Name: string }[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [showTable, setShowTable] = useState<boolean>(true);
+  const [showTable, setShowTable] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const location = useLocation();
 
@@ -57,12 +56,10 @@ const ItemListPage: React.FC = () => {
     fetchCategories();
   }, []);
 
-  // Save the view mode to local storage whenever it changes
   useEffect(() => {
     const savedViewMode = localStorage.getItem('itemViewMode');
     if (savedViewMode === 'grid') setShowTable(false);
     
-    // Read search query from URL
     const params = new URLSearchParams(location.search);
     const searchFromUrl = params.get('search') || '';
     setSearchQuery(searchFromUrl);
@@ -70,7 +67,6 @@ const ItemListPage: React.FC = () => {
     fetchItems();
   }, [location]);
 
-  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
@@ -92,27 +88,45 @@ const ItemListPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Items</h1>
-      <Button onClick={fetchItems} className="btn btn-primary mb-3 me-2" disabled={loading}>
-        {loading ? 'Loading...' : 'Refresh Items'}
-      </Button>
-      <Button onClick={toggleTableOrGrid} className="btn btn-primary mb-3 me-2">
-        {showTable ? `Display Grid` : 'Display Table'}
-      </Button>
-      <Form.Group className="mb-3">        
-        <Form.Control
+    <div className='mt-20 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
+      
+      <div className="mb-4 space-x-2">
+        <button 
+          onClick={fetchItems} 
+          className={`px-4 py-2 rounded ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+          disabled={loading}
+        >
+          {loading ? 'Loading...' : 'Refresh Items'}
+        </button>
+        <button 
+          onClick={toggleTableOrGrid} 
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          {showTable ? 'Display Grid' : 'Display Table'}
+        </button>
+        <Link 
+        to='/itemcreate' 
+        className="inline-block mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+      >
+        Add new item
+      </Link>
+        
+      </div>
+      <div className="mb-4">
+        <input
           type="text"
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
+          className="w-[30%] py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
         />
-      </Form.Group>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      </div>
+      {error && <p className="text-red-500 mb-4">{error}</p>}
       {showTable 
-      ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
-      : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>}
-      <Button href='/itemcreate' className="btn btn-secondary mt-3">Add new item</Button>
+        ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+        : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
+      }
+      
     </div>
   );
 };
