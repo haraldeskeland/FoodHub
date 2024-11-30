@@ -21,10 +21,10 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     : items;
 
   return (
-    <div className="mx-auto px-4 py-12">
+    <div className="mx-auto px-0">
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
-        <div className="w-full md:w-1/4 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
+        <div className="w-full md:w-1/5 pr-0 md:pr-6 p-5 rounded-lg mb-6 md:mb-0">
           <h3 className="font-bold text-2xl mb-2">Categories</h3>
           <hr className="py-2 dark:border-slate-700" />
           <ul className="space-y-0 flex flex-wrap md:flex-nowrap md:flex-col">
@@ -60,22 +60,22 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
         </div>
 
         {/* Right Side for Search Results */}
-        <div className="w-full md:w-3/4 md:pl-12 md:border-l-2 dark:border-l-2-slate-200">
-          <h2 className="text-4xl font-bold mb-5">Search Results</h2>
+        <div className="w-full md:w-3/4 md:pl-12 md:border-l-2 md:border-gray-200 dark:md:border-[#4e4e4ed5]">
+        <h2 className="text-4xl font-bold mb-5">Search Results</h2>
           {filteredItems.length === 0 ? (
             <p className="text-gray-600 dark:text-slate-300">No items found.</p>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filteredItems.map(item => (
-                <div key={item.ItemId} className="bg-white dark:bg-[#1d1d1f] dark:border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
-                  <Link to={`/item/${item.ItemId}`}>
+                <div key={item.ItemId} className="bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
+                  <Link to={`/item/${item.ItemId}`} className='no-underline'>
                     <div className="aspect-square relative">
-                      <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <div className="absolute inset-0 flex items-center justify-center p-3">
                         <img className="max-w-full max-h-full object-contain" src={`${apiUrl}${item.ImagePath}`} alt={item.Name} />
                       </div>
                     </div>
                     <div className="p-4">
-                      <h3 className="font-semibold text-l mb-2">{item.Name}</h3>
+                      <h3 className="font-semibold text-base mb-2 no-underline text-black dark:!text-white">{item.Name}</h3>
                       <p className="text-gray-600 font-semibold text-sm mb-2 dark:text-slate-400">{item.ProducerName}</p>
                       <p className="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3">
                         <span className="font-semibold">Carbs: </span> {item.Carbohydrate} g

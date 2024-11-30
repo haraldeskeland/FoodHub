@@ -86,7 +86,7 @@ const ItemListPage: React.FC = () => {
   };
 
   return (
-    <div className='mt-20 container mx-auto px-4'>
+    <div className='mt-20 mx-auto px-4'>
       <h1 className="text-2xl font-bold mb-4">Items</h1>
       <div className="mb-4 space-x-2">
         <button 
@@ -109,7 +109,7 @@ const ItemListPage: React.FC = () => {
           placeholder="Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
         />
       </div>
       {error && <p className="text-red-500 mb-4">{error}</p>}

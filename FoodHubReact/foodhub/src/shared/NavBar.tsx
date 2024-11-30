@@ -58,7 +58,7 @@ const NavMenu: React.FC = () => {
                       searchQuery={searchQuery}
                       setSearchQuery={setSearchQuery}
                     />
-                    <button type="submit" className="bg-gray-800 px-4 py-2 rounded-r-full text-white hover:bg-blue-800 transition-colors dark:!backdrop-blur-lg dark:!backdrop-saturate-[100%] dark:!bg-[rgba(29,29,31,0.38)]">
+                    <button type="submit" className="bg-gray-800 px-4 py-2 rounded-r-full text-white hover:bg-blue-800 transition-colors dark:!bg-gray-950 dark:hover:!bg-gray-900">
                       Search
                     </button>
                   </div>
