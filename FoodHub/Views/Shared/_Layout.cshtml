@@ -3,8 +3,8 @@
 
 @{
     // Get the current action and controller names
-    var currentAction = ActionContextAccessor.ActionContext.RouteData.Values["action"]?.ToString();
-    var currentController = ActionContextAccessor.ActionContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ActionContextAccessor?.ActionContext?.RouteData?.Values["action"]?.ToString();
+    var currentController = ActionContextAccessor?.ActionContext?.RouteData?.Values["controller"]?.ToString();
     // Check if the current page is the home page
     var isHomePage = currentAction == "Index" && currentController == "Home";
 }
