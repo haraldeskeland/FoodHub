@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 interface ItemGridProps {
   items: Item[];
-  categories: { ItemCategoryId: number; Name: string }[];
+  categories: { ItemCategoryId: number; ItemCategoryName: string }[];
   apiUrl: string;
   onItemDeleted: (itemId: number) => void;
 }
@@ -21,7 +21,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
   const filteredItems = selectedCategory
     ? items.filter(item => item.ItemCategoryId === selectedCategory)
     : items;
-
+    
   return (
     <div className="mx-auto px-0">
       <div className="flex flex-col md:flex-row">
@@ -54,7 +54,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
                   onClick={() => handleCategoryClick(category.ItemCategoryId)}
                   className="text-gray-800 hover:text-blue-800 dark:hover:text-slate-400 transition-all duration-100 ease-in-out text-base dark:text-slate-200"
                 >
-                  {category.Name}
+                  {category.ItemCategoryName}
                 </button>
               </li>
             ))}
