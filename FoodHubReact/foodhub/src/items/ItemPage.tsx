@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Item } from '../types/item'; // Adjust the import path as needed
 import API_URL from '../apiConfig'; // Adjust the import path as needed
+import { useNavigate } from 'react-router-dom';
+
 
 const ItemPage: React.FC = () => {
+  const navigate = useNavigate();
   const [item, setItem] = useState<Item | null>(null);
   const { itemId } = useParams<{ itemId: string }>();
 
@@ -27,6 +30,24 @@ const ItemPage: React.FC = () => {
   if (!item) {
     return <div>Loading...</div>;
   }
+
+  const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      try {
+        const response = await fetch(`${API_URL}/api/ItemAPI/delete/${item.ItemId}`, {
+          method: 'DELETE',
+        });
+        if (response.ok) {
+          // Redirect to the items list page after successful deletion
+          navigate('/items');
+        } else {
+          console.error('Failed to delete item');
+        }
+      } catch (error) {
+        console.error('Error deleting item:', error);
+      }
+    }
+  };
 
   const getAllergenEmoji = (allergenName: string) => {
     const allergenMap: { [key: string]: string } = {
@@ -99,6 +120,22 @@ const ItemPage: React.FC = () => {
             )}
           </div>
         </div>
+      </div>
+          
+        {/* Buttons Section */}
+      <div className="mt-8 flex justify-end space-x-4">
+        <button
+          onClick={() => navigate(`/itemupdate/${item.ItemId}`)}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+        >
+          Update
+        </button>
+        <button
+          onClick={handleDelete}
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
