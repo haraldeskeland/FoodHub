@@ -15,10 +15,10 @@ namespace FoodHub.DAL
         }
 
         // DbSet properties representing tables in the database
-        public DbSet<Item> Items { get; set; }
-        public DbSet<ItemCategory> ItemCategories { get; set; }
-        public DbSet<Allergen> Allergens { get; set; }
-        public DbSet<ItemAllergen> ItemAllergens { get; set; }
+        public DbSet<Item> Items { get; set; } = null!;
+        public DbSet<ItemCategory> ItemCategories { get; set; } = null!;
+        public DbSet<Allergen> Allergens { get; set; } = null!;
+        public DbSet<ItemAllergen> ItemAllergens { get; set; } = null!;
 
         // Configuring the DbContext to use lazy loading proxies
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
