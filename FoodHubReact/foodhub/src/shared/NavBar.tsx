@@ -45,7 +45,7 @@ const NavMenu: React.FC = () => {
             <div className="flex justify-between items-center p-3">
               {/* Logo Link */}
               <Link to="/" className="flex-shrink-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300 ease-in-out">
-                <img src="http://localhost:5115/images/Logos/foodhub_logo_black.png" alt="FoodHub" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
+                <img src="https://localhost:7268/images/Logos/foodhub_logo_black.png" alt="FoodHub logo" className="w-[130px] drop-shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out dark:invert" />
               </Link>
 
               {/* Desktop menu */}
@@ -73,7 +73,7 @@ const NavMenu: React.FC = () => {
                   onClick={toggleTheme}
                   className="w-8 h-8 p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 transform hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95"
                 >
-                  <img src="http://localhost:5115/images/light-dark.png" alt="Toggle theme" className="w-full h-full filter dark:invert" />
+                  <img src="https://localhost:7268/images/light-dark.png" alt="Light/Dark mode toggle icon" className="w-full h-full filter dark:invert" />
                 </button>
               </div>
 
