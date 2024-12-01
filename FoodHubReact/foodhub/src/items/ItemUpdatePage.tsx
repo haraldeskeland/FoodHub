@@ -67,7 +67,7 @@ const ItemUpdatePage: React.FC = () => {
       <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-32">
         <div className="text-center w-full mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
-          <span className="relative inline-block">
+            <span className="relative inline-block">
               <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-lime-500 to-lime-300 opacity-70 bg-clip-text text-transparent">
                 Update
               </span>
@@ -83,14 +83,22 @@ const ItemUpdatePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="content-section max-w-[1800px] my-12 px-5 flex flex-col justify-between items-center w-full">
-        <div className="w-full max-w-5xl bg-slate-50 border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg  p-8" data-aos="fade-up" data-aos-delay="200">
-          <ItemForm
-            onItemChanged={handleItemUpdated}
-            ItemId={item.ItemId}
-            isUpdate={true}
-            initialData={item}
-          />
+      <div className="content-section max-w-[1800px] my-12 px-1 flex flex-col justify-between items-center w-full">
+        <div className="w-full max-w-5xl bg-white border border-slate-200 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg shadow-lg p-8" data-aos="fade-up" data-aos-delay="200">
+          {loading ? (
+            <p>Loading...</p>
+          ) : error ? (
+            <p>{error}</p>
+          ) : !item ? (
+            <p>No item found</p>
+          ) : (
+            <ItemForm
+              onItemChanged={handleItemUpdated}
+              ItemId={item.ItemId}
+              isUpdate={true}
+              initialData={item}
+            />
+          )}
         </div>
       </div>
     </div>
