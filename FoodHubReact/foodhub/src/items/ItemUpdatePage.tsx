@@ -1,40 +1,46 @@
 // Portions of this file may be inspired by course demos created by the course lecturer: "Baifan Zhou".
 // These were used as learning references. Credit goes to Baifan Zhou for similar code.
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import ItemForm from './ItemForm';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
+// ItemUpdatePage component definition
 const ItemUpdatePage: React.FC = () => {
-  const { itemId } = useParams<{ itemId: string }>();
-  const navigate = useNavigate();
-  const [item, setItem] = useState<Item | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const { itemId } = useParams<{ itemId: string }>(); // Get the item ID from the URL parameters
+  const navigate = useNavigate(); // Create a navigate function
+  const location = useLocation(); // Get the current location
+  const [item, setItem] = useState<Item | null>(null); // State to store the item data
+  const [loading, setLoading] = useState<boolean>(true); // State to manage loading state
+  const [error, setError] = useState<string | null>(null); // State to store any error messages
 
-  useEffect(() => {
-    const fetchItem = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(`${API_URL}/api/ItemAPI/${itemId}`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setItem(data);
-      } catch (error) {
-        console.error(`There was a problem with the fetch operation: ${error.message}`);
-        setError('Failed to fetch item.');
-      } finally {
-        setLoading(false);
+  // Function to fetch the item data from the API
+  const fetchItem = async () => {
+    setLoading(true); // Set loading to true when starting the fetch
+    setError(null);   // Clear any previous errors
+
+    try {
+      const response = await fetch(`${API_URL}/api/ItemAPI/${itemId}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+      const data = await response.json();
+      setItem(data); // Set the fetched item data to the state
+    } catch (error) {
+      console.error(`There was a problem with the fetch operation: ${error.message}`);
+      setError('Failed to fetch item.');
+    } finally {
+      setLoading(false); // Set loading to false once the fetch is complete
+    }
+  };
 
+  // Fetch the item data when the component mounts or the itemId changes
+  useEffect(() => {
     fetchItem();
   }, [itemId]);
 
+  // Function to handle the item update
   const handleItemUpdated = async (updatedItem: Item) => {
     try {
       const response = await fetch(`${API_URL}/api/ItemAPI/update/${itemId}`, {
@@ -52,12 +58,19 @@ const ItemUpdatePage: React.FC = () => {
 
       const data = await response.json();
       console.log('Item updated successfully:', data);
-      navigate('/items');
+
+      // Get the current view mode from the query parameter
+      const searchParams = new URLSearchParams(location.search);
+      const viewMode = searchParams.get('view') || 'table';
+
+      // Navigate back to the items page with the current view mode
+      navigate(`/items?view=${viewMode}`);
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
   };
 
+  // Render loading, error, or the item form based on the state
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   if (!item) return <p>No item found</p>;
