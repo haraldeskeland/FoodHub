@@ -6,6 +6,7 @@ using Xunit;
 public class ItemsViewModelTests
 {
     [Fact]
+    //Tests the ItemsViewModel constructor with a list of items and a view name.
     public void ItemsViewModel_ListItem()
     {
         // Arrange
@@ -25,6 +26,7 @@ public class ItemsViewModelTests
     }
 
     [Fact]
+    //Tests the ItemsViewModel constructor with a null view name.
     public void ItemsViewModel_NullViewName()
     {
         // Arrange
@@ -43,6 +45,7 @@ public class ItemsViewModelTests
         Assert.Null(viewModel.CurrentViewName);
     }
     [Fact]
+    //Tests the ItemsViewModel constructor with an empty list of items.
     public void ItemsViewModel_EmptyItemsList()
     {
         // Arrange

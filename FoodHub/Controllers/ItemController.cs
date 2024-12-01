@@ -21,7 +21,7 @@ namespace FoodHub.Controllers
             _itemRepository = itemRepository;
             _logger = logger;
         }
-        
+
         // Action method to display items in a table view
         public async Task<IActionResult> Table()
         {
@@ -34,7 +34,7 @@ namespace FoodHub.Controllers
             var itemsViewModel = new ItemsViewModel(items, "Table");
             return View(itemsViewModel);
         }
-        
+
         // Action method to display details of a specific item
         public async Task<IActionResult> Details(int id)
         {
@@ -84,9 +84,17 @@ namespace FoodHub.Controllers
                     item.ImagePath = "/images/" + fileName;
                 }
 
-                bool returnOk = await _itemRepository.Create(item); // This will not be called during the unit test 
-                if (returnOk)
-                    return RedirectToAction(nameof(Table));
+                try
+                {
+                    bool returnOk = await _itemRepository.Create(item); // This will not be called during the unit test 
+                    if (returnOk)
+                        return RedirectToAction(nameof(Table));
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "[ItemController] Error occurred while creating item {@item}", item);
+                    ModelState.AddModelError("Error", "An error occurred while creating the item. Please try again.");
+                }
             }
 
             var categories = await _itemRepository.GetAllCategories();

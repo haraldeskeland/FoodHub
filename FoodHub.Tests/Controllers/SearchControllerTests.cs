@@ -24,6 +24,7 @@ public class SearchControllerTests
 
     //A task representing the asynchronous operation.
     [Fact]
+    //Return a view with items when a query is provided.
     public async Task Index_ReturnsViewWithItems()
     {
         // Arrange
@@ -55,6 +56,7 @@ public class SearchControllerTests
 
     //A task representing the asynchronous operation.
     [Fact]
+    //Return a view with items when no query is provided.
     public async Task Index_ReturnsViewWithItems_NoQuery()
     {
         // Arrange

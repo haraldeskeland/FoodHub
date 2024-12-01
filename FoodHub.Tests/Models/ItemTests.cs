@@ -15,6 +15,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is valid and returns no validation errors
+    //Positive test
     public void ItemModel_ValidModel()
     {
         // Arrange
@@ -45,6 +46,7 @@ public class ItemModelTests
 
     [Fact]
     //Check if the Itemmodel is invalid and returns validation errors. In this case the name is too short. 
+    //Negative test
     public void ItemModel_InvalidName()
     {
         // Arrange
@@ -56,7 +58,7 @@ public class ItemModelTests
             Description = "Fresh and juicy apple",
             Energy = 52,
             Carbohydrate = 14,
-            TotalFat = 2,
+            TotalFat = 2, //Valid totalfat value
             SaturatedFat = 1,
             UnsaturatedFat = 1,
             Sugar = 10,
@@ -76,6 +78,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid product name. 
+    //Negative test
     public void ItemModel_InvalidProducerName()
     {
         // Arrange
@@ -107,6 +110,7 @@ public class ItemModelTests
 
     [Fact]
     //chrck for invalid energy input.
+    //Negative test
     public void ItemModel_InvalidEnergyValue()
     {
         // Arrange
@@ -138,6 +142,7 @@ public class ItemModelTests
 
     [Fact]
     //Check for invalid total fat input.
+    //Negative test
     public void ItemModel_InvalidTotalFatValue()
     {
         // Arrange
@@ -169,6 +174,7 @@ public class ItemModelTests
 
     [Fact]
     //check for valid null values in the model.
+    //Positive test
     public void ItemModel_ValidNullableFields()
     {
         // Arrange
@@ -198,6 +204,7 @@ public class ItemModelTests
     }
     [Fact]
     // Check for invalid null values in the model.
+    //Negative test
     public void ItemModel_InvalidNullableFields()
     {
         // Arrange
