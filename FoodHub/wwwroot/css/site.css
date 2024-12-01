@@ -2,69 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-ExtraBold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-ExtraLight.woff2") format("woff2");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Geist";
-  src: url("../fonts/Geist/Geist-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-}
-
 .gradient-border {
   border-image: linear-gradient(to bottom, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)) 1;
 }
@@ -195,22 +132,6 @@ body {
   max-width: 100%;
   transition: all 0.1s ease-in-out;
 }
-
-.stat-box:hover {
-  transform: scale(1.05) rotate(1deg);
-}
-
-.stat-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: 800;
-}
-
-.stat-box p {
-  font-size: 1rem;
-  color: #666;
-}
-
 
 @media (max-width: 768px) {
   .image-text-container,

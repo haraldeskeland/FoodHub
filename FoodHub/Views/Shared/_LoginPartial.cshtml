@@ -12,6 +12,7 @@
                 <img src="/images/Icons/arrow.png" alt="arrow pointing down icon" class="ml-2 dark:invert w-4" />
             </div>
             
+            <!-- Dropdown menu for logged-in users -->
             <div class="sub-menu-wrap absolute top-full right-0 w-72 overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-out user-menu-dropdown" id="subMenu">
                 <div class="sub-menu bg-white dark:bg-[#1d1d1f] p-5 m-2.5 rounded-lg border dark:border-[#303030d5]">
                     <div class="user-info flex items-center text-lg font-bold overflow-hidden">
@@ -52,6 +53,7 @@
     }
     else
     {
+        <!-- Login and Register links for non-logged-in users -->
         <li class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
             <div>
                 <a class="text-gray-900 hover:text-[#38a1ff] hover:-translate-y-1 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] font-medium cursor-pointer inline-block transition-all duration-100 ease-in-out dark:text-slate-200" id="register" asp-area="Identity" asp-page="/Account/Register">
@@ -73,6 +75,7 @@
     let subMenu = document.getElementById('subMenu');
     let isMenuOpen = false;
 
+    // Function to toggle the dropdown menu
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
         if (isMenuOpen) {
