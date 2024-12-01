@@ -96,7 +96,7 @@ const ItemListPage: React.FC = () => {
   };
 
   return (
-    <div className='mt-20 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
+    <div className='mt-16 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
       
       <div className="mb-4 flex flex-col sm:flex-row sm:flex-wrap gap-2">
         <div className="flex w-full sm:w-auto gap-2">
