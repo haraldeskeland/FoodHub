@@ -9,6 +9,7 @@ using System.Formats.Asn1;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Xunit;
 
 namespace FoodHub.Tests.Controllers
 {
@@ -366,7 +367,7 @@ namespace FoodHub.Tests.Controllers
         {
             // Arrange
             int testItemId = 999;
-            _mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item)null);
+            _mockItemRepository.Setup(repo => repo.GetItemById(testItemId)).ReturnsAsync((Item?)null);
 
             // Act
             var result = await _controller.Update(testItemId);
@@ -445,6 +446,7 @@ namespace FoodHub.Tests.Controllers
             Assert.Equal(nameof(ItemController.Table), redirectToActionResult.ActionName);
             _mockItemRepository.Verify(repo => repo.Delete(itemId), Times.Once);
         }
+
         [Fact]
         //Testing the Delete method to see if it returns a BadRequestResult
         //DELETE-method in CRUD
@@ -453,7 +455,7 @@ namespace FoodHub.Tests.Controllers
         {
             // Arrange
             var itemId = 1;
-            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item)null);
+            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync((Item?)null);
 
             // Act
             var result = await _controller.DeleteConfirmed(itemId);

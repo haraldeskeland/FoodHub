@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using FoodHub.DAL; // Ensure you have the correct namespace for your repository
+using FoodHub.DAL;
 
 // Controller for handling search-related requests
 public class SearchController : Controller
@@ -24,7 +24,7 @@ public class SearchController : Controller
         {
             _logger.LogInformation("No items found for query '{Query}' in category {CategoryId}.", query, categoryId);
         }
-        
+
         // Retrieve all item categories
         var categories = await _itemRepository.GetAllCategories();
 
