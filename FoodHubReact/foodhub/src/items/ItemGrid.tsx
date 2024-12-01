@@ -30,7 +30,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
           <div className="md:hidden">
             <button 
               onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
-              className="w-full bg-gray-200 dark:bg-gray-800 text-left p-2 rounded-lg mb-2 flex justify-between items-center"
+              className="w-full bg-gray-200 dark:!bg-[#1d1d1f] text-left p-2 rounded-lg mb-2 flex justify-between items-center"
             >
               <span className="font-bold text-lg ml-2">Categories</span>
               <svg className={`w-5 h-5 transition-transform ${isCategoryMenuOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

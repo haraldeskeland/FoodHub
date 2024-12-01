@@ -55,7 +55,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) =
       {/* Mobile Card View */}
       <div className="sm:hidden space-y-4">
         {items.map(item => (
-          <div key={item.ItemId} className="bg-white dark:bg-[#1d1d1f] shadow rounded-lg p-10">
+          <div key={item.ItemId} className="bg-gray-100 dark:!bg-[#1d1d1f] border dark:border dark:!border-[#303030d5] rounded-lg p-10">
             <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{item.Name}</h2>
             <img src={`${apiUrl}${item.ImagePath}`} alt={item.Name} className="w-full h-48 object-cover rounded-md mb-4" />
             

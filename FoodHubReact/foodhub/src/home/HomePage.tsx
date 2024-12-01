@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
       ))}
       
       {/* Section containing the title and search bar */}
-      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-32">
+      <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[40vh] mt-44">
         <div className="text-center w-full mx-auto">
           {/* Main title of the page with animations and gradient text */}
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight gradient-text-large mt-8 z-50" data-aos="fade-up">
@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
               <span className="relative z-10 bg-gradient-to-r from-lime-800 to-lime-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
                 <i>actually</i>
               </span>
-          </span> 
+            </span> 
           eating
           </h1>        
           {/* Supporting description text with fade-up animation */}
@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
                 <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
                 
                 {/* Search button */}
-                <button onClick={handleSearch} className="bg-gradient-to-r from-lime-700 to-lime-500 px-6 py-3 rounded-r-full text-white dark:!text-black  font-medium hover:bg-blue-800 transition-colors">
+                <button onClick={handleSearch} className="bg-gradient-to-r from-lime-900 to-lime-600 px-6 py-3 rounded-r-full text-white   font-medium hover:text-gray-300  transition-colors">
                   Search
                 </button>
               </div>

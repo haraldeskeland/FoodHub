@@ -85,7 +85,8 @@ public static class DBInit
                 {
                     Name = "Pizza Grandiosa Original",
                     ProducerName = "Orkla",
-                    //Source: https://www.grandiosa.no/wp-content/uploads/sites/80/2024/10/1980.png
+                    //Source: https://www.grandiosa.no/wp-content/uploads/sites/80/2024/12/1980.png
+                    //Alt Source: https://www.grandiosa.no/produkter/grandiosa-original/    
                     ImagePath = "/images/grandiosa-original.png",
                     Description = "Grandiosa Original has a filling of tomato sauce, pizza meat and paprika. It is topped with Jarlsberg®, which gives the pizza a taste of its own. The original Grandiosa was launched in 1980 and since then has been by far Norway's most eaten pizza. ",
                     Energy = 218M,
