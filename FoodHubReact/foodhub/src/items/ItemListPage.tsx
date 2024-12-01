@@ -111,7 +111,7 @@ const ItemListPage: React.FC = () => {
             onClick={toggleTableOrGrid} 
             className="px-4 py-2 text-white rounded bg-gray-800 hover:bg-gray-700 flex-1 sm:flex-initial"
           >
-            {showTable ? 'Display Grid' : 'Display Table'}
+            {showTable ? 'Grid view' : 'Detailed View'}
           </button>
         </div>
         <Link 
