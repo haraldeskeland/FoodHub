@@ -26,7 +26,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     <div className="mx-auto px-2 sm:px-4 md:px-0">
       <div className="flex flex-col md:flex-row">
         {/* Categories Section */}
-        <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0 dark:!bg-[#1d1d1f] dark:border dark:!border-[#303030d5]">
+        <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0 bg-gray-100 dark:!bg-[#1d1d1f] border dark:border dark:!border-[#303030d5]">
           <div className="md:hidden">
             <button 
               onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
@@ -39,7 +39,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
             </button>
           </div>
           <h3 className="font-bold text-2xl mb-2 ml-4 mt-4 hidden md:block">Categories</h3>
-          <hr className="py-2 dark:border-slate-700 hidden md:block" />
+          <hr className="py-2 dark:border-slate-700 hidden md:block mx-auto w-[85%]" />
           <ul className={`space-y-0 ${isCategoryMenuOpen ? 'flex' : 'hidden'} md:flex flex-col`}>
             {/* All Categories Link */}
             <li className="hover:scale-[1.01] mb-2">
