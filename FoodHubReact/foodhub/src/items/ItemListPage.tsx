@@ -122,10 +122,10 @@ const ItemListPage: React.FC = () => {
         </Link>
         <input
           type="text"
-          placeholder="Search by name or description"
+          placeholder="🔍 Search by name or description"
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
-          className="w-full sm:w-auto py-2 px-4 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
+          className="w-full sm:w-[23%] py-2 px-4 bg-gray-100 dark:!bg-[#1d1d1f] dark:!border-[#303030d5] text-base outline-none border border-gray-300 dark:bg-[rgba(29,29,31,0.68)] rounded-md"
         />
       </div>
       
