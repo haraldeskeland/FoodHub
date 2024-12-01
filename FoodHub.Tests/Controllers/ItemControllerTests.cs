@@ -30,7 +30,7 @@ namespace FoodHub.Tests.Controllers
             _mockLogger = new Mock<ILogger<ItemController>>(); //creating a new Mock of ILogger
             _controller = new ItemController(_mockItemRepository.Object, _mockLogger.Object); //creating a new ItemController with the Mocks
         }
-
+        //CREATE
         [Fact]
         //Testing the Create method to see if it returns a ViewResult
         //part of the Create method in CRUD
@@ -199,7 +199,7 @@ namespace FoodHub.Tests.Controllers
         }
         [Fact]
         //Testing create method to see if it returns a ViewResult
-        //READ-method in CRUD
+        //Create-method in CRUD
         //Positive test
         public async Task CreateTable_OK()
         {
@@ -254,6 +254,8 @@ namespace FoodHub.Tests.Controllers
             Assert.Equal(2, itemsViewModel.Items.Count());
             Assert.Equal(itemList, itemsViewModel.Items);
         }
+
+        //READ
         [Fact]
         //Testing the Table method to see if it returns a ViewResult with an empty list
         //READ-method in CRUD
@@ -294,10 +296,34 @@ namespace FoodHub.Tests.Controllers
         }
 
         [Fact]
+        //Testing the Details method to see if it returns a ViewResult with the correct item
+        //READ-method in CRUD
+        //Positive test
+        public async Task Table_ReturnsViewResult_WithItems()
+        {
+            // Arrange
+            var items = new List<Item>
+            {
+                new Item { ItemId = 1, Name = "Item 1" },
+                new Item { ItemId = 2, Name = "Item 2" }
+            };
+            _mockItemRepository.Setup(repo => repo.GetAll()).ReturnsAsync(items);
+
+            // Act
+            var result = await _controller.Table();
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<ItemsViewModel>(viewResult.Model);
+            Assert.Equal(2, model.Items.Count());
+            Assert.Equal(items, model.Items);
+        }
+        //UPDATE
+        [Fact]
         //Testing the Update method to see if it returns a NotFoundObjectResult
         //UPDATE-method in CRUD
         //Negative test
-        public async Task Update_ReturnsViewResult_NotOK_ModelState()
+        public async Task Update_ReturnsViewResult_NotOK()
         {
             // Arrange
             var itemId = 1;
@@ -376,7 +402,52 @@ namespace FoodHub.Tests.Controllers
             var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
             Assert.Equal("Item not found for the ItemId", badRequestResult.Value);
         }
+        [Fact]
+        public async Task Update_UpdatesItem_OK()
+        {
+            // Arrange
+            var itemId = 1;
+            var existingItem = new Item
+            {
+                ItemId = itemId,
+                Name = "Existing Item",
+                TotalFat = 10,
+                SaturatedFat = 2,
+                UnsaturatedFat = 8,
+                Sugar = 1,
+                DietaryFiber = 0,
+                Protein = 15,
+                Salt = 0.5m,
+                ItemCategoryId = 1
+            };
 
+            var updatedItem = new Item
+            {
+                ItemId = itemId,
+                Name = "Updated Item",
+                TotalFat = 12,
+                SaturatedFat = 3,
+                UnsaturatedFat = 9,
+                Sugar = 2,
+                DietaryFiber = 1,
+                Protein = 18,
+                Salt = 0.7m,
+                ItemCategoryId = 1
+            };
+
+            _mockItemRepository.Setup(repo => repo.GetItemById(itemId)).ReturnsAsync(existingItem);
+            _mockItemRepository.Setup(repo => repo.Update(updatedItem)).ReturnsAsync(true);
+
+            // Act
+            var result = await _controller.Update(itemId, updatedItem, null);
+
+            // Assert
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal(nameof(ItemController.Table), redirectToActionResult.ActionName);
+            _mockItemRepository.Verify(repo => repo.Update(updatedItem), Times.Once);
+        }
+
+        //DELETE
         [Fact]
         //Testing the Delete method to see if it returns a ViewResult
         //DELETE-method in CRUD
@@ -415,7 +486,7 @@ namespace FoodHub.Tests.Controllers
         //Testing the Delete method to see if it deletes an item 
         //DELETE-method in CRUD
         //Positive test
-        public async Task Delete_Item_NotOK()
+        public async Task Delete_Item_OK()
         {
             // Arrange
             int itemId = 1;
