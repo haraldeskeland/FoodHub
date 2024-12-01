@@ -9,11 +9,10 @@
     <div class="flex flex-col md:flex-row w-full">
         <!-- Categories Section -->
         <div class="w-full md:w-1/5 pr-8 md:pr-6 p-4 sm:p-6 rounded-lg mb-6 md:mb-0 bg-gray-100 dark:!bg-[#1d1d1f] border dark:border dark:!border-[#303030d5]">
+            <!-- Mobile dropdown menu hidden on screens larger than "medium" -->
             <div class="md:hidden">
-                <button 
-                    onclick="toggleCategoryMenu()"
-                    class="w-full bg-gray-100 dark:!bg-[#1d1d1f] text-left rounded-lg flex justify-between items-center"
-                >
+                <!-- Button to toggle menu -->
+                <button onclick="toggleCategoryMenu()"class="w-full bg-gray-100 dark:!bg-[#1d1d1f] text-left rounded-lg flex justify-between items-center">
                     <span class="font-bold text-lg ml-2">Categories</span>
                     <svg class="w-5 h-5 transition-transform" id="categoryMenuIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -33,7 +32,7 @@
                     </a>
                 </li>
 
-                <!-- Category Links -->
+                <!-- Category Links displayed through a for-loop -->
                 @foreach (var category in ViewBag.Categories)
                 {
                     <li class="border-l-2 pl-4 py-3 hover:border-l-gray-500 mb-2 dark:text-white dark:border-slate-700 dark:hover:border-l-slate-200 @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold pl-3 ml-[-18px] border-l-2 border-l-gray-500" : "")">
@@ -59,6 +58,7 @@
             else
             {
                 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                    @* Loops through all items and displays them in item cards *@
                     @foreach (var item in Model)
                     {
                         <div class="bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
@@ -91,6 +91,7 @@
 </div>
 
 <script>
+    // function to toggle the category menu and add classes to the elements
     function toggleCategoryMenu() {
         var menu = document.getElementById('categoryMenu');
         var icon = document.getElementById('categoryMenuIcon');
