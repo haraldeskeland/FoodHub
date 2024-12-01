@@ -3,16 +3,19 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
+// Icons for update and delete actions
 const icons = [
   { src: "/images/icons/edit.png", alt: "Update icon" },
   { src: "/images/icons/delete.png", alt: "Delete icon" },
 ];
 
+// ItemPage component definition
 const ItemPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [item, setItem] = useState<Item | null>(null);
-  const { itemId } = useParams<{ itemId: string }>();
+  const navigate = useNavigate(); // Create a navigate function
+  const [item, setItem] = useState<Item | null>(null); // State to store the item data
+  const { itemId } = useParams<{ itemId: string }>(); // Get the item ID from the URL parameters
 
+  // Fetch the item data when the component mounts or the itemId changes
   useEffect(() => {
     const fetchItem = async () => {
       try {
@@ -21,7 +24,7 @@ const ItemPage: React.FC = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setItem(data);
+        setItem(data); // Set the fetched item data to the state
       } catch (error) {
         console.error('Error fetching item:', error);
       }
@@ -30,10 +33,7 @@ const ItemPage: React.FC = () => {
     fetchItem();
   }, [itemId]);
 
-  if (!item) {
-    return <div>Loading...</div>;
-  }
-
+  // Handle item deletion
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this item?')) {
       try {
@@ -41,7 +41,7 @@ const ItemPage: React.FC = () => {
           method: 'DELETE',
         });
         if (response.ok) {
-          navigate('/items');
+          navigate('/items'); // Navigate back to the items page after deletion
         } else {
           console.error('Failed to delete item');
         }
@@ -51,6 +51,7 @@ const ItemPage: React.FC = () => {
     }
   };
 
+  // Get the emoji for a given allergen name
   const getAllergenEmoji = (allergenName: string) => {
     const allergenMap: { [key: string]: string } = {
       celery: "🥬", egg: "🥚", fish: "🐟", gluten: "🌾", milk: "🥛",
@@ -59,6 +60,11 @@ const ItemPage: React.FC = () => {
     };
     return allergenMap[allergenName.toLowerCase()] || "⚠️";
   };
+
+  // Render loading state if item data is not yet available
+  if (!item) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-32 max-w-7xl pb-20">

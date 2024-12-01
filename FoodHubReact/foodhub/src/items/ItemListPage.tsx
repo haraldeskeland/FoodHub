@@ -7,20 +7,23 @@ import ItemGrid from './ItemGrid';
 import { Item } from '../types/item';
 import API_URL from '../apiConfig';
 
+// ItemListPage component definition
 const ItemListPage: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([]);
-  const [categories, setCategories] = useState<{ ItemCategoryId: number; ItemCategoryName: string }[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-  const [showTable, setShowTable] = useState<boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const location = useLocation();
+  const [items, setItems] = useState<Item[]>([]); // State to store the list of items
+  const [categories, setCategories] = useState<{ ItemCategoryId: number; ItemCategoryName: string }[]>([]); // State to store the list of categories
+  const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
+  const [error, setError] = useState<string | null>(null); // State to store any error messages
+  const [showTable, setShowTable] = useState<boolean>(false); // State to toggle between table and grid view
+  const [searchQuery, setSearchQuery] = useState<string>(''); // State to manage the search query
+  const location = useLocation(); // Get the current location
 
+  // Function to toggle between table and grid view
   const toggleTableOrGrid = () => setShowTable(prevShowTable => !prevShowTable);
 
+  // Function to fetch items from the API
   const fetchItems = async () => {
-    setLoading(true);
-    setError(null);
+    setLoading(true); // Set loading to true when starting the fetch
+    setError(null);   // Clear any previous errors
 
     try {
       const response = await fetch(`${API_URL}/api/ItemAPI/itemlist`);
@@ -28,16 +31,16 @@ const ItemListPage: React.FC = () => {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      setItems(data);
+      setItems(data); // Set the fetched items to the state
     } catch (error) {
       console.error(`There was a problem with the fetch operation: ${error.message}`);
       setError('Failed to fetch items.');
     } finally {
-      setLoading(false);
+      setLoading(false); // Set loading to false once the fetch is complete
     }
   };
 
-   // Fetch categories on component mount
+  // Fetch categories on component mount
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -45,7 +48,7 @@ const ItemListPage: React.FC = () => {
         if (response.ok) {
           const data = await response.json();
           console.log('Fetched Categories:', data);
-          setCategories(data);
+          setCategories(data); // Set the fetched categories to the state
         } else {
           console.error('Failed to fetch categories');
         }
@@ -56,7 +59,7 @@ const ItemListPage: React.FC = () => {
     fetchCategories();
   }, []);
 
-
+  // Fetch items and set view mode on component mount or location change
   useEffect(() => {
     const savedViewMode = localStorage.getItem('itemViewMode');
     if (savedViewMode === 'grid') setShowTable(false);
@@ -68,13 +71,15 @@ const ItemListPage: React.FC = () => {
     fetchItems();
   }, [location]);
 
+  // Filter items based on the search query
   const filteredItems = items.filter(item =>
     item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.Description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Function to handle item deletion
   const handleItemDeleted = async (itemId: number) => {
-    const confirmDelete = window.confirm(`Are you sure you want to delete the item ${itemId}?`);
+    const confirmDelete = window.confirm(`Are you sure you want to delete this item?`);
     if (confirmDelete) {
       try {
         const response = await fetch(`${API_URL}/api/ItemAPI/delete/${itemId}`, {
@@ -95,9 +100,10 @@ const ItemListPage: React.FC = () => {
     }
   };
 
+  // Render the JSX for the page
   return (
     <div className='mt-16 mx-auto px-2 lg:max-w-[1600px] w-[85vw]'>
-      
+      {/* Action Buttons and Search Bar */}
       <div className="mb-4 flex flex-col sm:flex-row sm:flex-wrap gap-2">
         <div className="flex w-full sm:w-auto gap-2">
           <button 
@@ -129,15 +135,16 @@ const ItemListPage: React.FC = () => {
         />
       </div>
       
+      {/* Display error message if any */}
       {error && <p className="text-red-500 mb-4">{error}</p>}
+      
+      {/* Display items in table or grid view based on the state */}
       {showTable 
         ? <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
         : <ItemGrid items={filteredItems} categories={categories} apiUrl={API_URL} onItemDeleted={handleItemDeleted}/>
       }
-      
     </div>
   );
-  
 };
 
 export default ItemListPage;
