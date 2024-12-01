@@ -94,7 +94,7 @@
                         </button>
 
                         <!-- Mobile menu -->
-                        <div class="w-full hidden md:hidden z-0 flex-col items-end space-y-4 absolute top-full right-0 -mt-10 bg-white  p-4 pt-12 rounded-2xl  dark:bg-[#1d1d1f] border dark:border-[#303030d5] border-t-0 shadow-md transition-all duration-300 ease-in-out mx-auto text-right" id="navbar-menu">
+                        <div class="w-full hidden md:hidden z-0 flex-col items-end space-y-4 absolute top-full right-0 -mt-10 bg-white p-4 pt-12 rounded-2xl dark:bg-[#1d1d1f] border dark:border-[#303030d5] border-t-0 shadow-md transition-all duration-300 ease-in-out mx-auto text-right" id="navbar-menu">
                             @if (!isHomePage)
                             {
                                 <form asp-controller="Search" asp-action="Index" method="get" class="w-full">
@@ -113,7 +113,7 @@
                             }
                             <a class="block w-full text-right text-gray-700 hover:text-gray-900 dark:text-slate-200" asp-controller="Search" asp-action="Index" asp-route-query="">All items</a>
 
-                            <div class="flex justify-end w-full">
+                            <div class="flex justify-end w-full relative">
                                 <partial name="_LoginPartial" />
                             </div>
 
@@ -171,54 +171,86 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            //  AOS (Animate On Scroll) library
-            AOS.init();
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // AOS (Animate On Scroll) library
+        AOS.init();
 
-            // Toggle mobile menu visibility
-            const navbarToggle = document.getElementById('navbar-toggle');
-            const navbarMenu = document.getElementById('navbar-menu');
+        // Toggle mobile menu visibility
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.getElementById('navbar-menu');
 
-            navbarToggle.addEventListener('click', function() {
-                navbarMenu.classList.toggle('hidden');
-            });
+        navbarToggle.addEventListener('click', function() {
+            navbarMenu.classList.toggle('hidden');
+        });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInsideMenu = navbarMenu.contains(event.target);
-                const isClickOnToggle = navbarToggle.contains(event.target);
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = navbarMenu.contains(event.target);
+            const isClickOnToggle = navbarToggle.contains(event.target);
 
-                if (!isClickInsideMenu && !isClickOnToggle && !navbarMenu.classList.contains('hidden')) {
-                    navbarMenu.classList.add('hidden');
-                }
-            });
-
-            // Light + Dark mode toggle
-            const themeToggleBtns = document.querySelectorAll('#theme-toggle');
-            const htmlElement = document.documentElement;
-
-            themeToggleBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    htmlElement.classList.toggle('dark');
-                    
-                    // Save the preference to localStorage
-                    if (htmlElement.classList.contains('dark')) {
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            });
-
-            // Check for saved theme preference or use system preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                htmlElement.classList.add('dark');
-            } else {
-                htmlElement.classList.remove('dark');
+            if (!isClickInsideMenu && !isClickOnToggle && !navbarMenu.classList.contains('hidden')) {
+                navbarMenu.classList.add('hidden');
             }
         });
-    </script>
+
+        // Light + Dark mode toggle
+        const themeToggleBtns = document.querySelectorAll('#theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                
+                // Save the preference to localStorage
+                if (htmlElement.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        // User menu dropdown toggle
+        const userMenuContainers = document.querySelectorAll('.user-menu-container');
+        
+        userMenuContainers.forEach(container => {
+            const menuButton = container.querySelector('.user-menu-button');
+            const menuDropdown = container.querySelector('.user-menu-dropdown');
+            
+            menuButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (menuDropdown.style.maxHeight === '400px') {
+                    menuDropdown.style.maxHeight = '0';
+                    menuDropdown.style.opacity = '0';
+                } else {
+                    menuDropdown.style.maxHeight = '400px';
+                    menuDropdown.style.opacity = '1';
+                }
+            });
+        });
+
+        // Close user menu dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const menuDropdowns = document.querySelectorAll('.user-menu-dropdown');
+            menuDropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target) && !event.target.closest('.user-menu-button')) {
+                    dropdown.style.maxHeight = '0';
+                    dropdown.style.opacity = '0';
+                }
+            });
+        });
+    });
+</script>
+
+
 </body>
 </html>
