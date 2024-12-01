@@ -61,7 +61,7 @@ namespace FoodHub.Controllers
         // POST: Action method to handle the creation of a new item
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Create(Item item, IFormFile ImagePath)
+        public async Task<IActionResult> Create(Item item, IFormFile? ImagePath)
         {
             // Added the total amount of fat must be equal to the sum of saturated and unsaturated fat
             if (item.TotalFat < item.SaturatedFat + item.UnsaturatedFat)
@@ -172,11 +172,6 @@ namespace FoodHub.Controllers
                         }
 
                         item.ImagePath = "/images/" + fileName;
-                    }
-                    else
-                    {
-                        // Keep the existing image URL if no new image is uploaded
-                        item.ImagePath = existingItem.ImagePath;
                     }
 
                     bool returnOk = await _itemRepository.Update(item);
