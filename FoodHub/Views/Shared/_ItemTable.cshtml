@@ -4,6 +4,7 @@
     <!-- Desktop Table View -->
     <div class="hidden sm:block rounded-lg">
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <!-- Table headings -->
             <thead class="bg-gray-100 dark:bg-gray-800">
                 <tr>
                     <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider rounded-tl-lg">Food Item</th>
@@ -17,6 +18,7 @@
                 </tr>
             </thead>
             <tbody class="bg-white dark:bg-[#1d1d1f] divide-y divide-gray-200 dark:divide-gray-700">
+                <!-- Loops through all items and adds them to the table -->
                 @foreach (var item in Model)
                 {
                     <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
@@ -33,6 +35,7 @@
                         <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Protein</td>
                         <td class="px-4 py-4 whitespace-nowrap text-sm space-x-2">
                             <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300">Update</a>
+                            <!-- Button which triggers delete confirmation function -->
                             <button type="button" onclick="showDeleteConfirmation(@item.ItemId)" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">Delete</button>
                         </td>
                     </tr>
@@ -128,40 +131,46 @@
 </div>
 
 <script>
-    let itemIdToDelete;
+// Variable to store the ID of the item to be deleted
+let itemIdToDelete;
 
-    function showDeleteConfirmation(itemId) {
-        itemIdToDelete = itemId;
-        document.getElementById('deleteModal').classList.remove('hidden');
-    }
+// Function to display the delete confirmation modal
+function showDeleteConfirmation(itemId) {
+    itemIdToDelete = itemId;
+    document.getElementById('deleteModal').classList.remove('hidden');
+}
 
-    document.getElementById('cancelDelete').addEventListener('click', function() {
+// Event listener for cancel button to hide the modal
+document.getElementById('cancelDelete').addEventListener('click', function() {
+    document.getElementById('deleteModal').classList.add('hidden');
+});
+
+// Event listener for confirm delete button
+document.getElementById('confirmDelete').addEventListener('click', function() {
+    // Send delete request to the server
+    fetch(`/Item/DeleteConfirmed/${itemIdToDelete}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('input[name="__RequestVerificationToken"]').value
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Reload page if delete was successful
+            location.reload();
+        } else {
+            // Log error if delete failed
+            console.error('Delete failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        // Hide the modal after delete attempt
         document.getElementById('deleteModal').classList.add('hidden');
     });
+});
 
-    document.getElementById('confirmDelete').addEventListener('click', function() {
-        // Perform the delete action here
-        fetch(`/Item/DeleteConfirmed/${itemIdToDelete}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('input[name="__RequestVerificationToken"]').value
-            },
-        })
-        .then(response => {
-            if (response.ok) {
-                // Item deleted successfully
-                location.reload(); // Reload the page to reflect the changes
-            } else {
-                // Handle error
-                console.error('Delete failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            document.getElementById('deleteModal').classList.add('hidden');
-        });
-    });
 </script>
