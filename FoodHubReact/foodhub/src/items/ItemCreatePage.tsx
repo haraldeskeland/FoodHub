@@ -58,7 +58,15 @@ const ItemCreatePage: React.FC = () => {
       <div className="kontainer w-full max-w-[1400px] flex justify-center items-center min-h-[10vh] mt-32">
         <div className="text-center w-full mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium tracking-tight gradient-text-large mb-4" data-aos="fade-up">
-            <span className="gradient-text underline pr-2 font-extrabold">Create</span> Food Item
+          <span className="relative inline-block">
+              <span className="absolute top-3 left-10 blur-[20px] bg-gradient-to-r from-lime-500 to-lime-300 opacity-70 bg-clip-text text-transparent">
+                Create
+              </span>
+              <span className="relative z-10 bg-gradient-to-r from-lime-800 to-lime-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
+              Create
+              </span>
+            </span>  
+             Food Item
           </h1>
           <p className="text-md font-light text-gray-500 mt-6" data-aos="fade-up" data-aos-delay="100">
             Add a new food item to our database with accurate nutritional information.

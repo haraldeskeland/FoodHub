@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
               <span className="relative z-10 bg-gradient-to-r from-lime-800 to-lime-300 text-transparent bg-clip-text p-3 font-extrabold dark:drop-shadow-">
                 <i>actually</i>
               </span>
-          </span> 
+            </span> 
           eating
           </h1>        
           {/* Supporting description text with fade-up animation */}
