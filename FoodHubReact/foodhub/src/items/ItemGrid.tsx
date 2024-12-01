@@ -24,7 +24,7 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, categories, apiUrl, onItemDe
     
   return (
     <div className="mx-auto px-0 sm:px-4 md:px-0">
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row w-full">
         {/* Categories Section */}
         <div className="w-full md:w-1/5 pr-8 md:pr-6 p-2 rounded-lg mb-6 md:mb-0 bg-gray-100 dark:!bg-[#1d1d1f] border dark:border dark:!border-[#303030d5]">
           <div className="md:hidden">
