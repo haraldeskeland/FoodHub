@@ -17,7 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, setSearchQuery }) =>
       value={searchQuery}
       onChange={(e) => setSearchQuery(e.target.value)}
       placeholder="
-      Search for your favourite food..." 
+      Search for food items" 
       className="w-full py-2 px-2 bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] sm:rounded-none text-sm outline-none border sm:border-y border-gray-300 dark:backdrop-blur-lg dark:!backdrop-saturate-[100%] dark:bg-[rgba(29,29,31,0.68)]"
     />
   );
