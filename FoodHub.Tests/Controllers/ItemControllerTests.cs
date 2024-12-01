@@ -403,6 +403,9 @@ namespace FoodHub.Tests.Controllers
             Assert.Equal("Item not found for the ItemId", badRequestResult.Value);
         }
         [Fact]
+        //Testing the Update method to see if it returns a ViewResult
+        //UPDATE-method in CRUD
+        //Positive test
         public async Task Update_UpdatesItem_OK()
         {
             // Arrange
