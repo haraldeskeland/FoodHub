@@ -1,0 +1,27 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<div class="min-h-screen flex flex-col justify-center bg-gray-100 py-12 sm:px-6 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <h1 class="text-center text-3xl font-semibold text-gray-900 mb-4">@ViewData["Title"]</h1>
+        
+        @if (@Model.DisplayConfirmAccountLink)
+        {
+            <p class="text-gray-700">
+                This app does not currently have a real email sender registered. See 
+                <a href="https://aka.ms/aspaccountconf" class="text-indigo-600 hover:text-indigo-500">these docs</a> 
+                for how to configure a real email sender. Normally this would be emailed: 
+                <a id="confirm-link" href="@Model.EmailConfirmationUrl" class="text-indigo-600 hover:text-indigo-500">Click here to confirm your account</a>
+            </p>
+        }
+        else
+        {
+            <p class="text-gray-700">
+                Please check your email to confirm your account.
+            </p>
+        }
+    </div>
+</div>

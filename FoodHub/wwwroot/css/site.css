@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-border {
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, .17), rgba(255, 255, 255, .04)) 1;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: "Geist", sans-serif !important;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 64px;
+  font-family: "Geist", sans-serif;
+}
+
+:root {
+  --gradient-colors: 45deg, #38a1ff, #10e3ff;
+}
+
+
+.gradient-text {
+  background: -webkit-linear-gradient(var(--gradient-colors));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #30a8bc;
+  display: inline-block;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer !important;
+}
+
+.search-input::before {
+  cursor: text;
+}
+
+.search-button {
+  padding: 10px;
+  font-size: 14px;
+  background-image: linear-gradient(
+    45deg,
+    hsl(208deg 100% 61%) 4%,
+    hsl(200deg 100% 50%) 34%,
+    hsl(197deg 100% 49%) 48%,
+    hsl(194deg 100% 47%) 60%,
+    hsl(191deg 100% 46%) 73%,
+    hsl(187deg 100% 44%) 100%
+  );
+  color: white;
+  border: 1px solid #ccc;
+  cursor: text;
+  transition: all 0.5s ease;
+  cursor: pointer !important;
+}
+
+.search-button:hover {
+  font-size: 16px;
+}
+
+.partners-section {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 0;
+  padding: 50px 0;
+  border-radius: 16px;
+}
+
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-partner {
+  transition: all 0.1s ease-in-out;
+}
+
+.logo-partner:hover {
+  transform: scale(1.1) rotate(1deg);
+}
+
+.scroll-content {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.logos-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Pausing animation on hover */
+.scroll-container:hover .scroll-content {
+  animation-play-state: paused;
+}
+
+.stat-box {
+  background-color: #fff;
+  border: 1px solid #7c7c7c1c;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  flex: 1 1 calc(25% - 20px);
+  max-width: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .image-text-container,
+  .image-text-container.right,
+  .logos-container,
+  .image-text-container.reverse {
+    flex-direction: column;
+  }
+
+  .search-button {
+    width: 30%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    font-size: 10px;
+  }
+
+  .search-input {
+    flex: 1;
+    width: 70%;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-box {
+    flex: 1 1 100%;
+  }
+}

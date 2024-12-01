@@ -1,0 +1,176 @@
+@model IEnumerable<Item>
+
+<div class="overflow-x-auto my-12">
+    <!-- Desktop Table View -->
+    <div class="hidden sm:block rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <!-- Table headings -->
+            <thead class="bg-gray-100 dark:bg-gray-800">
+                <tr>
+                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider rounded-tl-lg">Food Item</th>
+                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Producer</th>
+                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Image</th>
+                    <th class="px-2 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Energy (kcal)</th>
+                    <th class="px-2 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Carbs (g)</th>
+                    <th class="px-2 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Total Fat (g)</th>
+                    <th class="px-2 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Protein (g)</th>
+                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider rounded-tr-lg">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-[#1d1d1f] divide-y divide-gray-200 dark:divide-gray-700">
+                <!-- Loops through all items and adds them to the table -->
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+                        <td class="px-4 py-4 whitespace-nowrap text-sm">
+                            <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">@item.Name</a>
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@(item.ProducerName.Length > 10 ? item.ProducerName[..10] + "..." : item.ProducerName)</td> 
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                            <img src="@item.ImagePath" alt="@item.Name" class="w-16 h-16 object-cover rounded-md" />
+                        </td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Energy</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Carbohydrate</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.TotalFat</td>
+                        <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">@item.Protein</td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm space-x-2">
+                            <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300">Update</a>
+                            <!-- Button which triggers delete confirmation function -->
+                            <button type="button" onclick="showDeleteConfirmation(@item.ItemId)" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div class="sm:hidden space-y-4">
+        @foreach (var item in Model)
+        {
+            <div class="bg-white dark:bg-[#1d1d1f] shadow rounded-lg p-10">
+                <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2">@item.Name</h2>
+                <img src="@item.ImagePath" alt="@item.Name" class="w-full h-48 object-cover rounded-md mb-4" />
+                
+                <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+                    <div class="text-gray-600 dark:text-gray-400">Producer:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.ProducerName</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Energy:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Energy kcal</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Protein:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Protein g</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Carbs:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.Carbohydrate g</div>
+                    
+                    <div class="text-gray-600 dark:text-gray-400">Total Fat:</div>
+                    <div class="text-gray-800 dark:text-gray-200">@item.TotalFat g</div>
+                </div>
+                
+                @if (!string.IsNullOrWhiteSpace(item.Description))
+                {
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">@item.Description</p>
+                }
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <a asp-action="Update" asp-route-id="@item.ItemId" class="text-yellow-500 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 mr-2">Update</a>
+                        <button type="button" onclick="showDeleteConfirmation(@item.ItemId)" class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">Delete</button>
+                    </div>
+                    <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Details</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Button to create a new item -->
+    <div class="mt-6">
+        <a class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg dark:bg-blue-600 dark:hover:bg-blue-700" asp-controller="Item" asp-action="Create">
+            Create New Item
+        </a>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-zinc-900 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-[#1d1d1f] text-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-slate-100" id="modal-title">
+                                Delete Item
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500 dark:text-slate-400">
+                                    Are you sure you want to delete this item?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-[#1d1d1f] px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="confirmDelete" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Delete
+                    </button>
+                    <button type="button" id="cancelDelete" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Variable to store the ID of the item to be deleted
+let itemIdToDelete;
+
+// Function to display the delete confirmation modal
+function showDeleteConfirmation(itemId) {
+    itemIdToDelete = itemId;
+    document.getElementById('deleteModal').classList.remove('hidden');
+}
+
+// Event listener for cancel button to hide the modal
+document.getElementById('cancelDelete').addEventListener('click', function() {
+    document.getElementById('deleteModal').classList.add('hidden');
+});
+
+// Event listener for confirm delete button
+document.getElementById('confirmDelete').addEventListener('click', function() {
+    // Send delete request to the server
+    fetch(`/Item/DeleteConfirmed/${itemIdToDelete}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('input[name="__RequestVerificationToken"]').value
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Reload page if delete was successful
+            location.reload();
+        } else {
+            // Log error if delete failed
+            console.error('Delete failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        // Hide the modal after delete attempt
+        document.getElementById('deleteModal').classList.add('hidden');
+    });
+});
+
+</script>

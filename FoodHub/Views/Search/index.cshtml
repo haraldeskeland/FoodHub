@@ -1,0 +1,103 @@
+@model IEnumerable<FoodHub.Models.Item>
+
+@{
+    ViewData["Title"] = "Search Results";
+    Layout = "_Layout";
+}
+
+<div class="mx-auto px-0 sm:px-4 md:px-0 mt-8 pb-20">
+    <div class="flex flex-col md:flex-row w-full">
+        <!-- Categories Section -->
+        <div class="w-full md:w-1/5 pr-8 md:pr-6 p-4 sm:p-6 rounded-lg mb-6 md:mb-0 bg-gray-100 dark:!bg-[#1d1d1f] border dark:border dark:!border-[#303030d5]">
+            <!-- Mobile dropdown menu hidden on screens larger than "medium" -->
+            <div class="md:hidden">
+                <!-- Button to toggle menu -->
+                <button onclick="toggleCategoryMenu()"class="w-full bg-gray-100 dark:!bg-[#1d1d1f] text-left rounded-lg flex justify-between items-center">
+                    <span class="font-bold text-lg ml-2">Categories</span>
+                    <svg class="w-5 h-5 transition-transform" id="categoryMenuIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+            <h3 class="font-bold text-2xl mb-4 ml-4 mt-4 hidden md:block">Categories</h3>
+            <hr class="py-2 dark:border-slate-700 hidden md:block mx-auto w-[85%]" />
+            <ul id="categoryMenu" class="space-y-0 hidden md:flex flex-col pl-4">
+                <!-- All Categories Link -->
+                <li class="hover:scale-[1.01] mb-2">
+                    <a asp-controller="Search" 
+                       asp-action="Index" 
+                       asp-route-query="@ViewData["CurrentQuery"]"
+                       class="text-gray-800 hover:text-blue-800 dark:text-white @(ViewData["CurrentCategory"] == null ? "font-bold" : "")">
+                        All Categories
+                    </a>
+                </li>
+
+                <!-- Category Links displayed through a for-loop -->
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <li class="border-l-2 pl-4 py-3 hover:border-l-gray-500 mb-2 dark:text-white dark:border-slate-700 dark:hover:border-l-slate-200 @(category.ItemCategoryId.ToString() == ViewData["CurrentCategory"]?.ToString() ? "font-bold pl-3 ml-[-18px] border-l-2 border-l-gray-500" : "")">
+                        <a asp-controller="Search" 
+                           asp-action="Index" 
+                           asp-route-query="@ViewData["CurrentQuery"]"
+                           asp-route-categoryId="@category.ItemCategoryId"
+                           class="text-gray-800 hover:text-blue-800 dark:hover:text-slate-400 transition-all duration-100 ease-in-out text-base dark:text-slate-200">
+                            @category.Name
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!-- Right Side for Search Results -->
+        <div class="w-full md:w-4/5 md:pl-12 md:border-gray-200 dark:md:border-[#4e4e4ed5]">
+            <h2 class="text-4xl font-bold mb-5">Search Results</h2>
+            @if (!Model.Any())
+            {
+                <p class="text-gray-600 dark:text-slate-300">No items found.</p>
+            }
+            else
+            {
+                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                    @* Loops through all items and displays them in item cards *@
+                    @foreach (var item in Model)
+                    {
+                        <div class="bg-white dark:!bg-[#1d1d1f] dark:!border-[#303030d5] rounded-lg overflow-hidden hover:scale-[1.01] transition-all ease-in-out">
+                            <a asp-controller="Item" asp-action="Details" asp-route-id="@item.ItemId" class="no-underline">
+                                <div class="aspect-square relative">
+                                    <div class="absolute inset-0 flex items-center justify-center p-3">
+                                        <img class="max-w-full max-h-full object-contain" src="@item.ImagePath" alt="@item.Name" />
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="font-semibold text-base mb-2 no-underline text-black dark:!text-white">@item.Name</h3>
+                                    <p class="text-gray-600 font-semibold text-sm mb-2 dark:text-slate-400">@item.ProducerName</p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3">
+                                        <span class="font-semibold">Carbs: </span> @item.Carbohydrate g
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3">
+                                        <span class="font-semibold">Protein: </span> @item.Protein g
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-2 dark:text-slate-500 flex-grow line-clamp-3">
+                                        <span class="font-semibold">Fats: </span> @item.TotalFat g
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    // function to toggle the category menu and add classes to the elements
+    function toggleCategoryMenu() {
+        var menu = document.getElementById('categoryMenu');
+        var icon = document.getElementById('categoryMenuIcon');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        icon.classList.toggle('transform');
+        icon.classList.toggle('rotate-180');
+    }
+</script>

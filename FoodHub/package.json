@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "jquery-validation-unobtrusive": "^4.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "scripts": {
+    "css:build": "tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --minify",
+    "css:watch": "tailwindcss -i ./wwwroot/css/site.css -o ./wwwroot/css/styles.css --watch"
+  }
+}

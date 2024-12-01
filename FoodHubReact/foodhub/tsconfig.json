@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "baseUrl": "./src",
+        "paths": {
+            "*": ["node_modules/*"]
+        },
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["src/**/*", "src/**/*.png", "src/**/*.jpg", "src/**/*.jpeg", "src/**/*.svg"],
+    "exclude": ["node_modules", "build"]
+}
