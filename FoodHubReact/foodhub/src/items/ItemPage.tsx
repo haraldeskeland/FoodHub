@@ -84,7 +84,7 @@ const ItemPage: React.FC = () => {
 
           <div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">Nutritional Information (per 100g)</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {[
                 { label: "Energy", value: `${item.Energy} kcal` },
                 { label: "Carbohydrate", value: `${item.Carbohydrate} g` },
@@ -95,9 +95,9 @@ const ItemPage: React.FC = () => {
                 { label: "Protein", value: `${item.Protein} g` },
                 { label: "Salt", value: `${item.Salt} g` },
               ].map((nutrient, index) => (
-                <div key={index} className="bg-gray-100 dark:!bg-[#1d1d1f] border dark:!border-[#303030d5] p-2 rounded-md">
+                <div key={index} className="bg-gray-100 dark:!bg-[#1d1d1f] border dark:!border-[#303030d5] pl-2 pt-2 rounded-md">
                   <p className="font-normal text-xs sm:text-sm text-gray-700 dark:text-gray-300">{nutrient.label}</p>
-                  <p className="text-sm sm:text-lg font-bold text-gray-900 dark:text-white">{nutrient.value}</p>
+                  <p className="text-sm sm:text-lg font-bold text-gray-900 dark:text-white ">{nutrient.value}</p>
                 </div>
               ))}
             </div>

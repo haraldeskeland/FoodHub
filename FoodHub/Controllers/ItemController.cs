@@ -96,6 +96,10 @@ namespace FoodHub.Controllers
                     ModelState.AddModelError("Error", "An error occurred while creating the item. Please try again.");
                 }
             }
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Validation failed for item {@item}. Errors: {@Errors}", item, ModelState.Values.SelectMany(e => e.Errors));
+            }
 
             var categories = await _itemRepository.GetAllCategories();
             ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
@@ -184,6 +188,10 @@ namespace FoodHub.Controllers
                     _logger.LogError(ex, "[ItemController] Error occurred while updating item {ItemId:0000}", item.ItemId);
                     ModelState.AddModelError("", "An error occurred while updating the item. Please try again.");
                 }
+            }
+            if (!ModelState.IsValid)
+            {
+                _logger.LogWarning("Validation failed for item {@item}. Errors: {@Errors}", item, ModelState.Values.SelectMany(e => e.Errors));
             }
 
             // If we got this far, something failed, redisplay form
