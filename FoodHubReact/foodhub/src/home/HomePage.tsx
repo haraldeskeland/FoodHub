@@ -17,10 +17,10 @@ const HomePage: React.FC = () => {
   };
 
   const floatingImages = [
-    { src: "/images/assets/fatcarbprot.png", alt: "Food 1", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72 z-0" },
-    { src: "/images/assets/checks.png", alt: "Food 2", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0 z-0" },
-    { src: "/images/assets/graphs.png", alt: "Food 3", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64 z-0" },
-    { src: "/images/assets/allergens.png", alt: "Food 4", className: "bottom-1/4 right-[13%] w-20 md:w-28 lg:w-40 xl:w-52 z-0" },
+    { src: "/images/assets/fatcarbprot.png", alt: "Fats, Carbohydrates, Proteins bubbles", className: "top-[15%] left-[7%] w-44 md:w-34 lg:w-72 z-0" },
+    { src: "/images/assets/checks.png", alt: "Full transparency, less clutter, Know your food", className: "top-1/4 right-[4%] w-20 md:w-28 lg:w-52 invert dark:invert-0 z-0" },
+    { src: "/images/assets/graphs.png", alt: "Graphs showing the amount of protein, carbs, fats", className: "bottom-1/4 left-[10%] w-24 md:w-32 lg:w-64 z-0" },
+    { src: "/images/assets/allergens.png", alt: "Allergen control icons", className: "bottom-1/4 right-[13%] w-20 md:w-28 lg:w-40 xl:w-52 z-0" },
 ];
 
 
