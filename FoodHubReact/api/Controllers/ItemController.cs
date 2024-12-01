@@ -174,7 +174,7 @@ public class ItemAPIController : Controller
             _logger.LogError("[ItemAPIController] Item deletion failed for the ItemId {ItemId:0000}", id);
             return BadRequest("Item deletion failed");
         }
-        return NoContent(); // 204 No Content is a better fit for DELETE operations
+        return NoContent();
     }
 }
 
