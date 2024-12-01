@@ -61,9 +61,9 @@ namespace FoodHub.Controllers
         // POST: Action method to handle the creation of a new item
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Create(Item item, IFormFile ImagePath)
+        public async Task<IActionResult> Create(Item item, IFormFile? ImagePath)
         {
-            //added thed total amount of fat must be equal to the sum of saturated and unsaturated fat
+            // Added the total amount of fat must be equal to the sum of saturated and unsaturated fat
             if (item.TotalFat < item.SaturatedFat + item.UnsaturatedFat)
             {
                 ModelState.AddModelError("TotalFat", "Total fat must be equal to the sum of saturated fat and unsaturated fat");
@@ -86,7 +86,7 @@ namespace FoodHub.Controllers
 
                 try
                 {
-                    bool returnOk = await _itemRepository.Create(item); // This will not be called during the unit test 
+                    bool returnOk = await _itemRepository.Create(item);
                     if (returnOk)
                         return RedirectToAction(nameof(Table));
                 }
@@ -119,7 +119,6 @@ namespace FoodHub.Controllers
                 return BadRequest("Item not found for the ItemId");
             }
 
-            // Populate categories
             var categories = await _itemRepository.GetAllCategories();
             ViewBag.Categories = new SelectList(categories, "ItemCategoryId", "Name");
 
