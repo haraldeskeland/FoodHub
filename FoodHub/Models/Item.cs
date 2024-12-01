@@ -25,7 +25,7 @@ namespace FoodHub.Models
         // Description of the item with a maximum length of 600 characters
         [StringLength(600)]
         public string? Description { get; set; }
-
+        
         // Path for the image representing the item
         public string? ImagePath { get; set; }
 
