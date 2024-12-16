@@ -1,10 +1,3 @@
-Acknowledgment:
-This project was developed as part of the ITPE3200 group exam and was heavily inspired by the course demos created by the course lecturer Baifan Zhou. These demos were used as references and learning tools to understand key concepts such as database integration, authentication, logging, and more.
-
-While the group aimed to create original work, some parts of the implementation may resemble the demos provided during the course. We credit the course lecturer Baifan Zhou for any similarities in the code.
-
---
-
 To run the .net version of the project unzip the subapplication1 zip-file containing FoodHub and FoodhubTests, you must open the “FoodHub” folder in your IDE, then write “dotnet build FoodHub.csproj” in your IDE’s terminal. After the project is built, you must then write “dotnet run” to run the project and obtain a localhost ip/port. Copy/paste the same localhost ip/port (default is localhost:3000) in your web browser to successfully access the project’s web application. To run the MVC tests, use cd to move to the FoodHub.Tests folder, then write “dotnet test” to run the tests.
 
 After booting, the web application enables users to explore and search for food items, with options to categorize and sort the results. While browsing is open to all, registered users gain access to full CRUD operations on items. Registration requires a valid email and a secure password meeting specified criteria (one small letter, one big letter, one number, one special character, and minimum six characters). Once registered, users can manage food items via a dedicated menu accessible from the navigation bar when logged in.
