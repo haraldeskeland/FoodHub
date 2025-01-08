@@ -1,7 +1,3 @@
-// Disclaimer:
-// This file may contain similarities to the course demos created by Baifan Zhou, 
-// as these were used as learning tools to understand the framework and project setup. 
-// All credit for similar code goes to Baifan Zhou.
 using Microsoft.EntityFrameworkCore;
 using FoodHub.DAL;
 using Serilog;
