@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FoodHub/static/css/main.ecce4031.css",
-    "main.js": "/FoodHub/static/js/main.2c7b9158.js",
+    "main.js": "/FoodHub/static/js/main.b39d36fa.js",
     "static/js/453.55cfed65.chunk.js": "/FoodHub/static/js/453.55cfed65.chunk.js",
     "index.html": "/FoodHub/index.html",
     "main.ecce4031.css.map": "/FoodHub/static/css/main.ecce4031.css.map",
-    "main.2c7b9158.js.map": "/FoodHub/static/js/main.2c7b9158.js.map",
+    "main.b39d36fa.js.map": "/FoodHub/static/js/main.b39d36fa.js.map",
     "453.55cfed65.chunk.js.map": "/FoodHub/static/js/453.55cfed65.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecce4031.css",
-    "static/js/main.2c7b9158.js"
+    "static/js/main.b39d36fa.js"
   ]
 }
