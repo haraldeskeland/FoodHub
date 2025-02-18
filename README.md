@@ -30,18 +30,32 @@ As a member of a four-person team, I took the lead on front-end development, foc
 - Responsive design implementation
 - I also contributed to the back-end functionality and connecting the various parts.
 
-## Screenshots
+# Screenshots
 
-![Home Page](Skjermbilde 2025-02-18 kl. 16.33.56.png)
-![Search Results](Skjermbilde 2025-02-18 kl. 16.34.24.png)
-![Item Page](Skjermbilde 2025-02-18 kl. 16.34.30.png)
-![Item Page Light Mode](Skjermbilde 2025-02-18 kl. 16.34.34.png)
-![Edit Item View](Skjermbilde 2025-02-18 kl. 16.34.41.png)
-![Add Item View](Skjermbilde 2025-02-18 kl. 16.34.48.png)
+![Homepage](homepage.png)
+*Home page of the FoodHub application, showcasing the main interface and navigation.*
 
-![Edit Profile View](Skjermbilde 2025-02-18 kl. 16.34.54.png)
+![Search Results](search_results.png)
+*Search results page displaying various food items in a grid layout.*
 
-![Profile Menu Popup](Skjermbilde 2025-02-18 kl. 16.35.06.png)
+![Item View](item_view.png)
+*Detailed view of a specific food item, showing nutritional information and other details.*
+
+![Item View Light Mode](item_view_light.png)
+*Item page in light mode, demonstrating the application's theme options.*
+
+![Edit View](edit_view.png)
+*Interface for editing existing food item details, accessible to authorized users.*
+
+![Add View](add_view.png)
+*Form for adding a new food item to the database, showcasing the CRUD functionality.*
+
+![Edit Profile](edit_profile.png)
+*User profile editing interface, allowing users to update their personal information.*
+
+![Profile Popup](profile_popup.png)
+*Profile menu popup showing user options and quick access to account-related features.*
+
 
 
 
