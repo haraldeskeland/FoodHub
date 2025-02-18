@@ -17,6 +17,7 @@ FoodHub is a web application for exploring and managing food items. It was devel
   - C#
   - JavaScript
   - HTML/CSS
+  - Tailwind CSS
 - React version:
   - React
   - TypeScript
